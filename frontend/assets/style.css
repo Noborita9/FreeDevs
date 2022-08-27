@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.subtitle_font {
+  font-family: "Ibarra Real Nova", serif;
+  font-size: 1.1vw;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* BARRA DE NAVEGACION */
+
+ul {
+  width: 90%;
+  height: 9vh;
+  padding: 0 5% 0 5%;
+  background: rgb(130, 180, 54);
+  background: linear-gradient(
+    90deg,
+    rgba(130, 180, 54, 1) 30%,
+    rgba(58, 185, 177, 1) 100%
+  );
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  box-shadow: 0 0.4vh 0.4vh grey;
+}
+
+ul img {
+  width: auto;
+  height: calc(9vh * 0.8);
+}
+
+div {
+  width: 13vw;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+div p {
+  font-family: 'Dancing Script';
+  font-size: 40px;
+  text-transform: capitalize;
+}
+
+div img:hover {
+  cursor: pointer;
+}

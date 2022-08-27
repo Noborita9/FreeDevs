@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/login.css" />
+  </head>
+  <body>
+    <form>
+      <img src="assets/img/LogoFD.png" />
+      <h2>sign in</h2>
+      <input id="inUsuario" type="text" placeholder="user" />
+      <section><input id="inPass" type="password" placeholder="password"/> <img id="showImg" onclick="reveal()" src="assets/img/candado.png"></section>
+      <button id="sign" onclick="getData()">sign in now</button>
+      <section id="contentColors">
+        <img id="bgColor" onclick="changeColors()" src="assets/img/day-and-night.png" alt="">
+      </section>
+    </form>
+    <script src="./assets/acces.js"></script>
+  </body>
+</html>
