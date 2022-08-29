@@ -1,0 +1,46 @@
+Todos los datos de
+  Persona
+    Usuarios
+      username
+      password
+      role 'admin' 'usuario'
+
+  Ficha tecnica
+    id
+    insumos / ingredientes :: Ingrediente
+    cantidad
+    procedimiento ['', '']
+    comentarios ['', '']
+
+  Orden Produccion
+    id_orden_prod
+    fecha
+    precio total
+    evento asignado
+    productos
+    cantidad
+
+  Producto
+    id_prod
+    nombre
+    precio
+    imagen
+    unidad
+    ficha tecnica :: Ficha tecnica
+
+  Evento
+    id_evento
+    nombre
+    tipo 'cumple' una desc
+    servicio 'buffet' otra desc
+    fecha estandar de fecha
+    ubicacion 'calle .. esq 10' 
+    link_ubicacion 
+    cantidad personas 90
+    contacto evento 096 190 023
+    encargado evento | TABLA | encargado1_nombre encargado2_nombre encargado1_apellido encargado2_apellido id_evento
+    peronal del evento | TABLA | rol cantidad lugar_estar id_evento
+    moviliario del evento | TABLA | objeto cantidad id_evento
+    plano imagen del lugar
+    menu | TABLA | producto id_evento categoria momento
+    
