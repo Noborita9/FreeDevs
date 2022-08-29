@@ -30,5 +30,8 @@ class FichaTecnica{
         return $this->procedimiento;
     }
 }
+
 $ingredientes = array(array(ingrediente, cant))
+
 ?>
+
