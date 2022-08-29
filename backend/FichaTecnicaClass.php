@@ -7,27 +7,34 @@ class FichaTecnica{
     public $procedimiento;
     public $comentarios;
 
-    function get_nombre(){
+    function constructor($nombre, $ingredientes, $procedimiento, $comentarios){
+        $this->nombre = $nombre;
+        $this->ingredientes = $ingredientes;
+        $this->procedimiento = $procedimiento;
+        $this->comentarios = $comentarios;
+    }
+
+    function getNombre(){
         return $this->nombre;
     }
 
-    function set_nombre($nombre){
+    function setNombre($nombre){
         $this->nombre = $nombre;
     }
     
-    function get_ingredientes(){
+    function getIngredientes(){
         return $this->ingredientes;
     }
 
-    function set_ingredientes($ingredientes){
+    function setIngredientes($ingredientes){
         $this->ingredientes = $ingredientes;
     }
 
-    function get_procedimiento(){
+    function getProcedimiento(){
         return $this->procedimiento;
     }
 
-    function set_procedimiento($procedimiento){
+    function setProcedimiento($procedimiento){
         $this->procedimiento = $procedimiento;
     }
 
@@ -35,10 +42,9 @@ class FichaTecnica{
         return $this->comentarios;
     }
 
-    function setComentarios(){
-        $this->comentarios = comentarios;
+    function setComentarios($comentarios){
+        $this->comentarios = $comentarios;
     }
 }
 
 ?>
-

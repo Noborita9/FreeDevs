@@ -7,6 +7,13 @@ class OrdenProduccion {
     public $productos;
     public $idEvento;
 
+    function constructor($idOrdenProd, $nombre, $fecha, $precioTotal, $productos, $idEvento){
+        $this->nombre = $nombre;
+        $this->fecha = $fecha;
+        $this->idOrdenProd = $idOrdenProd;
+        $this->precioTotal = $precioTotal;
+        $this->productos = $productos;
+    }
     function getNombre() {
         return $this->nombre;
     }
@@ -45,6 +52,14 @@ class OrdenProduccion {
 
     function setProductos($productos) {
         $this->productos = $productos;
+    }
+
+    function getIdEvento() {
+        return $this->idEvento;
+    }
+
+    function setIdEvento($idEvento) {
+        $this->idEvento = $idEvento;
     }
 
 }
