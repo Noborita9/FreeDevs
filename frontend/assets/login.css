@@ -87,6 +87,12 @@ form button:hover {
     position: relative;
   }
 
+  #inPass
+  {
+    width: 190px;
+    padding-right: 40px;
+  }
+
   form input {
     width: 230px;
     height: 30px;
@@ -184,6 +190,11 @@ form button:hover {
     outline: none;
   }
 
+  input#inPass {
+    width: 40vw;
+    padding-right: 13vw;
+}
+
   input:focus {
     border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
     transition: 0.5s;
@@ -233,8 +244,4 @@ form button:hover {
     position: relative;
   }
 
-  /* #contentColors img:hover {
-    transform: rotate(180deg);
-    transition: 1s;
-  } */
 }
