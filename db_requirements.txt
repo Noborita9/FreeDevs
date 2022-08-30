@@ -38,7 +38,7 @@ Todos los datos de
     link_ubicacion 
     cantidad personas 90
     contacto evento 096 190 023
-    encargado evento | TABLA | encargado1_nombre encargado2_nombre encargado1_apellido encargado2_apellido id_evento
+    encargado evento | TABLA | nombre apellido id_evento
     peronal del evento | TABLA | rol cantidad lugar_estar id_evento
     moviliario del evento | TABLA | objeto cantidad id_evento
     plano imagen del lugar

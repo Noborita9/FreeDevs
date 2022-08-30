@@ -9,7 +9,7 @@
 
     <body>
         <section id="space">
-            <form action="register_verify.php" method="post" id="form_register">
+            <form action="" method="post" id="form_register">
                 <input type="text" name="user_name" placeholder="usuario">
                 <input type="password" name="user_pass" placeholder="constrasena">
                 <input type="text" name="mail" placeholder="mail">
@@ -17,7 +17,7 @@
                 <button type="button" onclick="verify_data_state_register()" >Registrarme</button>
             </form>
 
-            <form action="login_verify.php" method="post" id="form_login">
+            <form action="" method="post" id="form_login">
                 <input type="text" name="user_name" placeholder="usuario">
                 <input type="password" name="user_pass" placeholder="constrasena">
                 <button type="button" onclick="verify_data_state_login()" >Iniciar sesion</button>
