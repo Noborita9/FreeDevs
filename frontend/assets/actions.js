@@ -1,23 +1,41 @@
-const productsInfo = document.querySelector('.content button');
-const eventInfo = document.querySelector('.products button')
-const content = document.querySelector('.content');
-const products = document.querySelector('.products');
+const productsInfo = document.querySelectorAll('.content button');
+const eventInfo = document.querySelectorAll('.products button')
+const content = document.querySelectorAll('.content');
+const products = document.querySelectorAll('.products');
+const navContent = document.querySelectorAll('.navContent');
+const nav = document.querySelector('#nav');
 
-productsInfo.addEventListener('click', () => {
-    content.classList.remove('yMoveNt');
-    products.classList.remove('yMoveNt');
+let navWidth = 0;
+
+navContent.forEach(() => navWidth = navWidth + 10);
+
+nav.style.width = `${navWidth}%`;
+nav.style.margin = `0 0 0 ${(100 - navWidth) / 2}%`;
 
 
-    content.classList.add('yMove');
-    products.classList.add('yMove');
+console.log(navWidth);
+
+
+
+productsInfo.forEach((element)=> { element.addEventListener('click', () => {
+
+
+    content.forEach((element) => element.classList.add('yMove'));
+    products.forEach((element) => element.classList.add('yMove'));
+
+    content.forEach((element) => element.classList.remove('yMoveNt'));
+    products.forEach((element) => element.classList.remove('yMoveNt'));
+
+    })
 });
 
-eventInfo.addEventListener('click', () => {
-    content.classList.remove('yMove');
-    products.classList.remove('yMove');
+eventInfo.forEach((element)=> { element.addEventListener('click', () => {
 
-    content.classList.add('yMoveNt');
-    products.classList.add('yMoveNt');
+        content.forEach((element) => element.classList.add('yMoveNt'));
+        products.forEach((element) => element.classList.add('yMoveNt'));
 
-    console.log('me estas presionando');
-})
+        content.forEach((element) => element.classList.remove('yMove'));
+        products.forEach((element) => element.classList.remove('yMove'));
+
+    })
+});
