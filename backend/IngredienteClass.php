@@ -8,25 +8,25 @@ class Ingrediente{
     public $mani = False;
     public $lacteo = False;
 
-    function get_name(){
+    function getNombre(){
         return $this->nombre;
     }
     
-    function set_name($nombre){
+    function setNombre($nombre){
         $this->nombre = $nombre; 
     }
 
-    function get_unidad(){
+    function getUnidad(){
         return $this->unidad;
     }
-    function set_unidad($unidad){
+    function setUnidad($unidad){
         $this->unidad = $unidad;
     }
 
-    function get_tacc(){
+    function getTacc(){
         return $this->tacc;
     }
-    function change_tacc(){
+    function changeTacc(){
         if ($this->tacc){
             $this->tacc = False;
         } else {
@@ -34,10 +34,10 @@ class Ingrediente{
         }
     }
 
-    function get_vegano(){
+    function getVegano(){
         return $this->vegano;
     }
-    function change_vegano(){
+    function changeVegano(){
         if ($this->vegano){
             $this->vegano = False;
         } else {
@@ -45,10 +45,10 @@ class Ingrediente{
         }
     }
 
-    function get_mani(){
+    function getMani(){
         return $this->mani;
     }
-    function change_mani(){
+    function changeMani(){
         if ($this->mani){
             $this->mani = False;
         } else {
@@ -56,10 +56,10 @@ class Ingrediente{
         }
     }
 
-    function get_lacteo(){
+    function getLacteo(){
         return $this->lacteo;
     }
-    function change_lacteo(){
+    function changeLacteo(){
         if ($this->lacteo){
             $this->lacteo = False;
         } else {
