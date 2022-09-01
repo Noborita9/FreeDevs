@@ -20,7 +20,7 @@
         ];
 
         /*configuracion consulta*/
-        $data = $conn->query("SELECT * FROM users")->fetchAll();
+        $data = $pdo->query("SELECT * FROM usuarios")->fetchAll();
     
         /*recorro consulta*/
         $log_validate = false;
