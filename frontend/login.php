@@ -26,48 +26,48 @@
 </html>
 
 <script> 
-      async function fetch_send(data_set)
+  function fetch_send(data_set)
+  {
+      fetch('login_verify.php', 
       {
-          await fetch('login_verify.php', 
+          method: 'POST',
+          body: data_set,
+      })
+      .then(function(response) 
+      {
+          if(response.ok) 
           {
-              method: 'POST',
-      	      body: data_set,
-          })
-          .then(function(response) 
+              return response.text();
+          } else 
           {
-              if(response.ok) 
-              {
-                  return response.text();
-              } else 
-              {
-                  throw "Error";
-              }
-          })
-          .then(function(texto) 
-          {
-              // Aca deberia reenviar al user .. creo
-              console.log(texto)
-              window.location.replace("./index.html")
-          })
-          .catch(function(err) 
-          {
-              console.log(err); });
-      }
+              throw "Error";
+          }
+      })
+      .then(function(texto) 
+      {
+          // Aca deberia reenviar al user .. creo
+          console.log(texto)
+          window.location.replace("./index.html")
+      })
+      .catch(function(err) 
+      {
+          console.log(err); });
+  }
 
-      function verify_data_state() 
-      {  
-          const data = new FormData(document.getElementById('form_login'));
-          let usr = data.get("user_name");
-          let psw = data.get("user_pass");
-          
-          
-          /*me aseguro que los datos ingresados al menos tengan 5 caracteres de lenght (lo define cada sistema)*/ 
-          if(usr.length >=5 && psw.length >=5){fetch_send(data);}else
-          {
-              /*caso de error, campos vacios o con menos de 5 caracteres*/
-              let form = document.querySelector("#form_login");
-              if(usr.length <5){form.children[0].classList.add("error_input")}
-              if(psw.length <5){form.children[1].classList.add("error_input")}
-          } 
-      }
+  function verify_data_state() 
+  {  
+      const data = new FormData(document.getElementById('form_login'));
+      let usr = data.get("user_name");
+      let psw = data.get("user_pass");
+      
+      
+      /*me aseguro que los datos ingresados al menos tengan 5 caracteres de lenght (lo define cada sistema)*/ 
+      if(usr.length >=5 && psw.length >=5){fetch_send(data);}else
+      {
+          /*caso de error, campos vacios o con menos de 5 caracteres*/
+          let form = document.querySelector("#form_login");
+          if(usr.length <5){form.children[0].classList.add("error_input")}
+          if(psw.length <5){form.children[1].classList.add("error_input")}
+      } 
+  }
 </script>
