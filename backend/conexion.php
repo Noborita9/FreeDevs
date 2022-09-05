@@ -1,13 +1,15 @@
 <?php 
-    $host = "localhost";
+
+    $host = "127.0.0.1";
     $username = "nobora";
     $password = "mariaD8";
-    $db_name = "gestornomia"
+    $db_name = "gestornomia";
+    $charset = 'utf8mb4';
 
     try {
-        $conn = new PDO("mysql:host=$host;db_name=$db_name", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      	$dsn = "mysql:host=$host;dbname=$db_name;charset=$charset;port=$port";
+        $pdo = new \PDO($dsn, $username, $password, $options);
     } catch (PDOException $e) {
-        //throw $th;
+	      echo "Conection FAILED " . $e->getMessage();
     }
 ?>

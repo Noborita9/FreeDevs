@@ -47,6 +47,7 @@
           {
               // Aca deberia reenviar al user .. creo
               console.log(texto)
+              window.location.replace("./index.html")
           })
           .catch(function(err) 
           {
