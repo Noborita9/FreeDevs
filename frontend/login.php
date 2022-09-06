@@ -37,6 +37,7 @@
       {
           if(response.ok) 
           {
+              window.location.replace("./index.html")
               return response.text();
           } else 
           {
@@ -47,7 +48,6 @@
       {
           // Aca deberia reenviar al user .. creo
           console.log(texto)
-          window.location.replace("./index.html")
       })
       .catch(function(err) 
       {

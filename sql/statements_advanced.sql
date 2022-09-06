@@ -3,115 +3,110 @@ CREATE DATABASE gestornomia;
 USE gestornomia;
 
 CREATE TABLE personas (
-	id_personas INT PRIMARY KEY AUTO_INCREMENT,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	nombre NOT NULL,
 	apellido NOT NULL ,
-	usuario ,  
 );
 
 CREATE TABLE usuarios (
-  id_usuario INT PRIMARY KEY ,
+  id INT PRIMARY KEY ,
   nombre_usuario VARCHAR(50) NOT NULL,
   contrasena VARCHAR(50) NOT NULL,
   isadmin boolean NOT NULL, /*puesto dudoso num3*/
-  FOREIGN KEY (id_usuario) REFERENCES personas(id_personas)
+  FOREIGN KEY (id) REFERENCES personas(id)
 );
 
 CREATE TABLE administradores (
-	id_adminstradores INT NOT NULL,
-	id_usrfk INT NOT NULL,
-	usuario_admin VARCHAR(50) NOT NULL,
-	contraseña_admin VARCHAR(50) NOT NULL,
-	PRIMARY KEY (id_adminstradores,id_usrfk),
-	FOREIGN KEY (id_adminstradores) REFERENCES personas(id_personas),
-		FOREIGN KEY (id_usrfk) REFERENCES usuarios(id_usuario)
+  id_adminstradore INT NOT NULL,
+  id_usuario INT NOT NULL,
+  usuario_admin VARCHAR(50) NOT NULL,
+  contraseña_admin VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id_adminstradores, id_usuario),
+  FOREIGN KEY (id_adminstradores) REFERENCES personas(id),
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
 CREATE TABLE personal (
- id_personal INT PRIMARY KEY,
- nombre VARCHAR(20) NOT NULL,
- apellido VARCHAR(20) NOT NULL, 
- trabajo VARCHAR(30) NOT NULL,
-	FOREIGN KEY (id_personal) REFERENCES personas(id_personas)
+  id INT PRIMARY KEY,
+  trabajo VARCHAR(30) NOT NULL,
+  FOREIGN KEY (id) REFERENCES personas(id)
 );
 
 CREATE TABLE encargados(
- id_encargados INT PRIMARY KEY,
- nombre VARCHAR(20) NOT NULL,
- apellido VARCHAR(20) NOT NULL,
-	FOREIGN KEY (id_encargados) REFERENCES personas(id_personas)
+  id INT PRIMARY KEY,
+  FOREIGN KEY (id) REFERENCES personas(id)
 );
 
-CREATE TABLE producto (
- id_prod INT PRIMARY KEY AUTO_INCREMENT, 
- nombre VARCHAR NOT NULL, 
- precio INT NOT NULL,
- imagen NOT NULL,
- unidad NOT NULL,  
+CREATE TABLE productos (
+   id INT PRIMARY KEY AUTO_INCREMENT, 
+   nombre VARCHAR (50) NOT NULL, 
+   precio INT NOT NULL,
+   imagen VARCHAR (200) NOT NULL,
+   unidad VARCHAR (30) NOT NULL,  
 );
 
 CREATE TABLE fichas_tecnicas (
-  id_ficha_tecnica INT PRIMARY KEY AUTO_INCREMENT,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(50) NOT NULL  
 );
 
 CREATE TABLE ingredientes (
-  id_ingrediente INT PRIMARY KEY AUTO_INCREMENT,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   unidad VARCHAR(30) NOT NULL,
   nombre VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE ingredientes_por_ficha (
-  id_ingrediente_fk INT NOT NULL,
-  id_ingrediente_ficha INT NOT NULL,
+  id_ingrediente INT NOT NULL,
+  id_ficha INT NOT NULL,
   cantidad INT NOT NULL,
-  primary key (id_ingrediente_ficha,id_ingrediente_fk ),
-  FOREIGN KEY (id_ingrediente_fk) REFERENCES ingredientes(id_ingrediente),
-  FOREIGN KEY (id_ingrediente_ficha) REFERENCES fichas_tecnicas(id_ficha_tecnica)
+  PRIMARY KEY (id_ingrediente, id_ficha),
+  FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id),
+  FOREIGN KEY (id_ficha) REFERENCES fichas_tecnicas(id)
 );
 
 CREATE TABLE procedimiento_por_ficha (
-  id_procedimiento_ficha INT PRIMARY KEY NOT NULL,
+  id INT PRIMARY KEY NOT NULL,
   num_paso INT NOT NULL,
   paso VARCHAR(200) NOT NULL,
-  FOREIGN KEY (id_procedimiento_ficha) REFERENCES fichas_tecnicas(id_ficha_tecnica) 
+  FOREIGN KEY (id) REFERENCES fichas_tecnicas(id) 
 );
 
-CREATE TABLE evento (
-	id_evento INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	titulo_evento VARCHAR NOT NULL,
-	tipo_evento VARCHAR  NOT NULL,
-	servicio VARCHAR NOT NULL,
-	fecha DATE NOT NULL,
-	ubicacion VARCHAR NOT NULL,
-	link_ubicacion VARCHAR ,/*puesto dudoso num1*/
-	cantidad_personas INT NOT NULL ,
-	contacto evento VARCHAR /*puesto dudoso num2*/
-);
-
-CREATE TABLE recursos_eventos (
-	id_recursos_eventos PRIMARY KEY AUTO_INCREMENT NOT NULL, 
-	cantidad_necesaria NOT NULL
-	
-
+CREATE TABLE eventos (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  titulo VARCHAR (200) NOT NULL,
+  tipo VARCHAR (200) NOT NULL, /* puesto dudoso num2*/
+  servicio VARCHAR (200) NOT NULL,
+  fecha DATE NOT NULL,
+  ubicacion VARCHAR (200) NOT NULL,
+  link_ubicacion VARCHAR (200) ,/*puesto dudoso num1*/
+  cantidad_personas INT NOT NULL ,
+  contacto VARCHAR (100) NOT NULL
 );
 
 CREATE TABLE recursos (
- id_recurso PRIMARY KEY AUTO_INCREMENT NOT NULL, 
- Objeto VARCHAR NOT NULL,
- tipo_objeto VARCHAR NOT NULL,
- cantidad_disponible INT NOT NULL,
-  
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  nombre VARCHAR (50) NOT NULL,
+	cantidad_disponible INT NOT NULL
+);
+
+CREATE TABLE recursos_eventos (
+	id_evento INT, 
+  id_recurso INT,
+	cantidad_necesaria INT NOT NULL,
+  PRIMARY KEY(id_evento, id_recurso)
+  FOREIGN KEY(id_evento) REFERENCES eventos(id),
+  FOREIGN KEY(id_recurso) REFERENCES recursos(id)
 );
 
 CREATE TABLE menues_eventos (
- id_menues INT AUTO_INCREMENT NOT NULL,
- id_eventofk INT AUTO_INCREMENT NOT NULL,
- id_prodfk INT AUTO_INCREMENT NOT NULL,
- 
- 
- PRIMARY KEY(id_menues,id_eventofk)
+  id_menu INT AUTO_INCREMENT NOT NULL,
+  id_evento INT AUTO_INCREMENT NOT NULL,
+  PRIMARY KEY(id_menu,id_evento),
+  FOREIGN KEY(id_evento) REFERENCES eventos(id)
 );
+
+CREATE TABLE productos_menues ()
 
 
 
