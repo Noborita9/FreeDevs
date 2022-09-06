@@ -4,7 +4,7 @@
     if(!empty($_POST["user_name"]) && !empty( $_POST["user_pass"]) && isset($_POST["user_name"]) && isset($_POST["user_pass"])){process_login();}else 
     {
         /*redirecciono a login si es que no se provino con DATA SET via POST desde el*/
-        // header("Location: http://localhost/PHP%20devs/PDO/login%20example/login.php");
+        header("Location: ./login.php");
         exit();
     }
     

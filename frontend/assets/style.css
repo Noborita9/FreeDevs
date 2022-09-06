@@ -234,3 +234,17 @@ object-fit: cover;
   transition: all;
   transition-duration: 3s;
 }
+/*----------GESTION SECTION----------*/
+
+.gestion_menu {
+  display: flex;
+  justify-content: center;
+}
+
+.gestion_product {
+  background: #fff;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+}
