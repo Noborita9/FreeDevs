@@ -1,11 +1,35 @@
 <?php
-  if (isset($_POST["nombre"]) && !empty($_POST["nombre"]) && isset($_POST["unidad"]) && (!empty($_POST["unidad"]) || strcmp($_POST["unidad"], "0")) && isset($_POST["stock"]) && !empty($_POST["stock"])) {proccess_insumo();}else {
+  if (isset($_POST["nombre"]) && !empty($_POST["nombre"]) && isset($_POST["unidad"]) && (!empty($_POST["unidad"]) || strcmp($_POST["unidad"], "0")) && isset($_POST["stock"]) && !empty($_POST["stock"])) {check_existance_insumo();}else {
     //header("Location: ../../frontend/index.html ");
     exit();
   }
+
+  function check_existance_insumo(){
+    include("../conexion.php");
+
+    $exists = 0;
+    $stmt = $pdo->prepare("SELECT nombre, unidad FROM insumos WHERE nombre=:nombre");
+    $stmt->bindParam(":nombre", $_POST["nombre"]);
+    $stmt->execute();
+    $data = $stmt->fetchAll();
+
+    foreach ($data as $row){
+      if (strcmp($_POST["nombre"], $row["nombre"]) == 0 && strcmp($_POST["unidad"], $row["unidad"]) == 0){
+        $exists = 1;
+      }
+    }
+
+    if($exists == 0){
+      proccess_insumo();
+    }
+    else {
+      echo "El producto ya existe";
+    }
+  }
+
   function proccess_insumo(){
     include("../conexion.php");
-    
+
     $stmt = $pdo->prepare("INSERT INTO insumos (nombre, unidad, stock) VALUES(:nombre, :unidad, :stock)");
     $stmt->bindParam(":nombre", $nombre);
     $stmt->bindParam(":unidad", $unidad);
@@ -16,7 +40,7 @@
     $stock = $_POST["stock"];
 
     $stmt->execute();
-
+    echo "Producto agregado";
   }
 
 ?>
