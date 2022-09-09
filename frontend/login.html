@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="assets/login.css" />
+    <link id="css" rel="stylesheet" href="assets/login.css" />
+    <script src="https://kit.fontawesome.com/f4e70a9fbd.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <form>
@@ -14,7 +15,12 @@
       <input id="inUsuario" type="text" placeholder="User" />
       <section><input id="inPass" type="password" placeholder="Password"/> <img id="showImg" onclick="reveal()" src="assets/img/candado.png"></section>
       <button id="sign" onclick="getData()">sign in now</button>
+      <div class="colorMode">
+        <i class="fa-solid fa-moon" id="icoMoon"></i>
+        <i class="fa-solid fa-sun" id="icoSun"></i>
+      </div>
     </form>
     <script src="./assets/acces.js"></script>
+    <script src="./assets/layout.js"></script>
   </body>
 </html>
