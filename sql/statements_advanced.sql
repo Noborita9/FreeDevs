@@ -33,8 +33,11 @@ CREATE TABLE personal (
 );
 
 CREATE TABLE encargados(
-  id INT PRIMARY KEY,
-  FOREIGN KEY (id) REFERENCES personas(id)
+  id_persona INT PRIMARY KEY,
+  id_evento INT PRIMARY KEY,
+  PRIMARY KEY(id_persona, id_evento),
+  FOREIGN KEY (id_persona) REFERENCES personas(id),
+  FOREIGN KEY (id_evento) REFERENCES eventos(id)
 );
 
 CREATE TABLE productos (
