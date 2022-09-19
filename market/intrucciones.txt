@@ -1,0 +1,4 @@
+Pasos para poder usar localmente:
+1 - Cambiar los datos en connect.php para la maquina local
+2 - Crear la base de datos market y ejecutar el script 'market_example.sql'
+3 - Montar los archivos en el xampp
