@@ -131,22 +131,20 @@ form button:hover {
 
 }
 
-@media (max-width: 420px) {
+
+@media (max-width: 420px)
+{
   
   body
   {
-    background: linear-gradient(
-      40deg,
-    #303030 30%,
-    #111111 100%
-    );
+    background: #111111;
   }
 
 
   form {
     width: 94vw;
     height: 97.5vh;
-    background: #fff;
+    background: #303030;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,19 +159,23 @@ form button:hover {
   }
   
     
-  form * {
+  form *
+  {
     margin: 1vh;
   }
 
-  h2 {
+  h2
+  {
     text-transform: capitalize;
     font-family: "Dancing script", sans-serif;
     font-weight: bold;
     font-size: 8vw;
     margin: 3vh 0 5vh 0;
+    color: #fff;
   }
-
-  form section {
+  
+  form section
+  {
     width: 56vw;
     height: 4vh;
     border: none;
@@ -183,7 +185,8 @@ form button:hover {
     margin: 0;
   }
 
-  form input {
+  form input
+  {
     width: 50vw;
     height: 3vh;
     padding: 0 3vw;
@@ -191,25 +194,30 @@ form button:hover {
     border: none;
     border-bottom: 0.3vh solid rgba(0, 0, 0, 0.6);
     outline: none;
+    background: #303030;
   }
 
-  input#inPass {
+  input#inPass
+  {
     width: 40vw;
     padding-right: 13vw;
-}
+  }
 
-  input:focus {
+  input:focus
+  {
     border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
     transition: 0.5s;
   }
 
-  form section input {
+  form section input
+  {
     margin: 0;
     position: absolute;
     bottom: 0;
   }
 
-  section img{
+  section img
+  {
     width: auto;
     height: 30px;
     margin: 0 0 0 0;
@@ -217,19 +225,21 @@ form button:hover {
     right: 0;
   }
 
-  form button {
+  form button
+  {
     width: 50vw;
     height: 4vh;
     border-style: none;
-    border: 0.45vw solid rgba(0, 0, 0, 0.6);
+    border: 0.55vw solid rgba(0, 0, 0, 0.7);
     border-radius: 20px;
-    background: #fff;
+    background: transparent;
     text-transform: lowercase;
     margin: 3vh;
-    
+    color: #fff;
   }
 
-  #contentColors {
+  #contentColors
+  {
     width: 300px;
     height: 80px;
     padding: 20px;
@@ -241,7 +251,8 @@ form button:hover {
     justify-content: flex-end;
   }
 
-  #contentColors img {
+  #contentColors img
+  {
     width: auto;
     height: 60px;
     padding: 0 10px 0 10px;

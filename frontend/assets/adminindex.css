@@ -1,0 +1,427 @@
+
+@media(min-width: 1100px){
+    /* general */
+
+    input
+    {
+    width: 330px;
+    height: 30px;
+    margin: 20px;
+    border: none;
+    border-bottom: 0.3vh solid rgba(0, 0, 0, 0.7);
+    outline: none;
+    padding-bottom: 5px;
+    font-size: 15px;
+    }
+
+
+  /* gestor_indice */
+
+  #gestor_indice
+  {
+    width: var(--gapWidth);
+    height: 70px;
+    background: #fff;
+    margin-bottom: 0;
+  }
+
+  #gestor_indice ul
+  {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  #gestor_indice ul li
+  {
+    width: 10%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #gestor_indice ul li:hover
+  {
+    cursor: pointer;
+    background: rgba(130, 180, 54, 1);
+    color: #fff;
+    transition: 0.8s;
+  }
+
+  #gadgets
+  {
+    width: var(--gapWidth);
+    height: 80px;
+    background: #fff;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  #gadgets ul
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+  }
+
+  #buscador
+  {
+    width: 250px;
+    border: 0.3vh solid rgba(0, 0, 0, 0.7);
+    padding-left: 15px;
+  }
+
+  #filtro
+  {
+    width: 250px;
+    height: 40px;
+    border: 0.3vh solid rgba(0, 0, 0, 0.7);
+  }
+
+  #buscador_button
+  {
+    width: 125px;
+    height: 40px;
+    border: 0.3vh solid rgba(0, 0, 0, 0.7);
+    background: #292929;
+    color: #fff;
+  }
+
+  #buscador_button:hover
+  {
+    background: #fff;
+    color: #292929;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 0.7s;
+  }
+
+    /* gestor_menu  // lista & formulario de ingreso*/
+
+    #gestor_menu  
+    {
+    width: var(--gapWidth);
+    height: 500px;
+    margin-top: 0;
+    position: relative;
+    }
+
+    #menu_eventos
+    {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display:flex;  
+    z-index: 1;
+    position: absolute;
+    }
+
+    #list_eventos
+    {
+    width: 60%;
+    height: inherit;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px;
+    overflow-y: scroll;
+    }
+
+    #evento_form
+    {
+    width: 40%;
+    height: inherit;
+    border-left: 2px solid rgb(41, 41, 41);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    }
+
+    #evento_form textarea
+    {
+    width: 320px;
+    height: 60px;
+    padding: 5px;
+    resize: vertical;
+    }
+
+    #evento_form input:nth-of-type(2)
+    {
+    border: none;
+    }
+
+    #menu_insumos
+    {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display:flex;  
+    z-index: 2;
+    position: absolute;
+    }
+
+    #list_insumos
+    {
+    width: 60%;
+    height: inherit;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px;
+    overflow-y: scroll;
+    }
+
+    #list_insumos > span
+    {
+    margin: auto;
+    }
+
+    .list_sub_data
+    {
+    display: flex;
+    justify-content: space-between;
+    }
+
+    #insumo_form
+    {
+    width: 40%;
+    height: inherit;
+    border-left: 2px solid rgb(41, 41, 41);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+    #insumo_form h2, #evento_form h2
+    {
+    padding-bottom: 2vw;
+    }
+
+    #insumo_form button, #evento_form button
+    {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border-style: none;
+    border: 0.25vh solid rgba(0,0,0, 0.6);
+    background: transparent;
+    text-transform: lowercase;
+    font-size: 18px;
+    margin: 40px;
+    }
+
+    #insumo_form button:hover, #evento_form button:hover
+    {
+    cursor: pointer;
+    background: rgba(130, 180, 54, 1);
+    color: #fff;
+    transition: 0.8s;
+    border: none;
+    }
+
+    #insumo_form input:focus
+    {
+    border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
+    transition: 0.5s;
+    }
+}
+
+@media(max-width: 1099px) {
+    /* general */
+    input
+    {
+    width: 70vw;
+    height: 30px;
+    margin: 20px;
+    border: none;
+    border-bottom: 0.3vh solid rgba(0, 0, 0, 0.7);
+    outline: none;
+    padding-bottom: 5px;
+    font-size: 15px;
+    }
+
+
+    /* gestor_indice */
+
+    #gestor_indice
+    {
+    width: var(--gapWidth);
+    height: 70px;
+    background: #fff;
+    margin-bottom: 0;
+    }
+
+    #gestor_indice ul
+    {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    }
+
+    #gestor_indice ul li
+    {
+    width: 15%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    #gestor_indice ul li:hover
+    {
+    cursor: pointer;
+    background: rgba(130, 180, 54, 1);
+    color: #fff;
+    transition: 0.8s;
+    }
+
+    /* gestor_menu  // lista & formulario de ingreso*/
+
+    #gestor_menu  
+    {
+    width: var(--gapWidth);
+    height: 800px;
+    margin-top: 0;
+    position: relative;
+    }
+
+    #menu_insumos
+    {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display:flex;  
+    z-index: 2;
+    position: absolute;
+    flex-direction: column-reverse;
+    }
+
+    #list_insumos
+    {
+    width: 100%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px;
+    overflow-y: scroll;
+    }
+
+    #list_insumos > span
+    {
+    margin: auto;
+    }
+
+    .list_sub_data
+    {
+    display: flex;
+    justify-content: space-between;
+    }
+
+    #insumo_form
+    {
+    width: 100%;
+    height: 40%;
+    border-bottom: 2px solid rgb(41, 41, 41);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+
+
+    #insumo_form h2, #evento_form h2
+    {
+    padding-bottom: 0vw;
+    }
+
+    #insumo_form button, #evento_form button
+    {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border-style: none;
+    border: 0.25vh solid rgba(0,0,0, 0.6);
+    background: transparent;
+    text-transform: lowercase;
+    font-size: 18px;
+    margin: 40px;
+    }
+
+    #insumo_form button:hover, #evento_form button:hover
+    {
+    cursor: pointer;
+    background: rgba(130, 180, 54, 1);
+    color: #fff;
+    transition: 0.8s;
+    border: none;
+    }
+
+    #insumo_form input:focus
+    {
+    border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
+    transition: 0.5s;
+    }
+
+    #insumo_form > button, #insumo_form > input, #evento_form > button, #evento_form > input
+    {
+        margin: 1.3vh;
+    }
+
+
+
+     #menu_eventos
+    {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display:flex;  
+    flex-direction: column-reverse;
+    z-index: 1;
+    position: absolute;
+    }
+
+    #list_eventos
+    {
+    width: 100%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px;
+    overflow-y: scroll;
+    }
+
+    #evento_form
+    {
+    width: 100%;
+    height: 40%;
+    border-bottom: 2px solid rgb(41, 41, 41);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    }
+
+    #evento_form textarea
+    {
+    width: 70vw;
+    height: 60px;
+    padding: 5px;
+    resize: vertical;
+    }
+
+    #evento_form input:nth-of-type(2)
+    {
+    border: none;
+    } 
+}
