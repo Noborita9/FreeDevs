@@ -1,8 +1,8 @@
 <?php 
 
     $host = "127.0.0.1";
-    $username = "nobora";
-    $password = "mariaD8";
+    $username = "noborita9";
+    $password = "patata";
     $db_name = "gestornomia";
     $charset = 'utf8mb4';
 

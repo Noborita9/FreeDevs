@@ -309,11 +309,6 @@ body > *
 /* NUEVA MEDIA */
 @media (max-width: 700px) {
 
-  body
-  {
-    /* background: pink; */
-  }
-
   .ulLogo
   {
     width: 93%;
