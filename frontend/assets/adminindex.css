@@ -150,7 +150,7 @@
     resize: vertical;
     }
 
-    #evento_form input:nth-of-type(2)
+    #evento_form input:nth-of-type(3)
     {
     border: none;
     }
@@ -176,9 +176,16 @@
     overflow-y: scroll;
     }
 
-    #list_insumos > span
+    #list_insumos > span, #list_eventos > span
     {
-    margin: auto;
+      display: flex;
+      height: 100%;
+      margin: auto;
+      width: 100%;
+      box-shadow: 2px 2px 7px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .list_sub_data
