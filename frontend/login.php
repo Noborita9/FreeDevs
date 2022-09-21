@@ -20,7 +20,7 @@
       <section id="contentColors">
       </section>
     </form>
-    <script src="./assets/acces.js"> 
+    <script src="./assets/access.js"> 
     </script>
   </body>
 </html>
