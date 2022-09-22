@@ -30,6 +30,7 @@
       <ul>
         <li id="insumos">insumos</li>
         <li id="eventos">eventos</li>
+        <li id="usuarios">usuarios</li>
       </ul>
     </section>
     <section id="gadgets">
@@ -132,8 +133,33 @@
             <button type="button" onclick="verify_fetch_insumo()">SUBIR</button>
           </form>
         </section>
-    </section>
 
+        <!-- usuarios -->
+        <section id="menu_usuarios">
+          <!-- lista de usuarios -->
+          <div id="list_usuarios">
+            <span>
+              <h2>Juan</h2>
+              <p>Usuario</p>
+            </span>
+            <span>
+              <h2>nombre</h2>
+              <p>Rol</p>
+            </span>
+          </div>
+      
+          <!-- agregar usuarios -->
+          <form action="../backend/api/create_insumo.php" method="post" id="usuario_form">
+            <h2>Ingresar usuario</h2>
+              <input type="text" name="nombre" placeholder="Nombre de usuario">
+              <input type="text" name="password" placeholder="Ingrese una contrase;a" >
+              <input type="text" name="rol" placeholder="Rol que ocupara en el sistema">
+              <button type="button" onclick="verify_fetch_insumo()">SUBIR</button>
+          </form>
+        </section>
+    </section>
+        
+    </section>
     <!-- entrar al market -->
     <section id="enterMarket">
       <h1>Realizar venta</h1>
