@@ -31,6 +31,7 @@
         <li id="insumos">insumos</li>
         <li id="eventos">eventos</li>
         <li id="usuarios">usuarios</li>
+        <li id="productos">productos</li>
       </ul>
     </section>
     <section id="gadgets">
@@ -157,6 +158,31 @@
               <button type="button" onclick="verify_fetch_insumo()">SUBIR</button>
           </form>
         </section>
+
+     <!-- productos -->
+     <section id="menu_productos">
+      <!-- lista de productos -->
+      <div id="list_productos">
+        <span>
+          <h2>Hamburguesa con queso de cabra</h2>
+          <p>$330</p>
+        </span>
+        <span>
+          <h2>nombre</h2>
+          <p>precio</p>
+        </span>
+      </div>
+ 
+      <!-- agregar productos -->
+      <form action="../backend/api/create_insumo.php" method="post" id="producto_form">
+        <h2>Ingresar producto</h2>
+          <input type="text" name="nombre" placeholder="Nombre del producto">
+          <input type="text" name="password" placeholder="precio" >
+          <input type="file" name="rol" placeholder="Rol que ocupara en el sistema">
+          <button type="button" onclick="verify_fetch_insumo()">SUBIR</button>
+      </form>
+    </section>
+
     </section>
         
     </section>
