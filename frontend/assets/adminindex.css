@@ -426,22 +426,20 @@ justify-content: center;
     #gestor_indice
     {
     width: var(--gapWidth);
-    height: 70px;
     background: #fff;
     margin-bottom: 0;
     }
 
     #gestor_indice ul
     {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 70px;
     }
 
     #gestor_indice ul li
     {
-    width: 15%;
+    width: 100%;
     height: 100%;
     list-style: none;
     display: flex;
@@ -630,7 +628,7 @@ justify-content: center;
     #evento_form input:focus,
     #usuario_form input:focus,
     #producto_form input:focus,
-    #rol_form
+    #rol_form input:focus 
     {
     border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
     transition: 0.5s;
@@ -700,7 +698,7 @@ justify-content: center;
     resize: vertical;
     }
 
-    #evento_form input:nth-of-type(2),
+    #evento_form input:nth-of-type(3),
     #producto_form input:nth-of-type(3)
     {
     border: none;
