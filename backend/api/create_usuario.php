@@ -8,12 +8,16 @@ function check_user_exists() {
   $stmt = $pdo->prepare("SELECT nombre_usuario FROM usuarios WHERE nombre_usuario = ?;");
   $stmt->execute($_POST["usuario"]);
   $data = $stmt->fetchAll();
-  foreach ($data as $row) {
-    if (strcmp($_POST["usuario"], $row["nombre_usuario"] == 0)){
-      echo "User Already Exists";
-      exit();
-    }
+  if (!empty($data)) {
+    echo "Does not exists";
+    exit();
   }
+  /* foreach ($data as $row) { */
+  /*   if (strcmp($_POST["usuario"], $row["nombre_usuario"] == 0)){ */
+  /*     echo "User Already Exists"; */
+  /*     exit(); */
+  /*   } */
+  /* } */
   create_user();
 }
 
