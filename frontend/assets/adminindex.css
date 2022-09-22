@@ -150,7 +150,8 @@
     resize: vertical;
     }
 
-    #evento_form input:nth-of-type(3)
+    #evento_form input:nth-of-type(3),
+    #producto_form input:nth-of-type(3)
     {
     border: none;
     }
@@ -178,7 +179,8 @@
 
     #list_insumos > span,
     #list_eventos > span,
-    #list_usuarios > span
+    #list_usuarios > span,
+    #list_productos > span
     {
       display: flex;
       height: 100%;
@@ -209,14 +211,16 @@
 
     #insumo_form h2,
     #evento_form h2,
-    #usuario_form h2
+    #usuario_form h2,
+    #producto_form h2
     {
     padding-bottom: 2vw;
     }
 
     #insumo_form button,
     #evento_form button,
-    #usuario_form button
+    #usuario_form button,
+    #producto_form button
     {
     width: 200px;
     height: 40px;
@@ -231,7 +235,8 @@
 
     #insumo_form button:hover,
     #evento_form button:hover,
-    #usuario_form button:hover
+    #usuario_form button:hover,
+    #producto_form button:hover
     {
     cursor: pointer;
     background: rgba(130, 180, 54, 1);
@@ -242,7 +247,8 @@
 
     #insumo_form input:focus,
     #evento_form input:focus,
-    #usuario_form input:focus
+    #usuario_form input:focus,
+    #producto_form input:focus
     {
     border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
     transition: 0.5s;
@@ -281,6 +287,38 @@
     justify-content: center;
     }
 
+/* productos */
+#menu_productos
+{
+width: 100%;
+height: 100%;
+background: #fff;
+display:flex;  
+z-index: 2;
+position: absolute;
+}
+
+#list_productos
+{
+width: 60%;
+height: inherit;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-gap: 10px;
+grid-auto-rows: 100px;
+overflow-y: scroll;
+}
+
+#producto_form
+{
+width: 40%;
+height: inherit;
+border-left: 2px solid rgb(41, 41, 41);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
 
     /* Market */
     #enterMarket
@@ -442,7 +480,8 @@
 
     #list_insumos > span,
     #list_eventos > span,
-    #list_usuarios > span
+    #list_usuarios > span,
+    #list_productos > span
     {
       display: flex;
       height: 100%;
@@ -475,14 +514,16 @@
 
     #insumo_form h2,
     #evento_form h2,
-    #usuario_form h2
+    #usuario_form h2,
+    #producto_form h2
     {
     padding-bottom: 0vw;
     }
 
     #insumo_form button,
     #evento_form button,
-    #usuario_form button
+    #usuario_form button,
+    #producto_form button
     {
     width: 200px;
     height: 40px;
@@ -497,7 +538,8 @@
 
     #insumo_form button:hover,
     #evento_form button:hover,
-    #usuario_form button:hover
+    #usuario_form button:hover,
+    #producto_form button:hover
     {
     cursor: pointer;
     background: rgba(130, 180, 54, 1);
@@ -517,7 +559,9 @@
     #evento_form > button,
     #evento_form > input,
     #usuario_form > button,
-    #usuario_form > input
+    #usuario_form > input,
+    #producto_form > button,
+    #producto_form > input
     {
         margin: 1.3vh;
     }
@@ -563,7 +607,8 @@
     resize: vertical;
     }
 
-    #evento_form input:nth-of-type(2)
+    #evento_form input:nth-of-type(2),
+    #producto_form input:nth-of-type(3)
     {
     border: none;
     } 
@@ -602,6 +647,39 @@
    justify-content: center;
    }
 
+   /* productos*/
+   #menu_productos
+   {
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   display:flex; 
+   z-index: 3;
+   position: absolute;
+   flex-direction: column;
+   }
+ 
+   #list_productos
+   {
+   width: 100%;
+   height: 60%;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 10px;
+   grid-auto-rows: 100px;
+   overflow-y: scroll;
+   }
+ 
+  #producto_form
+   {
+   width: 100%;
+   height: 40%;
+   border-bottom: 2px solid rgb(41, 41, 41);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   }
 
 
     /* Market */
