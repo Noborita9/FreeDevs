@@ -32,6 +32,7 @@
         <li id="eventos">eventos</li>
         <li id="usuarios">usuarios</li>
         <li id="productos">productos</li>
+        <li id="roles">roles</li>
       </ul>
     </section>
     <section id="gadgets">
@@ -59,7 +60,10 @@
           <textarea name="" cols="30" rows="10" placeholder="Informacion del evento"></textarea>
           <input type="text" placeholder="ingrese la fecha del evento xx/xx/xxxx">
           <input type="file" name="" placeholder="Imagen del evento">
-          <button>Agregar evento</button>
+          <span>
+            <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+            <button>Eliminar</button>
+          </span>
         </form>
         </section>
 
@@ -131,7 +135,10 @@
             <input type="text" name="nombre" placeholder="Nombre del insumo">
             <input type="number" name="stock" value=0 min=0 >
             <input type="text" name="unidad" placeholder="Unidad de medida">
-            <button type="button" onclick="verify_fetch_insumo()">SUBIR</button>
+            <span>
+              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button>Eliminar</button>
+            </span>
           </form>
         </section>
 
@@ -155,37 +162,66 @@
               <input type="text" name="nombre" placeholder="Nombre de usuario">
               <input type="text" name="password" placeholder="Ingrese una contrase;a" >
               <input type="text" name="rol" placeholder="Rol que ocupara en el sistema">
-              <button type="button" onclick="verify_fetch_insumo()">SUBIR</button>
+              <span>
+                <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+                <button>Eliminar</button>
+              </span>
           </form>
         </section>
 
-     <!-- productos -->
-     <section id="menu_productos">
-      <!-- lista de productos -->
-      <div id="list_productos">
-        <span>
-          <h2>Hamburguesa con queso de cabra</h2>
-          <p>$330</p>
-        </span>
-        <span>
-          <h2>nombre</h2>
-          <p>precio</p>
-        </span>
-      </div>
- 
-      <!-- agregar productos -->
-      <form action="../backend/api/create_insumo.php" method="post" id="producto_form">
-        <h2>Ingresar producto</h2>
-          <input type="text" name="nombre" placeholder="Nombre del producto">
-          <input type="text" name="password" placeholder="precio" >
-          <input type="file" name="rol" placeholder="Rol que ocupara en el sistema">
-          <button type="button" onclick="verify_fetch_insumo()">SUBIR</button>
-      </form>
-    </section>
+      <!-- productos -->
+      <section id="menu_productos">
+        <!-- lista de productos -->
+        <div id="list_productos">
+          <span>
+            <h2>Hamburguesa con queso de cabra</h2>
+            <p>$330</p>
+          </span>
+          <span>
+            <h2>nombre</h2>
+            <p>precio</p>
+          </span>
+        </div>
+  
+        <!-- agregar productos -->
+        <form action="../backend/api/create_insumo.php" method="post" id="producto_form">
+          <h2>Ingresar producto</h2>
+            <input type="text" name="nombre" placeholder="Nombre del producto">
+            <input type="text" name="password" placeholder="precio" >
+            <input type="file" name="rol" placeholder="Rol que ocupara en el sistema">
+            <span>
+            <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+            <button>Eliminar</button>
+            </span>
+        </form>
+      </section>
 
-    </section>
-        
-    </section>
+      <!-- roles -->
+      <section id="menu_roles">
+        <!-- lista de roles -->
+        <div id="list_roles">
+          <span>
+            <h2>vendedor</h2>
+          </span>
+          <span>
+            <h2>nombre</h2>
+          </span>
+        </div>
+  
+        <!-- agregar roles -->
+        <form action="../backend/api/create_insumo.php" method="post" id="rol_form">
+          <h2>Ingresar Rol</h2>
+            <input type="text" name="nombre" placeholder="Nombre del rol">
+            <span>
+              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button>Eliminar</button>
+            </span>
+        </form>
+      </section>
+
+    </section>      
+  </section>
+
     <!-- entrar al market -->
     <section id="enterMarket">
       <h1>Realizar venta</h1>

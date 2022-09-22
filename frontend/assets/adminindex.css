@@ -180,7 +180,8 @@
     #list_insumos > span,
     #list_eventos > span,
     #list_usuarios > span,
-    #list_productos > span
+    #list_productos > span,
+    #list_roles > span
     {
       display: flex;
       height: 100%;
@@ -212,7 +213,8 @@
     #insumo_form h2,
     #evento_form h2,
     #usuario_form h2,
-    #producto_form h2
+    #producto_form h2,
+    #rol_form h2
     {
     padding-bottom: 2vw;
     }
@@ -220,7 +222,8 @@
     #insumo_form button,
     #evento_form button,
     #usuario_form button,
-    #producto_form button
+    #producto_form button,
+    #rol_form button
     {
     width: 200px;
     height: 40px;
@@ -230,13 +233,14 @@
     background: transparent;
     text-transform: lowercase;
     font-size: 18px;
-    margin: 40px;
+    margin: 30px;
     }
 
     #insumo_form button:hover,
     #evento_form button:hover,
     #usuario_form button:hover,
-    #producto_form button:hover
+    #producto_form button:hover,
+    #rol_form button:hover
     {
     cursor: pointer;
     background: rgba(130, 180, 54, 1);
@@ -245,10 +249,33 @@
     border: none;
     }
 
+    #insumo_form > span,
+    #evento_form > span,
+    #usuario_form > span,
+    #producto_form > span,
+    #rol_form > span
+    {
+      display: flex;
+    }
+
+    #insumo_form button:hover:nth-of-type(2),
+    #evento_form button:hover:nth-of-type(2),
+    #usuario_form button:hover:nth-of-type(2),
+    #producto_form button:hover:nth-of-type(2),
+    #rol_form button:hover:nth-of-type(2)
+    {
+    cursor: pointer;
+    background: rgb(180, 54, 54);
+    color: #fff;
+    transition: 0.8s;
+    border: none;
+    }
+
     #insumo_form input:focus,
     #evento_form input:focus,
     #usuario_form input:focus,
-    #producto_form input:focus
+    #producto_form input:focus,
+    #rol_form input:focus
     {
     border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
     transition: 0.5s;
@@ -320,6 +347,39 @@ align-items: center;
 justify-content: center;
 }
 
+/* roles */
+#menu_roles
+{
+width: 100%;
+height: 100%;
+background: #fff;
+display:flex;  
+z-index: 2;
+position: absolute;
+}
+
+#list_roles
+{
+width: 60%;
+height: inherit;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-gap: 10px;
+grid-auto-rows: 100px;
+overflow-y: scroll;
+}
+
+#rol_form
+{
+width: 40%;
+height: inherit;
+border-left: 2px solid rgb(41, 41, 41);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
     /* Market */
     #enterMarket
     {
@@ -346,6 +406,7 @@ justify-content: center;
 }
 
 @media(max-width: 1099px) {
+
     /* general */
     input
     {
@@ -448,7 +509,7 @@ justify-content: center;
 
     /* gestor_menu  // lista & formulario de ingreso*/
 
-    #gestor_menu  
+    #gestor_menu
     {
     width: var(--gapWidth);
     height: 800px;
@@ -481,7 +542,8 @@ justify-content: center;
     #list_insumos > span,
     #list_eventos > span,
     #list_usuarios > span,
-    #list_productos > span
+    #list_productos > span,
+    #list_roles > span
     {
       display: flex;
       height: 100%;
@@ -515,7 +577,8 @@ justify-content: center;
     #insumo_form h2,
     #evento_form h2,
     #usuario_form h2,
-    #producto_form h2
+    #producto_form h2,
+    #rol_form h2
     {
     padding-bottom: 0vw;
     }
@@ -523,9 +586,10 @@ justify-content: center;
     #insumo_form button,
     #evento_form button,
     #usuario_form button,
-    #producto_form button
+    #producto_form button,
+    #rol_form button
     {
-    width: 200px;
+    width: 125px;
     height: 40px;
     border-radius: 20px;
     border-style: none;
@@ -539,7 +603,8 @@ justify-content: center;
     #insumo_form button:hover,
     #evento_form button:hover,
     #usuario_form button:hover,
-    #producto_form button:hover
+    #producto_form button:hover,
+    #rol_form button:hover
     {
     cursor: pointer;
     background: rgba(130, 180, 54, 1);
@@ -548,22 +613,50 @@ justify-content: center;
     border: none;
     }
 
-    #insumo_form input:focus
+    #insumo_form button:nth-of-type(2):hover,
+    #evento_form button:nth-of-type(2):hover,
+    #usuario_form button:nth-of-type(2):hover,
+    #producto_form button:nth-of-type(2):hover,
+    #rol_form button:nth-of-type(2):hover
+    {
+    cursor: pointer;
+    background: rgb(180, 54, 54);
+    color: #fff;
+    transition: 0.8s;
+    border: none;
+    }
+
+    #insumo_form input:focus,
+    #evento_form input:focus,
+    #usuario_form input:focus,
+    #producto_form input:focus,
+    #rol_form
     {
     border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
     transition: 0.5s;
     }
 
-    #insumo_form > button,
+    #insumo_form  button,
     #insumo_form > input,
-    #evento_form > button,
+    #evento_form  button,
     #evento_form > input,
-    #usuario_form > button,
+    #usuario_form  button,
     #usuario_form > input,
-    #producto_form > button,
-    #producto_form > input
+    #producto_form  button,
+    #producto_form > input,
+    #rol_form  button,
+    #rol_form > input
     {
         margin: 1.3vh;
+    }
+
+    #insumo_form > span,
+    #evento_form > span,
+    #usuario_form > span,
+    #producto_form > span,
+    #rol_form > span
+    {
+      display: flex;
     }
 
     #menu_eventos
@@ -681,6 +774,40 @@ justify-content: center;
    justify-content: center;
    }
 
+      /* roles*/
+      #menu_roles
+      {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display:flex; 
+      z-index: 3;
+      position: absolute;
+      flex-direction: column;
+      }
+    
+      #list_roles
+      {
+      width: 100%;
+      height: 60%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+      grid-auto-rows: 100px;
+      overflow-y: scroll;
+      }
+    
+     #rol_form
+      {
+      width: 100%;
+      height: 40%;
+      border-bottom: 2px solid rgb(41, 41, 41);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      }
+   
 
     /* Market */
     #enterMarket
