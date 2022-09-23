@@ -18,33 +18,35 @@ CREATE TABLE usuarios (
   FOREIGN KEY (id_persona) REFERENCES personas(id),   
   PRIMARY KEY(id, nombre_usuario)
 );
- 
-
-CREATE TABLE productos (
-   id INT PRIMARY KEY AUTO_INCREMENT, 
-   nombre VARCHAR (50) NOT NULL, 
-   precio INT NOT NULL,
-   imagen VARCHAR (200) NOT NULL,
-   unidad VARCHAR (30) NOT NULL  
-);
 
 CREATE TABLE fichas_tecnicas (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(50) NOT NULL  
 );
 
-CREATE TABLE ingredientes (
+CREATE TABLE productos (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  id_ficha_tecnica INT NOT NULL,
+  nombre VARCHAR (50) NOT NULL, 
+  precio INT NOT NULL,
+  imagen VARCHAR (200) NOT NULL,
+  unidad VARCHAR (30) NOT NULL,
+  FOREIGN KEY(id_ficha_tecnica) REFERENCES fichas_tecnicas(id)
+);
+
+
+CREATE TABLE insumos (
   id INT PRIMARY KEY AUTO_INCREMENT,
   unidad VARCHAR(30) NOT NULL,
   nombre VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE ingredientes_por_ficha (
+CREATE TABLE insumos_por_ficha (
   id_ingrediente INT NOT NULL,
   id_ficha INT NOT NULL,
   cantidad INT NOT NULL,
   PRIMARY KEY (id_ingrediente, id_ficha),
-  FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id),
+  FOREIGN KEY (id_ingrediente) REFERENCES insumos(id),
   FOREIGN KEY (id_ficha) REFERENCES fichas_tecnicas(id)
 );
 
@@ -103,12 +105,18 @@ CREATE TABLE menues_eventos (
   FOREIGN KEY(id_evento) REFERENCES eventos(id)
 );
 
+CREATE TABLE platos(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR (30) NOT NULL
+)
 
 CREATE TABLE productos_menues (
   id_menu_fk INT NOT NULL,
   id_producto_fk INT NOT NULL,
+  id_tipo_comida INT NOT NULL,
   PRIMARY KEY (id_menu_fk,id_producto_fk),
   FOREIGN KEY(id_menu_fk) REFERENCES menues_eventos(id_menu),
+  FOREIGN KEY(id_tipo_comida) REFERENCES menues_eventos(id_menu),
   FOREIGN KEY(id_producto_fk) REFERENCES productos(id)
 );
 
@@ -116,9 +124,3 @@ CREATE TABLE Roles(
   id_roles INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
   nombre VARCHAR(40) NOT NULL
 );
-
-ALTER TABLE usuarios 
-ADD FOREIGN KEY (rol) REFERENCES roles(id_roles);
-
-
-

@@ -42,6 +42,10 @@ const onClickLoadEventos = (data, element) => {
     return data.map((item) => {
     return `<p id='event_${item['id_evento']}'>${item['titulo']}</p>`
   })}
+  if (element == "list_roles") {
+    return data.map((item) => {
+    return `<span id='event_${item['id']}'><h2>${item['nombre']}</h2></span>`
+  })}
 }
 
 document.getElementById("eventos").addEventListener("click", ()=>{
@@ -56,3 +60,7 @@ document.getElementById("usuarios").addEventListener("click", ()=>{
 document.getElementById("productos").addEventListener("click", ()=>{
   loader('../backend/api/load_items.php', "list_productos", onClickLoadEventos, "productos")
 })
+document.getElementById("roles").addEventListener("click", ()=>{
+  loader('../backend/api/load_items.php', "list_roles", onClickLoadEventos, "role")
+})
+
