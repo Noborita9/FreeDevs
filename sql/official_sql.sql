@@ -38,7 +38,9 @@ CREATE TABLE productos (
 CREATE TABLE insumos (
   id INT PRIMARY KEY AUTO_INCREMENT,
   unidad VARCHAR(30) NOT NULL,
-  nombre VARCHAR(50) NOT NULL
+  nombre VARCHAR(50) NOT NULL,
+  stock INT NOT NULL,
+  precio INT NOT NULL
 );
 
 CREATE TABLE insumos_por_ficha (
