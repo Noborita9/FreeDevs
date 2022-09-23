@@ -9,6 +9,12 @@ const usuariosBoton = document.getElementById('usuarios');
 const productosBoton = document.getElementById('productos');
 const rolesBoton = document.getElementById('roles');
 
+menuRoles.style.display = "none";
+menuProductos.style.display = "none";
+menuUsuarios.style.display = "none";
+menuEventos.style.display = "none";
+menuInsumos.style.display = "flex";
+
 insumosBoton.addEventListener('click', () => {
     menuRoles.style.display = "none";
     menuProductos.style.display = "none";
