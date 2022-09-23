@@ -1,5 +1,4 @@
-@media(max-width: 540px)
-{
+@media(max-width: 500px) {
     #products
     {
         width: var(--gapWidth);
@@ -11,13 +10,15 @@
     #filtros
     {
         width: 20%;
-        height: 100%;
+        height: calc(100% - 10vh);
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-rows: 100px;
         background: #fff;
         /* border-right: 1px solid black ; */
         box-shadow: 0px 1px 3px black;
+        position: relative;
+        padding-top: 10vh;
     }
 
     #filtros > span, #lista > span, #resumen > span
@@ -26,6 +27,30 @@
         flex-direction: column;
         justify-content: center;
         font-family: 'Montserrat', sans-serif;
+    }
+
+    #filtros > input
+    {
+        position: absolute;
+        top: 1vw;
+        width: 15vw;
+        left: 12.5%;
+        border: 0.1vh solid rgba(0, 0, 0, 0.7);
+        height: 30px;
+        outline: none;
+    }
+
+    #filtros > button
+    {
+        position: absolute;
+        top: 6vh;
+        width: 15vw;
+        left: 12.5%;
+        border: 0.1vh solid rgba(0, 0, 0, 0.7);
+        height: 30px;
+        outline: none;
+        background: #333;
+        color: #fff;
     }
 
     #filtros > span
@@ -72,12 +97,171 @@
         width: 70%;
         height: 100%;
         display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 150px;
+        grid-gap: 2vw;
+        margin: 0 auto;
+        position: relative;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    #lista > span button
+    {
+        width: 25vw;
+        height: 20px;
+        border-radius: 20px;
+        border-style: none;
+        border: 0.25vh solid rgba(0,0,0, 0.6);
+        background: #fff;
+        color: #333;
+        text-transform: lowercase;
+        font-size: 1.3vh;
+        font-weight: 600;
+    }
+
+
+    #resumen
+    {
+        width: var(--gapWidth);
+        background: #fff;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 50px;
+        padding-bottom: 50px;
+    }
+
+    #resumen > span
+    {
+        align-items: center;
+    }
+
+    #resumen > button
+    {
+        position: fixed;
+        bottom: 2vw;
+        left: calc( (100% - 200px) / 2 );
+        width: 200px;
+        height: 40px;
+        border-radius: 20px;
+        border-style: none;
+        border: 0.25vh solid rgba(0,0,0, 0.6);
+        background: #333;
+        color: #fff;
+        text-transform: lowercase;
+        font-size: 18px;
+}
+
+}
+
+@media(min-width: 501px)
+{
+    #products
+    {
+        width: var(--gapWidth);
+        height: 70vh;
+        /* background: #fff; */
+        display: flex;
+    }
+
+    #filtros
+    {
+        width: 20%;
+        height: calc(100% - 10vh);
+        padding-top: 10vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 100px;
+        background: #fff;
+        /* border-right: 1px solid black ; */
+        box-shadow: 0px 1px 3px black;
+        position: relative
+    }
+
+    #filtros > span, #lista > span, #resumen > span
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    #filtros > span
+    {
+        padding: 0 3vw 0 3vw;
+    }
+
+    #filtros > input
+    {
+        position: absolute;
+        top: 1vw;
+        width: 15vw;
+        left: 12.5%;
+        border: 0.1vh solid rgba(0, 0, 0, 0.7);
+        height: 30px;
+        outline: none;
+    }
+
+    #filtros > button
+    {
+        position: absolute;
+        top: 6vh;
+        width: 15vw;
+        left: 12.5%;
+        border: 0.1vh solid rgba(0, 0, 0, 0.7);
+        height: 30px;
+        outline: none;
+        background: #333;
+        color: #fff;
+    }
+
+    #lista > span
+    {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        font-size: 4vw;
+        font-weight: 400;
+        color: white;
+        background: transparent;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+
+    #lista > input
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        border: 0.3vh solid rgba(0, 0, 0, 0.7);
+        padding-left: 15px;
+        height: 30px;
+        outline: none;
+    }
+    
+
+    #filtros > span
+    {
+        font-size: 2.5vw;
+        font-weight: 500;
+        /* text-shadow: 0px 0px 3px #333; */
+    }
+
+    #lista > span p { margin: 1vw 0; }
+
+
+    #lista
+    {
+        width: 70%;
+        height: 100%;
+        display: grid;
         grid-template-columns: repeat(2, calc(50% - 6px));;
         grid-auto-rows: 150px;
         grid-gap: 2vw;
         margin: 0 auto;
         position: relative;
-        padding-top: 5vw;
+        /* padding-top: 5vw; */
         overflow-y: scroll;
         overflow-x: hidden;
     }
@@ -130,7 +314,7 @@
 
 }
 
-@media(min-width: 541px)
+@media(min-width: 1001px)
 {
 
     #products
@@ -144,13 +328,15 @@
     #filtros
     {
         width: 20%;
-        height: 100%;
+        height: calc(100% - 10vh);
         display: grid;
+        padding-top: 10vh;
         grid-template-columns: 1fr;
         grid-auto-rows: 100px;
         background: #fff;
         /* border-right: 1px solid black ; */
         box-shadow: 0px 1px 3px black;
+        position: relative;
     }
 
     #filtros > span, #lista > span, #resumen > span
@@ -176,7 +362,7 @@
 
     #lista > span > *
     {
-        padding: 0 3vw 0 3vw;
+        padding: 0 1vw 0 1vw;
     }
 
     #lista > span button
@@ -190,21 +376,33 @@
         color: #333;
         text-transform: lowercase;
         font-size: 1.3vw;
-        margin: 0 3vw 0 3vw;
+        margin: 0 1vw 0 1vw;
     }
     
 
 
-    #lista > input
+    #filtros > input
     {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 200px;
-        border: 0.3vh solid rgba(0, 0, 0, 0.7);
-        padding-left: 15px;
+        top: 1vw;
+        width: 15vw;
+        left: 12.5%;
+        border: 0.1vh solid rgba(0, 0, 0, 0.7);
         height: 30px;
         outline: none;
+    }
+
+    #filtros > button
+    {
+        position: absolute;
+        top: 4vw;
+        width: 15vw;
+        left: 12.5%;
+        border: 0.1vh solid rgba(0, 0, 0, 0.7);
+        height: 30px;
+        outline: none;
+        background: #333;
+        color: #fff;
     }
 
     #filtros > span
@@ -220,14 +418,13 @@
     #lista
     {
         width: 70%;
-        height: 100%;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 31%);
         grid-auto-rows: 240px;
         grid-gap: 2vw;
         margin: 0 auto;
         position: relative;
-        padding-top: 5vw;
+        /* padding-top: 5vw; */
         overflow-y: scroll;
         overflow-x: hidden;
     }
@@ -264,3 +461,4 @@
     }
 
 }
+
