@@ -108,7 +108,7 @@ CREATE TABLE menues_eventos (
 CREATE TABLE platos(
   id INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR (30) NOT NULL
-)
+);
 
 CREATE TABLE productos_menues (
   id_menu_fk INT NOT NULL,
@@ -120,7 +120,7 @@ CREATE TABLE productos_menues (
   FOREIGN KEY(id_producto_fk) REFERENCES productos(id)
 );
 
-CREATE TABLE Roles(
+CREATE TABLE roles(
   id_roles INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
   nombre VARCHAR(40) NOT NULL
 );
