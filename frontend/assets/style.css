@@ -6,7 +6,25 @@
   --gapWidth: calc(100% - 3vw);
 }
 
-/* ANIMACIONES */
+* 
+{
+  padding: 0;
+  margin: 0;
+}
+
+body 
+{
+  padding: 0;
+  margin: 0;
+  background: #292929;
+}
+
+body > * 
+{
+  margin: 1.5vw;
+}
+
+/* ANIMACIONES / INDEX */
 
 @keyframes carruselResponsive
 {
@@ -46,575 +64,73 @@
   100% {transform: translateX(calc(-200% ))}
 }
 
-* 
-{
-  padding: 0;
-  margin: 0;
-}
-
-body 
-{
-  padding: 0;
-  margin: 0;
-  background: #292929;
-}
-
-body > * 
-{
-  margin: 1.5vw;
-}
-
-
 /* BARRA DE NAVEGACION */
-@media (min-width: 701px) {
-  body
-  {
-    overflow-x: hidden;
-  }
-
-  .ulLogo
-  {
-    width: 93%;
-    height: 10vh;
-    padding: 0 5% 0 5%;
-    margin: -1.5vw -1.5vw 0 -1.5vw; 
-    color: white;
-    background: #1f1f1f;
-    box-shadow: 0 0.4vh 0.4vh rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .ulLogo img
-  {
-    width: auto;
-    height: calc(9vh * 0.8);
-  }
-  
-  .ulLogo img:hover
-  {
-    cursor: pointer;
-  }
-  
-  .ulLogo i
-  {
-    font-size: calc(9vh * 0.5);
-    color: #fff;
-  }
-  
-  .ulLogo i:hover
-  {
-    color: rgba(130, 180, 54, 1);
-    transition-duration: 0.5s;
-  }
-  
-  .ulLogo ul li
-  {
-    margin-top: 8vh;
-    list-style: none;
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    font-size: 20px;
-  }
-  
-  .ulLogo li:hover
-  {
-    background: rgba(130, 180, 54, 1);
-    color: #fff;
-    border-radius: 5px 5px 0px 0px;
-  }
-  
-  .ulLogo ul .liSelected
-  {
-    background: rgba(130, 180, 54, 1);
-    color: #fff;
-    border-radius: 5px 5px 0px 0px;
-    padding: 10px;
-    font-size: 20px;
-  }
-  
-  /* CARRUSEll */
-  
-  #carrusel 
-  {
-    width: var(--gapWidth);
-    height: 70vh;
-    overflow: hidden;
-    position: relative;
-  } 
-   
-  #carrusel div:nth-child(1)
-  {
-    width: calc(100% * 6);
-    height: 70vh;
-    display: flex;
-    animation: carrusel 30s infinite;
-  }
-  
-  #carrusel div img 
-  {
-    height: 70vh;
-    width: calc(100% / 6);
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  #navBalls
-  {
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-  }
-  
-  .navContent
-  {
-    width: 3vh;
-    height: 3vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border-radius: 50px;
-    margin: 3vh;
-  }
-  
-  /* PAGE CONTENT */
-  
-  .eventLeft
-  {
-    overflow: hidden;
-    width: var(--gapWidth);
-    height: 40vw;
-  }
-  
-  .eventRight
-  {
-    overflow: hidden;
-    width: var(--gapWidth);
-    height: 100%;
-  }
-  
-  .eventRight .content div
-  {
-    padding-right: calc(var(--gapWidth) - 40vw - 50%);
-  }
-  
-  .content
-  {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background: #fff;
-    margin-bottom: 0;
-  }
-  
-  .content img 
-  {
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .content div
-  {
-    width: 40vw;
-    padding: 0 0 1vw 5vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .content div h2
-  {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: 3vw;
-  }
-
-  .content p
-  {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 1.3vw;
-  }
-  
-  .content button
-  {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    width: 150px;
-    height: 50px;
-    background: transparent;
-    border: 1px solid #292929;
-  }
-  
-  .eventLeft button:hover
-  {
-    border: 0.25vh solid rgba(130, 180, 54, 0.6);
-    background: rgba(130, 180, 54, 1);
-    color: #fff;
-    transition: 1s;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .eventRight button:hover
-  {
-    border: 0.25vh solid rgba(130, 180, 54, 0.6);
-    background: rgba(130, 180, 54, 1);
-    color: #fff;
-    transition: 1s;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .products
-  {
-    width: 100%;
-    height: 31.3vw;
-    padding: 1vw;
-    background: white;
-    display: grid;
-    grid-template-columns: repeat(3, calc(100% / 3 - 0.75vw));
-    grid-template-rows: repeat(2, calc(50% - 0.5vw));
-    grid-gap: 1vw;
-    overflow: hidden;
-    margin-top: 0;
-    position: relative;
-  }
-  
-  .products button
-  {
-    width: 150px;
-    height: 50px;
-    position: absolute;
-    bottom: 1vh;
-    left: 45%;
-    background: white;
-    border: 1px solid #292929;
-  }
-  
-  .products div
-  {
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .products div:hover
-  {
-    background: rgba(0, 0, 0, 0.3);
-    transition: all;
-    transition-duration: 1.5s;
-  }
-  
-  .products div img
-  {
-    width: auto;
-    height: 30vh;
-  }
-
-  /* #outstanding
-  {
-    width: var(--gapWidth);
-    height: 40vh;
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-  }
-
-  #outstanding > span
-  {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  #outstanding div
-  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  #outstanding img
-  {
-    height: 80%;
-    width: auto;
-  } */
-
-  #outstanding
-  {
-    width: var(--gapWidth);
-    height: 30vh;
-  }
-
-  #outstanding > span
-  {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 100%;
-    grid-template-columns: repeat(3, 33.3%);
-    grid-gap: 15px;
-  }
-
-  #outstanding div
-  {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #outstanding img
-  {
-    width: 90%;
-    height: 90%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  #outstanding div span
-  {
-    margin: auto;
-  }
-
-    
-  .fa-star
-  {
-    color: gold;
-  }
+.ulLogo
+{
+  width: 93%;
+  height: 10vh;
+  padding: 0 5% 0 5%;
+  margin: -1.5vw -1.5vw 0 -1.5vw; 
+  color: white;
+  background: #1f1f1f;
+  box-shadow: 0 0.4vh 0.4vh rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
 }
 
-
-/* NUEVA MEDIA */
-@media (max-width: 700px) {
-
-
-  body
-  {
-    overflow-x: hidden;
-  }
-
-  .ulLogo
-  {
-    width: 93%;
-    height: 10vh;
-    padding: 0 5% 0 5%;
-    margin: -1.5vw -1.5vw 0 -1.5vw; 
-    color: white;
-    background: #1f1f1f;
-    box-shadow: 0 0.4vh 0.4vh rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .ulLogo img
-  {
-    width: auto;
-    height: calc(9vh * 0.8);
-  }
-  
-  .ulLogo img:hover
-  {
-    cursor: pointer;
-  }
-  
-  .ulLogo i
-  {
-    font-size: calc(9vh * 0.5);
-    color: #fff;
-  }
-  
-  .ulLogo i:hover
-  {
-    color: rgba(130, 180, 54, 1);
-    transition-duration: 0.5s;
-  }
-  
-  .ulLogo ul li
-  {
-    margin-top: 8vh;
-    list-style: none;
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    font-size: 20px;
-  }
-  
-
-  #carrusel 
-  {
-    width: var(--gapWidth);
-    height: 89vh;
-    overflow: hidden;
-    position: relative;
-  } 
-   
-  #carrusel div:nth-child(1)
-  {
-    width: 100%;
-    height: 89vh;
-    display: flex;
-    animation: carruselResponsive 60s infinite;
-  }
-  
-  #carrusel div img 
-  {
-    height: 89vh;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  #navBalls
-  {
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-  }
-  
-  .navContent
-  {
-    width: 3vh;
-    height: 3vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border-radius: 50px;
-    margin: 3vh;
-  }
-
-  /* MOSTRAR EVENTOS */
-
-  .eventLeft
-  {
-    overflow: hidden;
-    width: var(--gapWidth);
-    height: 70vh;
-  }
-
-  .content
-  {
-    width: 100%;
-    height: 100%;
-    /* background: #fff; */
-    position: relative;
-  }
-
-  .content img 
-  {
-    position: absolute;
-    height: 100%;
-    width: auto;
-    object-fit: center;
-    opacity: 0.4;
-    z-index: -1;
-  }
-
-  .content div
-  {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    color: white;
-  }
-
-  .content div h2
-  {
-    font-weight: bold;
-    font-size: 5 2vh;
-  }
-
-  .content p
-  {
-    padding: 20px;
-  }
-
-  .content button
-  {
-    width: 150px;
-    height: 50px;
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-  }
-
-  #outstanding
-  {
-    width: var(--gapWidth);
-    /* width: calc(var(--gapWidth) * 3); */
-    height: 40vh;
-    /* background-color: rgba(244, 244, 244, 0.1); */
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-    position: relative;
-    z-index: 2;
-  }
-
-  #outstanding > span
-  {
-    /* width: calc( 100% * 3);
-    height: 100%; */
-    display: flex;
-  }
-
-  #outstanding div
-  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 94vw;
-    height: 100%;
-    animation: destacados 20s infinite;
-  }
-
-  #outstanding img
-  {
-    height: 80%;
-    width: auto;
-    max-width: 90%;
-  }
-    
-  .fa-star
-  {
-    color: gold;
-  }
-
+.ulLogo img
+{
+  width: auto;
+  height: calc(9vh * 0.8);
 }
 
+.ulLogo img:hover
+{
+  cursor: pointer;
+}
+
+.ulLogo i
+{
+  font-size: calc(9vh * 0.5);
+  color: #fff;
+}
+
+.ulLogo i:hover
+{
+  color: rgba(130, 180, 54, 1);
+  transition-duration: 0.5s;
+}
+
+.ulLogo ul li
+{
+  margin-top: 8vh;
+  list-style: none;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.ulLogo li:hover
+{
+  background: rgba(130, 180, 54, 1);
+  color: #fff;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.ulLogo ul .liSelected
+{
+  background: rgba(130, 180, 54, 1);
+  color: #fff;
+  border-radius: 5px 5px 0px 0px;
+  padding: 10px;
+  font-size: 20px;
+}
 
 /* MOVIMIENTOS JS */
 .yMove

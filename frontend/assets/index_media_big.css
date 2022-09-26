@@ -1,0 +1,238 @@
+@media (min-width: 701px) {
+    body
+    {
+      overflow-x: hidden;
+    }
+  
+ 
+    
+    /* CARRUSEll */
+    
+    #carrusel 
+    {
+      width: var(--gapWidth);
+      height: 70vh;
+      overflow: hidden;
+      position: relative;
+    } 
+     
+    #carrusel div:nth-child(1)
+    {
+      width: calc(100% * 6);
+      height: 70vh;
+      display: flex;
+      animation: carrusel 30s infinite;
+    }
+    
+    #carrusel div img 
+    {
+      height: 70vh;
+      width: calc(100% / 6);
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    #navBalls
+    {
+      width: 100%;
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      position: absolute;
+      bottom: 0;
+    }
+    
+    .navContent
+    {
+      width: 3vh;
+      height: 3vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 50px;
+      margin: 3vh;
+    }
+    
+    /* PAGE CONTENT */
+    
+    .eventLeft
+    {
+      overflow: hidden;
+      width: var(--gapWidth);
+      height: 40vw;
+    }
+    
+    .eventRight
+    {
+      overflow: hidden;
+      width: var(--gapWidth);
+      height: 100%;
+    }
+    
+    .eventRight .content div
+    {
+      padding-right: calc(var(--gapWidth) - 40vw - 50%);
+    }
+    
+    .content
+    {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      background: #fff;
+      margin-bottom: 0;
+    }
+    
+    .content img 
+    {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .content div
+    {
+      width: 40vw;
+      padding: 0 0 1vw 5vw;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+    
+    .content div h2
+    {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      font-size: 3vw;
+    }
+  
+    .content p
+    {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 1.3vw;
+    }
+    
+    .content button
+    {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      width: 150px;
+      height: 50px;
+      background: transparent;
+      border: 1px solid #292929;
+    }
+    
+    .eventLeft button:hover
+    {
+      border: 0.25vh solid rgba(130, 180, 54, 0.6);
+      background: rgba(130, 180, 54, 1);
+      color: #fff;
+      transition: 1s;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .eventRight button:hover
+    {
+      border: 0.25vh solid rgba(130, 180, 54, 0.6);
+      background: rgba(130, 180, 54, 1);
+      color: #fff;
+      transition: 1s;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .products
+    {
+      width: 100%;
+      height: 31.3vw;
+      padding: 1vw;
+      background: white;
+      display: grid;
+      grid-template-columns: repeat(3, calc(100% / 3 - 0.75vw));
+      grid-template-rows: repeat(2, calc(50% - 0.5vw));
+      grid-gap: 1vw;
+      overflow: hidden;
+      margin-top: 0;
+      position: relative;
+    }
+    
+    .products button
+    {
+      width: 150px;
+      height: 50px;
+      position: absolute;
+      bottom: 1vh;
+      left: 45%;
+      background: white;
+      border: 1px solid #292929;
+    }
+    
+    .products div
+    {
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .products div:hover
+    {
+      background: rgba(0, 0, 0, 0.3);
+      transition: all;
+      transition-duration: 1.5s;
+    }
+    
+    .products div img
+    {
+      width: auto;
+      height: 30vh;
+    }
+  
+    #outstanding
+    {
+      width: var(--gapWidth);
+      height: 30vh;
+    }
+  
+    #outstanding > span
+    {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: 100%;
+      grid-template-columns: repeat(3, 33.3%);
+      grid-gap: 15px;
+    }
+  
+    #outstanding div
+    {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    #outstanding img
+    {
+      width: 90%;
+      height: 90%;
+      object-fit: cover;
+      object-position: center;
+    }
+  
+    #outstanding div span
+    {
+      margin: auto;
+    }
+  
+      
+    .fa-star
+    {
+      color: gold;
+    }
+  }

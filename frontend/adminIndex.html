@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/f4e70a9fbd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/style.css" />
-    <link rel="stylesheet" href="assets/adminindex.css">
+    <link rel="stylesheet" href="assets/adminindex_media_big.css">
+    <link rel="stylesheet" href="assets/adminindex_media_small.css">
     <title>Admin</title>
   </head>
   <body>
@@ -54,11 +55,11 @@
           </span>
         </div>
         <!-- agregar eventos -->
-        <form action="" id="evento_form">
+        <form action="" class="forms" id="evento_form">
           <h2>Ingresar evento</h2>
           <input type="text" placeholder="Nombre del evento">
           <textarea name="" cols="30" rows="10" placeholder="Informacion del evento"></textarea>
-          <input type="text" placeholder="ingrese la fecha del evento xx/xx/xxxx">
+          <input type="date">
           <input type="file" name="" placeholder="Imagen del evento">
           <span>
             <button type="button" onclick="verify_fetch_insumo()">guardar</button>
@@ -130,7 +131,7 @@
           </div>
 
           <!-- agregar insumos -->
-          <form action="../backend/api/create_insumo.php" method="post" id="insumo_form">
+          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="insumo_form">
             <h2>Ingresar insumo</h2>
             <input type="text" name="nombre" placeholder="Nombre del insumo">
             <input type="number" name="stock" value=0 min=0 >
@@ -156,7 +157,7 @@
             </span>
           </div>
       <!-- agregar usuarios -->
-          <form action="../backend/api/create_insumo.php" method="post" id="usuario_form">
+          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="usuario_form">
             <h2>Ingresar usuario</h2>
               <input type="text" name="nombre" placeholder="Nombre de usuario">
               <input type="text" name="password" placeholder="Ingrese una contrase;a" >
@@ -183,7 +184,7 @@
         </div>
   
         <!-- agregar productos -->
-        <form action="../backend/api/create_insumo.php" method="post" id="producto_form">
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="producto_form">
           <h2>Ingresar producto</h2>
             <input type="text" name="nombre" placeholder="Nombre del producto">
             <input type="text" name="password" placeholder="precio" >
@@ -208,7 +209,7 @@
         </div>
   
         <!-- agregar roles -->
-        <form action="../backend/api/create_insumo.php" method="post" id="rol_form">
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="rol_form">
           <h2>Ingresar Rol</h2>
             <input type="text" name="nombre" placeholder="Nombre del rol">
             <span>
