@@ -49,10 +49,6 @@
         <section id="menu_eventos">
         <!-- lista de eventos -->
         <div id="list_eventos">
-          <span>
-            <h2>Dia de la madre</h2>
-              <p>fecha xx/xx/xxxx</p>
-          </span>
         </div>
         <!-- agregar eventos -->
         <form action="" class="forms" id="evento_form">
@@ -72,62 +68,6 @@
         <section id="menu_insumos">
           <!-- lista de insumos -->
           <div id="list_insumos">
-            <span>
-              <h2>nombre</h2>
-              <span class="list_sub_data">
-                <p>stock</p>
-                <p>unidad</p>
-              </span>
-            </span>
-            <span>
-              <h2>nombre</h2>
-              <span class="list_sub_data">
-                <p>stock</p>
-                <p>unidad</p>
-              </span>
-            </span>
-            <span>
-              <h2>nombre</h2>
-              <span class="list_sub_data">
-                <p>stock</p>
-                <p>unidad</p>
-              </span>
-            </span>
-            <span>
-              <h2>nombre</h2>
-              <span class="list_sub_data">
-                <p>stock</p>
-                <p>unidad</p>
-              </span>
-            </span>
-            <span>
-              <h2>nombre</h2>
-              <span class="list_sub_data">
-                <p>stock</p>
-                <p>unidad</p>
-              </span>
-            </span>
-            <span>
-              <h2>nombre</h2>
-              <span class="list_sub_data">
-                <p>stock</p>
-                <p>unidad</p>
-              </span>
-            </span>
-            <span>
-              <h2>nombre</h2>
-              <span class="list_sub_data">
-                <p>stock</p>
-                <p>unidad</p>
-              </span>
-            </span>
-            <span>
-              <h2>nombre</h2>
-              <span class="list_sub_data">
-                <p>stock</p>
-                <p>unidad</p>
-              </span>
-            </span>
           </div>
 
           <!-- agregar insumos -->
@@ -136,6 +76,7 @@
             <input type="text" name="nombre" placeholder="Nombre del insumo">
             <input type="number" name="stock" value=0 min=0 >
             <input type="text" name="unidad" placeholder="Unidad de medida">
+            <input type="number" name="precio" placeholder="precio">
             <span>
               <button type="button" onclick="verify_fetch_insumo()">guardar</button>
               <button>Eliminar</button>
@@ -240,6 +181,7 @@
       </div>
     </footer>
     <script src="./assets/gestor_menu.js"></script>
+    <script src="./assets/gestion.js"></script>
     <script src="./assets/loaders.js"></script>
   </body>
 </html>

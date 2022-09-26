@@ -32,7 +32,7 @@ const onClickLoadEventos = (data, element) => {
   })}
   if (element == "list_insumos") {
     return data.map((item) => {
-    return `<span id='event_${item['id']}'><h2>${item['nombre']}</h2><span><p>${item['stock']}</p><p>${item['unidad']}</p></span></span>`
+    return `<span id='event_${item['id']}'><h2>${item['nombre']}</h2><span class="list_sub_data"><p>${item['stock']} </p> <p>${item['unidad']}</p></span></span>`
   })}
   if (element == "list_productos") {
     return data.map((item) => {
