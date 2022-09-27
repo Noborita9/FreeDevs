@@ -60,6 +60,17 @@
           <input type="text" placeholder="Nombre del evento">
           <textarea name="" cols="30" rows="10" placeholder="Informacion del evento"></textarea>
           <input type="date">
+          <input type="text" placeholder="Encargado">
+          <input type="text" placeholder="Contacto">
+          <input type="text" placeholder="Nombre de la ubicacion">
+          <input type="text" placeholder="Link de la ubicacion">
+          <input type="number" placeholder="cantidad de personas">
+          <input type="text" placeholder="tipo de servicio">
+          <input type="text" placeholder="seleccione el mobiliario">
+          <input type="text" placeholder="seleccione los menu">
+          <label for="ingresar_plano" class="cargar_file">cargar plano</label>
+          <input type="file" id="ingresar_plano" class="none_border" placeholder="Plano del evento">
+          <label for="ingresar_plano" class="cargar_file">cargar imagen para el evento</label>
           <input type="file" class="none_border" name="" placeholder="Imagen del evento">
           <span>
             <button type="button" onclick="verify_fetch_insumo()">guardar</button>
@@ -133,7 +144,8 @@
           <h2>Ingresar producto</h2>
             <input type="text" name="nombre" placeholder="Nombre del producto">
             <input type="number" name="password" placeholder="precio" >
-            <input type="file" class="none_border" name="rol" placeholder="Rol que ocupara en el sistema">
+            <label for="ingresar_plano" class="cargar_file">Imagen del producto</label>
+            <input type="file" class="none_border" name="rol">
             <span>
             <button type="button" onclick="verify_fetch_insumo()">guardar</button>
             <button>Eliminar</button>

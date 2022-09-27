@@ -103,7 +103,7 @@
     #gestor_menu
     {
     width: var(--gapWidth);
-    height: 900px;
+    height: 1500px;
     margin-top: 0;
     position: relative;
     }
@@ -219,6 +219,21 @@
     height: 60px;
     padding: 5px;
     resize: vertical;
+    }
+
+    input[type='file']{ display: none;}
+
+    .cargar_file
+    {
+      border: 0.25vh solid rgba(0,0,0, 0.6);
+      width: 250px;
+      height: 40px; 
+      text-transform: lowercase;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1vh;
     }
 
     .none_border
