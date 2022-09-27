@@ -109,17 +109,16 @@
     position: relative;
     }
 
-    #menu_eventos
+    .menu
     {
     width: 100%;
     height: 100%;
     background: #fff;
     display:flex;  
-    z-index: 1;
     position: absolute;
     }
 
-    #list_eventos
+    .list
     {
     width: 60%;
     height: inherit;
@@ -130,7 +129,7 @@
     overflow-y: scroll;
     }
 
-    #evento_form
+    .forms
     {
     width: 40%;
     height: inherit;
@@ -149,38 +148,12 @@
     resize: vertical;
     }
 
-    #evento_form input:nth-of-type(3),
-    #producto_form input:nth-of-type(3)
+    .none_border
     {
     border: none;
     }
 
-    #menu_insumos
-    {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    display:flex;  
-    z-index: 2;
-    position: absolute;
-    }
-
-    #list_insumos
-    {
-    width: 60%;
-    height: inherit;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: 100px;
-    overflow-y: scroll;
-    }
-
-    #list_insumos > span,
-    #list_eventos > span,
-    #list_usuarios > span,
-    #list_productos > span,
-    #list_roles > span
+    .list > span
     {
       display: flex;
       height: 100%;
@@ -196,17 +169,6 @@
     {
     display: flex;
     justify-content: space-between;
-    }
-
-    #insumo_form
-    {
-    width: 40%;
-    height: inherit;
-    border-left: 2px solid rgb(41, 41, 41);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     }
 
     .forms h2
@@ -254,105 +216,6 @@
     {
     border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
     transition: 0.5s;
-    }
-
-    /* usuarios */
-    #menu_usuarios
-    {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    display:flex;  
-    z-index: 2;
-    position: absolute;
-    }
-
-    #list_usuarios
-    {
-    width: 60%;
-    height: inherit;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: 100px;
-    overflow-y: scroll;
-    }
-
-    #usuario_form
-    {
-    width: 40%;
-    height: inherit;
-    border-left: 2px solid rgb(41, 41, 41);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    }
-
-    /* productos */
-    #menu_productos
-    {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    display:flex;  
-    z-index: 2;
-    position: absolute;
-    }
-
-    #list_productos
-    {
-    width: 60%;
-    height: inherit;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: 100px;
-    overflow-y: scroll;
-    }
-
-    #producto_form
-    {
-    width: 40%;
-    height: inherit;
-    border-left: 2px solid rgb(41, 41, 41);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    }
-
-    /* roles */
-    #menu_roles
-    {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    display:flex;  
-    z-index: 2;
-    position: absolute;
-    }
-
-    #list_roles
-    {
-    width: 60%;
-    height: inherit;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: 100px;
-    overflow-y: scroll;
-    }
-
-    #rol_form
-    {
-    width: 40%;
-    height: inherit;
-    border-left: 2px solid rgb(41, 41, 41);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     }
 
     /* Market */

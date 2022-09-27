@@ -103,12 +103,12 @@
     #gestor_menu
     {
     width: var(--gapWidth);
-    height: 800px;
+    height: 900px;
     margin-top: 0;
     position: relative;
     }
 
-    #menu_insumos
+    .menu
     {
     width: 100%;
     height: 100%;
@@ -119,10 +119,10 @@
     flex-direction: column;
     }
 
-    #list_insumos
+    .list
     {
     width: 100%;
-    height: 60%;
+    height: 40%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
@@ -130,11 +130,7 @@
     overflow-y: scroll;
     }
 
-    #list_insumos > span,
-    #list_eventos > span,
-    #list_usuarios > span,
-    #list_productos > span,
-    #list_roles > span
+    .list > span
     {
       display: flex;
       height: 100%;
@@ -152,10 +148,10 @@
     justify-content: space-between;
     }
 
-    #insumo_form
+   .forms
     {
     width: 100%;
-    height: 40%;
+    height: 60%;
     border-bottom: 2px solid rgb(41, 41, 41);
     display: flex;
     flex-direction: column;
@@ -217,39 +213,6 @@
       display: flex;
     }
 
-    #menu_eventos
-    {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    display:flex;  
-    flex-direction: column;
-    z-index: 1;
-    position: absolute;
-    }
-
-    #list_eventos
-    {
-    width: 100%;
-    height: 60%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: 100px;
-    overflow-y: scroll;
-    }
-
-    #evento_form
-    {
-    width: 100%;
-    height: 40%;
-    border-bottom: 2px solid rgb(41, 41, 41);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;  
-    }
-
     #evento_form textarea
     {
     width: 70vw;
@@ -258,114 +221,10 @@
     resize: vertical;
     }
 
-    #evento_form input:nth-of-type(3),
-    #producto_form input:nth-of-type(3)
+    .none_border
     {
     border: none;
     } 
-
-    /* usuarios */
-    #menu_usuarios
-   {
-   width: 100%;
-   height: 100%;
-   background: #fff;
-   display:flex; 
-   z-index: 3;
-   position: absolute;
-   flex-direction: column;
-   }
- 
-   #list_usuarios
-   {
-   width: 100%;
-   height: 60%;
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   grid-gap: 10px;
-   grid-auto-rows: 100px;
-   overflow-y: scroll;
-   }
- 
-  #usuario_form
-   {
-   width: 100%;
-   height: 40%;
-   border-bottom: 2px solid rgb(41, 41, 41);
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   }
-
-   /* productos*/
-   #menu_productos
-   {
-   width: 100%;
-   height: 100%;
-   background: #fff;
-   display:flex; 
-   z-index: 3;
-   position: absolute;
-   flex-direction: column;
-   }
- 
-   #list_productos
-   {
-   width: 100%;
-   height: 60%;
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   grid-gap: 10px;
-   grid-auto-rows: 100px;
-   overflow-y: scroll;
-   }
- 
-  #producto_form
-   {
-   width: 100%;
-   height: 40%;
-   border-bottom: 2px solid rgb(41, 41, 41);
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   }
-
-    /* roles*/
-    #menu_roles
-    {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    display:flex; 
-    z-index: 3;
-    position: absolute;
-    flex-direction: column;
-    }
-    
-    #list_roles
-    {
-    width: 100%;
-    height: 60%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: 100px;
-    overflow-y: scroll;
-    }
-    
-    #rol_form
-    {
-    width: 100%;
-    height: 40%;
-    border-bottom: 2px solid rgb(41, 41, 41);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    }
-   
 
     /* Market */
     #enterMarket

@@ -34,6 +34,10 @@
         <li id="productos">productos</li>
         <li id="usuarios">usuarios</li>
         <li id="roles">roles</li>
+        <li id="mobiliarios">mobiliario</li>
+        <li id="menues">menu's</li>
+        <li id="platos">platos</li>
+        <li id="fichasTecnicas">fichas tecnicas</li>
       </ul>
     </section>
     <section id="gadgets">
@@ -46,9 +50,9 @@
     </section>
     <section id="gestor_menu"> 
         <!-- eventos -->
-        <section id="menu_eventos">
+        <section class="menu" id="menu_eventos">
         <!-- lista de eventos -->
-        <div id="list_eventos">
+        <div class="list" id="list_eventos">
         </div>
         <!-- agregar eventos -->
         <form action="" class="forms" id="evento_form">
@@ -56,7 +60,7 @@
           <input type="text" placeholder="Nombre del evento">
           <textarea name="" cols="30" rows="10" placeholder="Informacion del evento"></textarea>
           <input type="date">
-          <input type="file" name="" placeholder="Imagen del evento">
+          <input type="file" class="none_border" name="" placeholder="Imagen del evento">
           <span>
             <button type="button" onclick="verify_fetch_insumo()">guardar</button>
             <button>Eliminar</button>
@@ -65,9 +69,9 @@
         </section>
 
         <!-- insumos -->
-        <section id="menu_insumos">
+        <section class="menu" id="menu_insumos">
           <!-- lista de insumos -->
-          <div id="list_insumos">
+          <div class="list" id="list_insumos">
           </div>
 
           <!-- agregar insumos -->
@@ -85,9 +89,9 @@
         </section>
 
         <!-- usuarios -->
-        <section id="menu_usuarios">
+        <section class="menu" id="menu_usuarios">
           <!-- lista de usuarios -->
-          <div id="list_usuarios">
+          <div class="list" id="list_usuarios">
             <span>
               <h2>Juan</h2>
               <p>Usuario</p>
@@ -111,9 +115,9 @@
         </section>
 
       <!-- productos -->
-      <section id="menu_productos">
+      <section class="menu" id="menu_productos">
         <!-- lista de productos -->
-        <div id="list_productos">
+        <div class="list" id="list_productos">
           <span>
             <h2>Hamburguesa con queso de cabra</h2>
             <p>$330</p>
@@ -128,8 +132,8 @@
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="producto_form">
           <h2>Ingresar producto</h2>
             <input type="text" name="nombre" placeholder="Nombre del producto">
-            <input type="text" name="password" placeholder="precio" >
-            <input type="file" name="rol" placeholder="Rol que ocupara en el sistema">
+            <input type="number" name="password" placeholder="precio" >
+            <input type="file" class="none_border" name="rol" placeholder="Rol que ocupara en el sistema">
             <span>
             <button type="button" onclick="verify_fetch_insumo()">guardar</button>
             <button>Eliminar</button>
@@ -138,9 +142,9 @@
       </section>
 
       <!-- roles -->
-      <section id="menu_roles">
+      <section class="menu" id="menu_roles">
         <!-- lista de roles -->
-        <div id="list_roles">
+        <div class="list" id="list_roles">
           <span>
             <h2>vendedor</h2>
           </span>
@@ -153,6 +157,99 @@
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="rol_form">
           <h2>Ingresar Rol</h2>
             <input type="text" name="nombre" placeholder="Nombre del rol">
+            <span>
+              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button>Eliminar</button>
+            </span>
+        </form>
+      </section>
+
+      <!-- mobiliario -->
+      <section class="menu" id="menu_mobiliarios">
+        <!-- lista de mobiliario -->
+        <div class="list" id="list_moiliarios">
+          <span>
+            <h2>mesas</h2>
+          </span>
+          <span>
+            <h2>nombre</h2>
+          </span>
+        </div>
+  
+        <!-- agregar mobiliarios -->
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="mobiliario_form">
+          <h2>Ingresar Mobiliario</h2>
+            <input type="text" name="nombre" placeholder="Nombre del mobiliario">
+            <span>
+              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button>Eliminar</button>
+            </span>
+        </form>
+      </section>
+
+      <!-- menues -->
+      <section class="menu" id="menu_menues">
+        <!-- lista de menues -->
+        <div class="list" id="list_menues">
+          <span>
+            <h2>menu premium</h2>
+          </span>
+          <span>
+            <h2>nombre</h2>
+          </span>
+        </div>
+  
+        <!-- agregar menues -->
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="menu_form">
+          <h2>Ingresar Menu</h2>
+            <input type="text" name="nombre" placeholder="Nombre del menu">
+            <span>
+              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button>Eliminar</button>
+            </span>
+        </form>
+      </section>
+
+
+      <!-- platos -->
+      <section class="menu" id="menu_platos">
+        <!-- lista de mobiliario -->
+        <div class="list" id="list_platos">
+          <span>
+            <h2>plato principal</h2>
+          </span>
+          <span>
+            <h2>nombre</h2>
+          </span>
+        </div>
+  
+        <!-- agregar mobiliarios -->
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="plato_form">
+          <h2>Ingresar plato</h2>
+            <input type="text" name="nombre" placeholder="Nombre del plato">
+            <span>
+              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button>Eliminar</button>
+            </span>
+        </form>
+      </section>
+
+      <!-- fichas tecnicas -->
+      <section class="menu" id="menu_fichasTecnicas">
+        <!-- lista de mobiliario -->
+        <div class="list" id="list_fichasTecnincas">
+          <span>
+            <h2>pizza con pi;a</h2>
+          </span>
+          <span>
+            <h2>nombre</h2>
+          </span>
+        </div>
+  
+        <!-- agregar mobiliarios -->
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="fichTec_form">
+          <h2>Ingresar Ficha tecnica</h2>
+            <input type="text" name="nombre" placeholder="Nombre de la ficha tecnica">
             <span>
               <button type="button" onclick="verify_fetch_insumo()">guardar</button>
               <button>Eliminar</button>
