@@ -11,7 +11,7 @@
     #carrusel 
     {
       width: var(--gapWidth);
-      height: 70vh;
+      height: 84vh;
       overflow: hidden;
       position: relative;
     } 
@@ -19,14 +19,14 @@
     #carrusel div:nth-child(1)
     {
       width: calc(100% * 6);
-      height: 70vh;
+      height: 100%;
       display: flex;
       animation: carrusel 30s infinite;
     }
     
     #carrusel div img 
     {
-      height: 70vh;
+      height: 100%;
       width: calc(100% / 6);
       object-fit: cover;
       object-position: center;
