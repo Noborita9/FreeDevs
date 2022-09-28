@@ -13,16 +13,13 @@
   <body>
     <nav>
       <ul class="ulLogo">
-        <img src="assets/img/LogoFDWhite.png" />
-        <!-- <ul>
-          <li class="liSelected">Inicio</li>
-          <li>Stock</li>
-          <li>Productos</li>
-          <li>Fichas Tecnicas</li>
-          <li>Eventos</li>
-          <li>Usuarios</li>
-        </ul> -->
-        <a href="index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        <img src="assets/img/Logo_Gestornomia.png" />
+        <ul>
+          <li class="liSelected"><p>Inicio</p></li>
+          <li onclick='location.href="./market.html"'><p>Market</p></li>
+          <li onclick='location.href="./login.html"'><p>Salir</p></li>
+        </ul>
+        <a href="index.html"><i class="fa-solid fa-user"></i></a>
       </ul>
     </nav>
 
@@ -38,6 +35,7 @@
         <li id="menues">menu's</li>
         <li id="platos">platos</li>
         <li id="fichasTecnicas">fichas tecnicas</li>
+        <li id="imagenes">imagenes</li>
       </ul>
     </section>
     <section id="gadgets">
@@ -89,8 +87,10 @@
           <form action="../backend/api/create_insumo.php" method="post" class="forms" id="insumo_form">
             <h2>Ingresar insumo</h2>
             <input type="text" name="nombre" placeholder="Nombre del insumo">
-            <input type="number" name="stock" value=0 min=0 >
-            <input type="text" name="unidad" placeholder="Unidad de medida">
+            <span>
+              <input type="number" class="objeto" name="stock" value=0 min=0 >
+              <input type="text" class="counter" name="unidad" placeholder="Unidad">
+            </span>
             <input type="number" name="precio" placeholder="precio">
             <span>
               <button type="button" onclick="verify_fetch_insumo()">guardar</button>
@@ -248,7 +248,7 @@
 
       <!-- fichas tecnicas -->
       <section class="menu" id="menu_fichasTecnicas">
-        <!-- lista de mobiliario -->
+        <!-- lista de fichas tecnicas -->
         <div class="list" id="list_fichasTecnincas">
           <span>
             <h2>pizza con pi;a</h2>
@@ -258,10 +258,16 @@
           </span>
         </div>
   
-        <!-- agregar mobiliarios -->
+        <!-- agregar fchas tecncas -->
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="fichTec_form">
           <h2>Ingresar Ficha tecnica</h2>
             <input type="text" name="nombre" placeholder="Nombre de la ficha tecnica">
+            <span>
+              <input type="text" class="objeto" placeholder="ingrese un ingredente">
+              <input type="number" class="counter" placeholder="0">
+            </span>
+            <textarea name="procedimiento" id="" cols="30" rows="10" placeholder="Descrba el procedmiento"></textarea>
+            <input type="text" placeholder="Ingrese un comentario">
             <span>
               <button type="button" onclick="verify_fetch_insumo()">guardar</button>
               <button>Eliminar</button>
@@ -269,14 +275,38 @@
         </form>
       </section>
 
+        <!-- imagenes de presentacion -->
+        <section class="menu" id="menu_imagenes">
+          <!-- lista de imagenes -->
+          <div class="list" id="list_imagenes">
+            <span>
+              <img src="" alt="">
+            </span>
+            <span>
+              <h2>imagen</h2>
+            </span>
+          </div>
+
+          <!-- agregar imagenes -->
+          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="imagen_form">
+            <h2>Ingresar imagen</h2>
+            <label for="ingresar_plano" class="cargar_file">Imagen de presentacion</label>
+            <input type="file" class="none_border" name="rol">
+            <span>
+              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button>Eliminar</button>
+            </span>
+          </form>
+        </section>
+
     </section>      
   </section>
 
-    <!-- entrar al market -->
+    <!-- entrar al market
     <section id="enterMarket">
       <h1>Realizar venta</h1>
       <button>market</button>
-    </section>
+    </section> -->
     
     <footer>
       <div class="divLeft">

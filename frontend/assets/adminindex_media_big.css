@@ -140,7 +140,7 @@
     justify-content: center;  
     }
 
-    #evento_form textarea
+    textarea
     {
     width: 320px;
     height: 60px;
@@ -234,6 +234,9 @@
     transition: 0.5s;
     }
 
+    .objeto{ width: 250px;}
+    .counter{ width: 70px; padding-left: 10px;}
+    .objeto, .counter {margin: 20px 0 20px 0;}
 
 
 

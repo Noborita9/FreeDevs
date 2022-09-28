@@ -213,7 +213,7 @@
       display: flex;
     }
 
-    #evento_form textarea
+    textarea
     {
     width: 70vw;
     height: 60px;

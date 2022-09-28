@@ -8,6 +8,7 @@ const menuMobiliarios = document.getElementById('menu_mobiliarios');
 const menuMenues = document.getElementById('menu_menues');
 const menuPlatos = document.getElementById('menu_platos');
 const menuFichTec = document.getElementById('menu_fichasTecnicas');
+const menuImagenes = document.getElementById('menu_imagenes');
 
 // barra de navegacion
 const insumosBoton = document.getElementById('insumos');
@@ -19,6 +20,7 @@ const mobiliariosBoton = document.getElementById('mobiliarios');
 const menuesBoton = document.getElementById('menues');
 const platosBoton = document.getElementById('platos');
 const fichTecBoton = document.getElementById('fichasTecnicas');
+const imagenesBoton = document.getElementById('imagenes');
 
 menuRoles.style.display = "none";
 menuProductos.style.display = "none";
@@ -29,6 +31,7 @@ menuMenues.style.display = "none";
 menuPlatos.style.display = "none";
 menuFichTec.style.display = "none";
 menuInsumos.style.display = "flex";
+menuImagenes.style.display="none";
 
 insumosBoton.addEventListener('click', () => {
     menuRoles.style.display = "none";
@@ -40,6 +43,8 @@ insumosBoton.addEventListener('click', () => {
     menuMenues.style.display = "none";
     menuPlatos.style.display = "none";
     menuFichTec.style.display = "none";
+    menuImagenes.style.display = "none";
+    menuImagenes.style.display = "none";
 })
 
 eventosBoton.addEventListener('click', () => {
@@ -52,6 +57,7 @@ eventosBoton.addEventListener('click', () => {
     menuMenues.style.display = "none";
     menuPlatos.style.display = "none";
     menuFichTec.style.display = "none";
+    menuImagenes.style.display = "none";
 })
 
 usuariosBoton.addEventListener('click', () => {
@@ -64,6 +70,7 @@ usuariosBoton.addEventListener('click', () => {
     menuMenues.style.display = "none";
     menuPlatos.style.display = "none";
     menuFichTec.style.display = "none";
+    menuImagenes.style.display = "none";
 })
 
 productosBoton.addEventListener('click', () => {
@@ -76,6 +83,7 @@ productosBoton.addEventListener('click', () => {
     menuMenues.style.display = "none";
     menuPlatos.style.display = "none";
     menuFichTec.style.display = "none";
+    menuImagenes.style.display = "none";
 })
 
 rolesBoton.addEventListener('click', () => {
@@ -88,6 +96,7 @@ rolesBoton.addEventListener('click', () => {
     menuMenues.style.display = "none";
     menuPlatos.style.display = "none";
     menuFichTec.style.display = "none";
+    menuImagenes.style.display = "none";
 })
 
 mobiliariosBoton.addEventListener('click', () => {
@@ -100,6 +109,7 @@ mobiliariosBoton.addEventListener('click', () => {
     menuMenues.style.display = "none";
     menuPlatos.style.display = "none";
     menuFichTec.style.display = "none";
+    menuImagenes.style.display = "none";
 })
 
 menuesBoton.addEventListener('click', () => {
@@ -112,6 +122,7 @@ menuesBoton.addEventListener('click', () => {
     menuMenues.style.display = "flex";
     menuPlatos.style.display = "none";
     menuFichTec.style.display = "none";
+    menuImagenes.style.display = "none";
 })
 
 platosBoton.addEventListener('click', () => {
@@ -124,6 +135,7 @@ platosBoton.addEventListener('click', () => {
     menuMenues.style.display = "none";
     menuPlatos.style.display = "flex";
     menuFichTec.style.display = "none";
+    menuImagenes.style.display = "none";
 })
 
 fichTecBoton.addEventListener('click', () => {
@@ -136,4 +148,18 @@ fichTecBoton.addEventListener('click', () => {
     menuMenues.style.display = "none";
     menuPlatos.style.display = "none";
     menuFichTec.style.display = "flex";
+    menuImagenes.style.display = "none";
+})
+
+imagenesBoton.addEventListener('click', () => {
+    menuRoles.style.display = "none";
+    menuProductos.style.display = "none";
+    menuUsuarios.style.display = "none";
+    menuEventos.style.display = "none";
+    menuInsumos.style.display = "none";
+    menuMobiliarios.style.display = "none";
+    menuMenues.style.display = "none";
+    menuPlatos.style.display = "none";
+    menuFichTec.style.display = "none";
+    menuImagenes.style.display = "flex";
 })
