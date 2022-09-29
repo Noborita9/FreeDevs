@@ -10,6 +10,19 @@ const menuPlatos = document.getElementById('menu_platos');
 const menuFichTec = document.getElementById('menu_fichasTecnicas');
 const menuImagenes = document.getElementById('menu_imagenes');
 
+const arrayMenu = [
+    menuInsumos,
+    menuEventos,
+    menuUsuarios,
+    menuProductos,
+    menuRoles,
+    menuMobiliarios,
+    menuMenues,
+    menuPlatos,
+    menuFichTec,
+    menuImagenes
+];
+
 // barra de navegacion
 const insumosBoton = document.getElementById('insumos');
 const eventosBoton = document.getElementById('eventos');
@@ -22,144 +35,22 @@ const platosBoton = document.getElementById('platos');
 const fichTecBoton = document.getElementById('fichasTecnicas');
 const imagenesBoton = document.getElementById('imagenes');
 
-menuRoles.style.display = "none";
-menuProductos.style.display = "none";
-menuUsuarios.style.display = "none";
-menuEventos.style.display = "none";
-menuMobiliarios.style.display = "none";
-menuMenues.style.display = "none";
-menuPlatos.style.display = "none";
-menuFichTec.style.display = "none";
-menuInsumos.style.display = "flex";
-menuImagenes.style.display="none";
+function mostrar(flex) {
+    arrayMenu.forEach(
+        (menu) => { menu === flex ? menu.style.display="flex" : menu.style.display="none" }
+    )
+}
 
-insumosBoton.addEventListener('click', () => {
-    menuRoles.style.display = "none";
-    menuProductos.style.display = "none";
-    menuUsuarios.style.display = "none";
-    menuEventos.style.display = "none";
-    menuInsumos.style.display = "flex";
-    menuMobiliarios.style.display = "none";
-    menuMenues.style.display = "none";
-    menuPlatos.style.display = "none";
-    menuFichTec.style.display = "none";
-    menuImagenes.style.display = "none";
-    menuImagenes.style.display = "none";
-})
+mostrar(menuInsumos);
 
-eventosBoton.addEventListener('click', () => {
-    menuRoles.style.display = "none";
-    menuProductos.style.display = "none";
-    menuUsuarios.style.display = "none";
-    menuEventos.style.display = "flex";
-    menuInsumos.style.display = "none";
-    menuMobiliarios.style.display = "none";
-    menuMenues.style.display = "none";
-    menuPlatos.style.display = "none";
-    menuFichTec.style.display = "none";
-    menuImagenes.style.display = "none";
-})
 
-usuariosBoton.addEventListener('click', () => {
-    menuRoles.style.display = "none";
-    menuProductos.style.display = "none";
-    menuUsuarios.style.display = "flex";
-    menuEventos.style.display = "none";
-    menuInsumos.style.display = "none";
-    menuMobiliarios.style.display = "none";
-    menuMenues.style.display = "none";
-    menuPlatos.style.display = "none";
-    menuFichTec.style.display = "none";
-    menuImagenes.style.display = "none";
-})
-
-productosBoton.addEventListener('click', () => {
-    menuRoles.style.display = "none";
-    menuProductos.style.display = "flex";
-    menuUsuarios.style.display = "none";
-    menuEventos.style.display = "none";
-    menuInsumos.style.display = "none";
-    menuMobiliarios.style.display = "none";
-    menuMenues.style.display = "none";
-    menuPlatos.style.display = "none";
-    menuFichTec.style.display = "none";
-    menuImagenes.style.display = "none";
-})
-
-rolesBoton.addEventListener('click', () => {
-    menuRoles.style.display = "flex";
-    menuProductos.style.display = "none";
-    menuUsuarios.style.display = "none";
-    menuEventos.style.display = "none";
-    menuInsumos.style.display = "none";
-    menuMobiliarios.style.display = "none";
-    menuMenues.style.display = "none";
-    menuPlatos.style.display = "none";
-    menuFichTec.style.display = "none";
-    menuImagenes.style.display = "none";
-})
-
-mobiliariosBoton.addEventListener('click', () => {
-    menuRoles.style.display = "none";
-    menuProductos.style.display = "none";
-    menuUsuarios.style.display = "none";
-    menuEventos.style.display = "none";
-    menuInsumos.style.display = "none";
-    menuMobiliarios.style.display = "flex";
-    menuMenues.style.display = "none";
-    menuPlatos.style.display = "none";
-    menuFichTec.style.display = "none";
-    menuImagenes.style.display = "none";
-})
-
-menuesBoton.addEventListener('click', () => {
-    menuRoles.style.display = "none";
-    menuProductos.style.display = "none";
-    menuUsuarios.style.display = "none";
-    menuEventos.style.display = "none";
-    menuInsumos.style.display = "none";
-    menuMobiliarios.style.display = "none";
-    menuMenues.style.display = "flex";
-    menuPlatos.style.display = "none";
-    menuFichTec.style.display = "none";
-    menuImagenes.style.display = "none";
-})
-
-platosBoton.addEventListener('click', () => {
-    menuRoles.style.display = "none";
-    menuProductos.style.display = "none";
-    menuUsuarios.style.display = "none";
-    menuEventos.style.display = "none";
-    menuInsumos.style.display = "none";
-    menuMobiliarios.style.display = "none";
-    menuMenues.style.display = "none";
-    menuPlatos.style.display = "flex";
-    menuFichTec.style.display = "none";
-    menuImagenes.style.display = "none";
-})
-
-fichTecBoton.addEventListener('click', () => {
-    menuRoles.style.display = "none";
-    menuProductos.style.display = "none";
-    menuUsuarios.style.display = "none";
-    menuEventos.style.display = "none";
-    menuInsumos.style.display = "none";
-    menuMobiliarios.style.display = "none";
-    menuMenues.style.display = "none";
-    menuPlatos.style.display = "none";
-    menuFichTec.style.display = "flex";
-    menuImagenes.style.display = "none";
-})
-
-imagenesBoton.addEventListener('click', () => {
-    menuRoles.style.display = "none";
-    menuProductos.style.display = "none";
-    menuUsuarios.style.display = "none";
-    menuEventos.style.display = "none";
-    menuInsumos.style.display = "none";
-    menuMobiliarios.style.display = "none";
-    menuMenues.style.display = "none";
-    menuPlatos.style.display = "none";
-    menuFichTec.style.display = "none";
-    menuImagenes.style.display = "flex";
-})
+insumosBoton.addEventListener('click', () => { mostrar(menuInsumos) });
+eventosBoton.addEventListener('click', () => { mostrar(menuEventos) });
+usuariosBoton.addEventListener('click', () => { mostrar(menuUsuarios) });
+productosBoton.addEventListener('click', () => { mostrar(menuProductos) });
+rolesBoton.addEventListener('click', () => { mostrar(menuRoles) });
+mobiliariosBoton.addEventListener('click', () => { mostrar(menuMobiliarios) });
+menuesBoton.addEventListener('click', () => { mostrar(menuMenues) });
+platosBoton.addEventListener('click', () => { mostrar(menuPlatos) });
+fichTecBoton.addEventListener('click', () => { mostrar(menuFichTec) });
+imagenesBoton.addEventListener('click', () => { mostrar(menuImagenes) });
