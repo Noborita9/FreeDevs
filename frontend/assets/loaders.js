@@ -77,7 +77,7 @@ const onClickLoadRoles = (data,element) => {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-  loader('../backend/api/load_items.php', "list_insumos", onClickLoadItem, "insumos")
+  loader('../backend/api/load_items.php', "list_insumos", onClickLoadInsumos, "insumos")
 })
 
 const backendRoute = "../../backend/api/"
