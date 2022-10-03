@@ -53,7 +53,7 @@
         <div class="list" id="list_eventos">
         </div>
         <!-- agregar eventos -->
-        <form action="" class="forms" id="evento_form">
+        <form action="" class="forms" id="form_eventos">
           <h2>Ingresar evento</h2>
           <input type="text" placeholder="Nombre del evento">
           <textarea name="" cols="30" rows="10" placeholder="Informacion del evento"></textarea>
@@ -71,8 +71,8 @@
           <label for="ingresar_plano" class="cargar_file">cargar imagen para el evento</label>
           <input type="file" class="none_border" name="" placeholder="Imagen del evento">
           <span>
-            <button id="button_eventos_save" jtype="button" onclick="verify_fetch_insumo()">guardar</button>
-            <button id="button_eventos_remove">Eliminar</button>
+            <button type="button" >guardar</button>
+            <button >Eliminar</button>
           </span>
         </form>
         </section>
@@ -84,7 +84,7 @@
           </div>
 
           <!-- agregar insumos -->
-          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="insumo_form">
+          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_insumos">
             <h2>Ingresar insumo</h2>
             <input type="text" name="nombre" placeholder="Nombre del insumo">
             <span>
@@ -93,8 +93,8 @@
             </span>
             <input type="number" name="precio" placeholder="precio">
             <span>
-              <button id="button_insumos_save" type="button" onclick="verify_fetch_insumo()">guardar</button>
-              <button id="button_insumos_remove">Eliminar</button>
+              <button type="button" >guardar</button>
+              <button>Eliminar</button>
             </span>
           </form>
         </section>
@@ -113,14 +113,14 @@
             </span>
           </div>
       <!-- agregar usuarios -->
-          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="usuario_form">
+          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_usuarios">
             <h2>Ingresar usuario</h2>
               <input type="text" name="nombre" placeholder="Nombre de usuario">
               <input type="text" name="password" placeholder="Ingrese una contrase;a" >
               <input type="text" name="rol" placeholder="Rol que ocupara en el sistema">
               <span>
-                <button id="button_usuarios_save" type="button" onclick="verify_fetch_insumo()">guardar</button>
-                <button id="button_usuarios_remove">Eliminar</button>
+                <button type="button" >guardar</button>
+                <button>Eliminar</button>
               </span>
           </form>
         </section>
@@ -140,15 +140,15 @@
         </div>
   
         <!-- agregar productos -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="producto_form">
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_productos">
           <h2>Ingresar producto</h2>
             <input type="text" name="nombre" placeholder="Nombre del producto">
             <input type="number" name="password" placeholder="precio" >
             <label for="ingresar_plano" class="cargar_file">Imagen del producto</label>
             <input type="file" class="none_border" name="rol">
             <span>
-            <button id="button_productos_save" type="button">guardar</button>
-            <button id="button_productos_remove">Eliminar</button>
+            <button type="button" >guardar</button>
+            <button>Eliminar</button>
             </span>
         </form>
       </section>
@@ -166,12 +166,12 @@
         </div>
   
         <!-- agregar roles -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="rol_form">
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_roles">
           <h2>Ingresar Rol</h2>
             <input type="text" name="nombre" placeholder="Nombre del rol">
             <span>
-              <button id="button_roles_save" type="button">Guardar</button>
-              <button id="button_roles_remove" type="button">Eliminar</button>
+              <button type="button" >guardar</button>
+              <button>Eliminar</button>
             </span>
         </form>
       </section>
@@ -189,11 +189,11 @@
         </div>
   
         <!-- agregar mobiliarios -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="mobiliario_form">
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_mobiliarios">
           <h2>Ingresar Mobiliario</h2>
             <input type="text" name="nombre" placeholder="Nombre del mobiliario">
             <span>
-              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button type="button" >guardar</button>
               <button>Eliminar</button>
             </span>
         </form>
@@ -212,11 +212,11 @@
         </div>
   
         <!-- agregar menues -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="menu_form">
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_menus">
           <h2>Ingresar Menu</h2>
             <input type="text" name="nombre" placeholder="Nombre del menu">
             <span>
-              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button type="button" >guardar</button>
               <button>Eliminar</button>
             </span>
         </form>
@@ -236,11 +236,11 @@
         </div>
   
         <!-- agregar mobiliarios -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="plato_form">
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_platos">
           <h2>Ingresar plato</h2>
             <input type="text" name="nombre" placeholder="Nombre del plato">
             <span>
-              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button type="button" >guardar</button>
               <button>Eliminar</button>
             </span>
         </form>
@@ -259,7 +259,7 @@
         </div>
   
         <!-- agregar fchas tecncas -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="fichTec_form">
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_fichas">
           <h2>Ingresar Ficha tecnica</h2>
             <input type="text" name="nombre" placeholder="Nombre de la ficha tecnica">
             <span>
@@ -269,7 +269,7 @@
             <textarea name="procedimiento" id="" cols="30" rows="10" placeholder="Descrba el procedmiento"></textarea>
             <input type="text" placeholder="Ingrese un comentario">
             <span>
-              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button type="button" >guardar</button>
               <button>Eliminar</button>
             </span>
         </form>
@@ -288,12 +288,12 @@
           </div>
 
           <!-- agregar imagenes -->
-          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="imagen_form">
+          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_imagenes">
             <h2>Ingresar imagen</h2>
             <label for="ingresar_plano" class="cargar_file">Imagen de presentacion</label>
             <input type="file" class="none_border" name="rol">
             <span>
-              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button type="button" >guardar</button>
               <button>Eliminar</button>
             </span>
           </form>
@@ -320,6 +320,6 @@
       </div>
     </footer>
     <script src="./assets/gestor_menu.js"></script>
-    <script type="module" src="./assets/loaders.js"></script>
+    <script src="./assets/loaders.js"></script>
   </body>
 </html>
