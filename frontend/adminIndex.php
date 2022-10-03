@@ -50,15 +50,15 @@
         <div id="list_eventos">
         </div>
         <!-- agregar eventos -->
-        <form action="" id="evento_form">
+        <form action="" id="eventos_form">
           <h2>Ingresar evento</h2>
           <input type="text" placeholder="Nombre del evento">
           <textarea name="" cols="30" rows="10" placeholder="Informacion del evento"></textarea>
           <input type="text" placeholder="ingrese la fecha del evento xx/xx/xxxx">
           <input type="file" name="" placeholder="Imagen del evento">
           <span>
-            <button type="button" onclick="verify_fetch_insumo()">guardar</button>
-            <button>Eliminar</button>
+            <button id="button_eventos_save" jtype="button" onclick="verify_fetch_insumo()">guardar</button>
+            <button id="button_eventos_remove">Eliminar</button>
           </span>
         </form>
         </section>
@@ -70,15 +70,15 @@
           </div>
 
           <!-- agregar insumos -->
-          <form action="../backend/api/create_insumo.php" method="post" id="insumo_form">
+          <form action="../backend/api/create_insumo.php" method="post" id="insumos_form">
             <h2>Ingresar insumo</h2>
             <input type="text" name="nombre" placeholder="Nombre del insumo">
             <input type="number" name="stock" value=0 min=0 >
             <input type="text" name="unidad" placeholder="Unidad de medida">
             <input type="number" name="precio" placeholder="precio">
             <span>
-              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
-              <button>Eliminar</button>
+              <button id="button_insumos_save" type="button" onclick="verify_fetch_insumo()">guardar</button>
+              <button id="button_insumos_remove">Eliminar</button>
             </span>
           </form>
         </section>
@@ -97,14 +97,14 @@
             </span>
           </div>
       <!-- agregar usuarios -->
-          <form action="../backend/api/create_insumo.php" method="post" id="usuario_form">
+          <form action="../backend/api/create_insumo.php" method="post" id="usuarios_form">
             <h2>Ingresar usuario</h2>
               <input type="text" name="nombre" placeholder="Nombre de usuario">
               <input type="text" name="password" placeholder="Ingrese una contrase;a" >
               <input type="text" name="rol" placeholder="Rol que ocupara en el sistema">
               <span>
-                <button type="button" onclick="verify_fetch_insumo()">guardar</button>
-                <button>Eliminar</button>
+                <button id="button_usuarios_save" type="button" onclick="verify_fetch_insumo()">guardar</button>
+                <button id="button_usuarios_remove">Eliminar</button>
               </span>
           </form>
         </section>
@@ -124,14 +124,14 @@
         </div>
   
         <!-- agregar productos -->
-        <form action="../backend/api/create_insumo.php" method="post" id="producto_form">
+        <form action="../backend/api/create_insumo.php" method="post" id="productos_form">
           <h2>Ingresar producto</h2>
             <input type="text" name="nombre" placeholder="Nombre del producto">
             <input type="text" name="password" placeholder="precio" >
             <input type="file" name="rol" placeholder="Rol que ocupara en el sistema">
             <span>
-            <button type="button" onclick="verify_fetch_insumo()">guardar</button>
-            <button>Eliminar</button>
+            <button id="button_productos_save" type="button">guardar</button>
+            <button id="button_productos_remove">Eliminar</button>
             </span>
         </form>
       </section>
@@ -149,12 +149,12 @@
         </div>
   
         <!-- agregar roles -->
-        <form action="../backend/api/create_insumo.php" method="post" id="rol_form">
+        <form action="../backend/api/create_insumo.php" method="post" id="roles_form">
           <h2>Ingresar Rol</h2>
             <input type="text" name="nombre" placeholder="Nombre del rol">
             <span>
-              <button type="button" onclick="verify_fetch_insumo()">guardar</button>
-              <button>Eliminar</button>
+              <button id="button_roles_save" type="button">Guardar</button>
+              <button id="button_roles_remove" type="button">Eliminar</button>
             </span>
         </form>
       </section>
@@ -180,7 +180,6 @@
       </div>
     </footer>
     <script src="./assets/gestor_menu.js"></script>
-    <script src="./assets/gestion.js"></script>
-    <script src="./assets/loaders.js"></script>
+    <script type="module" src="./assets/loaders.js"></script>
   </body>
 </html>
