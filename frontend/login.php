@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/login.css" />
+    <link id="css" rel="stylesheet" href="assets/login.css" />
+    <script src="https://kit.fontawesome.com/f4e70a9fbd.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <form action="login_verify.php" method="post" id="form_login">
-      <img src="./assets/img/LogoFD.png" />
+      <img id="imgLogo" src="./assets/img/LogoFD.png" />
       <h2>sign in</h2>
       <input id="inUsuario" type="text" name="user_name" placeholder="user" />
       <section>
@@ -19,9 +20,13 @@
       <button id="sign" type="button" onclick="verify_data_state()">sign in now</button>
       <section id="contentColors">
       </section>
+      <div class="colorMode">
+        <i class="fa-solid fa-moon" id="icoMoon"></i>
+        <i class="fa-solid fa-sun" id="icoSun"></i>
+      </div>
     </form>
-    <script src="./assets/access.js"> 
-    </script>
+    <script src="./assets/access.js"></script>
+    <script src="./assets/layout.js"></script>
   </body>
 </html>
 
