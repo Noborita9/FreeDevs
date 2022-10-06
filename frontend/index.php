@@ -47,7 +47,7 @@
         <img src="assets/img/pancakes.jpg">
         <div>
           <h2>Dia de la madre</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint pariatur asperiores necessitatibus repellendus. Vero fugiat autem nesciunt? Consectetur labore molestias alias sint placeat, nemo magni beatae enim! Dicta, expedita sunt. <br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa molestiae nihil asperiores similique cum quasi voluptatum ad, corrupti reiciendis odit suscipit error doloremque modi nam esse eligendi est quis dignissimos!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint pariatur asperiores necessitatibus repellendus.</p>
           <button>mas informacion</button>
         </div>
       </section>

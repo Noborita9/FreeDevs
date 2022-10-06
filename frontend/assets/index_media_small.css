@@ -2,10 +2,11 @@
   
   #carrusel 
   {
-    width: var(--gapWidth);
+    width: 100%;
     height: 89vh;
     overflow: hidden;
     position: relative;
+    margin: 0;
   } 
    
   #carrusel div:nth-child(1)
