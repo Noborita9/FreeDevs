@@ -102,29 +102,42 @@ body > *
   transition-duration: 0.5s;
 }
 
+.ulLogo div
+{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
 .ulLogo ul
 {
-  width: 30%;
+  width: 85%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr;
   align-items: end;
 }
 
 .ulLogo li
 {
-  height: 80%;
+  height: 100%;
   width: 100%;
   list-style: none;
   font-size: 1.3vw; 
   display: flex;
-  border-radius: 13px 13px 0 0;
+  /* border-bottom: 1px solid rgba(130, 180, 54, 1); */
 }
 
 .ulLogo li:hover
 {
-  background: rgba(130, 180, 54, 0.5);
+  /* border: 1px solid rgba(130, 180, 54, 1); */
+  /* background: rgba(130, 180, 54, 1); */
+  border-bottom: 1px solid rgba(130, 180, 54, 1);
+  color: rgba(130, 180, 54, 1);
   transition: all;
   transition-duration: 1s;
   cursor: pointer;
@@ -135,10 +148,10 @@ li p
   margin: auto auto;
 }
 
-.liSelected
+/* .liSelected
 {
   background: rgba(130, 180, 54, 1);
-}
+} */
 
 /* MOVIMIENTOS JS */
 .yMove
