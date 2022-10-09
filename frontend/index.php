@@ -13,9 +13,20 @@
   <body>
 
     <nav>
-      <ul class="ulLogo">
-        <img src="assets/img/LogoFDWhite.png" />
-        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+    <ul class="ulLogo">
+        <img src="assets/img/Logo_Gestornomia.png" />
+
+        <div>
+          <ul>
+            <li class="liSelected"><p>inicio</p></li>
+            <li onclick='location.href="."'><p>eventos</p></li>
+            <li onclick='location.href="."'><p>nosotros</p></li>
+            <li onclick='location.href="."'><p>contacto</p></li>
+            <li onclick='location.href="."'><p>admin</p></li>
+            <li onclick='location.href="."'><p>market</p></li>
+          </ul>
+          <a href="index.html"><i class="fa-solid fa-user"></i></a>
+        </div>
       </ul>
     </nav>
 
@@ -36,7 +47,7 @@
         <img src="assets/img/pancakes.jpg">
         <div>
           <h2>Dia de la madre</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint pariatur asperiores necessitatibus repellendus. Vero fugiat autem nesciunt? Consectetur labore molestias alias sint placeat, nemo magni beatae enim! Dicta, expedita sunt. <br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa molestiae nihil asperiores similique cum quasi voluptatum ad, corrupti reiciendis odit suscipit error doloremque modi nam esse eligendi est quis dignissimos!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint pariatur asperiores necessitatibus repellendus.</p>
           <button>mas informacion</button>
         </div>
       </section>

@@ -1,15 +1,22 @@
 @media (min-width: 701px) {
-  
- 
+/*   
+  body
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } */
     
   /* CARRUSEll */
   
   #carrusel 
   {
-    width: var(--gapWidth);
-    height: 84vh;
+    width: 100%;
+    height: 90vh;
     overflow: hidden;
     position: relative;
+    padding: 0;
+    margin: 0;
   } 
    
   #carrusel div:nth-child(1)
@@ -45,8 +52,9 @@
   .event
   {
     overflow: hidden;
-    width: var(--gapWidth);
-    height: 40vw;
+    width: 65vw;
+    height: 20vw;
+    margin-left: calc(35vw / 2);
   }
   
   .content
@@ -68,7 +76,6 @@
   .content div
   {
     width: 40vw;
-    padding: 0 0 1vw 5vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -80,14 +87,15 @@
   {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 3vw;
+    font-size: 2vw;
   }
 
   .content p
   {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 1.3vw;
+    font-size: 1vw;
+    width: 90%;
   }
   
   .content button
@@ -108,53 +116,6 @@
     transition: 1s;
     cursor: pointer;
     border: none;
-  }
-  
-  .products
-  {
-    width: 100%;
-    height: 31.3vw;
-    padding: 1vw;
-    background: white;
-    display: grid;
-    grid-template-columns: repeat(3, calc(100% / 3 - 0.75vw));
-    grid-template-rows: repeat(2, calc(50% - 0.5vw));
-    grid-gap: 1vw;
-    overflow: hidden;
-    margin-top: 0;
-    position: relative;
-  }
-  
-  .products button
-  {
-    width: 150px;
-    height: 50px;
-    position: absolute;
-    bottom: 1vh;
-    left: 45%;
-    background: white;
-    border: 1px solid #292929;
-  }
-  
-  .products div
-  {
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .products div:hover
-  {
-    background: rgba(0, 0, 0, 0.3);
-    transition: all;
-    transition-duration: 1.5s;
-  }
-  
-  .products div img
-  {
-    width: auto;
-    height: 30vh;
   }
 
 }

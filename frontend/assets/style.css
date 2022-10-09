@@ -67,7 +67,7 @@ body > *
   width: 93%;
   height: 10vh;
   padding: 0 5% 0 5%;
-  margin: -1.5vw -1.5vw 0 -1.5vw; 
+  margin: -1.5vw; 
   color: white;
   background: #1f1f1f;
   box-shadow: 0 0.4vh 0.4vh rgba(0, 0, 0, 0.4);
@@ -102,29 +102,40 @@ body > *
   transition-duration: 0.5s;
 }
 
+.ulLogo div
+{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
 .ulLogo ul
 {
-  width: 30%;
+  width: 85%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr;
   align-items: end;
 }
 
 .ulLogo li
 {
-  height: 80%;
+  height: 100%;
   width: 100%;
   list-style: none;
   font-size: 1.3vw; 
   display: flex;
-  border-radius: 13px 13px 0 0;
+  border-bottom: 2px solid transparent;
 }
 
 .ulLogo li:hover
 {
-  background: rgba(130, 180, 54, 0.5);
+  border-bottom: 2px solid rgba(130, 180, 54, 1);
+  color: rgba(130, 180, 54, 1);
   transition: all;
   transition-duration: 1s;
   cursor: pointer;
@@ -134,27 +145,6 @@ li p
 {
   margin: auto auto;
 }
-
-.liSelected
-{
-  background: rgba(130, 180, 54, 1);
-}
-
-/* MOVIMIENTOS JS */
-.yMove
-{
-  transform: translateY(-33.3vw);
-  transition: all;
-  transition-duration: 3s;
-}
-
-.yMoveNt
-{
-  transform: translateY(33.3vw / 8);
-  transition: all;
-  transition-duration: 3s;
-}
-
 
 /* FOOTER */
 footer
