@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+body
+{
+  overflow-x: hidden;
+}
+
 :root 
 {
   --gapWidth: calc(100% - 3vw);
@@ -55,14 +60,6 @@ body > *
   90% {transform: translateX(calc(400% / -6))}
   100% {transform: translateX(calc(500% / -6))}
 }
-/* 
-@keyframes destacados {
-  0% {transform: translateX(0%)}
-  25% {transform: translateX(calc(-100% ))}
-  50% {transform: translateX(calc(-100% ))}
-  75% {transform: translateX(calc(-200% ))}
-  100% {transform: translateX(calc(-200% ))}
-} */
 
 /* BARRA DE NAVEGACION */
 .ulLogo
@@ -105,38 +102,10 @@ body > *
   transition-duration: 0.5s;
 }
 
-/* .ulLogo ul li
-{
-  margin-top: 8vh;
-  list-style: none;
-  display: inline-block;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.ulLogo li:hover
-{
-  background: rgba(130, 180, 54, 1);
-  color: #fff;
-  border-radius: 5px 5px 0px 0px;
-}
-
-.ulLogo ul .liSelected
-{
-  background: rgba(130, 180, 54, 1);
-  color: #fff;
-  border-radius: 5px 5px 0px 0px;
-  padding: 10px;
-  font-size: 20px;
-} */
-
 .ulLogo ul
 {
   width: 30%;
   height: 100%;
-  /* background: #fff; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
@@ -206,56 +175,3 @@ footer
   color: #fff;
   margin: 0 2vw 0 2vw;
 }
-
-footer .divLeft
-{
-  float: left;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-footer .divRight
-{
-  float: right;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-footer .divLeft ul
-{
-  list-style: none;
-  text-decoration: none;
-}
-
-footer .divRight ul
-{
-  list-style: none;
-  text-decoration: none;
-}
-
-footer .divLeft ul a
-{
-  list-style: none;
-  text-decoration: none;
-  color: #fff;
-}
-
-footer .divRight ul a
-{
-  list-style: none;
-  text-decoration: none;
-  color: #fff;
-}
-
-footer .divLeft ul a:hover
-{
-  color: rgba(130, 180, 54, 1);
-}
-
-footer .divRight ul a:hover
-{
-  color: rgba(130, 180, 54, 1);
-}
-
