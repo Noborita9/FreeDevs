@@ -51,5 +51,3 @@ function proccess_evento(){
   $stmt->execute();
   echo "Producto agregado";
 }
-
-?>

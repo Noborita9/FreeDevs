@@ -16,7 +16,7 @@ CREATE TABLE usuarios (
   contrasena VARCHAR(50) NOT NULL,
   rol VARCHAR(40) NOT NULL,
   FOREIGN KEY (id_persona) REFERENCES personas(id),   
-  PRIMARY KEY(id, nombre_usuario)
+  PRIMARY KEY(id)
 );
 
 CREATE TABLE fichas_tecnicas (
@@ -126,3 +126,5 @@ CREATE TABLE roles(
   id_roles INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
   nombre VARCHAR(40) NOT NULL
 );
+
+INSERT INTO usuarios (nombre_usuario, contrasena, rol) VALUES ('admin','admin','admin');

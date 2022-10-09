@@ -14,5 +14,3 @@ function load_items($items){
   } 
   echo $json; 
 }
-?>
-

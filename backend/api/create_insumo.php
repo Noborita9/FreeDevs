@@ -53,5 +53,3 @@ function proccess_insumo(){
   $stmt->execute();
   echo "Producto agregado";
 }
-
-?>

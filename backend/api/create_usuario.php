@@ -29,5 +29,3 @@ function create_user() {
   $stmt->bindParam(":role", $_POST["role"]);
   $stmt->execute();
 }
-
-?>
