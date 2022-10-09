@@ -13,7 +13,7 @@
   <body>
     <nav>
       <ul class="ulLogo">
-        <img src="assets/img/Logo_Gestornomia.png" />
+        <img src="assets/img/_white.png" />
 
         <div>
           <ul>
