@@ -13,7 +13,7 @@
   <body>
     <nav>
       <ul class="ulLogo">
-        <img src="assets/img/_white.png" />
+        <img src="assets/img/greenHat.png" />
 
         <div>
           <ul>

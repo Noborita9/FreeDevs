@@ -12,9 +12,9 @@
   </head>
   <body>
 
-    <nav>
+    <nav id="nav">
     <ul class="ulLogo">
-        <img src="assets/img/Logo_Gestornomia.png" />
+        <img src="assets/img/greenHat.png" />
 
         <div>
           <ul>
@@ -51,6 +51,22 @@
           <button>mas informacion</button>
         </div>
       </section>
+    </section>
+
+    <section id="formularioContacto">
+      <form action="">
+      <a href="#nav"><i class="fa-solid fa-circle-arrow-up"></i></a>
+        <div>
+          <input type="text" placeholder="nombre">
+          <input type="text" placeholder="apellido">
+        </div>
+        <input type="email" placeholder="e-mail">
+        <input type="number" placeholder="numero de telefono">
+        <div>
+          <textarea name="" id="" cols="30" rows="10" placeholder="que nos quiere comunicar?"></textarea>
+          <button>enviar</button>
+        </div>
+      </form>
     </section>
 
     <script src="assets/actions.js"></script>
