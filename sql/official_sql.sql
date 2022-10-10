@@ -5,7 +5,7 @@ USE gestornomia;
 CREATE TABLE personas (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(40) NOT NULL,
-	apellido VARCHAR(40) NOT NULL ,
+	apellido VARCHAR(40),
 	ci VARCHAR(10)
 );
 
@@ -85,13 +85,12 @@ CREATE TABLE encargados(
   FOREIGN KEY (id_evento) REFERENCES eventos(id)
 );
 
-CREATE TABLE recursos (
+CREATE TABLE mobiliarios (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   nombre VARCHAR (50) NOT NULL,
-	cantidad_disponible INT NOT NULL
 );
 
-CREATE TABLE recursos_eventos (
+CREATE TABLE mobiliarios_eventos (
 	id_evento INT, 
   id_recurso INT,
 	cantidad_necesaria INT NOT NULL,
@@ -126,5 +125,6 @@ CREATE TABLE roles(
   id_roles INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
   nombre VARCHAR(40) NOT NULL
 );
+
 
 INSERT INTO usuarios (nombre_usuario, contrasena, rol) VALUES ('admin','admin','admin');

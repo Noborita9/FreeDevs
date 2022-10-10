@@ -1,9 +1,12 @@
 <?php
-if (isset($_POST["usuario"]) && !empty($_POST["usuario"]) && isset($_POST["password"]) && !empty($_POST["password"]) && isset($_POST["role"]) && !empty($_POST["role"])) {check_user_exists();}else {
+if (isset($_POST["usuario"]) && !empty($_POST["usuario"]) && isset($_POST["password"]) && !empty($_POST["password"]) && isset($_POST["role"]) && !empty($_POST["role"])) {
+  check_user_exists();
+} else {
   //header("Location: ../../frontend/index.html ");
   exit();
 }
-function check_user_exists() {
+function check_user_exists()
+{
   include("../conexion.php");
   $stmt = $pdo->prepare("SELECT nombre_usuario FROM usuarios WHERE nombre_usuario = ?;");
   $stmt->execute($_POST["usuario"]);
@@ -21,7 +24,8 @@ function check_user_exists() {
   create_user();
 }
 
-function create_user() {
+function create_user()
+{
   include("../conexion.php");
   $stmt = $pdo->prepare("INSERT INTO usuarios (nombre_usuario, contrasena, role) VALUES (:username, :password, :role)");
   $stmt->bindParam(":username", $_POST["usuario"]);
