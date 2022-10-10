@@ -1,41 +1,62 @@
-const productsInfo = document.querySelectorAll('.content button');
-const eventInfo = document.querySelectorAll('.products button')
-const content = document.querySelectorAll('.content');
-const products = document.querySelectorAll('.products');
-const navContent = document.querySelectorAll('.navContent');
-const nav = document.querySelector('#nav');
+const liSelected = document.querySelector('.liSelected');
+const li = document.querySelectorAll('li');
+const ul = document.querySelector('.ulLogo div ul');
 
-let navWidth = 0;
+// console.log(typeof(li));
+// console.log(li);
+li.forEach( (esto) => {console.log(esto)} );
 
-navContent.forEach(() => navWidth = navWidth + 10);
+let unshow = true;
 
-nav.style.width = `${navWidth}%`;
-nav.style.margin = `0 0 0 ${(100 - navWidth) / 2}%`;
-
-
-console.log(navWidth);
+if(screen.width <= 700)
+{
 
 
+        liSelected.addEventListener('click', () => {
+            
+            if(unshow == true){
 
-productsInfo.forEach((element)=> { element.addEventListener('click', () => {
+                ul.style.zIndex='999';
+                li.forEach( (esto) => {
+                    esto.style.display='flex';
+                    esto.style.margin='0';
+                    esto.style.border='none';
+                } );
+        
+                unshow = false;
+            }else{
+                
+                ul.style.zIndex='999';
+                li.forEach( (esto) => {
+                esto == liSelected ? esto.style.display='flex' : esto.style.display='none';
+                } );
+                unshow = true;
+            }
+        })
 
+    // if(unshow == true){
+    // liSelected.addEventListener('click', () => {
 
-    content.forEach((element) => element.classList.add('yMove'));
-    products.forEach((element) => element.classList.add('yMove'));
+    //     ul.style.zIndex='999';
+    //     li.forEach( (esto) => {
+    //         esto.style.display='flex';
+    //         esto.style.margin='0';
+    //         esto.style.border='none';
+    //     } );
 
-    content.forEach((element) => element.classList.remove('yMoveNt'));
-    products.forEach((element) => element.classList.remove('yMoveNt'));
+    //     unshow = false;
 
-    })
-});
+    //     })
+    // }
+    // else{
+    // liSelected.addEventListener('click', () => {
 
-eventInfo.forEach((element)=> { element.addEventListener('click', () => {
+    //     ul.style.zIndex='999';
+    //     li.forEach( (esto) => {
+    //         esto.style.display='none';
+    //     } );
+    //     unshow = true;
 
-        content.forEach((element) => element.classList.add('yMoveNt'));
-        products.forEach((element) => element.classList.add('yMoveNt'));
-
-        content.forEach((element) => element.classList.remove('yMove'));
-        products.forEach((element) => element.classList.remove('yMove'));
-
-    })
-});
+    //     })
+    // }
+}
