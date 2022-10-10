@@ -1,17 +1,20 @@
 <?php
-if (isset($_POST["nombre"]) &&
+if (
+  isset($_POST["nombre"]) &&
   !empty($_POST["nombre"]) &&
   isset($_POST["info"]) &&
   empty($_POST["info"]) &&
   isset($_POST["fecha"]) &&
-  !empty($_POST["fecha"])) {
-  check_existance_insumo();
-}else {
+  !empty($_POST["fecha"])
+) {
+  check_existance_evento();
+} else {
   //header("Location: ../../frontend/index.html ");
   exit();
 }
 
-function check_existance_evento(){
+function check_existance_evento()
+{
   include("../conexion.php");
 
   $exists = 0;
@@ -20,21 +23,21 @@ function check_existance_evento(){
   $stmt->execute();
   $data = $stmt->fetchAll();
 
-  foreach ($data as $row){
-    if (strcmp($_POST["nombre"], $row["nombre"]) == 0){
+  foreach ($data as $row) {
+    if (strcmp($_POST["nombre"], $row["nombre"]) == 0) {
       $exists = 1;
     }
   }
 
-  if($exists == 0){
+  if ($exists == 0) {
     proccess_evento();
-  }
-  else {
+  } else {
     echo "El producto ya existe";
   }
 }
 
-function proccess_evento(){
+function proccess_evento()
+{
   include("../conexion.php");
 
   $stmt = $pdo->prepare("INSERT INTO eventos (nombre, unidad, stock, precio) VALUES(:nombre, :unidad, :stock, :precio)");

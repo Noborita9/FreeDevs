@@ -3,11 +3,6 @@ const icoMoon = document.getElementById('icoMoon');
 const icoSun = document.getElementById('icoSun');
 const img = document.getElementById('imgLogo');
 
-
-console.log(link);
-console.log(icoMoon);
-console.log(icoSun);
-
 icoMoon.addEventListener('click', () => {
     link.setAttribute('href', "assets/loginNight.css")
     img.setAttribute('src', "assets/img/LogoFDWhite.png");

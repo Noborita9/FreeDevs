@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,51 +32,51 @@
   </form>
   <script src="./assets/access.js"></script>
   <script src="./assets/layout.js"></script>
+  <script>
+    function fetch_send(data_set) {
+      fetch('login_verify.php', {
+          method: 'POST',
+          body: data_set,
+        })
+        .then(function(response) {
+          if (response.ok) {
+            return response.text();
+          } else {
+            throw "Error";
+          }
+        })
+        .then(function(texto) {
+          console.log(texto)
+          if (texto == "true") {
+            window.open("index.php","_self")
+          }
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
+    }
+
+    function verify_data_state() {
+      const data = new FormData(document.getElementById('form_login'));
+      let usr = data.get("user_name");
+      let psw = data.get("user_pass");
+
+
+      /*me aseguro que los datos ingresados al menos tengan 5 caracteres de lenght (lo define cada sistema)*/
+      if (usr.length >= 5 && psw.length >= 5) {
+        fetch_send(data);
+      } else {
+        /*caso de error, campos vacios o con menos de 5 caracteres*/
+        let form = document.querySelector("#form_login");
+        if (usr.length < 5) {
+          form.children[0].classList.add("error_input")
+        }
+        if (psw.length < 5) {
+          form.children[1].classList.add("error_input")
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>
-
-<script>
-  function fetch_send(data_set) {
-    fetch('login_verify.php', {
-        method: 'POST',
-        body: data_set,
-      })
-      .then(function(response) {
-        if (response.ok) {
-          window.location.replace("./index.html")
-          return response.text();
-        } else {
-          throw "Error";
-        }
-      })
-      .then(function(texto) {
-        // Aca deberia reenviar al user .. creo
-        console.log(texto)
-      })
-      .catch(function(err) {
-        console.log(err);
-      });
-  }
-
-  function verify_data_state() {
-    const data = new FormData(document.getElementById('form_login'));
-    let usr = data.get("user_name");
-    let psw = data.get("user_pass");
-
-
-    /*me aseguro que los datos ingresados al menos tengan 5 caracteres de lenght (lo define cada sistema)*/
-    if (usr.length >= 5 && psw.length >= 5) {
-      fetch_send(data);
-    } else {
-      /*caso de error, campos vacios o con menos de 5 caracteres*/
-      let form = document.querySelector("#form_login");
-      if (usr.length < 5) {
-        form.children[0].classList.add("error_input")
-      }
-      if (psw.length < 5) {
-        form.children[1].classList.add("error_input")
-      }
-    }
-  }
-</script>
