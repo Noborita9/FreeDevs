@@ -23,22 +23,22 @@ session_start();
       <img src="assets/img/Logo_Gestornomia.png" />
 
       <div>
-        <ul>
+        <ul class="navOptions">
           <li class="liSelected">
             <p>inicio</p>
           </li>
-          <li onclick='window.open("")'>
+          <li onclick='location.href="."'>
             <p>eventos</p>
           </li>
-          <li onclick='window.open("")'>
+          <li onclick='location.href="."'>
             <p>nosotros</p>
           </li>
-          <li onclick='window.open("")'>
+          <li onclick='location.href="."'>
             <p>contacto</p>
           </li>
           <?php if (strcmp($_SESSION["rol"], "admin") == 0) {
             echo "
-          <li onclick='location.href("."'.adminIndex.php'".")'>
+          <li onclick='location.href(" . "'.adminIndex.php'" . ")'>
             <p>admin</p>
           </li>
           <li onclick='location.href='>
@@ -54,7 +54,7 @@ session_start();
           ";
           } ?>
         </ul>
-        <a href="index.php"><i class="fa-solid fa-user"></i></a>
+        <a href="index.html"><i class="fa-solid fa-user"></i></a>
       </div>
     </ul>
   </nav>
@@ -75,24 +75,25 @@ session_start();
 
   </section>
 
-    <section id="formularioContacto">
-      <form action="">
+  <section id="formularioContacto">
+    <form action="">
       <a href="#nav"><i class="fa-solid fa-circle-arrow-up"></i></a>
-        <div>
-          <input type="text" placeholder="nombre">
-          <input type="text" placeholder="apellido">
-        </div>
-        <input type="email" placeholder="e-mail">
-        <input type="number" placeholder="numero de telefono">
-        <div>
-          <textarea name="" id="" cols="30" rows="10" placeholder="que nos quiere comunicar?"></textarea>
-          <button>enviar</button>
-        </div>
-      </form>
-    </section>
+      <div>
+        <input type="text" placeholder="nombre">
+        <input type="text" placeholder="apellido">
+      </div>
+      <input type="email" placeholder="e-mail">
+      <input type="number" placeholder="numero de telefono">
+      <div>
+        <textarea name="" id="" cols="30" rows="10" placeholder="que nos quiere comunicar?"></textarea>
+        <button>enviar</button>
+      </div>
+    </form>
+  </section>
 
-    <script src="assets/actions.js"></script>
-    <script src="assets/carousel.js"></script>
-    <script src="assets/event_loader.js"></script>
-  </body>
+  <script src="assets/actions.js"></script>
+  <script src="assets/carousel.js"></script>
+  <script src="assets/event_loader.js"></script>
+</body>
+
 </html>

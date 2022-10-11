@@ -23,13 +23,13 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <img src="assets/img/greenHat.png" />
 
         <div>
-          <ul>
-            <li class="liSelected"><p>inicio</p></li>
+          <ul class="navOptions">
+            <li class="liSelected"><p>admin</p></li>
             <li onclick='location.href="."'><p>eventos</p></li>
             <li onclick='location.href="."'><p>nosotros</p></li>
             <li onclick='location.href="."'><p>contacto</p></li>
-            <li onclick='location.href="."'><p>admin</p></li>
-            <li onclick='location.href="."'><p>market</p></li>
+            <li onclick='location.href="market.php"'><p>market</p></li>
+            <li onclick='location.href="."'><p>inicio</p></li>
           </ul>
           <a href="index.html"><i class="fa-solid fa-user"></i></a>
         </div>
@@ -83,10 +83,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <input type="file" id="ingresar_plano" class="none_border" placeholder="Plano del evento">
           <label for="ingresar_plano" class="cargar_file">cargar imagen para el evento</label>
           <input type="file" class="none_border" name="" placeholder="Imagen del evento">
-          <span>
-            <button type="button" >guardar</button>
-            <button >Eliminar</button>
-          </span>
+          <button type="button" >guardar</button>
+          <button>Eliminar</button>
         </form>
         </section>
 
@@ -105,10 +103,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
               <input type="text" class="counter" name="unidad" placeholder="Unidad">
             </span>
             <input type="number" name="precio" placeholder="precio">
-            <span>
-              <button type="button" >guardar</button>
-              <button>Eliminar</button>
-            </span>
+            <button type="button" >guardar</button>
+            <button>Eliminar</button>
           </form>
         </section>
 
@@ -131,10 +127,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
               <input type="text" name="nombre" placeholder="Nombre de usuario">
               <input type="text" name="password" placeholder="Ingrese una contrase;a" >
               <input type="text" name="rol" placeholder="Rol que ocupara en el sistema">
-              <span>
-                <button type="button" >guardar</button>
-                <button>Eliminar</button>
-              </span>
+              <button type="button" >guardar</button>
+              <button>Eliminar</button>
           </form>
         </section>
 
@@ -159,10 +153,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <input type="number" name="password" placeholder="precio" >
             <label for="ingresar_plano" class="cargar_file">Imagen del producto</label>
             <input type="file" class="none_border" name="rol">
-            <span>
             <button type="button" >guardar</button>
             <button>Eliminar</button>
-            </span>
         </form>
       </section>
 
@@ -182,10 +174,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_roles">
           <h2>Ingresar Rol</h2>
             <input type="text" name="nombre" placeholder="Nombre del rol">
-            <span>
-              <button type="button" >guardar</button>
-              <button>Eliminar</button>
-            </span>
+            <button type="button" >guardar</button>
+            <button>Eliminar</button>
         </form>
       </section>
 
@@ -205,10 +195,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_mobiliarios">
           <h2>Ingresar Mobiliario</h2>
             <input type="text" name="nombre" placeholder="Nombre del mobiliario">
-            <span>
-              <button type="button" >guardar</button>
-              <button>Eliminar</button>
-            </span>
+            <button type="button" >guardar</button>
+            <button>Eliminar</button>
         </form>
       </section>
 
@@ -228,10 +216,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_menus">
           <h2>Ingresar Menu</h2>
             <input type="text" name="nombre" placeholder="Nombre del menu">
-            <span>
-              <button type="button" >guardar</button>
-              <button>Eliminar</button>
-            </span>
+            <button type="button" >guardar</button>
+            <button>Eliminar</button>
         </form>
       </section>
 
@@ -252,10 +238,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_platos">
           <h2>Ingresar plato</h2>
             <input type="text" name="nombre" placeholder="Nombre del plato">
-            <span>
-              <button type="button" >guardar</button>
-              <button>Eliminar</button>
-            </span>
+            <button type="button" >guardar</button>
+            <button>Eliminar</button>
         </form>
       </section>
 
@@ -281,10 +265,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             </span>
             <textarea name="procedimiento" id="" cols="30" rows="10" placeholder="Descrba el procedmiento"></textarea>
             <input type="text" placeholder="Ingrese un comentario">
-            <span>
-              <button type="button" >guardar</button>
-              <button>Eliminar</button>
-            </span>
+            <button type="button" >guardar</button>
+            <button>Eliminar</button>
         </form>
       </section>
 
@@ -305,10 +287,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <h2>Ingresar imagen</h2>
             <label for="ingresar_plano" class="cargar_file">Imagen de presentacion</label>
             <input type="file" class="none_border" name="rol">
-            <span>
-              <button type="button" >guardar</button>
-              <button>Eliminar</button>
-            </span>
+            <button type="button" >guardar</button>
+            <button>Eliminar</button>
           </form>
         </section>
 
@@ -323,6 +303,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
 
     </footer>
     
+    <script src="assets/actions.js"></script>
     <script src="./assets/gestor_menu.js"></script>
     <script src="./assets/loaders.js"></script>
   </body>

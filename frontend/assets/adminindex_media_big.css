@@ -137,7 +137,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;  
+  /* justify-content: center;   */
+  justify-content: flex-start;
   }
 
   textarea
@@ -237,5 +238,7 @@
   .objeto{ width: 250px;}
   .counter{ width: 70px; padding-left: 10px;}
   .objeto, .counter {margin: 20px 0 20px 0;}
+
+  .list span:hover {cursor: pointer;}
 
 }

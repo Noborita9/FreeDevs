@@ -1,0 +1,210 @@
+@media(min-width: 1100px){
+
+    body
+    {
+        overflow-y: hidden;
+    }
+
+    #market
+    {
+        width: 100%;
+        height: 90vh;
+        background-color: #222;
+        margin: 0;
+        display: flex;
+    }
+
+    #market > div:nth-of-type(1)
+    {
+        width: 25%;
+        height: 100%;
+        background-color: #fff;
+    }
+
+    #market div:nth-of-type(1) span
+    {
+        width: 100%;
+        height: 50%;
+        background: #fff;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #filter
+    {
+        border-bottom: 1px solid #222;
+        position: relative;
+    }
+
+    #filter input[type="text"]
+    {
+        width: 90%;
+        height: 35px;
+        font-size: 1vw;
+        padding-left: 5%;
+        border: 0.2vw solid #222;
+        margin: 0.5vw;
+        outline: none;
+    }
+
+    #filter input[type="text"]:focus
+    {
+        border: 0.2vw solid rgba(130, 180, 54, 1);
+        transition: all;
+        transition-duration: 1s;
+    }
+
+    #filter label
+    {
+        width: 65%;
+        font-size: 1.5vw;
+        margin: 0.3vw;
+    }
+
+    #filtrar
+    {
+        width: 30%;
+        height: 40px;
+        background: #222;
+        color: #fff;
+        border: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 1vw;
+    }
+
+    #buscar
+    {
+        width: 30%;
+        height: 40px;
+        background: #222;
+        color: #fff;
+        border: none;
+        position: absolute;
+        bottom: 5vw;
+        right: 0;
+        font-size: 2.5vh;
+    }
+
+    button:hover {cursor: pointer;}
+
+    #cart{overflow-y: scroll; direction: rtl;}
+
+    #cart h2
+    {
+        font-size: 1.5vw;
+        margin: 0.5vw 0
+    }
+
+    .registro
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        font-size: 1.5vw;
+        margin: 0.5vw 0;
+    }
+
+    #comprar
+    {
+        width: 30%;
+        height: 40px;
+        background: #222;
+        color: #fff;
+        border: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 1vw;
+    }
+
+    #cancelar
+    {
+        width: 30%;
+        height: 40px;
+        background: #222;
+        color: #fff;
+        border: none;
+        position: absolute;
+        bottom: 5vw;
+        right: 0;
+        font-size: 1vw;
+    }
+
+    .registro button
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border: 1px solid #222;
+        font-size: 1.5vw;
+    }
+
+
+
+    #content
+    {
+        width: 75%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 35vh);
+        grid-auto-rows: 35vh;
+        grid-row-gap: 5%;
+        overflow-y: scroll;
+        justify-content: space-evenly;
+    }
+
+    .producto
+    {
+        background: #fff;
+        background-image: url('./img/pancakes.jpg');
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: #fff;
+    }
+
+    .producto *
+    {
+        z-index: 3;
+    }
+
+    .producto div
+    {
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.5vw;
+    }
+
+    .producto h2 { font-size: 2vw;}
+
+    .filter
+    {
+        position: absolute;
+        width: 100% !important;
+        height: 100%;
+        background: #222;
+        opacity: 0.6;
+        z-index: 2;
+    }
+
+    .producto:hover
+    {
+        cursor: pointer;
+    }
+
+    .fa-bars {display: none;}
+    .fa-backward {display: none;}
+}
