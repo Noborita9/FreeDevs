@@ -95,7 +95,7 @@
         margin: 0.3vw;
     }
 
-    #filter button
+    #filtrar
     {
         width: 30%;
         height: 40px;
@@ -104,6 +104,19 @@
         border: none;
         position: absolute;
         bottom: 0;
+        right: 0;
+        font-size: 2.5vh;
+    }
+
+    #buscar
+    {
+        width: 30%;
+        height: 40px;
+        background: #222;
+        color: #fff;
+        border: none;
+        position: absolute;
+        bottom: 5vh;
         right: 0;
         font-size: 2.5vh;
     }

@@ -41,7 +41,8 @@
                 <label for=""><input type="checkbox" > checkbox2</label>
                 <label for=""><input type="checkbox" > checkbox3</label>
                 <label for=""><input type="checkbox" > checkbox4</label>
-                <button>filtrar</button>
+                <button id="buscar">buscar</button>
+                <button id="filtrar">filtrar</button>
             </span>   
             <span id="cart">
                 <h2>carrito</h2>

@@ -239,4 +239,6 @@
   .counter{ width: 70px; padding-left: 10px;}
   .objeto, .counter {margin: 20px 0 20px 0;}
 
+  .list span:hover {cursor: pointer;}
+
 }
