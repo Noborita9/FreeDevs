@@ -1,0 +1,260 @@
+@media(max-width: 1099px){
+
+    .navContent
+    {
+      width: 3vh;
+      height: 3vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 50px;
+      margin: 3vh;
+    }
+  
+    .ulLogo ul {
+      grid-template-columns: 1fr;
+    }
+  
+    .ulLogo li {
+    display: none;
+    font-size: 150%;
+    }
+  
+    .ulLogo .liSelected {
+      display: flex;
+      font-size: 150%;
+    }
+  
+
+    body
+    {
+        overflow-y: hidden;
+    }
+
+    #market
+    {
+        width: 100%;
+        height: 90vh;
+        background-color: #222;
+        margin: 0;
+        display: flex;
+        position: relative;
+    }
+
+    #market > div:nth-of-type(1)
+    {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        z-index: 5;
+        left: -100vw;
+    }
+
+    #market div:nth-of-type(1) span
+    {
+        width: 100%;
+        height: 50%;
+        background: #fff;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #filter
+    {
+        border-bottom: 1px solid #222;
+        position: relative;
+    }
+
+    #filter input[type="text"]
+    {
+        width: 90%;
+        height: 35px;
+        font-size: 2vh;
+        padding-left: 5%;
+        border: 0.2vw solid #222;
+        margin: 0.5vw;
+        margin-top: 6.5vh;
+        outline: none;
+    }
+
+    #filter input[type="text"]:focus
+    {
+        border: 0.2vw solid rgba(130, 180, 54, 1);
+        transition: all;
+        transition-duration: 1s;
+    }
+
+    #filter label
+    {
+        width: 65%;
+        font-size: 3vh;
+        margin: 0.3vw;
+    }
+
+    #filter button
+    {
+        width: 30%;
+        height: 40px;
+        background: #222;
+        color: #fff;
+        border: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 2.5vh;
+    }
+
+    button:hover {cursor: pointer;}
+
+    #cart{overflow-y: scroll; direction: rtl;}
+
+    #cart h2
+    {
+        font-size: 3.5vh;
+        margin: 0.5vw 0
+    }
+
+    .registro
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        font-size: 3vh;
+        margin: 0.5vw 0;
+    }
+
+    #comprar
+    {
+        width: 30%;
+        height: 40px;
+        background: #222;
+        color: #fff;
+        border: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 2.5vh;
+    }
+
+    #cancelar
+    {
+        width: 30%;
+        height: 40px;
+        background: #222;
+        color: #fff;
+        border: none;
+        position: absolute;
+        bottom: 7vh;
+        right: 0;
+        font-size: 2.5vh;
+    }
+
+    .registro button
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border: 1px solid #222;
+        font-size: 2vh;
+    }
+
+
+
+    #content
+    {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 65vw;
+        grid-auto-rows: 35vh;
+        grid-row-gap: 5%;
+        overflow-y: scroll;
+        justify-content: space-evenly;
+    }
+
+    .producto
+    {
+        background: #fff;
+        background-image: url('./img/pancakes.jpg');
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: #fff;
+    }
+
+    .producto *
+    {
+        z-index: 3;
+    }
+
+    .producto div
+    {
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 2vh;
+    }
+
+    .producto h2 { font-size: 3vh;}
+
+    .filter
+    {
+        position: absolute;
+        width: 100% !important;
+        height: 100%;
+        background: #222;
+        opacity: 0.6;
+        z-index: 2;
+    }
+
+    .producto:hover
+    {
+        cursor: pointer;
+    }
+
+    .fa-bars 
+    {
+        color: #fff;
+        font-size: 4vh;
+        position: absolute;
+        top: 2vh;
+        left: 2vh;
+    }
+
+
+    .fa-backward
+    {
+        color: #222;
+        font-size: 4vh;
+        position: absolute;
+        top: 2vh;
+        left: 2vh;
+        z-index: 5;
+    }
+
+    .enter
+    {
+        transform: translateX( 100vw);
+        transition: all;
+        transition-duration: 2s;
+    }
+
+    .leave
+    {
+        transform: translateX( -100vw);
+        transition: all;
+        transition-duration: 2s;
+    }
+}

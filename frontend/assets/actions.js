@@ -1,5 +1,5 @@
 const liSelected = document.querySelector('.liSelected');
-const li = document.querySelectorAll('li');
+const li = document.querySelectorAll('.navOptions li');
 const ul = document.querySelector('.ulLogo div ul');
 
 // console.log(typeof(li));
@@ -21,6 +21,7 @@ if(screen.width <= 700)
                     esto.style.display='flex';
                     esto.style.margin='0';
                     esto.style.border='none';
+                    esto.style.background='#1f1f1f'
                 } );
         
                 unshow = false;
@@ -32,7 +33,7 @@ if(screen.width <= 700)
                 } );
                 unshow = true;
             }
-        })
+})
 
     // if(unshow == true){
     // liSelected.addEventListener('click', () => {

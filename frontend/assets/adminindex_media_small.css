@@ -13,6 +13,19 @@
   font-size: 15px;
   }
 
+  .ulLogo ul {
+    grid-template-columns: 1fr;
+  }
+
+  .ulLogo li {
+  display: none;
+  font-size: 150%;
+  }
+
+  .ulLogo .liSelected {
+    display: flex;
+    font-size: 150%;
+  }
 
   /* gestor_indice */
 

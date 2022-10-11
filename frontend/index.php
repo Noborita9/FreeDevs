@@ -17,13 +17,13 @@
         <img src="assets/img/greenHat.png" />
 
         <div>
-          <ul>
+        <ul class="navOptions">
             <li class="liSelected"><p>inicio</p></li>
             <li onclick='location.href="."'><p>eventos</p></li>
             <li onclick='location.href="."'><p>nosotros</p></li>
             <li onclick='location.href="."'><p>contacto</p></li>
-            <li onclick='location.href="."'><p>admin</p></li>
-            <li onclick='location.href="."'><p>market</p></li>
+            <li onclick='location.href="adminIndex.php"'><p>admin</p></li>
+            <li onclick='location.href="market.php"'><p>market</p></li>
           </ul>
           <a href="index.html"><i class="fa-solid fa-user"></i></a>
         </div>
