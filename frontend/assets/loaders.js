@@ -126,10 +126,11 @@ options.forEach(option => {
   document.getElementById(`${type}`).addEventListener('click', () => {
     loader(`${backend_route}load_items.php`, `list_${type}`, option["loadFunction"], type)
   })
-  document.querySelector(`#form_${type} span button:nth-child(1)`).addEventListener('click', () => {
+  const buttons = document.querySelectorAll(`#form_${type} button`)
+  buttons[0].addEventListener('click', () => {
     create_item(new FormData(document.getElementById(`form_${type}`)), option["submitHandlerFile"], option["loadFunction"], type)
   })
-  document.querySelector(`#form_${type} span button:nth-child(2)`).addEventListener('click', () => {
+  buttons[1].addEventListener('click', () => {
     create_item(new FormData(document.getElementById(`form_${type}`)), option["submitHandlerFile"], option["loadFunction"], type)
   })
 });

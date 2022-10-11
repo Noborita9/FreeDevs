@@ -84,7 +84,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <label for="ingresar_plano" class="cargar_file">cargar imagen para el evento</label>
           <input type="file" class="none_border" name="" placeholder="Imagen del evento">
           <button type="button" >guardar</button>
-          <button>Eliminar</button>
+          <button type="button">Eliminar</button>
         </form>
         </section>
 
@@ -104,7 +104,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             </span>
             <input type="number" name="precio" placeholder="precio">
             <button type="button" >guardar</button>
-            <button>Eliminar</button>
+          <button type="button">Eliminar</button>
           </form>
         </section>
 

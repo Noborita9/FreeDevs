@@ -68,92 +68,29 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
     <div>
       <i class="fa-solid fa-backward"></i>
       <span id="filter">
-        <input type="text" placeholder="buscar">
-        <label for=""><input type="checkbox"> precio</label>
-        <label for=""><input type="checkbox"> checkbox2</label>
-        <label for=""><input type="checkbox"> checkbox3</label>
-        <label for=""><input type="checkbox"> checkbox4</label>
+        <input id="buscarInput" type="text" placeholder="buscar">
+        <label for=""><input type="checkbox"> alfabeticamente</label>
+        <label for=""><input type="checkbox"> por precio</label>
+        <label for=""><input type="checkbox"> por stock</label>
+        <label for=""><input type="checkbox"> por stock</label>
         <button id="buscar">buscar</button>
         <button id="filtrar">filtrar</button>
       </span>
       <span id="cart">
         <h2>carrito</h2>
-        <div class="registro">
-          <button>+</button>
-          <p>1</p>
-          <button>-</button>
-          <p>pancakes</p>
-          <button>x</button>
-
-        </div>
         <button id="cancelar">cancelar</button>
-        <button id="comprar">comprar</button>
+        <button onclick="buyCart()" id="comprar">comprar</button>
       </span>
     </div>
 
     <div id="content">
-      <span class="producto">
-        <div class="filter"></div>
-        <h2>pancakes</h2>
-        <div>
-          <p>stock: 2</p>
-          <p>$220</p>
-        </div>
-      </span>
-      <span class="producto">
-        <div class="filter"></div>
-        <h2>pancakes</h2>
-        <div>
-          <p>stock: 2</p>
-          <p>$220</p>
-        </div>
-      </span>
-      <span class="producto">
-        <div class="filter"></div>
-        <h2>pancakes</h2>
-        <div>
-          <p>stock: 2</p>
-          <p>$220</p>
-        </div>
-      </span>
-      <span class="producto">
-        <div class="filter"></div>
-        <h2>pancakes</h2>
-        <div>
-          <p>stock: 2</p>
-          <p>$220</p>
-        </div>
-      </span>
-      <span class="producto">
-        <div class="filter"></div>
-        <h2>pancakes</h2>
-        <div>
-          <p>stock: 2</p>
-          <p>$220</p>
-        </div>
-      </span>
-      <span class="producto">
-        <div class="filter"></div>
-        <h2>pancakes</h2>
-        <div>
-          <p>stock: 2</p>
-          <p>$220</p>
-        </div>
-      </span>
-      <span class="producto">
-        <div class="filter"></div>
-        <h2>pancakes</h2>
-        <div>
-          <p>stock: 2</p>
-          <p>$220</p>
-        </div>
-      </span>
     </div>
   </section>
 
   <script src="assets/move.js"></script>
   <script src="assets/actions.js"></script>
   <script src="./assets/senders.js"></script>
+  <script src="./assets/market.js"></script>
 </body>
 
 </html>

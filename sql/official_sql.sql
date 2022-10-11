@@ -31,6 +31,7 @@ CREATE TABLE productos (
   precio INT NOT NULL,
   imagen VARCHAR (200) NOT NULL,
   unidad VARCHAR (30) NOT NULL,
+  stock INT NOT NULL, 
   FOREIGN KEY(id_ficha_tecnica) REFERENCES fichas_tecnicas(id)
 );
 
@@ -132,3 +133,8 @@ INSERT INTO usuarios (nombre_usuario, contrasena, rol) VALUES ('admin','admin','
 INSERT INTO usuarios (nombre_usuario, contrasena, rol) VALUES ('usuario','usuario','usuario');
 INSERT INTO eventos (titulo, tipo, servicio,fecha, ubicacion, link_ubicacion, cantidad_personas, contacto, image_name) VALUES ('Dia de la madre', 'buffet', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint pariatur asperiores necessitatibus repellendus.', CURTIME(), 'ACA', 'https://github.com/noborita9/freedevs', 90, '096160022', 'pancakes.jpg');
 INSERT INTO eventos (titulo, tipo, servicio,fecha, ubicacion, link_ubicacion, cantidad_personas, contacto, image_name) VALUES ('Fin de semana en familia', 'buffet', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint pariatur asperiores necessitatibus repellendus.', CURTIME(), 'ACA', 'https://github.com/noborita9/freedevs', 90, '096160022', 'pancakes.jpg');
+INSERT INTO fichas_tecnicas (nombre) VALUES ('ficha_tecnica_placeholder');
+INSERT INTO productos (id_ficha_tecnica, nombre, precio, stock, imagen, unidad) VALUES (1,'Hamburguesa completa', 320, 12, 'hamburger.jpg', 'Unidad' );
+INSERT INTO productos (id_ficha_tecnica, nombre, precio, stock, imagen, unidad) VALUES (1,'Pancakes', 150, 34, 'pancakes.jpg', 'Unidad' );
+INSERT INTO productos (id_ficha_tecnica, nombre, precio, stock, imagen, unidad) VALUES (1,'Torta', 210, 8, 'cake.jpg', 'Unidad' );
+INSERT INTO productos (id_ficha_tecnica, nombre, precio, stock, imagen, unidad) VALUES (1,'Carne Ahumada', 240, 15, 'meatloaf.jpg', 'Unidad' );
