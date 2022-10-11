@@ -38,11 +38,14 @@ session_start();
           </li>
           <?php if (strcmp($_SESSION["rol"], "admin") == 0) {
             echo "
-          <li onclick='location.href(" . "'.adminIndex.php'" . ")'>
+          <li onclick='sendToAdmin()'>
             <p>admin</p>
           </li>
-          <li onclick='location.href='>
+          <li onclick='sendToMarket()'>
             <p>market</p>
+          </li>
+          <li onclick='logout()'>
+            <p>logout</p>
           </li>
           ";
           } ?>
@@ -54,7 +57,7 @@ session_start();
           ";
           } ?>
         </ul>
-        <a href="index.html"><i class="fa-solid fa-user"></i></a>
+        <a href="index.php"><i class="fa-solid fa-user"></i></a>
       </div>
     </ul>
   </nav>
@@ -94,6 +97,8 @@ session_start();
   <script src="assets/actions.js"></script>
   <script src="assets/carousel.js"></script>
   <script src="assets/event_loader.js"></script>
+  <script src="assets/senders.js"></script>
+  <script src="assets/logout.js"></script>
 </body>
 
 </html>

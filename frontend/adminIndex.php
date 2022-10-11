@@ -24,12 +24,12 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
 
         <div>
           <ul class="navOptions">
-            <li class="liSelected"><p>admin</p></li>
+            <li class="liSelected" onclick='location.href="./index.php"'><p>inicio</p></li>
             <li onclick='location.href="."'><p>eventos</p></li>
             <li onclick='location.href="."'><p>nosotros</p></li>
             <li onclick='location.href="."'><p>contacto</p></li>
+            <li onclick='location.href="./adminIndex.php"'><p>admin</p></li>
             <li onclick='location.href="market.php"'><p>market</p></li>
-            <li onclick='location.href="."'><p>inicio</p></li>
           </ul>
           <a href="index.html"><i class="fa-solid fa-user"></i></a>
         </div>
@@ -306,5 +306,6 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
     <script src="assets/actions.js"></script>
     <script src="./assets/gestor_menu.js"></script>
     <script src="./assets/loaders.js"></script>
+    <script src="./assets/senders.js"></script>
   </body>
 </html>
