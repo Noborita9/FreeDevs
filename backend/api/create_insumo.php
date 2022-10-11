@@ -30,12 +30,33 @@ function check_existance_insumo()
       $exists = 1;
     }
   }
-
-  if ($exists == 0) {
+  if ($exists == 0 && $_POST["update"] == true) {
     proccess_insumo();
   } else {
-    echo "El producto ya existe";
+    update_insumo();
   }
+}
+
+function update_insumo()
+{
+  include("../conexion.php");
+
+  $stmt = $pdo->prepare("UPDATE insumos SET nombre=:nombre unidad=:unidad stock=:stock precio=:precio WHERE id=:id");
+
+  $stmt->bindParam(":nombre", $nombre);
+  $stmt->bindParam(":unidad", $unidad);
+  $stmt->bindParam(":stock", $stock);
+  $stmt->bindParam(":precio", $precio);
+  $stmt->bindParam(":id", $id);
+
+  $nombre = $_POST["nombre"];
+  $unidad = $_POST["unidad"];
+  $stock = $_POST["stock"];
+  $precio = $_POST["precio"];
+  $id = $_POST["id"];
+
+  $stmt->execute();
+  echo "Producto actualizado";
 }
 
 function proccess_insumo()
@@ -43,6 +64,7 @@ function proccess_insumo()
   include("../conexion.php");
 
   $stmt = $pdo->prepare("INSERT INTO insumos (nombre, unidad, stock, precio) VALUES(:nombre, :unidad, :stock, :precio)");
+
   $stmt->bindParam(":nombre", $nombre);
   $stmt->bindParam(":unidad", $unidad);
   $stmt->bindParam(":stock", $stock);

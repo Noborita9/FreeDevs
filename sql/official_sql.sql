@@ -68,7 +68,8 @@ CREATE TABLE eventos (
   ubicacion VARCHAR (200) NOT NULL,
   link_ubicacion VARCHAR (200) ,
   cantidad_personas INT NOT NULL ,
-  contacto VARCHAR (100) NOT NULL
+  contacto VARCHAR (100) NOT NULL,
+  image_name VARCHAR (100)
 );
 
 CREATE TABLE personal (
@@ -128,3 +129,5 @@ CREATE TABLE roles(
 
 
 INSERT INTO usuarios (nombre_usuario, contrasena, rol) VALUES ('admin','admin','admin');
+INSERT INTO eventos (titulo, tipo, servicio,fecha, ubicacion, link_ubicacion, cantidad_personas, contacto, image_name) VALUES ('Dia de la madre', 'buffet', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint pariatur asperiores necessitatibus repellendus.', CURTIME(), 'ACA', 'https://github.com/noborita9/freedevs', 90, '096160022', 'pancakes.jpg');
+INSERT INTO eventos (titulo, tipo, servicio,fecha, ubicacion, link_ubicacion, cantidad_personas, contacto, image_name) VALUES ('Fin de semana en familia', 'buffet', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint pariatur asperiores necessitatibus repellendus.', CURTIME(), 'ACA', 'https://github.com/noborita9/freedevs', 90, '096160022', 'pancakes.jpg');

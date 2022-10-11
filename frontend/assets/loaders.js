@@ -1,8 +1,13 @@
 const backend_route = "../backend/api/"
+const actual_map = new Map()
 
-const loader = (url, element, injector, item_table) => {
+const loader = (url, element, injector, item_table, is_searching, search_query) => {
   const data = new FormData()
   data.set("item", item_table)
+  if (is_searching) {
+    data.set("searching", true)
+    data.set("query_string", search_query)
+  }
   fetch(url, {
     method: "POST",
     body: data
@@ -18,16 +23,15 @@ const loader = (url, element, injector, item_table) => {
       let json = JSON.parse(texto)
       let elementSpace = document.getElementById(element)
       elementSpace.innerHTML = " "
-      let items = injector(json["body"], element)
+      let items = injector(json["body"])
       items.forEach(item => {
         elementSpace.innerHTML += item
       });
     })
     .catch((err) => { console.log(err) })
-  // [{}]
 }
 
-function create_item(data, route) {
+function create_item(data, route, loadFunction, type) {
 
   fetch(`${backend_route}${route}`, {
     method: "POST",
@@ -41,45 +45,40 @@ function create_item(data, route) {
       }
     })
     .then((text) => {
-      console.log(text)
+      loader(`${backend_route}load_items.php`, `list_${type}`, loadFunction, type)
     })
     .catch((text) => { console.log(text) })
 }
 
-const onClickLoadEventos = (data, element) => {
-  if (element == "list_eventos") {
-    return data.map((item) => {
-      return `<span id='event_${item['id_evento']}'><h2>${item['titulo']}</h2><p>fecha xx/xx/xxxx</p></span>`
-    })
-  }
+const onClickLoadEventos = (data) => {
+  return data.map((item) => {
+    actual_map.set(item["id"], item)
+    return `<span onclick='chargeItem(${item['id']})' id='${item['id']}'><h2>${item['titulo']}</h2><p>fecha xx/xx/xxxx</p></span>`
+  })
 }
-const onClickLoadInsumos = (data, element) => {
-  if (element == "list_insumos") {
-    return data.map((item) => {
-      return `<span id='event_${item['id']}'><h2>${item['nombre']}</h2><span class="list_sub_data"><p>${item['stock']} </p> <p>${item['unidad']}</p></span></span>`
-    })
-  }
+const onClickLoadInsumos = (data) => {
+  return data.map((item) => {
+    actual_map.set(item["id"], item)
+    return `<span onclick='chargeItem(${item['id']})' id='${item['id']}'><h2>${item['nombre']}</h2><span class="list_sub_data"><p>${item['stock']} </p> <p>${item['unidad']}</p></span></span>`
+  })
 }
-const onClickLoadProductos = (data, element) => {
-  if (element == "list_productos") {
-    return data.map((item) => {
-      return `<p id='event_${item['id_evento']}'>${item['titulo']}</p>`
-    })
-  }
+const onClickLoadProductos = (data) => {
+  return data.map((item) => {
+    actual_map.set(item["id"], item)
+    return `<p id='${item['id']}'>${item['nombre']}</p>`
+  })
 }
-const onClickLoadUsuarios = (data, element) => {
-  if (element == "list_usuarios") {
-    return data.map((item) => {
-      return `<p id='event_${item['id_evento']}'>${item['titulo']}</p>`
-    })
-  }
+const onClickLoadUsuarios = (data) => {
+  return data.map((item) => {
+    actual_map.set(item["id"], item)
+    return `<span> <p id='${item['id']}'>${item['nombre_usuario']}</p> </span>`
+  })
 }
-const onClickLoadRoles = (data, element) => {
-  if (element == "list_roles") {
-    return data.map((item) => {
-      return `<span id='event_${item['id']}'><h2>${item['nombre']}</h2></span>`
-    })
-  }
+const onClickLoadRoles = (data) => {
+  return data.map((item) => {
+    actual_map.set(item["id"], item)
+    return `<span id='${item['id']}'><h2>${item['nombre']}</h2></span>`
+  })
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -124,16 +123,19 @@ const options = [
 
 options.forEach(option => {
   let type = option["type"]
-  console.log(`list_${type}`)
   document.getElementById(`${type}`).addEventListener('click', () => {
     loader(`${backend_route}load_items.php`, `list_${type}`, option["loadFunction"], type)
   })
   document.querySelector(`#form_${type} span button:nth-child(1)`).addEventListener('click', () => {
-    create_item(new FormData(document.getElementById(`form_${type}`)), option["submitHandlerFile"])
-    loader(`${backend_route}load_items.php`, `list_${type}`, option["loadFunction"], type)
+    create_item(new FormData(document.getElementById(`form_${type}`)), option["submitHandlerFile"], option["loadFunction"], type)
   })
   document.querySelector(`#form_${type} span button:nth-child(2)`).addEventListener('click', () => {
-    create_item(new FormData(document.getElementById(`form_${type}`)), option["submitHandlerFile"])
-    loader(`${backend_route}load_items.php`, `list_${type}`, option["loadFunction"], type)
+    create_item(new FormData(document.getElementById(`form_${type}`)), option["submitHandlerFile"], option["loadFunction"], type)
   })
 });
+
+searchButton = document.getElementById("buscador_button")
+searchButton.addEventListener('click', () => {
+  let searchValue = document.getElementById("buscador").value
+  loader(`${backend_route}load_items.php`, `list_insumos`, onClickLoadInsumos, "insumos", true, `nombre LIKE "%${searchValue}%" `)
+})

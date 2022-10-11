@@ -46,8 +46,15 @@ session_start();
           </li>
           ";
           } ?>
+          <?php if (strcmp($_SESSION["rol"], "usuario") == 0) {
+            echo "
+          <li onclick='location.href='>
+            <p>market</p>
+          </li>
+          ";
+          } ?>
         </ul>
-        <a href="index.html"><i class="fa-solid fa-user"></i></a>
+        <a href="index.php"><i class="fa-solid fa-user"></i></a>
       </div>
     </ul>
   </nav>
@@ -64,15 +71,8 @@ session_start();
   </section>
 
 
-  <section class="event">
-    <section class="content">
-      <img src="assets/img/pancakes.jpg">
-      <div>
-        <h2>Dia de la madre</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint pariatur asperiores necessitatibus repellendus.</p>
-        <button>mas informacion</button>
-      </div>
-    </section>
+  <section id="event_container">
+
   </section>
 
     <section id="formularioContacto">
@@ -93,5 +93,6 @@ session_start();
 
     <script src="assets/actions.js"></script>
     <script src="assets/carousel.js"></script>
+    <script src="assets/event_loader.js"></script>
   </body>
 </html>
