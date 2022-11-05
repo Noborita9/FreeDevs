@@ -57,7 +57,7 @@ session_start();
           ";
           } ?>
         </ul>
-        <a href="index.php"><i class="fa-solid fa-user"></i></a>
+        <a href="login.php"><i class="fa-solid fa-user"></i></a>
       </div>
     </ul>
   </nav>
@@ -95,7 +95,6 @@ session_start();
   </section>
 
   <script src="assets/actions.js"></script>
-  <script src="assets/carousel.js"></script>
   <script src="assets/event_loader.js"></script>
   <script src="assets/senders.js"></script>
   <script src="assets/logout.js"></script>

@@ -89,7 +89,7 @@ CREATE TABLE encargados(
 
 CREATE TABLE mobiliarios (
   id INT PRIMARY KEY AUTO_INCREMENT, 
-  nombre VARCHAR (50) NOT NULL,
+  nombre VARCHAR (50) NOT NULL
 );
 
 CREATE TABLE mobiliarios_eventos (
