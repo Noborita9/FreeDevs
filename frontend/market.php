@@ -56,7 +56,12 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
           ";
           } ?>
         </ul>
-        <a href="index.php"><i class="fa-solid fa-user"></i></a>
+        <span>
+          <button class='dropdown-caller'><i class="fa-solid fa-user"></i></button>
+          <div class="dropdown-menu">
+            <a href="login.php"> <i class="fa-solid fa-door-open"></i> log in</a>
+          </div>
+        </span>
       </div>
     </ul>
   </nav>

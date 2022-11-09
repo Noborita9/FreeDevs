@@ -5,9 +5,9 @@ const img = document.getElementById('imgLogo');
 
 icoMoon.addEventListener('click', () => {
     link.setAttribute('href', "assets/loginNight.css")
-    img.setAttribute('src', "assets/img/LogoFDWhite.png");
+    img.setAttribute('src', "assets/img/greenHat.png");
 });
 icoSun.addEventListener('click', () => {
     link.setAttribute('href', "assets/login.css");
-    img.setAttribute('src', "assets/img/LogoFD.png")
+    img.setAttribute('src', "assets/img/darkHat.png")
 })

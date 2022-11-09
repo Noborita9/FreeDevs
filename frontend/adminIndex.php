@@ -31,7 +31,12 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <li onclick='location.href="./adminIndex.php"'><p>admin</p></li>
             <li onclick='location.href="market.php"'><p>market</p></li>
           </ul>
-          <a href="index.html"><i class="fa-solid fa-user"></i></a>
+          <span>
+            <button class='dropdown-caller'><i class="fa-solid fa-user"></i></button>
+            <div class="dropdown-menu">
+              <a href="login.php"> <i class="fa-solid fa-door-open"></i> log in</a>
+            </div>
+          </span>
         </div>
       </ul>
     </nav>

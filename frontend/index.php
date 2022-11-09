@@ -18,22 +18,22 @@ session_start();
 
 <body>
 
-  <nav>
+  <nav id="nav">
     <ul class="ulLogo">
-      <img src="assets/img/Logo_Gestornomia.png" />
+      <img src="assets/img/greenHat.png" />
 
       <div>
         <ul class="navOptions">
           <li class="liSelected">
             <p>inicio</p>
           </li>
-          <li onclick='location.href="."'>
+          <li onclick='location.href="".'>
             <p>eventos</p>
           </li>
           <li onclick='location.href="."'>
             <p>nosotros</p>
           </li>
-          <li onclick='location.href="."'>
+          <li onclick='location.href="#formularioContacto"'>
             <p>contacto</p>
           </li>
           <?php if (strcmp($_SESSION["rol"], "admin") == 0) {
@@ -57,7 +57,22 @@ session_start();
           ";
           } ?>
         </ul>
-        <a href="index.php"><i class="fa-solid fa-user"></i></a>
+        <span>
+          <button class='dropdown-caller'><i class="fa-solid fa-user"></i></button>
+          <div class="dropdown-menu">
+          <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+            <a href="login.php"> <i class="fa-solid fa-door-open"></i> log out</a>
+          ';
+          } else{
+            echo '
+            <a href="login.php"> <i class="fa-solid fa-door-open"></i> log in</a>
+            ';
+          }
+           ?>
+            
+          </div>
+        </span>
       </div>
     </ul>
   </nav>

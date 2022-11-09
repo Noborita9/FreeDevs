@@ -41,13 +41,20 @@
   }
   
   /* PAGE CONTENT */
+
+  #event_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
   .event
   {
     overflow: hidden;
     width: 65vw;
     height: 20vw;
-    margin-left: calc(35vw / 2);
+    /* margin-left: calc(35vw / 2); */
+    margin: 2vh;
   }
   
   .content
@@ -78,14 +85,12 @@
   
   .content div h2
   {
-    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 2vw;
   }
 
   .content p
   {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 1vw;
     width: 90%;
@@ -93,7 +98,6 @@
   
   .content button
   {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     width: 200px;
     height: 60px;
