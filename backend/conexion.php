@@ -1,5 +1,6 @@
 <?php 
 
+// Make this connection to the server when its done
     $host = "127.0.0.1";
     $username = "nobora";
     $password = "mariaD8";
