@@ -154,8 +154,8 @@ form button:hover {
   }
 
   form img {
-    width: 32vw;
-    height: 20vw;
+    width: auto;
+    height: 13vh;
   }
   
     

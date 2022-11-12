@@ -5,6 +5,10 @@
         overflow-y: hidden;
     }
 
+    #mover, #navOptionsResponsive{
+        display: none;
+      }
+
     #market
     {
         width: 100%;

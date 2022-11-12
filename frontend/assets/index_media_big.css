@@ -39,6 +39,10 @@
     border-radius: 50px;
     margin: 3vh;
   }
+
+  #mover, #navOptionsResponsive{
+    display: none;
+  }
   
   /* PAGE CONTENT */
 

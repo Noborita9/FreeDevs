@@ -13,19 +13,55 @@
   font-size: 15px;
   }
 
-  .ulLogo ul {
-    grid-template-columns: 1fr;
-  }
-
-  .ulLogo li {
-  display: none;
-  font-size: 150%;
-  }
-
   .ulLogo .liSelected {
     display: flex;
     font-size: 150%;
   }
+
+  #logOutOptions{
+    display: none;
+  }
+
+  #navOptionsResponsive{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #navOptionsResponsive button{
+    color: #fff;
+    font-size: 150%;
+  }
+
+  #navOptionsResponsive a{
+    color: #fff;
+  }
+
+  #navOptionsResponsive li{
+    list-style: none;
+    font-size: 150%;
+  }
+
+  #navOptionsResponsive .dropdown-menu{
+    left: 0;
+    border-radius: 0;
+    background: #1F1F1F;
+    width: 100% !important;
+    height: 300px !important;
+    transform: translateY(-10px) !important;
+    color: #fff;
+  }
+
+  #navOptionsResponsive > .dropdown-caller:focus +.dropdown-menu{
+    transform: translateY(-10px) !important;
+  }
+
+
+  .navOptions{
+    display: none;
+  }
+
 
   /* gestor_indice */
 
