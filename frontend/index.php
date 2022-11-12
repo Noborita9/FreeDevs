@@ -162,7 +162,6 @@ session_start();
   </section>
 
   <script src="assets/actions.js"></script>
-  <script src="assets/carousel.js"></script>
   <script src="assets/event_loader.js"></script>
   <script src="assets/senders.js"></script>
   <script src="assets/logout.js"></script>

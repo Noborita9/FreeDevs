@@ -52,12 +52,13 @@ function chargeItem(id, amount) {
   } else {
     charged_items.set(id, { id: id, stock: 1 })
     let item = loaded_items.get(id)
+    console.log(item["nombre"])
     let newItem = `
         <div id="prod_${id}" class="registro">
           <button onclick='chargeItem(${item["id"]}, 1)'>+</button>
           <p id='stock_${item["id"]}'>${charged_items.get(id).stock}</p>
           <button onclick='chargeItem(${item["id"]}, -1)'>-</button>
-          <p>${item["nombre"]}</p>
+          <p>${item["nombre"].slice(0,10)}</p>
           <button onclick='removeItem(${item["id"]})'>x</button>
         </div>`
     let chargeElement = document.getElementById("cart")
