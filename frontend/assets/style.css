@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+  overflow-x: hidden;
+}
 
 body
 {
@@ -15,6 +20,7 @@ body
 {
   padding: 0;
   margin: 0;
+  font-family: 'Poppins';
 }
 
 body 
@@ -61,6 +67,59 @@ body > *
   100% {transform: translateX(calc(500% / -6))}
 }
 
+@keyframes avisos{
+  0%{
+    transform: translateY(0);
+    opacity: 0;
+    }
+  20%{
+    transform: translateY(500px);
+    opacity: 1;
+  }
+
+  80%{
+    transform: translateY(500px);
+    opacity: 1;
+  }
+
+  90%{
+    transform: translateY(450px);
+    opacity: 1;
+  }
+  95% {
+    transform: translateY(450px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(450px);
+    opacity: 0;
+  }
+}
+
+/* AVISOS */
+
+#avisos{
+  width: 300px;
+  height: 100px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: -200px;
+  margin: -150px;
+  z-index: 10;
+  animation: avisos 5s linear 0;
+  animation-iteration-count: 1;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: rgb(0 0 0 / 50%) 0px 0px 20px;
+  font-weight: 500;
+  font-size: 1.2em;
+  text-transform: capitalize;
+}
+
 /* BARRA DE NAVEGACION */
 .ulLogo
 {
@@ -96,10 +155,58 @@ body > *
   color: #fff;
 }
 
-.ulLogo i:hover
+.ulLogo button i:hover
 {
   color: rgba(130, 180, 54, 1);
   transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.ulLogo span
+{
+  position: relative;
+}
+
+.dropdown-caller{
+  background: transparent;
+  border: 0;
+}
+
+.dropdown-menu
+{
+  width: 150px !important;
+  height: 50px !important;
+  z-index: 999;
+  position: absolute;
+  left: -150%;
+  top: calc(100% + .5rem);
+  background-color: #fff;
+  padding: .75rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .4);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.dropdown-menu a{
+  color: #1f1f1f;
+  outline: none;
+  text-decoration: none;
+}
+.dropdown-menu a i{
+  color: black;
+  font-size: 25px;
+}
+
+.ulLogo span > .dropdown-caller:focus +.dropdown-menu{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .ulLogo div
@@ -111,7 +218,24 @@ body > *
   justify-content: space-between;
 }
 
-.ulLogo ul
+.navOptions
+{
+  width: 85%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navOptions li{
+  height: 10vh;
+  list-style: none;
+  font-size: 1.3vw;
+  display: flex;
+  border-bottom: 4px solid transparent;
+}
+
+/* .ulLogo ul
 {
   width: 85%;
   height: 100%;
@@ -119,9 +243,9 @@ body > *
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr;
   align-items: end;
-}
+} */
 
-.ulLogo li
+/* .ulLogo li
 {
   height: 10vh;
   width: 100%;
@@ -129,11 +253,11 @@ body > *
   font-size: 1.3vw; 
   display: flex;
   border-bottom: 2px solid transparent;
-}
+} */
 
-.ulLogo li:hover
+.navOptions li:hover
 {
-  border-bottom: 2px solid rgba(130, 180, 54, 1);
+  border-bottom: 4px solid rgba(130, 180, 54, 1);
   color: rgba(130, 180, 54, 1);
   transition: all;
   transition-duration: 1s;

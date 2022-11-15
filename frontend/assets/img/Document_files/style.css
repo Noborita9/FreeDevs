@@ -226,21 +226,18 @@ body > *
   
   .content div h2
   {
-    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 3vw;
   }
 
   .content p
   {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 1.3vw;
   }
   
   .content button
   {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     width: 150px;
     height: 50px;

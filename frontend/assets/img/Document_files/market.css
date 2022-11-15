@@ -25,7 +25,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-family: 'Montserrat', sans-serif;
     }
 
     #filtros > span
@@ -144,7 +143,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-family: 'Montserrat', sans-serif;
     }
 
     #lista > span

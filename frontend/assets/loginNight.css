@@ -49,8 +49,8 @@ form button:hover {
   }
   
   form img {
-    width: 140px;
-    height: 95px;
+    width: auto;
+    height: 13vh;
   }
   
   h2 {
@@ -154,8 +154,8 @@ form button:hover {
   }
 
   form img {
-    width: 32vw;
-    height: 20vw;
+    width: auto;
+    height: 13vh;
   }
   
     

@@ -31,9 +31,56 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <li onclick='location.href="./adminIndex.php"'><p>admin</p></li>
             <li onclick='location.href="market.php"'><p>market</p></li>
           </ul>
-          <a href="index.html"><i class="fa-solid fa-user"></i></a>
+
+          <div id="mover"></div>
+
+          <span id="navOptionsResponsive">
+          <button class='dropdown-caller'><i class="fa-solid fa-bars"></i></button>
+          <div class="dropdown-menu">
+          <li class="liSelected">
+            <p>inicio</p>
+          </li>
+          <li onclick='location.href="".'>
+            <p>eventos</p>
+          </li>
+          <li onclick='location.href="."'>
+            <p>nosotros</p>
+          </li>
+          <li onclick='location.href="#formularioContacto"'>
+            <p>contacto</p>
+          </li>
+
+          <li onclick='sendToAdmin()'>
+            <p>admin</p>
+          </li>
+
+          <li onclick='location.href='>
+            <p>market</p>
+          </li>
+
+            <li ><a href="logout.php">log out</a></li>
+
+          </div>
+        </span>
+
+        <span id="logOutOptions">
+          <button class='dropdown-caller'><i class="fa-solid fa-user"></i></button>
+          <div class="dropdown-menu">
+          <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+            <a href="logout.php"> <i class="fa-solid fa-door-open"></i> log out</a>
+          ';
+          } else{
+            echo '
+            <a href="login.php"> <i class="fa-solid fa-door-open"></i> log in</a>
+            ';
+          }
+           ?>
+          </div>
+        </span>
         </div>
       </ul>
+
     </nav>
 
     <!-- indice del gestor -->

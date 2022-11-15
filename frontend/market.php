@@ -24,46 +24,70 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
     <ul class="ulLogo">
       <img src="assets/img/greenHat.png" />
 
+
+
       <div>
-        <ul class="navOptions">
-          <li onclick='location.href="./index.php"' class="liSelected">
+          <ul class="navOptions">
+            <li class="liSelected" onclick='location.href="./index.php"'><p>inicio</p></li>
+            <li onclick='location.href="."'><p>eventos</p></li>
+            <li onclick='location.href="."'><p>nosotros</p></li>
+            <li onclick='location.href="."'><p>contacto</p></li>
+            <li onclick='location.href="./adminIndex.php"'><p>admin</p></li>
+            <li onclick='location.href="market.php"'><p>market</p></li>
+          </ul>
+
+          <div id="mover"></div>
+
+          <span id="navOptionsResponsive">
+          <button class='dropdown-caller'><i class="fa-solid fa-bars"></i></button>
+          <div class="dropdown-menu">
+          <li class="liSelected">
             <p>inicio</p>
           </li>
-          <li onclick='location.href="."'>
+          <li onclick='location.href="".'>
             <p>eventos</p>
           </li>
           <li onclick='location.href="."'>
             <p>nosotros</p>
           </li>
-          <li onclick='location.href="."'>
+          <li onclick='location.href="#formularioContacto"'>
             <p>contacto</p>
           </li>
-          <?php if (strcmp($_SESSION["rol"], "admin") == 0) {
-            echo "
+
           <li onclick='sendToAdmin()'>
             <p>admin</p>
           </li>
-          <li onclick='sendToMarket()'>
-            <p>market</p>
-          </li>
-          ";
-          } ?>
-          <?php if (strcmp($_SESSION["rol"], "usuario") == 0) {
-            echo "
+
           <li onclick='location.href='>
             <p>market</p>
           </li>
-          ";
-          } ?>
-        </ul>
-        <a href="index.php"><i class="fa-solid fa-user"></i></a>
-      </div>
-    </ul>
+
+            <li ><a href="logout.php">log out</a></li>
+
+          </div>
+        </span>
+
+        <span id="logOutOptions">
+          <button class='dropdown-caller'><i class="fa-solid fa-user"></i></button>
+          <div class="dropdown-menu">
+          <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+            <a href="logout.php"> <i class="fa-solid fa-door-open"></i> log out</a>
+          ';
+          } else{
+            echo '
+            <a href="login.php"> <i class="fa-solid fa-door-open"></i> log in</a>
+            ';
+          }
+           ?>
+          </div>
+        </span>
+        </div>
   </nav>
 
   <section id="market">
 
-    <i class="fa-solid fa-bars"></i>
+    <i id="stageCaller" class="fa-solid fa-bars"></i>
 
     <div>
       <i class="fa-solid fa-backward"></i>

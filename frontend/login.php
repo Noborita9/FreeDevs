@@ -15,7 +15,7 @@ session_start();
 
 <body>
   <form action="login_verify.php" method="post" id="form_login">
-    <img id="imgLogo" src="./assets/img/LogoFD.png" />
+    <img id="imgLogo" src="./assets/img/darkHat.png" />
     <h2>sign in</h2>
     <input id="inUsuario" type="text" name="user_name" placeholder="user" />
     <section>

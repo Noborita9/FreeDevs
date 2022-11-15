@@ -18,22 +18,24 @@ session_start();
 
 <body>
 
-  <nav>
+  <div id="avisos"> bienvenido de nuevo</div>
+
+  <nav id="nav">
     <ul class="ulLogo">
-      <img src="assets/img/Logo_Gestornomia.png" />
+      <img src="assets/img/greenHat.png" />
 
       <div>
         <ul class="navOptions">
           <li class="liSelected">
             <p>inicio</p>
           </li>
-          <li onclick='location.href="."'>
+          <li onclick='location.href="".'>
             <p>eventos</p>
           </li>
           <li onclick='location.href="."'>
             <p>nosotros</p>
           </li>
-          <li onclick='location.href="."'>
+          <li onclick='location.href="#formularioContacto"'>
             <p>contacto</p>
           </li>
           <?php if (strcmp($_SESSION["rol"], "admin") == 0) {
@@ -43,9 +45,6 @@ session_start();
           </li>
           <li onclick='sendToMarket()'>
             <p>market</p>
-          </li>
-          <li onclick='logout()'>
-            <p>logout</p>
           </li>
           ";
           } ?>
@@ -57,9 +56,77 @@ session_start();
           ";
           } ?>
         </ul>
-        <a href="login.php"><i class="fa-solid fa-user"></i></a>
+
+        <div id="mover"></div>
+
+        <span id="navOptionsResponsive">
+          <button class='dropdown-caller'><i class="fa-solid fa-bars"></i></button>
+          <div class="dropdown-menu">
+          <li class="liSelected">
+            <p>inicio</p>
+          </li>
+          <li onclick='location.href="".'>
+            <p>eventos</p>
+          </li>
+          <li onclick='location.href="."'>
+            <p>nosotros</p>
+          </li>
+          <li onclick='location.href="#formularioContacto"'>
+            <p>contacto</p>
+          </li>
+          <?php if (strcmp($_SESSION["rol"], "admin") == 0) {
+            echo "
+          <li onclick='sendToAdmin()'>
+            <p>admin</p>
+          </li>
+          <li onclick='sendToMarket()'>
+            <p>market</p>
+          </li>
+          ";
+          } ?>
+          <?php if (strcmp($_SESSION["rol"], "usuario") == 0) {
+            echo "
+          <li onclick='location.href='>
+            <p>market</p>
+          </li>
+          ";
+          } ?>
+          <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+            <li ><a href="logout.php">log out</a></li>
+          ';
+          } else{
+            echo '
+            <li ><a href="login.php">log in</a></li>
+            ';
+          }
+           ?>
+          </div>
+        </span>
+
+        <span id="logOutOptions">
+          <button class='dropdown-caller'><i class="fa-solid fa-user"></i></button>
+          <div class="dropdown-menu">
+          <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+            <a href="logout.php"> <i class="fa-solid fa-door-open"></i> log out</a>
+          ';
+          } else{
+            echo '
+            <a href="login.php"> <i class="fa-solid fa-door-open"></i> log in</a>
+            ';
+          }
+           ?>
+          </div>
+        </span>
       </div>
     </ul>
+
+    <?php
+            echo '<script>';
+            echo 'invocarAviso()';
+            echo '</script>';
+          ?>
   </nav>
 
   <section id="carrusel">

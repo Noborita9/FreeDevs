@@ -1,4 +1,4 @@
-const openPanel = document.querySelector('.fa-bars');
+const openPanel = document.querySelector('#stageCaller');
 const closePanel = document.querySelector('.fa-backward');
 const filterPanel = document.querySelector('#market > div:nth-of-type(1)');
 
