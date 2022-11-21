@@ -7,8 +7,11 @@ class Unidad
 
     public function from_array($data)
     {
-        $this->id = $data["id"];
-        $this->nombre = $data["nombre"];
+        try {
+            $this->id = $data["id"];
+            $this->nombre = $data["nombre"];
+        } catch (Throwable $th) {
+        }
     }
 
     public function select_all()
@@ -24,14 +27,14 @@ class Unidad
         echo $json;
     }
 
-    public function select_by_id($id)
+    public function select_by_id()
     {
         include("../conexion.php");
         $query = "SELECT * FROM unidades WHERE id=:id;";
         $stmt = $conn->prepare($query);
-        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":id", $this->id);
         $stmt->execute();
-        $data = $stmt->fetchAll();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (!(json_encode($data) === false)) {
             $json = json_encode(["status" => 200, "body" => $data]);
         } else {
@@ -40,23 +43,23 @@ class Unidad
         echo $json;
     }
 
-    public function delete_by_id($id)
+    public function delete_by_id()
     {
         include("../conexion.php");
         $query = "DELETE FROM unidades where id=:id;";
         $stmt = $conn->prepare($query);
-        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":id", $this->id);
         $stmt->execute();
         // Change to check if its ok
         echo 1;
     }
 
-    public function insert($nombre)
+    public function insert()
     {
         include("../conexion.php");
         $query = "INSERT INTO unidades (nombre) VALUES (:nombre);";
         $stmt = $conn->prepare($query);
-        $stmt->bindParam(":nombre", $nombre);
+        $stmt->bindParam(":nombre", $this->nombre);
         $stmt->execute();
         // Change to check if its ok
         echo 1;
