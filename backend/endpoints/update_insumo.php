@@ -1,5 +1,7 @@
 <?php
 if (
+    isset($_POST["id"]) &&
+    !empty($_POST["id"]) &&
     isset($_POST["nombre"]) &&
     !empty($_POST["nombre"]) &&
     isset($_POST["stock"]) &&
@@ -30,12 +32,33 @@ function check_existance_insumo()
             $exists = 1;
         }
     }
-
     if ($exists == 0 && $_POST["update"] == true) {
         proccess_insumo();
     } else {
         echo 0;
     }
+}
+
+function update_insumo()
+{
+    include("../conexion.php");
+
+    $stmt = $pdo->prepare("UPDATE insumos SET nombre=:nombre unidad=:unidad stock=:stock precio=:precio WHERE id=:id");
+
+    $stmt->bindParam(":nombre", $nombre);
+    $stmt->bindParam(":unidad", $unidad);
+    $stmt->bindParam(":stock", $stock);
+    $stmt->bindParam(":precio", $precio);
+    $stmt->bindParam(":id", $id);
+
+    $nombre = $_POST["nombre"];
+    $unidad = $_POST["unidad"];
+    $stock = $_POST["stock"];
+    $precio = $_POST["precio"];
+    $id = $_POST["id"];
+
+    $stmt->execute();
+    echo "Producto actualizado";
 }
 
 function proccess_insumo()

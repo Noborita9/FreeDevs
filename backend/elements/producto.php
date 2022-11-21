@@ -1,18 +1,22 @@
 <?php
-class Ingrediente
+class Producto
 {
     public $id;
     public $nombre;
+    public $imagen; // String
+    public $id_ficha_tecnica;
+    public $stock;
     public $precio;
     public $unidad;
-    public $stock;
 
-    public function from_array($data)
+    public function from_named_array($data)
     {
         $this->nombre = $data["nombre"];
         $this->precio = $data["precio"];
         $this->unidad = $data["unidad"];
         $this->stock = $data["stock"];
+        $this->id_ficha_tecnica = $data["id_ficha_tecnica"];
+        $this->imagen = $data["imagen"];
     }
 
     function return_as_array()
@@ -57,6 +61,7 @@ class Ingrediente
     {
         include("../conexion.php");
         $query = "UPDATE ingredientes SET active=false WHERE id=:id;";
+        // $query = "DELETE FROM {table} WHERE id=:id;";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":id", $this->id);
         $stmt->execute();
@@ -67,30 +72,17 @@ class Ingrediente
     public function insert()
     {
         include("../conexion.php");
-        $query =
-            "INSERT INTO ingredientes (nombre, precio, stock, unidad, active)
-        VALUES (:nombre, :precio, :stock, :unidad, true);";
+        $query = 
+        "INSERT INTO productos (nombre, precio, stock, unidad, id_ficha_tecnica, imagen, active)
+        VALUES (:nombre, :precio, :stock, :unidad, :id_ficha_tecnica, :imagen, true);";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":nombre", $nombre);
         $stmt->bindParam(":precio", $precio);
         $stmt->bindParam(":stock", $stock);
         $stmt->bindParam(":unidad", $unidad);
+        $stmt->bindParam(":id_ficha_tecnica", $id_ficha_tecnica);
+        $stmt->bindParam(":imagen", $imagen);
         $stmt->execute();
         echo 1;
-    }
-
-    public function update($id)
-    {
-        include("../conexion.php");
-
-        $stmt = $pdo->prepare("UPDATE insumos SET nombre=:nombre unidad=:unidad stock=:stock precio=:precio WHERE id=:id");
-
-        $stmt->bindParam(":nombre", $this->nombre);
-        $stmt->bindParam(":unidad", $this->unidad);
-        $stmt->bindParam(":stock", $this->stock);
-        $stmt->bindParam(":precio", $this->precio);
-        $stmt->bindParam(":id", $id);
-        $stmt->execute();
-        echo "Producto actualizado";
     }
 }

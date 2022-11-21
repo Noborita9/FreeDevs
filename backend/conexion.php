@@ -9,8 +9,8 @@
 
     try {
       	$dsn = "mysql:host=$host;dbname=$db_name;charset=$charset;port=$port";
-        $pdo = new \PDO($dsn, $username, $password, $options);
+        $conn = new \PDO($dsn, $username, $password, $options);
     } catch (PDOException $e) {
 	      echo "Conection FAILED " . $e->getMessage();
     }
-?>
+    return $conn;
