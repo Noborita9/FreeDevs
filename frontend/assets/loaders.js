@@ -1,6 +1,23 @@
 const backend_route = "../backend/api/"
 const actual_map = new Map()
 
+const addVariantButton = document.getElementById('add-variant');
+const variantList = document.getElementById('variant_list');
+const variantInput = 
+`
+<span class="variant none_margin">
+<i class="fa-solid fa-trash icon-variant"></i>
+<input type="text" placeholder="unidad">
+<input type="number" placeholder="precio">
+</span>
+`
+
+variantList.innerHTML += variantInput
+
+addVariantButton.addEventListener('click', () => { variantList.innerHTML += variantInput });
+
+
+
 const loader = (url, element, injector, item_table, is_searching, search_query) => {
   const data = new FormData()
   data.set("item", item_table)

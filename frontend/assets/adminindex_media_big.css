@@ -36,20 +36,22 @@
   justify-content: center;
 }
 
-#gestor_indice ul li
+#gestor_indice ul button
 {
-  width: 10%;
+  width: 20%;
   height: 100%;
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+  border: none;
 }
 
-#gestor_indice ul li:hover
+#gestor_indice ul button:hover
 {
   cursor: pointer;
-  background: rgba(130, 180, 54, 1);
+  background: #1F1F1F;
   color: #fff;
   transition: 0.8s;
 }
@@ -108,15 +110,16 @@
   #gestor_menu  
   {
   width: var(--gapWidth);
-  height: 1200px;
+  height: 600px;
   margin-top: 0;
   position: relative;
+  overflow-y: scroll;
   }
 
   .menu
   {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   background: #fff;
   display:flex;  
   position: absolute;
@@ -125,7 +128,7 @@
   .list
   {
   width: 60%;
-  height: inherit;
+  height: 600px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
@@ -136,7 +139,7 @@
   .forms
   {
   width: 40%;
-  height: inherit;
+  /* height: inherit; */
   border-left: 2px solid rgb(41, 41, 41);
   display: flex;
   flex-direction: column;
@@ -156,6 +159,11 @@
   .none_border
   {
   border: none;
+  }
+
+  .none_margin
+  {
+    margin: 0 !important;
   }
 
   .list h2 { font-weight: 500 }
@@ -193,7 +201,7 @@
   background: transparent;
   text-transform: lowercase;
   font-size: 18px;
-  margin: 30px;
+  margin: 15px;
   }
 
   .forms button:hover, .cargar_file:hover
@@ -235,10 +243,22 @@
   border: none;
   }
 
-  .forms input:focus
+  .forms input:focus, #select_fichTec:focus
   {
   border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
   transition: 0.5s;
+  }
+
+  #select_fichTec
+  {
+    width: 330px;
+    height: 30px;
+    margin: 20px;
+    border: none;
+    border-bottom: 0.3vh solid rgba(0, 0, 0, 0.7);
+    outline: none;
+    padding-bottom: 5px;
+    font-size: 15px;
   }
 
   .objeto{ width: 250px;}
@@ -247,4 +267,95 @@
 
   .list span:hover {cursor: pointer;}
 
+  .gestion_map{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .gestion_map button 
+  {
+    width: 100% !important;
+  }
+  .gestion_map .dropdown-menu{
+    left: 0;
+    border-radius: 0;
+    background: #1F1F1F;
+    width: 90% !important;
+    /* height: 120px !important; */
+    transform: translateY(-10px) !important;
+    color: #fff;
+    padding: 5% !important;
+    justify-content: space-between;
+    height: auto !important;
+  }
+
+  .dropdown-menu li{ list-style: none;}
+
+  .dropdown-menu li:hover
+  {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .gestion_map > .dropdown-caller:focus + .dropdown-menu
+  {
+    opacity: 1;
+    transform: translateY(-10px) !important;
+  }
+
+#eventos:focus, #usuarios:focus, #productos:focus, #imagenes:focus
+  {
+    background: #1F1F1F;
+    color: #fff;
+    transition: 0.8s;
+  }
+
+  .variants_system
+  {
+    width: 360px;
+    height: 30px;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .variant
+  {
+    width: 360px;
+    height: 30px;
+    margin: 20px;
+    display: grid !important;
+    grid-template-columns: 30px 2fr 3fr;
+    margin-bottom: 20px !important;
+  }
+
+  .variant input
+  {
+    width: 100%;
+    height: 50%;
+    border: none;
+    border-bottom: 0.3vh solid rgba(0, 0, 0, 0.7);
+    outline: none;
+    padding-bottom: 5px;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  #add-variant
+  {
+    position: absolute;
+    left: 0%;
+    font-size: 30px;
+  }
+  .icon-variant
+  { 
+    font-size: 20px; 
+    margin: auto;
+  }
+
+  #add-variant:hover, .icon-variant:hover {cursor: pointer;}
 }

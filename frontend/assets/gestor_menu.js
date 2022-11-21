@@ -9,6 +9,7 @@ const menuMenues = document.getElementById('menu_menues');
 const menuPlatos = document.getElementById('menu_platos');
 const menuFichTec = document.getElementById('menu_fichasTecnicas');
 const menuImagenes = document.getElementById('menu_imagenes');
+const menuPedidos = document.getElementById('menu_pedidos')
 
 const arrayMenu = [
     menuInsumos,
@@ -20,7 +21,8 @@ const arrayMenu = [
     menuMenues,
     menuPlatos,
     menuFichTec,
-    menuImagenes
+    menuImagenes,
+    menuPedidos
 ];
 
 // barra de navegacion
@@ -34,6 +36,7 @@ const menuesBoton = document.getElementById('menues');
 const platosBoton = document.getElementById('platos');
 const fichTecBoton = document.getElementById('fichasTecnicas');
 const imagenesBoton = document.getElementById('imagenes');
+const pedidosBoton = document.getElementById('pedidos');
 
 function mostrar(flex) {
     arrayMenu.forEach(
@@ -53,4 +56,4 @@ menuesBoton.addEventListener('click', () => { mostrar(menuMenues) });
 platosBoton.addEventListener('click', () => { mostrar(menuPlatos) });
 fichTecBoton.addEventListener('click', () => { mostrar(menuFichTec) });
 imagenesBoton.addEventListener('click', () => { mostrar(menuImagenes) });
-
+pedidosBoton.addEventListener('click', () => {mostrar(menuPedidos)});

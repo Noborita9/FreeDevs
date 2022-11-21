@@ -74,19 +74,22 @@
 
   #gestor_indice ul
   {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: 70px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
   }
 
-  #gestor_indice ul li
+  #gestor_indice ul button
   {
-  width: 100%;
-  height: 100%;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 20%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
   }
 
   #gestor_indice ul li:hover
@@ -108,6 +111,7 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
 #gadgets ul
@@ -116,6 +120,37 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  position: relative;
+}
+
+.manage
+{
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  font-size: calc(9vh * 0.5);
+}
+
+.fa-backward
+{
+  opacity: 0;
+  display: none;
+}
+
+.unshow
+{
+  opacity: 0;
+  transition: opacity;
+  transition-duration: 5s;
+  display: none;
+}
+
+.show
+{
+  opacity: 1;
+  transition: opacity;
+  transition-duration: 5s;
+  display: block;
 }
 
 #buscador
@@ -174,15 +209,15 @@
   display:flex;  
   z-index: 2;
   position: absolute;
-  flex-direction: column-reverse;
+  /* flex-direction: column-reverse; */
   }
 
   .list
   {
   width: 100%;
-  height: 40%;
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns:  1fr;
   grid-gap: 10px;
   grid-auto-rows: 100px;
   overflow-y: scroll;
@@ -209,12 +244,16 @@
  .forms
   {
   width: 100%;
-  height: 60%;
+  height: 100%;
   border-bottom: 2px solid rgb(41, 41, 41);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: -100vw;
   }
 
 
@@ -302,4 +341,63 @@
   .objeto{ width: 50vw;}
   .counter{ width: 15vw; padding-left: 5vw;}
   .objeto, .counter {margin: 20px 0 20px 0;}
+
+  .gestion_map{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .gestion_map button 
+  {
+    width: 100% !important;
+  }
+  .gestion_map .dropdown-menu{
+    left: 0;
+    border-radius: 0;
+    background: #1F1F1F;
+    width: 90% !important;
+    /* height: 120px !important; */
+    transform: translateY(-10px) !important;
+    color: #fff;
+    padding: 5% !important;
+    justify-content: space-between;
+    height: auto !important;
+  }
+
+  .dropdown-menu li{ list-style: none;}
+
+  .dropdown-menu li:hover
+  {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .gestion_map > .dropdown-caller:focus + .dropdown-menu
+  {
+    opacity: 1;
+    transform: translateY(-10px) !important;
+  }
+
+#eventos:focus, #usuarios:focus, #productos:focus, #imagenes:focus
+  {
+    background: #1F1F1F;
+    color: #fff;
+    transition: 0.8s;
+  }
+  .enter
+  {
+    transform: translateX( 100vw);
+    transition: all;
+    transition-duration: 2s;
+  }
+
+  .leave
+  {
+    transform: translateX( -100vw);
+    transition: all;
+    transition-duration: 2s;
+  }
 }

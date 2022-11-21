@@ -122,11 +122,6 @@ session_start();
       </div>
     </ul>
 
-    <?php
-            echo '<script>';
-            echo 'invocarAviso()';
-            echo '</script>';
-          ?>
   </nav>
 
   <section id="carrusel">
@@ -146,8 +141,8 @@ session_start();
   </section>
 
   <section id="formularioContacto">
+    <a href="#nav"><i class="fa-solid fa-circle-arrow-up"></i></a>
     <form action="">
-      <a href="#nav"><i class="fa-solid fa-circle-arrow-up"></i></a>
       <div>
         <input type="text" placeholder="nombre">
         <input type="text" placeholder="apellido">

@@ -18,6 +18,9 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
     <title>Admin</title>
   </head>
   <body>
+    
+  <div id="avisos"> bienvenido de nuevo</div>
+
     <nav>
       <ul class="ulLogo">
         <img src="assets/img/greenHat.png" />
@@ -86,16 +89,34 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
     <!-- indice del gestor -->
     <section id="gestor_indice">
       <ul>
-        <li id="insumos">insumos</li>
-        <li id="eventos">eventos</li>
-        <li id="productos">productos</li>
-        <li id="usuarios">usuarios</li>
-        <li id="roles">roles</li>
-        <li id="mobiliarios">mobiliario</li>
-        <li id="menues">menu's</li>
-        <li id="platos">platos</li>
-        <li id="fichasTecnicas">fichas tecnicas</li>
-        <li id="imagenes">imagenes</li>
+        <span class="gestion_map">
+          <button id="eventos" class="dropdown-caller">eventos</button>
+            <div class="dropdown-menu">
+              <li id="mobiliarios">mobiliario</li>
+              <li id="menues">menu's</li>
+              <li id="platos">platos</li>
+            </div>
+        </span>
+
+        <span class="gestion_map">
+          <button id="productos" class="dropdown-caller">productos</button>
+          <div class="dropdown-menu">
+            <li id="insumos">insumos</li>
+            <li id="fichasTecnicas">fichas tecnicas</li>
+          </div>
+        </span>
+
+
+
+        <span class="gestion_map">
+          <button id="usuarios" class="dropdown-caller">usuarios</button>
+          <div class="dropdown-menu">
+            <li id="roles">roles</li>
+          </div>
+        </span>
+
+        <button id="imagenes">imagenes</button>
+        <button id="pedidos">pedidos</button>
       </ul>
     </section>
     <section id="gadgets">
@@ -105,6 +126,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <button id="buscador_button">Buscar</button>
         <!-- <input type="text" placeholder="Filtrar"> -->
       </ul>
+      <i class="fa-solid fa-gears manage" id="stageCaller"></i>
+      <i class="fa-solid fa-backward manage"></i>
     </section>
     <section id="gestor_menu"> 
         <!-- eventos -->
@@ -194,12 +217,12 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         </div>
   
         <!-- agregar productos -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_productos">
+        <form action="../backend/api/create_insumo.php" method="post" class="forms stage" id="form_productos">
           <h2>Ingresar producto</h2>
             <input type="text" name="nombre" placeholder="Nombre del producto">
             <input type="number" name="password" placeholder="precio" >
-            <label for="ingresar_plano" class="cargar_file">Imagen del producto</label>
-            <input type="file" class="none_border" name="rol">
+            <label for="imagen_producto" class="cargar_file">Imagen del producto</label>
+            <input type="file" id="imagen_producto" class="none_border" name="rol">
             <button type="button" >guardar</button>
             <button>Eliminar</button>
         </form>
@@ -240,8 +263,15 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
   
         <!-- agregar mobiliarios -->
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_mobiliarios">
-          <h2>Ingresar Mobiliario</h2>
-            <input type="text" name="nombre" placeholder="Nombre del mobiliario">
+          <h2>Ingresar producto</h2>
+            <input type="text" name="nombre" placeholder="Nombre del producto">
+            <label for="imagen_elaborado" class="cargar_file">Imagen del producto</label>
+            <input type="file" id="imagen_elaborado">
+            <span class="variants_system">
+            <i class="fa-solid fa-plus" id="add-variant"></i>
+            <p>nueva unidad</p>
+            </span>
+            <section id="variant_list"></section>
             <button type="button" >guardar</button>
             <button>Eliminar</button>
         </form>
@@ -271,7 +301,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
 
       <!-- platos -->
       <section class="menu" id="menu_platos">
-        <!-- lista de mobiliario -->
+        <!-- lista de platos -->
         <div class="list" id="list_platos">
           <span>
             <h2>plato principal</h2>
@@ -281,7 +311,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           </span>
         </div>
   
-        <!-- agregar mobiliarios -->
+        <!-- agregar platos -->
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_platos">
           <h2>Ingresar plato</h2>
             <input type="text" name="nombre" placeholder="Nombre del plato">
@@ -339,6 +369,33 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           </form>
         </section>
 
+              <!-- pedidos -->
+      <section class="menu" id="menu_pedidos">
+        <!-- lista de pedidos -->
+        <div class="list" id="list_pedidos">
+          <span>
+            <h2>pedido principal</h2>
+          </span>
+          <span>
+            <h2>nombre</h2>
+          </span>
+        </div>
+  
+        <!-- agregar pedidos -->
+        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_pedidos">
+          <h2>Ingresar plato</h2>
+            <input type="text" name="nombre" placeholder="Nombre del pedido">
+            <label for="select_fichTec"></label>
+            <select id="select_fichTec"> 
+              <option>ficha tecnica</option> 
+            </select>
+            <input type="numeric" placeholder="cantidad">
+            <textarea name="" id="" cols="30" rows="10" placeholder="detalles del pedido"></textarea>
+            <button type="button" >guardar</button>
+            <button>Eliminar</button>
+        </form>
+      </section>
+
     </section>      
   </section>
 
@@ -354,5 +411,6 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
     <script src="./assets/gestor_menu.js"></script>
     <script src="./assets/loaders.js"></script>
     <script src="./assets/senders.js"></script>
+    <script src="./assets/adminStage.js"></script>
   </body>
 </html>

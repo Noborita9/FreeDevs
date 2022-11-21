@@ -20,6 +20,9 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
 </head>
 
 <body>
+
+<div id="avisos"> bienvenido de nuevo</div>
+
   <nav id="nav">
     <ul class="ulLogo">
       <img src="assets/img/greenHat.png" />
@@ -89,7 +92,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
 
     <i id="stageCaller" class="fa-solid fa-bars"></i>
 
-    <div>
+    <div class="stage">
       <i class="fa-solid fa-backward"></i>
       <span id="filter">
         <input id="buscarInput" type="text" placeholder="buscar">
