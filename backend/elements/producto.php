@@ -9,7 +9,7 @@ class Producto
     public $precio;
     public $unidad;
 
-    public function from_named_array($data)
+    public function from_array($data)
     {
         $this->nombre = $data["nombre"];
         $this->precio = $data["precio"];

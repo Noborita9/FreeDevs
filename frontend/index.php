@@ -6,40 +6,40 @@ session_start();
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://kit.fontawesome.com/f4e70a9fbd.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="assets/index_media_big.css">
-  <link rel="stylesheet" href="assets/index_media_small.css">
-  <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/f4e70a9fbd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/index_media_big.css">
+    <link rel="stylesheet" href="assets/index_media_small.css">
+    <title>Document</title>
 </head>
 
 <body>
 
-  <div id="avisos"> bienvenido de nuevo</div>
+    <div id="avisos"> bienvenido de nuevo</div>
 
-  <nav id="nav">
-    <ul class="ulLogo">
-      <img src="assets/img/greenHat.png" />
+    <nav id="nav">
+        <ul class="ulLogo">
+            <img src="assets/img/greenHat.png" />
 
-      <div>
-        <ul class="navOptions">
-          <li class="liSelected">
-            <p>inicio</p>
-          </li>
-          <li onclick='location.href="".'>
-            <p>eventos</p>
-          </li>
-          <li onclick='location.href="."'>
-            <p>nosotros</p>
-          </li>
-          <li onclick='location.href="#formularioContacto"'>
-            <p>contacto</p>
-          </li>
-          <?php if (strcmp($_SESSION["rol"], "admin") == 0) {
-            echo "
+            <div>
+                <ul class="navOptions">
+                    <li class="liSelected">
+                        <p>inicio</p>
+                    </li>
+                    <li onclick='location.href="".'>
+                        <p>eventos</p>
+                    </li>
+                    <li onclick='location.href="."'>
+                        <p>nosotros</p>
+                    </li>
+                    <li onclick='location.href="#formularioContacto"'>
+                        <p>contacto</p>
+                    </li>
+                    <?php if (strcmp($_SESSION["rol"], "admin") == 0) {
+                        echo "
           <li onclick='sendToAdmin()'>
             <p>admin</p>
           </li>
@@ -47,17 +47,17 @@ session_start();
             <p>market</p>
           </li>
           ";
-          } ?>
-          <?php if (strcmp($_SESSION["rol"], "usuario") == 0) {
-            echo "
+                    } ?>
+                    <?php if (strcmp($_SESSION["rol"], "usuario") == 0) {
+                        echo "
           <li onclick='location.href='>
             <p>market</p>
           </li>
           ";
-          } ?>
-        </ul>
+                    } ?>
+                </ul>
 
-        <div id="mover"></div>
+                <div id="mover"></div>
 
         <span id="navOptionsResponsive">
           <button class='dropdown-caller login-caller-sm' id=""><i class="fa-solid fa-bars"></i></button>
@@ -83,26 +83,26 @@ session_start();
             <p>market</p>
           </li>
           ";
-          } ?>
-          <?php if (strcmp($_SESSION["rol"], "usuario") == 0) {
-            echo "
+                        } ?>
+                        <?php if (strcmp($_SESSION["rol"], "usuario") == 0) {
+                            echo "
           <li onclick='location.href='>
             <p>market</p>
           </li>
           ";
-          } ?>
-          <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
-            echo '
+                        } ?>
+                        <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+                            echo '
             <li ><a href="logout.php">log out</a></li>
           ';
-          } else{
-            echo '
+                        } else {
+                            echo '
             <li ><a href="login.php">log in</a></li>
             ';
-          }
-           ?>
-          </div>
-        </span>
+                        }
+                        ?>
+                    </div>
+                </span>
 
         <span id="logOutOptions">
           <button class='dropdown-caller' id="login-caller-bg"><i class="fa-solid fa-user"></i></button>
@@ -111,34 +111,34 @@ session_start();
             echo '
             <a href="logout.php"> <i class="fa-solid fa-door-open"></i> log out</a>
           ';
-          } else{
-            echo '
+                        } else {
+                            echo '
             <a href="login.php"> <i class="fa-solid fa-door-open"></i> log in</a>
             ';
-          }
-           ?>
-          </div>
-        </span>
-      </div>
-    </ul>
+                        }
+                        ?>
+                    </div>
+                </span>
+            </div>
+        </ul>
 
-  </nav>
+    </nav>
 
-  <section id="carrusel">
-    <div>
-      <img src="assets/img/hamburger.jpg">
-      <img src="assets/img/pancakes.jpg">
-      <img src="assets/img/charcuterie.jpg">
-      <img src="assets/img/meatloaf.jpg">
-      <img src="assets/img/pancakes2.jpg">
-      <img src="assets/img/hamburger.jpg">
-    </div>
-  </section>
+    <section id="carrusel">
+        <div>
+            <img src="assets/img/hamburger.jpg">
+            <img src="assets/img/pancakes.jpg">
+            <img src="assets/img/charcuterie.jpg">
+            <img src="assets/img/meatloaf.jpg">
+            <img src="assets/img/pancakes2.jpg">
+            <img src="assets/img/hamburger.jpg">
+        </div>
+    </section>
 
 
-  <section id="event_container">
+    <section id="event_container">
 
-  </section>
+    </section>
 
   <section id="nosotros">
     <div id="test-bg"></div>
@@ -164,10 +164,10 @@ session_start();
     </form>
   </section>
 
-  <script src="assets/actions.js"></script>
-  <script src="assets/event_loader.js"></script>
-  <script src="assets/senders.js"></script>
-  <script src="assets/logout.js"></script>
+    <script src="assets/actions.js"></script>
+    <script src="assets/event_loader.js"></script>
+    <script src="assets/senders.js"></script>
+    <script src="assets/logout.js"></script>
 </body>
 
 </html>

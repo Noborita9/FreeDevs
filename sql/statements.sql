@@ -12,32 +12,38 @@ CREATE TABLE usuarios (
     username VARCHAR(50) NOT NULL,
     passwd VARCHAR(50) NOT NULL,
     rol VARCHAR(20) NOT NULL,
-    active BOOL NOT NULL,
+    active BOOL DEFAULT true,
     FOREIGN KEY (rol) REFERENCES user_roles(nombre)
+);
+
+CREATE TABLE unidades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(25) 
 );
 
 CREATE TABLE ingredientes (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    unidad VARCHAR(25),
+    unidad INT ,
     nombre VARCHAR(50) NOT NULL,
     stock INT NOT NULL,
     precio INT NOT NULL,
-    active BOOL NOT NULL
+    active BOOL DEFAULT true,
+    FOREIGN KEY (unidad) REFERENCES unidades(id)
 );
 
 CREATE TABLE fichas_tecnicas (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    active BOOL NOT NULL,
+    active BOOL DEFAULT true,
     nombre VARCHAR(50) NOT NULL  
 );
 
 CREATE TABLE ingred_por_ficha (
-    id_ingrediente INT NOT NULL,
-    id_ficha INT NOT NULL,
+    id_ingrediente INT,
+    id_ficha INT,
     cantidad INT NOT NULL,
-    PRIMARY KEY (id_ingrediente, id_ficha),
+    FOREIGN KEY (id_ficha) REFERENCES fichas_tecnicas (id),
     FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id),
-    FOREIGN KEY (id_ficha) REFERENCES fichas_tecnicas(id)
+    PRIMARY KEY (id_ingrediente, id_ficha)
 );
 
 CREATE TABLE productos (
@@ -48,7 +54,7 @@ CREATE TABLE productos (
     imagen VARCHAR (200) NOT NULL,
     unidad VARCHAR (30) NOT NULL,
     stock INT NOT NULL, 
-    active BOOL NOT NULL,
+    active BOOL DEFAULT true,
     FOREIGN KEY(id_ficha_tecnica) REFERENCES fichas_tecnicas(id)
 );
 
@@ -62,7 +68,8 @@ CREATE TABLE eventos (
     cantidad_personas INT NOT NULL ,
     contacto VARCHAR (100) NOT NULL,
     image_name VARCHAR (100),
-    mobiliario VARCHAR (200)
+    mobiliario VARCHAR (200),
+    active BOOL DEFAULT true
 );
 
 CREATE TABLE encargados(
@@ -88,7 +95,7 @@ CREATE TABLE productos_menues (
 CREATE TABLE prod_order (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
-    active BOOL NOT NULL,
+    active BOOL DEFAULT true,
     description VARCHAR(300) NOT NULL
 );
 
@@ -101,5 +108,26 @@ CREATE TABLE producto_per_prod_order (
     FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
-
-INSERT INTO user_roles (nombre) VALUES("ADMIN"), ("USER");
+INSERT INTO user_roles (nombre) VALUES("admin"), ("user");
+INSERT INTO usuarios (username, passwd, rol) VALUES("admin","admin","admin"), ("user", "user", "user");
+INSERT INTO unidades (nombre)
+VALUES ("Kg"),
+    ("Gr"),
+    ("L"),
+    ("Ml"),
+    ("Unidad"),
+    ("Porcion"),
+    ("Entera"),
+    ("Media"),
+    ("Cuarto");
+INSERT INTO ingredientes (nombre, unidad, stock, precio) 
+VALUES("Queso Mozzarella","Kg", 2, 890),
+    ("Jamon", "Kg", 15000, 500),
+    ("Agua", "L", 12000, 300),
+    ("Harina", "Kg", 10000, 1100),
+    ("Aceite de girasol", "Ml", 60, 120),
+    ("Polvo de hornear", "Gr", 100, 120),
+    ("Huevo", "Unidad", 24, 700);
+INSERT INTO fichas_tecnicas (nombre) VALUES ("Pizza con Mozzarella"), ("Torta");
+INSERT INTO productos (id_ficha_tecnica, nombre, precio, imagen, unidad, stock) 
+VALUES (1, "Pizza Con Mozzarella", 550, "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83", "Entera", 3);

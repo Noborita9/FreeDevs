@@ -29,7 +29,7 @@ function process_login()
   $log_validate = false;
   foreach ($data as $row) {
     /*escucho coincidencia en usuario y pass*/
-    if (strcmp($row['nombre_usuario'], $array_dataset["user"]) == 0 && strcmp($row['contrasena'], $array_dataset["pass"]) == 0) {
+    if (strcmp($row['username'], $array_dataset["user"]) == 0 && strcmp($row['passwd'], $array_dataset["pass"]) == 0) {
       $log_validate = true;
       $_SESSION["rol"] = $row["rol"];
       $_SESSION["username"] = $row["nombre_usuario"];

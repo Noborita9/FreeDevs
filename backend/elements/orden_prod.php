@@ -1,69 +1,98 @@
-<?php 
-class OrdenProduccion {
-    public $idOrdenProd;
+<?php
+class OrdenProduccion
+{
+    public $id;
     public $nombre;
     public $fecha;
     public $precioTotal;
     public $productos;
     public $idEvento;
 
-    function constructor($idOrdenProd, $nombre, $fecha, $precioTotal, $productos, $idEvento){
-        $this->nombre = $nombre;
-        $this->fecha = $fecha;
-        $this->idOrdenProd = $idOrdenProd;
-        $this->precioTotal = $precioTotal;
-        $this->productos = $productos;
-    }
-    function getNombre() {
-        return $this->nombre;
+    public function from_array($data)
+    {
+        $this->id = $data["id"];
+        $this->nombre = $data["nombre"];
+        $this->fecha = $data["fecha"];
+        $this->precioTotal = $data["precioTotal"];
+        $this->productos = $data["productos"];
     }
 
-    function setNombre($nombre) {
-        $this->nombre = $nombre;
+    function return_as_array()
+    {
+        return array(
+            'nombre' => $this->nombre,
+            'id_unidad' => $this->id_unidad,
+            'id' => $this->id,
+        );
     }
 
-    function getFecha() {
-        return $this->fecha;
+    public function select_all()
+    {
+        include("../conexion.php");
+        $query = "SELECT * FROM prod_orden;";
+        $data = $conn->query($query)->fetchAll();
+        if (!(json_encode($data) === false)) {
+            $json = json_encode(["status" => 200, "body" => $data]);
+        } else {
+            $json = json_encode(["status" => 404, "error" => "There are no elements"]);
+        }
+        echo $json;
     }
 
-    function setFecha($fecha) {
-        $this->fecha = $fecha;
+    public function select_by_id($id)
+    {
+        include("../conexion.php");
+        $query = "SELECT * FROM prod_orden WHERE id=:id;";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $data = $stmt->fetchAll();
+        if (!(json_encode($data) === false)) {
+            $json = json_encode(["status" => 200, "body" => $data]);
+        } else {
+            $json = json_encode(["status" => 404, "error" => "There are no elements"]);
+        }
+        echo $json;
     }
 
-    function getIdOrdenProd() {
-        return $this->idOrdenProd;
+    public function delete_by_id()
+    {
+        include("../conexion.php");
+        $query = "UPDATE prod_orden SET active=false WHERE id=:id;";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":id", $this->id);
+        $stmt->execute();
+        // Change to check if its ok
+        echo 1;
     }
 
-    function setIdOrdenProd($idOrdenProd) {
-        $this->idOrdenProd = $idOrdenProd;
+    public function insert()
+    {
+        include("../conexion.php");
+        $query =
+            "INSERT INTO prod_orden (nombre, precio, stock, unidad, active)
+        VALUES (:nombre, :precio, :stock, :unidad, true);";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":nombre", $this->nombre);
+        $stmt->bindParam(":precio", $this->precio);
+        $stmt->bindParam(":stock", $this->stock);
+        $stmt->bindParam(":unidad", $this->unidad);
+        $stmt->execute();
+        echo 1;
     }
 
-    function getPrecioTotal() {
-        return $this->precioTotal;
-    }
+    public function update($id)
+    {
+        include("../conexion.php");
 
-    function setPrecioTotal($precioTotal) {
-        $this->precioTotal = $precioTotal;
-    }
+        $stmt = $pdo->prepare("UPDATE prod_orden SET nombre=:nombre unidad=:unidad stock=:stock precio=:precio WHERE id=:id");
 
-    function getProductos() {
-        return $this->productos;
+        $stmt->bindParam(":nombre", $this->nombre);
+        $stmt->bindParam(":unidad", $this->unidad);
+        $stmt->bindParam(":stock", $this->stock);
+        $stmt->bindParam(":precio", $this->precio);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        echo "Producto actualizado";
     }
-
-    function setProductos($productos) {
-        $this->productos = $productos;
-    }
-
-    function getIdEvento() {
-        return $this->idEvento;
-    }
-
-    function setIdEvento($idEvento) {
-        $this->idEvento = $idEvento;
-    }
-
 }
-// $neworder = new OrdenProduccion();
-// $neworder->set_name("Pedro");
-// echo $neworder->nombre;
-?>

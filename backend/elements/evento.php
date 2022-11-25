@@ -12,7 +12,7 @@ class Evento
     public $contacto;
     public $encargados;
     public $personal;
-    public $moviliario;
+    public $mobiliario;
     public $planoLugar;
     public $menu;
 
