@@ -60,8 +60,8 @@ session_start();
         <div id="mover"></div>
 
         <span id="navOptionsResponsive">
-          <button class='dropdown-caller'><i class="fa-solid fa-bars"></i></button>
-          <div class="dropdown-menu">
+          <button class='dropdown-caller login-caller-sm' id=""><i class="fa-solid fa-bars"></i></button>
+          <div class="dropdown-menu" id="dropdown-log-sm">
           <li class="liSelected">
             <p>inicio</p>
           </li>
@@ -105,8 +105,8 @@ session_start();
         </span>
 
         <span id="logOutOptions">
-          <button class='dropdown-caller'><i class="fa-solid fa-user"></i></button>
-          <div class="dropdown-menu">
+          <button class='dropdown-caller' id="login-caller-bg"><i class="fa-solid fa-user"></i></button>
+          <div class="dropdown-menu" id="dropdown-log-bg">
           <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
             echo '
             <a href="logout.php"> <i class="fa-solid fa-door-open"></i> log out</a>

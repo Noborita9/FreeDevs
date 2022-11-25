@@ -436,4 +436,12 @@
     width: 330px;
     margin: 0 0 10px 0;
   }
+
+  .encargado-input{
+    width: calc(330px / 2);
+  }
+
+  #gestor_indice_responsive{
+    display: none;
+  }
 }
