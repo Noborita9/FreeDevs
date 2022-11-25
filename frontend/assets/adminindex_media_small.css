@@ -82,7 +82,7 @@
 
   #gestor_indice ul button
   {
-    width: 20%;
+    width: calc(100% / 6);
     height: 100%;
     list-style: none;
     display: flex;
@@ -196,9 +196,10 @@
   #gestor_menu
   {
   width: var(--gapWidth);
-  height: 1500px;
+  height: 600px;
   margin-top: 0;
   position: relative;
+  overflow-y: scroll;
   }
 
   .menu
@@ -244,8 +245,6 @@
  .forms
   {
   width: 100%;
-  height: 100%;
-  border-bottom: 2px solid rgb(41, 41, 41);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -387,6 +386,68 @@
     color: #fff;
     transition: 0.8s;
   }
+
+  .variants_system
+  {
+    width: 70vw;
+    height: 30px;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .variant
+  {
+    width: 70vw;
+    height: 30px;
+    margin: 20px;
+    display: grid !important;
+    grid-template-columns: 2fr 3fr;
+    margin-bottom: 20px !important;
+    position: relative;
+  }
+
+  .variant input
+  {
+    width: 100%;
+    height: 50%;
+    border: none;
+    border-bottom: 0.3vh solid rgba(0, 0, 0, 0.7);
+    outline: none;
+    padding-bottom: 5px;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  #add-variant
+  {
+    position: absolute;
+    left: -30px;
+    font-size: 30px;
+  }
+  .icon-variant
+  { 
+    font-size: 20px; 
+    margin: auto;
+    position: absolute;
+    left: -30px;
+  }
+
+
+  #ingredient-field
+  {
+    position: relative;
+  }
+  #add-ingredient
+  {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    font-size: 30px;
+    margin-top: -15px;
+  }
+
   .enter
   {
     transform: translateX( 100vw);
@@ -399,5 +460,39 @@
     transform: translateX( -100vw);
     transition: all;
     transition-duration: 2s;
+  }
+
+  th{
+    font-size: .8rem;
+    padding: 10px;
+    /* border: 1px solid rgba(130, 180, 54, 1); */
+    /* border: 1px solid #292929; */
+  }
+
+  td{
+    font-size: .8rem;
+    padding: 10px;
+    /* border: 1px solid rgba(130, 180, 54, 1); */
+    /* border: 1px solid #292929; */
+  }
+
+  table{
+    border-collapse: collapse;
+    /* border: 2px solid rgba(130, 180, 54, 1); */
+    border: 1px solid #292929;
+    width: 330px;
+    margin: 0 0 10px 0;
+  }
+
+  .select
+  {
+    width: 70vw;
+    height: 30px;
+    margin: 20px;
+    border: none;
+    border-bottom: 0.3vh solid rgba(0, 0, 0, 0.7);
+    outline: none;
+    padding-bottom: 5px;
+    font-size: 15px;
   }
 }

@@ -91,32 +91,32 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
       <ul>
         <span class="gestion_map">
           <button id="eventos" class="dropdown-caller">eventos</button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu none_display">
               <li id="mobiliarios">mobiliario</li>
               <li id="menues">menu's</li>
               <li id="platos">platos</li>
             </div>
         </span>
-
+        
         <span class="gestion_map">
           <button id="productos" class="dropdown-caller">productos</button>
-          <div class="dropdown-menu">
-            <li id="insumos">insumos</li>
+          <div class="dropdown-menu none_display">
             <li id="fichasTecnicas">fichas tecnicas</li>
           </div>
         </span>
 
+        <button id="insumos">insumos</button>
 
+        <button id="pedidos">pedidos</button>
 
         <span class="gestion_map">
           <button id="usuarios" class="dropdown-caller">usuarios</button>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu none_display">
             <li id="roles">roles</li>
           </div>
         </span>
 
         <button id="imagenes">imagenes</button>
-        <button id="pedidos">pedidos</button>
       </ul>
     </section>
     <section id="gadgets">
@@ -141,14 +141,24 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <input type="text" placeholder="Nombre del evento">
           <textarea name="" cols="30" rows="10" placeholder="Informacion del evento"></textarea>
           <input type="date">
-          <input type="text" placeholder="Encargado">
-          <input type="text" placeholder="Contacto">
+          <span style="position: relative;">
+            <i class="fa-solid fa-plus" id="add-encargado"></i>
+            <select name="" id="select-encargado" class="select">
+              <!-- <option>manuela</option>
+              <option>piero</option> -->
+            </select>
+          </span>
+          <table id="encargados-list">
+            <tr>
+              <th>encargado/s</th>
+            </tr>
+          </table>
+          <input type="number" placeholder="Contacto">
           <input type="text" placeholder="Nombre de la ubicacion">
-          <input type="text" placeholder="Link de la ubicacion">
           <input type="number" placeholder="cantidad de personas">
           <input type="text" placeholder="tipo de servicio">
-          <input type="text" placeholder="seleccione el mobiliario">
-          <input type="text" placeholder="seleccione los menu">
+          <textarea name="" cols="30" rows="10" placeholder="Detalle el mobiliario del evento"></textarea>
+          <!-- <input type="text" placeholder="seleccione los menu"> -->
           <label for="ingresar_plano" class="cargar_file">cargar plano</label>
           <input type="file" id="ingresar_plano" class="none_border" placeholder="Plano del evento">
           <label for="ingresar_plano" class="cargar_file">cargar imagen para el evento</label>
@@ -170,7 +180,10 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <input type="text" name="nombre" placeholder="Nombre del insumo">
             <span>
               <input type="number" class="objeto" name="stock" value=0 min=0 >
-              <input type="text" class="counter" name="unidad" placeholder="Unidad">
+              <select type="text" class="counter select" name="unidad" placeholder="Unidad" style="height: initial;">
+                <!-- <option>kg</option>
+                <option>L</option> -->
+              </select>
             </span>
             <input type="number" name="precio" placeholder="precio">
             <button type="button" >guardar</button>
@@ -196,7 +209,11 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <h2>Ingresar usuario</h2>
               <input type="text" name="nombre" placeholder="Nombre de usuario">
               <input type="text" name="password" placeholder="Ingrese una contrase;a" >
-              <input type="text" name="rol" placeholder="Rol que ocupara en el sistema">
+              <label for="select-rol"></label>
+              <select name="rol" id="select-rol" class="select">
+                <!-- <option value="usuario">usuario</option>
+                <option value="administrador">administrador</option> -->
+              </select>
               <button type="button" >guardar</button>
               <button>Eliminar</button>
           </form>
@@ -218,11 +235,35 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
   
         <!-- agregar productos -->
         <form action="../backend/api/create_insumo.php" method="post" class="forms stage" id="form_productos">
-          <h2>Ingresar producto</h2>
+        <h2>Ingresar producto</h2>
             <input type="text" name="nombre" placeholder="Nombre del producto">
-            <input type="number" name="password" placeholder="precio" >
-            <label for="imagen_producto" class="cargar_file">Imagen del producto</label>
-            <input type="file" id="imagen_producto" class="none_border" name="rol">
+            <label for="imagen_elaborado" class="cargar_file">Imagen del producto</label>
+            <input type="file" id="imagen_elaborado">
+            <span class="variants_system">
+            <i class="fa-solid fa-plus" id="add-variant"></i>
+            <p>nueva unidad</p>
+            </span>
+            <section id="variant_list"></section>
+            <h2 style="padding: 2vw 0">Agrega una Ficha tecnica</h2>
+            <input type="text" name="nombre" placeholder="Nombre de la ficha tecnica">
+            <span id="ingredient-field">
+              <i class="fa-solid fa-plus" id="add-ingredient"></i>
+              <!-- <input type="text" class="objeto" placeholder="ingrese un ingredente"> -->
+              <select name="" class="objeto select" id="ingredient-select" style="height: initial;">
+                <!-- <option value="harina">harina</option>
+                <option value="dulce de leche"> dulce de leche</option> -->
+              </select>
+              <input type="number" min="1" max="100" class="counter" id="ingredient-counter" placeholder="0">
+            </span>
+            <!-- <section id="ingredient-list" class="table-list"></section> -->
+            <table id="ingredient-list">
+              <tr>
+                <th>insumo</th>
+                <th>cantidad</th>
+              </tr>
+            </table>
+            <textarea name="procedimiento" id="" cols="30" rows="10" placeholder="Descrba el procedmiento"></textarea>
+            <input type="text" placeholder="Ingrese un comentario">
             <button type="button" >guardar</button>
             <button>Eliminar</button>
         </form>
@@ -272,6 +313,20 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <p>nueva unidad</p>
             </span>
             <section id="variant_list"></section>
+            <h2 style="padding: 2vw 0">Agrega una Ficha tecnica</h2>
+            <input type="text" name="nombre" placeholder="Nombre de la ficha tecnica">
+            <span id="ingredient-field">
+              <i class="fa-solid fa-plus" id="add-ingredient"></i>
+              <!-- <input type="text" class="objeto" placeholder="ingrese un ingredente"> -->
+              <select name="" class="objeto" id="ingredient-select">
+                <!-- <option value="harina">harina</option>
+                <option value="dulce de leche"> dulce de leche</option> -->
+              </select>
+              <input type="number" min="1" max="100" class="counter" id="ingredient-counter" placeholder="0">
+            </span>
+            <section id="ingredient-list" class="table-list"></section>
+            <textarea name="procedimiento" id="" cols="30" rows="10" placeholder="Descrba el procedmiento"></textarea>
+            <input type="text" placeholder="Ingrese un comentario">
             <button type="button" >guardar</button>
             <button>Eliminar</button>
         </form>
@@ -383,12 +438,18 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
   
         <!-- agregar pedidos -->
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_pedidos">
-          <h2>Ingresar plato</h2>
+          <h2>Ingresar pedido</h2>
             <input type="text" name="nombre" placeholder="Nombre del pedido">
-            <label for="select_fichTec"></label>
-            <select id="select_fichTec"> 
-              <option>ficha tecnica</option> 
-            </select>
+            <span style="position: relative;">
+            <i class="fa-solid fa-plus" id="add-fichTec"></i>
+              <select id="select_fichTec" class="select"> 
+                <!-- <option value="un producto">torta</option>  -->
+              </select>
+            </span>
+            <!-- <section class="table-list" id="fichTec-list"></section> -->
+            <table id="fichTec-list">
+              <tr><th>producto</th></tr>
+            </table>
             <input type="numeric" placeholder="cantidad">
             <textarea name="" id="" cols="30" rows="10" placeholder="detalles del pedido"></textarea>
             <button type="button" >guardar</button>

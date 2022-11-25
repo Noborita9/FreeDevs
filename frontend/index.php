@@ -140,21 +140,29 @@ session_start();
 
     </section>
 
-    <section id="formularioContacto">
-        <a href="#nav"><i class="fa-solid fa-circle-arrow-up"></i></a>
-        <form action="">
-            <div>
-                <input type="text" placeholder="nombre">
-                <input type="text" placeholder="apellido">
-            </div>
-            <input type="email" placeholder="e-mail">
-            <input type="number" placeholder="numero de telefono">
-            <div>
-                <textarea name="" id="" cols="30" rows="10" placeholder="que nos quiere comunicar?"></textarea>
-                <button>enviar</button>
-            </div>
-        </form>
-    </section>
+  <section id="nosotros">
+    <div id="test-bg"></div>
+    <img src="assets/img/restaurant.jpg" alt="">
+    <div id="nosotros-text">
+      <p>Somos un grupo de estudiantes de Gastronomía de la Escuela Técnica Solymar, ubicada en Solymar Norte. Nos hemos capacitado en elaboración de primorosos y deleitables platos que ofrecemos en distintos tipos de eventos, contemplando la variedad de gustos de los asistentes.</p>
+    </div>
+  </section>
+
+  <section id="formularioContacto">
+    <a href="#nav"><i class="fa-solid fa-circle-arrow-up"></i></a>
+    <form action="">
+      <div>
+        <input type="text" placeholder="nombre">
+        <input type="text" placeholder="apellido">
+      </div>
+      <input type="email" placeholder="e-mail">
+      <input type="number" placeholder="numero de telefono">
+      <div>
+        <textarea name="" id="" cols="30" rows="10" placeholder="que nos quiere comunicar?"></textarea>
+        <button>enviar</button>
+      </div>
+    </form>
+  </section>
 
     <script src="assets/actions.js"></script>
     <script src="assets/event_loader.js"></script>
