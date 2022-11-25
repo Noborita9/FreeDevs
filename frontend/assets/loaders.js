@@ -1,6 +1,44 @@
 const backend_route = "../backend/api/"
 const actual_map = new Map()
 
+const addFichTec = document.getElementById('add-fichTec');
+const fichTecList = document.getElementById('fichTec-list');
+const selectFichTec = document.getElementById('select_fichTec');
+
+addFichTec.addEventListener(('click'), () => {
+  fichTecList.innerHTML += `
+  <tr>
+  <td>${selectFichTec.value}</td>
+  </tr>
+  `
+})
+
+const encargadosList = document.getElementById('encargados-list')
+const addEncargados = document.getElementById('add-encargado')
+const selectEncargados = document.getElementById('select-encargado')
+
+addEncargados.addEventListener('click', () => {encargadosList.innerHTML += `
+  <tr>
+    <td>${selectEncargados.value}</td>
+  </tr>
+  `
+})
+
+const addIngredient = document.getElementById('add-ingredient');
+const selectIngredient = document.getElementById('ingredient-select');
+const counterIngredient = document.getElementById('ingredient-counter')
+const ingredientList = document.getElementById('ingredient-list');
+
+counterIngredient.value= 1
+addIngredient.addEventListener('click', () => {
+  ingredientList.innerHTML += `
+  <tr>
+  <td>${ selectIngredient.value }</td>
+  <td>${ counterIngredient.value }</td>
+  </tr>`
+  counterIngredient.value= 1
+  })
+
 const addVariantButton = document.getElementById('add-variant');
 const variantList = document.getElementById('variant_list');
 const variantInput = 

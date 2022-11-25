@@ -38,7 +38,7 @@
 
 #gestor_indice ul button
 {
-  width: 20%;
+  width: calc(100% / 6);
   height: 100%;
   list-style: none;
   display: flex;
@@ -219,7 +219,8 @@
   .cargar_file
   {
     border: 0.25vh solid rgba(0,0,0, 0.6);
-    width: 250px;
+    /* width: 250px; */
+    width: 330px;
     height: 40px; 
     text-transform: lowercase;
     font-size: 18px;
@@ -243,13 +244,13 @@
   border: none;
   }
 
-  .forms input:focus, #select_fichTec:focus
+  .forms input:focus, .select:focus
   {
   border-bottom: 0.3vh solid rgba(130, 180, 54, 0.6);
   transition: 0.5s;
   }
 
-  #select_fichTec
+  .select
   {
     width: 330px;
     height: 30px;
@@ -315,7 +316,7 @@
 
   .variants_system
   {
-    width: 360px;
+    width: 330px;
     height: 30px;
     margin: 20px;
     align-items: center;
@@ -325,12 +326,13 @@
 
   .variant
   {
-    width: 360px;
+    width: 330px;
     height: 30px;
     margin: 20px;
     display: grid !important;
-    grid-template-columns: 30px 2fr 3fr;
+    grid-template-columns: 2fr 3fr;
     margin-bottom: 20px !important;
+    position: relative;
   }
 
   .variant input
@@ -348,14 +350,88 @@
   #add-variant
   {
     position: absolute;
-    left: 0%;
+    left: -30px;
     font-size: 30px;
   }
   .icon-variant
   { 
     font-size: 20px; 
     margin: auto;
+    position: absolute;
+    left: -30px;
+  }
+
+  #ingredient-field
+  {
+    position: relative;
+  }
+  #add-ingredient
+  {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    font-size: 30px;
+    margin-top: -15px;
+  }
+  .table-list
+  {
+    border: 1px solid black;
+    padding: 5px;
+    width: 330px;
+    margin-bottom: 30px;
   }
 
   #add-variant:hover, .icon-variant:hover {cursor: pointer;}
+
+  #select-rol
+  {
+    width: 330px;
+    height: 30px;
+    margin: 20px;
+    border: none;
+    border-bottom: 0.3vh solid rgba(0, 0, 0, 0.7);
+    outline: none;
+    padding-bottom: 5px;
+    font-size: 15px;
+  }
+
+  #add-fichTec
+  {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    font-size: 30px;
+    margin-top: -15px;
+  }
+
+  #add-encargado
+  {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    font-size: 30px;
+    margin-top: -15px;
+  }
+
+  th{
+    font-size: .8rem;
+    padding: 10px;
+    /* border: 1px solid rgba(130, 180, 54, 1); */
+    /* border: 1px solid #292929; */
+  }
+
+  td{
+    font-size: .8rem;
+    padding: 10px;
+    /* border: 1px solid rgba(130, 180, 54, 1); */
+    /* border: 1px solid #292929; */
+  }
+
+  table{
+    border-collapse: collapse;
+    /* border: 2px solid rgba(130, 180, 54, 1); */
+    border: 1px solid #292929;
+    width: 330px;
+    margin: 0 0 10px 0;
+  }
 }
