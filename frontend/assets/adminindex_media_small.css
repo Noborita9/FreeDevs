@@ -245,7 +245,6 @@
  .forms
   {
   width: 100%;
-  border-bottom: 2px solid rgb(41, 41, 41);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -390,7 +389,7 @@
 
   .variants_system
   {
-    width: 330px;
+    width: 70vw;
     height: 30px;
     margin: 20px;
     align-items: center;
@@ -400,7 +399,7 @@
 
   .variant
   {
-    width: 330px;
+    width: 70vw;
     height: 30px;
     margin: 20px;
     display: grid !important;
@@ -448,13 +447,6 @@
     font-size: 30px;
     margin-top: -15px;
   }
-  #ingredient-list
-  {
-    border: 1px solid black;
-    padding: 5px;
-    width: 330px;
-    margin-bottom: 30px;
-  }
 
   .enter
   {
@@ -468,5 +460,39 @@
     transform: translateX( -100vw);
     transition: all;
     transition-duration: 2s;
+  }
+
+  th{
+    font-size: .8rem;
+    padding: 10px;
+    /* border: 1px solid rgba(130, 180, 54, 1); */
+    /* border: 1px solid #292929; */
+  }
+
+  td{
+    font-size: .8rem;
+    padding: 10px;
+    /* border: 1px solid rgba(130, 180, 54, 1); */
+    /* border: 1px solid #292929; */
+  }
+
+  table{
+    border-collapse: collapse;
+    /* border: 2px solid rgba(130, 180, 54, 1); */
+    border: 1px solid #292929;
+    width: 330px;
+    margin: 0 0 10px 0;
+  }
+
+  .select
+  {
+    width: 70vw;
+    height: 30px;
+    margin: 20px;
+    border: none;
+    border-bottom: 0.3vh solid rgba(0, 0, 0, 0.7);
+    outline: none;
+    padding-bottom: 5px;
+    font-size: 15px;
   }
 }

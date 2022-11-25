@@ -166,6 +166,8 @@
     margin: 0 !important;
   }
 
+  .none_display{ display: none;}
+
   .list h2 { font-weight: 500 }
 
   .list > span

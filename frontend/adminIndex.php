@@ -91,7 +91,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
       <ul>
         <span class="gestion_map">
           <button id="eventos" class="dropdown-caller">eventos</button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu none_display">
               <li id="mobiliarios">mobiliario</li>
               <li id="menues">menu's</li>
               <li id="platos">platos</li>
@@ -100,7 +100,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         
         <span class="gestion_map">
           <button id="productos" class="dropdown-caller">productos</button>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu none_display">
             <li id="fichasTecnicas">fichas tecnicas</li>
           </div>
         </span>
@@ -111,7 +111,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
 
         <span class="gestion_map">
           <button id="usuarios" class="dropdown-caller">usuarios</button>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu none_display">
             <li id="roles">roles</li>
           </div>
         </span>
@@ -144,8 +144,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <span style="position: relative;">
             <i class="fa-solid fa-plus" id="add-encargado"></i>
             <select name="" id="select-encargado" class="select">
-              <option>manuela</option>
-              <option>piero</option>
+              <!-- <option>manuela</option>
+              <option>piero</option> -->
             </select>
           </span>
           <table id="encargados-list">
@@ -180,7 +180,10 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <input type="text" name="nombre" placeholder="Nombre del insumo">
             <span>
               <input type="number" class="objeto" name="stock" value=0 min=0 >
-              <input type="text" class="counter" name="unidad" placeholder="Unidad">
+              <select type="text" class="counter select" name="unidad" placeholder="Unidad" style="height: initial;">
+                <!-- <option>kg</option>
+                <option>L</option> -->
+              </select>
             </span>
             <input type="number" name="precio" placeholder="precio">
             <button type="button" >guardar</button>
@@ -208,8 +211,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
               <input type="text" name="password" placeholder="Ingrese una contrase;a" >
               <label for="select-rol"></label>
               <select name="rol" id="select-rol" class="select">
-                <option value="usuario">usuario</option>
-                <option value="administrador">administrador</option>
+                <!-- <option value="usuario">usuario</option>
+                <option value="administrador">administrador</option> -->
               </select>
               <button type="button" >guardar</button>
               <button>Eliminar</button>
@@ -246,9 +249,9 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <span id="ingredient-field">
               <i class="fa-solid fa-plus" id="add-ingredient"></i>
               <!-- <input type="text" class="objeto" placeholder="ingrese un ingredente"> -->
-              <select name="" class="objeto" id="ingredient-select">
-                <option value="harina">harina</option>
-                <option value="dulce de leche"> dulce de leche</option>
+              <select name="" class="objeto select" id="ingredient-select" style="height: initial;">
+                <!-- <option value="harina">harina</option>
+                <option value="dulce de leche"> dulce de leche</option> -->
               </select>
               <input type="number" min="1" max="100" class="counter" id="ingredient-counter" placeholder="0">
             </span>
@@ -316,8 +319,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
               <i class="fa-solid fa-plus" id="add-ingredient"></i>
               <!-- <input type="text" class="objeto" placeholder="ingrese un ingredente"> -->
               <select name="" class="objeto" id="ingredient-select">
-                <option value="harina">harina</option>
-                <option value="dulce de leche"> dulce de leche</option>
+                <!-- <option value="harina">harina</option>
+                <option value="dulce de leche"> dulce de leche</option> -->
               </select>
               <input type="number" min="1" max="100" class="counter" id="ingredient-counter" placeholder="0">
             </span>
@@ -440,7 +443,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <span style="position: relative;">
             <i class="fa-solid fa-plus" id="add-fichTec"></i>
               <select id="select_fichTec" class="select"> 
-                <option value="un producto">torta</option> 
+                <!-- <option value="un producto">torta</option>  -->
               </select>
             </span>
             <!-- <section class="table-list" id="fichTec-list"></section> -->
