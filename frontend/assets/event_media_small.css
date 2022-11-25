@@ -1,0 +1,37 @@
+@media(max-width: 1099px) {
+
+    #content
+    {
+        height:90vh;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        position: relative;
+    }
+
+    #nav-events
+    {
+        width: 150px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -150px;
+        background: #fff;
+    }
+
+    #nav-events p
+    {
+        margin: 15px;
+    }
+
+    .event-space
+    {
+        width: 90%;
+        height: 90%;
+        background: #fff;
+        margin: auto;
+    }
+
+
+}

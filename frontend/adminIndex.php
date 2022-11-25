@@ -172,7 +172,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
               <th>apellido</th>
             </tr>
           </table>
-          <input type="number" placeholder="Contacto">
+          <input type="text" placeholder="Contacto">
           <input type="text" placeholder="Nombre de la ubicacion">
           <input type="number" placeholder="cantidad de personas">
           <input type="text" placeholder="tipo de servicio">
@@ -273,6 +273,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
                 <option value="dulce de leche"> dulce de leche</option> -->
               </select>
               <input type="number" min="1" max="100" class="counter" id="ingredient-counter" placeholder="0">
+              <input type="number" class="counter" placeholder="stock">
             </span>
             <!-- <section id="ingredient-list" class="table-list"></section> -->
             <table id="ingredient-list">

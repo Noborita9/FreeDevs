@@ -382,7 +382,7 @@
     width: 330px;
     margin-bottom: 30px;
   }
-
+  
   #add-variant:hover, .icon-variant:hover {cursor: pointer;}
 
   #select-rol
@@ -443,5 +443,10 @@
 
   #gestor_indice_responsive{
     display: none;
+  }
+
+  #ingredient-select
+  {
+    width: 180px;
   }
 }
