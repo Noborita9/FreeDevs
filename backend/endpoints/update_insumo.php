@@ -22,7 +22,7 @@ function check_existance_insumo()
     include("../conexion.php");
 
     $exists = 0;
-    $stmt = $pdo->prepare("SELECT nombre, unidad FROM ingredientes WHERE nombre=:nombre");
+    $stmt = $conn->prepare("SELECT nombre, unidad FROM ingredientes WHERE nombre=:nombre");
     $stmt->bindParam(":nombre", $_POST["nombre"]);
     $stmt->execute();
     $data = $stmt->fetchAll();
@@ -43,7 +43,7 @@ function update_insumo()
 {
     include("../conexion.php");
 
-    $stmt = $pdo->prepare("UPDATE insumos SET nombre=:nombre unidad=:unidad stock=:stock precio=:precio WHERE id=:id");
+    $stmt = $conn->prepare("UPDATE insumos SET nombre=:nombre unidad=:unidad stock=:stock precio=:precio WHERE id=:id");
 
     $stmt->bindParam(":nombre", $nombre);
     $stmt->bindParam(":unidad", $unidad);

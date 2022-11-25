@@ -17,8 +17,7 @@ function remove_item_by_id($id, $item)
 
     switch ($item) {
         case 'unidades':
-            include("../elements/unidad.php");
-            $remove_item = new Unidad();
+            include("../elements/unidad.php"); $remove_item = new Unidad();
             $remove_item->id = $id;
             break;
         case 'eventos':
@@ -55,7 +54,7 @@ function remove_item_by_id($id, $item)
             break;
     }
 
-    $stmt = $pdo->prepare("INSERT INTO :table (nombre, unidad, stock, precio) VALUES(:nombre, :unidad, :stock, :precio)");
+    $stmt = $conn->prepare("INSERT INTO :table (nombre, unidad, stock, precio) VALUES(:nombre, :unidad, :stock, :precio)");
 
 
     $stmt->execute();

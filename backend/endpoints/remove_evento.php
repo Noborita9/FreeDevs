@@ -16,7 +16,7 @@ function check_existance_evento()
     include("../conexion.php");
 
     $exists = 0;
-    $stmt = $pdo->prepare("SELECT nombre FROM eventos WHERE nombre=:nombre");
+    $stmt = $conn->prepare("SELECT nombre FROM eventos WHERE nombre=:nombre");
     $stmt->bindParam(":nombre", $_POST["nombre"]);
     $stmt->execute();
     $data = $stmt->fetchAll();
@@ -38,7 +38,7 @@ function remove_evento()
 {
     include("../conexion.php");
 
-    $stmt = $pdo->prepare("INSERT INTO eventos (nombre, unidad, stock, precio) VALUES(:nombre, :unidad, :stock, :precio)");
+    $stmt = $conn->prepare("INSERT INTO eventos (nombre, unidad, stock, precio) VALUES(:nombre, :unidad, :stock, :precio)");
     $stmt->bindParam(":nombre", $nombre);
     $stmt->bindParam(":unidad", $unidad);
     $stmt->bindParam(":stock", $stock);

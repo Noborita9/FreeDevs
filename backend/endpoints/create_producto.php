@@ -22,7 +22,7 @@ function check_existance_producto()
     include("../conexion.php");
 
     $exists = 0;
-    $stmt = $pdo->prepare("SELECT nombre FROM productos WHERE nombre=:nombre");
+    $stmt = $conn->prepare("SELECT nombre FROM productos WHERE nombre=:nombre");
     $stmt->bindParam(":nombre", $_POST["nombre"]);
     $stmt->execute();
     $data = $stmt->fetchAll();
@@ -44,7 +44,7 @@ function proccess_product()
 {
     include("../conexion.php");
 
-    $stmt = $pdo->prepare("INSERT INTO productos (nombre, unidad, precio, imagen, id_ficha_tecnica) VALUES(:nombre, :unidad, :precio, :imagen, :id_ficha_tecnica)");
+    $stmt = $conn->prepare("INSERT INTO productos (nombre, unidad, precio, imagen, id_ficha_tecnica) VALUES(:nombre, :unidad, :precio, :imagen, :id_ficha_tecnica)");
     $stmt->bindParam(":nombre", $nombre);
     $stmt->bindParam(":unidad", $unidad);
     $stmt->bindParam(":imagen", $imagen);

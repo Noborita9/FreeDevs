@@ -14,7 +14,7 @@ function check_existance_mobiliario()
     include("../conexion.php");
 
     $exists = 0;
-    $stmt = $pdo->prepare("SELECT nombre FROM mobiliarios WHERE nombre=:nombre");
+    $stmt = $conn->prepare("SELECT nombre FROM mobiliarios WHERE nombre=:nombre");
     $stmt->bindParam(":nombre", $_POST["nombre"]);
     $stmt->execute();
     $data = $stmt->fetchAll();
@@ -36,7 +36,7 @@ function process_mobiliario()
 {
     include("../conexion.php");
 
-    $stmt = $pdo->prepare("INSERT INTO mobiliarios (nombre) VALUES(:nombre)");
+    $stmt = $conn->prepare("INSERT INTO mobiliarios (nombre) VALUES(:nombre)");
     $stmt->bindParam(":nombre", $nombre);
 
     $nombre = $_POST["nombre"];

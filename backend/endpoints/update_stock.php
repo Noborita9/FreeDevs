@@ -16,7 +16,7 @@ function check_existance_producto()
     include("../conexion.php");
 
     $exists = 0;
-    $stmt = $pdo->prepare("SELECT * FROM productos WHERE id=:id");
+    $stmt = $conn->prepare("SELECT * FROM productos WHERE id=:id");
     $stmt->bindParam(":id", $_POST["id"]);
     $stmt->execute();
     $data = $stmt->fetchAll();
@@ -39,7 +39,7 @@ function update_product($stock)
 {
     include("../conexion.php");
 
-    $stmt = $pdo->prepare("UPDATE productos SET stock=:stock WHERE id=:id");
+    $stmt = $conn->prepare("UPDATE productos SET stock=:stock WHERE id=:id");
     $stmt->bindParam(":id", $id);
     $stmt->bindParam(":stock", $stock);
 

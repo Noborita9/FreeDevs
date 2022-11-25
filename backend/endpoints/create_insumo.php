@@ -20,7 +20,7 @@ function check_existance_insumo()
     include("../conexion.php");
 
     $exists = 0;
-    $stmt = $pdo->prepare("SELECT nombre, unidad FROM ingredientes WHERE nombre=:nombre");
+    $stmt = $conn->prepare("SELECT nombre, unidad FROM ingredientes WHERE nombre=:nombre");
     $stmt->bindParam(":nombre", $_POST["nombre"]);
     $stmt->execute();
     $data = $stmt->fetchAll();
