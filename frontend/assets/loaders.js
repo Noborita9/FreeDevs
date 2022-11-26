@@ -45,7 +45,8 @@ const addEncargados = document.getElementById('add-encargado')
 const nombreEncargados = document.getElementById('name-input-encargado')
 const apellidoEncargados = document.getElementById('apellido-input-encargado')
 
-addEncargados.addEventListener('click', () => {encargadosList.innerHTML += `
+addEncargados.addEventListener('click', () => {
+    encargadosList.innerHTML += `
   <tr>
     <td><i class="fa-solid fa-trash icon-variant"></i></td>
     <td>${nombreEncargados.value}</td>
@@ -73,9 +74,10 @@ addIngredient.addEventListener('click', () => {
 let addVariantButton = document.querySelector('#add-variant')
 const variantList = document.getElementById('variant_list')
 
-const add_var_row = () => {
-    let variantInput =
-        `
+const add_var_row = (times) => {
+    for (let j = 0; j < times; j++) {
+        let variantInput =
+            `
 <span id='var_${variant_counter}' class="variant none_margin">
 <i class="fa-solid fa-trash icon-variant"></i>
 <input type="text" placeholder="unidad">
@@ -84,15 +86,27 @@ const add_var_row = () => {
 </span>
 `
 
-    variantList.innerHTML += variantInput
-    variant_counter += 1
+        variantList.innerHTML += variantInput
+        variant_counter += 1
 
+    }
+    // Restore values
+
+    actual_unities.forEach((item, index) => {
+        console.log(item)
+        if (actual_unities.length < 2) {
+            document.querySelector(`#variant_list > span > input[type=text]:nth-child(2)`).value = item.unidad
+            document.querySelector(`#variant_list > span > input[type=number]:nth-child(3)`).value = item.precio
+        } else {
+            document.querySelector(`#variant_list > span:nth-child(${item.id}) > input[type=text]:nth-child(2)`).value = item.unidad
+            document.querySelector(`#variant_list > span:nth-child(${item.id}) > input[type=number]:nth-child(3)`).value = item.precio
+        }
+    })
 }
 
-add_var_row()
 
-addVariantButton.addEventListener('click', () => { 
-    add_var_row()
+addVariantButton.addEventListener('click', () => {
+    add_var_row(1)
 });
 
 const chargeItem = (item, id, clear) => {
@@ -150,21 +164,17 @@ const loadUnities = (id) => {
             variant_counter = 1
             let data = json["body"]
             actual_unities = data
-            for (let j = 0; j < data.length; j++) {
-                add_var_row()
-            }
-            console.log(data)
-            data.forEach((item, index) => {
-                if (data.length < 2) {
-                    document.querySelector(`#variant_list > span > input[type=text]:nth-child(2)`).value = item.unidad
-                    document.querySelector(`#variant_list > span > input[type=number]:nth-child(3)`).value = item.precio
-                } else {
-                    document.querySelector(`#variant_list > span:nth-child(${item.id}) > input[type=text]:nth-child(2)`).value = item.unidad
-                    document.querySelector(`#variant_list > span:nth-child(${item.id}) > input[type=number]:nth-child(3)`).value = item.precio
-                }
-                // ADD THIS
-                /* document.querySelector(`#variant_list > span:nth-child(${index + 1}) > input[type=number]:nth-child(4)`).value = item.stock */
-            })
+            add_var_row(data.length)
+
+            /* data.forEach((item, index) => { */
+            /*     if (data.length < 2) { */
+            /*         document.querySelector(`#variant_list > span > input[type=text]:nth-child(2)`).value = item.unidad */
+            /*         document.querySelector(`#variant_list > span > input[type=number]:nth-child(3)`).value = item.precio */
+            /*     } else { */
+            /*         document.querySelector(`#variant_list > span:nth-child(${item.id}) > input[type=text]:nth-child(2)`).value = item.unidad */
+            /*         document.querySelector(`#variant_list > span:nth-child(${item.id}) > input[type=number]:nth-child(3)`).value = item.precio */
+            /*     } */
+            /* }) */
         })
         .catch((err) => { console.log(err) })
 }
