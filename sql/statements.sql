@@ -18,10 +18,11 @@ CREATE TABLE usuarios (
 
 CREATE TABLE unidades (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    active BOOL DEFAULT true,
     nombre VARCHAR(25) 
 );
 
-CREATE TABLE ingredientes (
+CREATE TABLE insumos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     unidad INT ,
     nombre VARCHAR(50) NOT NULL,
@@ -34,7 +35,8 @@ CREATE TABLE ingredientes (
 CREATE TABLE fichas_tecnicas (
     id INT PRIMARY KEY AUTO_INCREMENT,
     active BOOL DEFAULT true,
-    nombre VARCHAR(50) NOT NULL  
+    nombre VARCHAR(50) NOT NULL,
+    description VARCHAR(400) NOT NULL
 );
 
 CREATE TABLE ingred_por_ficha (
@@ -42,7 +44,7 @@ CREATE TABLE ingred_por_ficha (
     id_ficha INT,
     cantidad INT NOT NULL,
     FOREIGN KEY (id_ficha) REFERENCES fichas_tecnicas (id),
-    FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id),
+    FOREIGN KEY (id_ingrediente) REFERENCES insumos(id),
     PRIMARY KEY (id_ingrediente, id_ficha)
 );
 
@@ -50,12 +52,20 @@ CREATE TABLE productos (
     id INT PRIMARY KEY AUTO_INCREMENT, 
     id_ficha_tecnica INT,
     nombre VARCHAR (70) NOT NULL, 
-    precio INT NOT NULL,
     imagen VARCHAR (200) NOT NULL,
-    unidad VARCHAR (30) NOT NULL,
-    stock INT NOT NULL, 
     active BOOL DEFAULT true,
     FOREIGN KEY(id_ficha_tecnica) REFERENCES fichas_tecnicas(id)
+);
+
+CREATE TABLE product_per_unity (
+    id INT AUTO_INCREMENT,
+    id_producto INT,
+    precio INT,
+    unidad VARCHAR(30),
+    active BOOL DEFAULT true,
+    stock INT NOT NULL, 
+    PRIMARY KEY (id, id_producto),
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
 CREATE TABLE eventos (
@@ -120,14 +130,15 @@ VALUES ("Kg"),
     ("Entera"),
     ("Media"),
     ("Cuarto");
-INSERT INTO ingredientes (nombre, unidad, stock, precio) 
-VALUES("Queso Mozzarella","Kg", 2, 890),
-    ("Jamon", "Kg", 15000, 500),
-    ("Agua", "L", 12000, 300),
-    ("Harina", "Kg", 10000, 1100),
-    ("Aceite de girasol", "Ml", 60, 120),
-    ("Polvo de hornear", "Gr", 100, 120),
-    ("Huevo", "Unidad", 24, 700);
-INSERT INTO fichas_tecnicas (nombre) VALUES ("Pizza con Mozzarella"), ("Torta");
-INSERT INTO productos (id_ficha_tecnica, nombre, precio, imagen, unidad, stock) 
-VALUES (1, "Pizza Con Mozzarella", 550, "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83", "Entera", 3);
+INSERT INTO insumos (nombre, unidad, stock, precio) 
+VALUES
+    ("Queso Mozzarella",1, 2000, 890),
+    ("Jamon", 1, 15000, 500),
+    ("Agua", 3, 12000, 300),
+    ("Harina", 1, 10000, 1100),
+    ("Aceite de girasol", 4, 60, 120),
+    ("Polvo de hornear", 2, 100, 120),
+    ("Huevo", 5, 24, 700);
+INSERT INTO fichas_tecnicas (nombre, description) VALUES ("Pizza con Mozzarella", ""), ("Torta", "");
+INSERT INTO productos (id_ficha_tecnica, nombre, imagen ) 
+VALUES (1, "Pizza Con Mozzarella", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83");

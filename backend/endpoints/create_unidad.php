@@ -14,7 +14,7 @@ function check_existance_unidad()
     include("../conexion.php");
 
     $exists = 0;
-    $stmt = $pdo->prepare("SELECT nombre FROM unidades WHERE nombre=:nombre");
+    $stmt = $conn->prepare("SELECT nombre FROM unidades WHERE nombre=:nombre");
     $stmt->bindParam(":nombre", $_POST["nombre"]);
     $stmt->execute();
     $data = $stmt->fetchAll();

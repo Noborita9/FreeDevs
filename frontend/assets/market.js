@@ -3,7 +3,6 @@ const charged_items = new Map()
 let buyButton = document.getElementById("comprar")
 
 function buyCart() {
-  console.log("Loggin in")
   charged_items.forEach(element => {
     const data = new FormData()
     data.set("id", element.id)

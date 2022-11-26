@@ -19,7 +19,7 @@ const onClickLoadEventos = (data) => {
 const loader = () => {
   const data = new FormData()
   data.set('item', 'eventos')
-  fetch('../backend/api/load_items.php', {
+  fetch('../backend/endpoints/load_items.php', {
     method: "POST",
     body: data
   })
