@@ -91,12 +91,12 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
       <span class="gestion-dropdown">
         <button class="dropdown-caller" id="opciones-gestor-responsive">opciones</button>
         <div class="dropdown-menu" id="opciones-drop">
-          <button id="eventos" class="eventos">eventos</button>
-          <button id="productos" class="productos">productos</button>
-          <button id="insumos" class="insumos">insumos</button>
-          <button id="pedidos" class="pedidos">pedidos</button>
-          <button id="usuarios" class="usuarios">usuarios</button>
-          <button id="imagenes" class="imagenes">imagenes</button>
+          <button id="eventos_responsive" class="eventos">eventos</button>
+          <button id="productos_responsive" class="productos">productos</button>
+          <button id="insumos_responsive" class="insumos">insumos</button>
+          <button id="pedidos_responsive" class="pedidos">pedidos</button>
+          <button id="usuarios_responsive" class="usuarios">usuarios</button>
+          <button id="imagenes_responsive" class="imagenes">imagenes</button>
         </div>
       </span>
 
@@ -242,14 +242,6 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
       <section class="menu" id="menu_productos">
         <!-- lista de productos -->
         <div class="list" id="list_productos">
-          <span>
-            <h2>Hamburguesa con queso de cabra</h2>
-            <p>$330</p>
-          </span>
-          <span>
-            <h2>nombre</h2>
-            <p>precio</p>
-          </span>
         </div>
   
         <!-- agregar productos -->

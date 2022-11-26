@@ -1,13 +1,12 @@
 const backendRoute = "../backend/endpoints/"
 const ingred_map = new Map()
 const actual_map = new Map()
-const actual_unities = []
+let actual_unities = []
 let actual_id = 0
 let variant_counter = 1
 const units = {
     1: "Kg",
-    2: "Gr",
-    3: "L",
+    2: "Gr", 3: "L",
     4: "Ml",
     5: "Unidad",
     6: "Entera",
@@ -151,6 +150,7 @@ const loadUnities = (id) => {
             for (let j = 0; j < data.length; j++) {
                 add_var_row()
             }
+            console.log(data)
             data.forEach((item, index) => {
                 if (data.length < 2) {
                     document.querySelector(`#variant_list > span > input[type=text]:nth-child(2)`).value = item.unidad
@@ -297,7 +297,8 @@ const options = [
 
 options.forEach(option => {
     let type = option["type"]
-    document.getElementById(`${type}`).addEventListener('click', () => {
+    let type_dom = document.getElementById(`${type}`)
+    type_dom.addEventListener('click', () => {
         loader(`${backendRoute}load_items.php`, `list_${type}`, option["loadFunction"], type)
         loader(`${backendRoute}load_items.php`, "ingredient-select", loadSelectionIngredientes, "insumos")
     })
