@@ -449,4 +449,9 @@
   {
     width: 180px;
   }
+
+  td i
+  {
+    position: static !important;
+  }
 }
