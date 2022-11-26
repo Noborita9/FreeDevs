@@ -42,10 +42,16 @@ addFichTec.addEventListener(('click'), () => {
 
 const encargadosList = document.getElementById('encargados-list')
 const addEncargados = document.getElementById('add-encargado')
-const selectEncargados = document.getElementById('select-encargado')
+// const selectEncargados = document.getElementById('select-encargado')
+const nombreEncargados = document.getElementById('name-input-encargado')
+const apellidoEncargados = document.getElementById('apellido-input-encargado')
 
-addEncargados.addEventListener('click', () => {
-    encargadosList.innerHTML += `<tr><td>${selectEncargados.value}</td></tr>`
+addEncargados.addEventListener('click', () => {encargadosList.innerHTML += `
+  <tr>
+    <td>${nombreEncargados.value}</td>
+    <td>${apellidoEncargados.value}</td>
+  </tr>
+  `
 })
 
 const addIngredient = document.getElementById('add-ingredient');

@@ -186,7 +186,6 @@ body > *
 {
   width: 150px !important;
   height: 50px !important;
-  z-index: 999;
   position: absolute;
   left: -150%;
   top: calc(100% + .5rem);
@@ -201,6 +200,7 @@ body > *
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  z-index: 999;
 }
 
 .dropdown-menu a{

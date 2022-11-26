@@ -13,6 +13,8 @@ session_start();
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="stylesheet" href="assets/index_media_big.css">
     <link rel="stylesheet" href="assets/index_media_small.css">
+    <link rel="stylesheet" href="assets/event_media_big.css">
+    <link rel="stylesheet" href="assets/event_media_small.css">
     <title>Document</title>
 </head>
 
@@ -124,45 +126,37 @@ session_start();
 
     </nav>
 
-    <section id="carrusel">
-        <div>
-            <img src="assets/img/hamburger.jpg">
-            <img src="assets/img/pancakes.jpg">
-            <img src="assets/img/charcuterie.jpg">
-            <img src="assets/img/meatloaf.jpg">
-            <img src="assets/img/pancakes2.jpg">
-            <img src="assets/img/hamburger.jpg">
+    <section id="content">
+        <div id="nav-events">
+            <p>evento</p>
+            <p>evento</p>
+            <p>evento</p>
+            <p>evento</p>
+            <p>evento</p>
+            <p>evento</p>
+            <p>evento</p>
+            <p>evento</p>
+            <p>evento</p>
         </div>
+        
+        <div class="event-space">
+            <div id="event-banner">
+                <img src="./assets/img/restaurant.jpg" alt="">
+                <div id="event-info">
+                        <h2>nombre del evento</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi consequatur itaque assumenda atque ducimus architecto, adipisci tempore ea facilis quia ut vel doloribus libero nihil velit. Facilis odio inventore laudantium!</p>
+                        <div>
+                        <li>fecha</li>
+                        <li>nombre de la ubicacion</li>
+                        <li>tipo de evento</li>
+                        <li>cantidad de personas</li>
+                        <li>conteacto</li>
+                        </div>
+                </div>
+            </div>
+        </div>
+
     </section>
-
-
-    <section id="event_container">
-
-    </section>
-
-  <section id="nosotros">
-    <div id="test-bg"></div>
-    <img src="assets/img/restaurant.jpg" alt="">
-    <div id="nosotros-text">
-      <p>Somos un grupo de estudiantes de Gastronomía de la Escuela Técnica Solymar, ubicada en Solymar Norte. Nos hemos capacitado en elaboración de primorosos y deleitables platos que ofrecemos en distintos tipos de eventos, contemplando la variedad de gustos de los asistentes.</p>
-    </div>
-  </section>
-
-  <section id="formularioContacto">
-    <a href="#nav"><i class="fa-solid fa-circle-arrow-up"></i></a>
-    <form action="">
-      <div>
-        <input type="text" placeholder="nombre">
-        <input type="text" placeholder="apellido">
-      </div>
-      <input type="email" placeholder="e-mail">
-      <input type="number" placeholder="numero de telefono">
-      <div>
-        <textarea name="" id="" cols="30" rows="10" placeholder="que nos quiere comunicar?"></textarea>
-        <button>enviar</button>
-      </div>
-    </form>
-  </section>
 
     <script src="assets/actions.js"></script>
     <script src="assets/event_loader.js"></script>

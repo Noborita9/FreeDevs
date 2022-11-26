@@ -382,7 +382,7 @@
     width: 330px;
     margin-bottom: 30px;
   }
-
+  
   #add-variant:hover, .icon-variant:hover {cursor: pointer;}
 
   #select-rol
@@ -435,5 +435,18 @@
     border: 1px solid #292929;
     width: 330px;
     margin: 0 0 10px 0;
+  }
+
+  .encargado-input{
+    width: calc(330px / 2);
+  }
+
+  #gestor_indice_responsive{
+    display: none;
+  }
+
+  #ingredient-select
+  {
+    width: 180px;
   }
 }

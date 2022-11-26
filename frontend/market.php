@@ -42,8 +42,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
           <div id="mover"></div>
 
           <span id="navOptionsResponsive">
-          <button class='dropdown-caller'><i class="fa-solid fa-bars"></i></button>
-          <div class="dropdown-menu">
+          <button class='dropdown-caller login-caller-sm' id=""><i class="fa-solid fa-bars"></i></button>
+          <div class="dropdown-menu" id="dropdown-log-sm">
           <li class="liSelected">
             <p>inicio</p>
           </li>
@@ -71,8 +71,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
         </span>
 
         <span id="logOutOptions">
-          <button class='dropdown-caller'><i class="fa-solid fa-user"></i></button>
-          <div class="dropdown-menu">
+          <button class='dropdown-caller' id="login-caller-bg"><i class="fa-solid fa-user"></i></button>
+          <div class="dropdown-menu" id="dropdown-log-bg">
           <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
             echo '
             <a href="logout.php"> <i class="fa-solid fa-door-open"></i> log out</a>
@@ -90,7 +90,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
 
   <section id="market">
 
-    <i id="stageCaller" class="fa-solid fa-bars"></i>
+    <i id="stageCaller" class="fa-solid fa-cart-shopping"></i>
 
     <div class="stage">
       <i class="fa-solid fa-backward"></i>

@@ -38,8 +38,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <div id="mover"></div>
 
           <span id="navOptionsResponsive">
-          <button class='dropdown-caller'><i class="fa-solid fa-bars"></i></button>
-          <div class="dropdown-menu">
+          <button class='dropdown-caller login-caller-sm' id=""><i class="fa-solid fa-bars"></i></button>
+          <div class="dropdown-menu" id="dropdown-log-sm">
           <li class="liSelected">
             <p>inicio</p>
           </li>
@@ -67,8 +67,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         </span>
 
         <span id="logOutOptions">
-          <button class='dropdown-caller'><i class="fa-solid fa-user"></i></button>
-          <div class="dropdown-menu">
+          <button class='dropdown-caller' id="login-caller-bg"><i class="fa-solid fa-user"></i></button>
+          <div class="dropdown-menu" id="dropdown-log-bg">
           <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
             echo '
             <a href="logout.php"> <i class="fa-solid fa-door-open"></i> log out</a>
@@ -87,36 +87,51 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
     </nav>
 
     <!-- indice del gestor -->
+    <section id="gestor_indice_responsive">
+      <span class="gestion-dropdown">
+        <button class="dropdown-caller" id="opciones-gestor-responsive">opciones</button>
+        <div class="dropdown-menu" id="opciones-drop">
+          <button id="eventos" class="eventos">eventos</button>
+          <button id="productos" class="productos">productos</button>
+          <button id="insumos" class="insumos">insumos</button>
+          <button id="pedidos" class="pedidos">pedidos</button>
+          <button id="usuarios" class="usuarios">usuarios</button>
+          <button id="imagenes" class="imagenes">imagenes</button>
+        </div>
+      </span>
+
+    </section>
+
     <section id="gestor_indice">
       <ul>
         <span class="gestion_map">
-          <button id="eventos" class="dropdown-caller">eventos</button>
+          <button id="eventos" class="dropdown-caller eventos">eventos</button>
             <div class="dropdown-menu none_display">
               <li id="mobiliarios">mobiliario</li>
-              <li id="menues">menu's</li>
+              <li id="menues"> menu's</li>
               <li id="platos">platos</li>
             </div>
         </span>
         
         <span class="gestion_map">
-          <button id="productos" class="dropdown-caller">productos</button>
+          <button id="productos" class="dropdown-caller productos">productos</button>
           <div class="dropdown-menu none_display">
             <li id="fichasTecnicas">fichas tecnicas</li>
           </div>
         </span>
 
-        <button id="insumos">insumos</button>
+        <button id="insumos" class="insumos">insumos</button>
 
-        <button id="pedidos">pedidos</button>
+        <button id="pedidos" class="pedidos">pedidos</button>
 
         <span class="gestion_map">
-          <button id="usuarios" class="dropdown-caller">usuarios</button>
+          <button id="usuarios" class="dropdown-caller usuarios">usuarios</button>
           <div class="dropdown-menu none_display">
             <li id="roles">roles</li>
           </div>
         </span>
 
-        <button id="imagenes">imagenes</button>
+        <button id="imagenes" class="imagenes">imagenes</button>
       </ul>
     </section>
     <section id="gadgets">
@@ -143,17 +158,21 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <input type="date">
           <span style="position: relative;">
             <i class="fa-solid fa-plus" id="add-encargado"></i>
-            <select name="" id="select-encargado" class="select">
+            <!-- <select name="" id="select-encargado" class="select"> -->
               <!-- <option>manuela</option>
               <option>piero</option> -->
-            </select>
+            <!-- </select> -->
+            <input type="text" class="objeto encargado-input" id="name-input-encargado" placeholder="nombre">
+            <input type="text" class="objeto encargado-input" id="apellido-input-encargado" placeholder="apellido">
           </span>
           <table id="encargados-list">
+            <caption>encargados/s</caption>
             <tr>
-              <th>encargado/s</th>
+              <th>nombre</th>
+              <th>apellido</th>
             </tr>
           </table>
-          <input type="number" placeholder="Contacto">
+          <input type="text" placeholder="Contacto">
           <input type="text" placeholder="Nombre de la ubicacion">
           <input type="number" placeholder="cantidad de personas">
           <input type="text" placeholder="tipo de servicio">
@@ -254,6 +273,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
                 <option value="dulce de leche"> dulce de leche</option> -->
               </select>
               <input type="number" min="1" max="100" class="counter" id="ingredient-counter" placeholder="0">
+              <input type="number" class="counter" placeholder="stock">
             </span>
             <!-- <section id="ingredient-list" class="table-list"></section> -->
             <table id="ingredient-list">
@@ -468,10 +488,11 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
 
     </footer>
     
-    <script src="assets/actions.js"></script>
+    <script src="./assets/actions.js"></script>
     <script src="./assets/gestor_menu.js"></script>
     <script src="./assets/loaders.js"></script>
     <script src="./assets/senders.js"></script>
     <script src="./assets/adminStage.js"></script>
+    <script src=""></script>
   </body>
 </html>
