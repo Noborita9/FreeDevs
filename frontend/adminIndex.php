@@ -35,6 +35,12 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
       <ul class="ulLogo">
         <img src="assets/img/greenHat.png" />
 
+        <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+        <p id="userName">'.$_SESSION["username"].'</p>
+          ';}
+          ?>
+
         <div>
           <ul class="navOptions">
             <li class="liSelected" onclick='location.href="./index.php"'><p>inicio</p></li>
@@ -50,16 +56,16 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <span id="navOptionsResponsive">
           <button class='dropdown-caller login-caller-sm' id=""><i class="fa-solid fa-bars"></i></button>
           <div class="dropdown-menu" id="dropdown-log-sm">
-          <li class="liSelected">
+          <li class="liSelected" onclick="sendToIndex()">
             <p>inicio</p>
           </li>
-          <li onclick='location.href="".'>
+          <li onclick='sendToEvent()'>
             <p>eventos</p>
           </li>
-          <li onclick='location.href="."'>
+          <li onclick="sendToIndex()">
             <p>nosotros</p>
           </li>
-          <li onclick='location.href="#formularioContacto"'>
+          <li onclick="sendToIndex()">
             <p>contacto</p>
           </li>
 
@@ -67,7 +73,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <p>admin</p>
           </li>
 
-          <li onclick='location.href='>
+          <li onclick='sendToMarket()'>
             <p>market</p>
           </li>
 

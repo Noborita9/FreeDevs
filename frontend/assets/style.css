@@ -159,6 +159,31 @@ i:hover
   height: 9vh;
 }
 
+#userName
+{
+  margin: 0px 15vw 0 0vw;
+  text-transform: capitalize;
+  /* font-size: 1.5vw;2 */
+  background: rgba(130, 180, 54, 1);
+  padding: 10px 20px 10px 20px;
+  border-radius: 50px;
+}
+
+@media(max-width: 1099px)
+{
+  #userName
+{
+  /* margin: 0px 0 0 20vw; */
+  text-transform: capitalize;
+  /* font-size: 1.8vh; */
+  background: rgba(130, 180, 54, 1);
+  padding: 10px 20px 10px 20px;
+  border-radius: 50px;
+  position: absolute;
+  left: 40%;
+}
+}
+
 .ulLogo img:hover
 {
   cursor: pointer;

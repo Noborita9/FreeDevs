@@ -181,6 +181,19 @@
   width: 320px;
 }
 
+.checked
+  {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    font-size: 30px;
+    margin-top: -15px;
+    color: rgba(130, 180, 54, 1);
+    display: flex !important;
+  }
+
+  #plano-checked, #event-checked, #producto-checked, #imagen-checked{ display: none; }
+
 #buscador_button:hover
 {
   background: #fff;
@@ -311,7 +324,7 @@
 
   textarea
   {
-  width: 70vw;
+  width: 71vw;
   height: 60px;
   padding: 5px;
   resize: vertical;

@@ -1,6 +1,11 @@
 @media(min-width: 1100px){
   /* general */
 
+  body
+  {
+    height: 100vh;
+  }
+
   input
   {
   width: 330px;
@@ -543,5 +548,12 @@
   }
 
   #cartel button:hover{cursor: pointer;}
+
+  footer
+  {
+    height: 6vh;
+    position: absolute;
+    bottom: 0;
+  }
 
 }

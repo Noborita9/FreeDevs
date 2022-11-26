@@ -6,6 +6,10 @@ function sendToMarket() {
   window.open("./market.php", "_self")
 }
 
-function sentToEvent() {
+function sendToEvent() {
   window.open("./event.php", "_self")
+}
+
+function sendToIndex() {
+  window.open("./index.php", "_self")
 }
