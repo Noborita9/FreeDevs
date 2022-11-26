@@ -332,7 +332,7 @@
     height: 30px;
     margin: 20px;
     display: grid !important;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 20px !important;
     position: relative;
   }
@@ -445,8 +445,8 @@
     display: none;
   }
 
-  #ingredient-select
+  td i
   {
-    width: 180px;
+    position: static !important;
   }
 }

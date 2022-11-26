@@ -63,6 +63,7 @@ counterIngredient.value = 1
 addIngredient.addEventListener('click', () => {
     ingredientList.innerHTML += `
 <tr>
+<td><i class="fa-solid fa-trash icon-variant"></i></td>
 <td>${selectIngredient.value}</td>
 <td>${counterIngredient.value}</td>
 </tr>`
@@ -80,6 +81,7 @@ const add_var_row = (times) => {
 <i class="fa-solid fa-trash icon-variant"></i>
 <input type="text" placeholder="unidad">
 <input type="number" placeholder="precio">
+<input type="number" placeholder="stock">
 </span>
 `
 

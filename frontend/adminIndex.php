@@ -153,6 +153,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <!-- agregar eventos -->
         <form action="" class="forms" id="form_eventos">
           <h2>Ingresar evento</h2>
+          <button type="button">agregar evento</button>
           <input type="text" placeholder="Nombre del evento">
           <textarea name="" cols="30" rows="10" placeholder="Informacion del evento"></textarea>
           <input type="date">
@@ -196,6 +197,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <!-- agregar insumos -->
           <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_insumos">
             <h2>Ingresar insumo</h2>
+            <button type="button">agregar insumo</button>
             <input type="text" name="nombre" placeholder="Nombre del insumo">
             <span>
               <input type="number" class="objeto" name="stock" value=0 min=0 >
@@ -226,6 +228,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
       <!-- agregar usuarios -->
           <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_usuarios">
             <h2>Ingresar usuario</h2>
+            <button type="button">agregar usuario</button>
               <input type="text" name="nombre" placeholder="Nombre de usuario">
               <input type="text" name="password" placeholder="Ingrese una contrase;a" >
               <label for="select-rol"></label>
@@ -247,6 +250,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <!-- agregar productos -->
         <form action="../backend/api/create_insumo.php" method="post" class="forms stage" id="form_productos">
         <h2>Ingresar producto</h2>
+        <button type="button">agregar producto</button>
             <input type="text" name="nombre" placeholder="Nombre del producto">
             <label for="imagen_elaborado" class="cargar_file">Imagen del producto</label>
             <input type="file" id="imagen_elaborado">
@@ -265,11 +269,11 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
                 <option value="dulce de leche"> dulce de leche</option> -->
               </select>
               <input type="number" min="1" max="100" class="counter" id="ingredient-counter" placeholder="0">
-              <input type="number" class="counter" placeholder="stock">
             </span>
             <!-- <section id="ingredient-list" class="table-list"></section> -->
             <table id="ingredient-list">
               <tr>
+                <th></th>
                 <th>insumo</th>
                 <th>cantidad</th>
               </tr>
@@ -300,7 +304,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <button type="button" >guardar</button>
             <button>Eliminar</button>
         </form>
-      </section>
+      </section> 
 
       <!-- mobiliario -->
       <section class="menu" id="menu_mobiliarios">
@@ -429,6 +433,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <!-- agregar imagenes -->
           <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_imagenes">
             <h2>Ingresar imagen</h2>
+            <button type="button">agregar imagen</button>
             <label for="ingresar_plano" class="cargar_file">Imagen de presentacion</label>
             <input type="file" class="none_border" name="rol">
             <button type="button" >guardar</button>
@@ -451,6 +456,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <!-- agregar pedidos -->
         <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_pedidos">
           <h2>Ingresar pedido</h2>
+          <button type="button">agregar pedido</button>
             <input type="text" name="nombre" placeholder="Nombre del pedido">
             <span style="position: relative;">
             <i class="fa-solid fa-plus" id="add-fichTec"></i>
