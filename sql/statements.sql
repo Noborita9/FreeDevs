@@ -25,13 +25,7 @@ CREATE TABLE unidades (
 CREATE TABLE insumos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     unidad INT ,
-    nombre VARCHAR(50) NOT NULL,
-    stock INT NOT NULL,
-    precio INT NOT NULL,
-    active BOOL DEFAULT true,
-    FOREIGN KEY (unidad) REFERENCES unidades(id)
-);
-
+    nombre VARCHAR(50) NOT NULL, stock INT NOT NULL, precio INT NOT NULL, active BOOL DEFAULT true, FOREIGN KEY (unidad) REFERENCES unidades(id));
 CREATE TABLE fichas_tecnicas (
     id INT PRIMARY KEY AUTO_INCREMENT,
     active BOOL DEFAULT true,
@@ -139,6 +133,8 @@ VALUES
     ("Aceite de girasol", 4, 60, 120),
     ("Polvo de hornear", 2, 100, 120),
     ("Huevo", 5, 24, 700);
-INSERT INTO fichas_tecnicas (nombre, description) VALUES ("Pizza con Mozzarella", ""), ("Torta", "");
+INSERT INTO fichas_tecnicas (nombre, description) VALUES ("Pizza con Mozzarella", ""), ("Pancho con Panceta", "");
 INSERT INTO productos (id_ficha_tecnica, nombre, imagen ) 
-VALUES (1, "Pizza Con Mozzarella", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83");
+VALUES (1, "Pizza Con Mozzarella", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83"),
+    (2, "Pancho con Panceta", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83");
+INSERT INTO product_per_unity (id_producto, unidad, precio, stock) VALUES (1, "Porcion", 110, 12), (1, "Entera", 550, 4), (2, "Unidad", 230, 10);

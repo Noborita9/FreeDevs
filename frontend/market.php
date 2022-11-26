@@ -99,7 +99,6 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
         <label for=""><input type="checkbox"> alfabeticamente</label>
         <label for=""><input type="checkbox"> por precio</label>
         <label for=""><input type="checkbox"> por stock</label>
-        <label for=""><input type="checkbox"> por stock</label>
         <button id="buscar">buscar</button>
         <button id="filtrar">filtrar</button>
       </span>
