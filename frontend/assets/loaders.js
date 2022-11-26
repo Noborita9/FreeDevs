@@ -47,6 +47,7 @@ const apellidoEncargados = document.getElementById('apellido-input-encargado')
 
 addEncargados.addEventListener('click', () => {encargadosList.innerHTML += `
   <tr>
+    <td><i class="fa-solid fa-trash icon-variant"></i></td>
     <td>${nombreEncargados.value}</td>
     <td>${apellidoEncargados.value}</td>
   </tr>

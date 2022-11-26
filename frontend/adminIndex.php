@@ -169,6 +169,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <table id="encargados-list">
             <caption>encargados/s</caption>
             <tr>
+              <th></th>
               <th>nombre</th>
               <th>apellido</th>
             </tr>
