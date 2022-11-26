@@ -28,6 +28,20 @@ const transformer = (unit, quantity) => {
     return changes[units[unit]]()
 }
 
+// const ingresarPlano = document.getElementById('ingresar_plano');
+// const planoChecked = document.getElementById('plano-checked');
+
+// ingresarPlano.addEventListener('change', () => {planoChecked.classList.add('checked')})
+
+function checkear( inputFile, checkTick){
+    inputFile.addEventListener('change', () => {checkTick.classList.add('checked')})
+}
+
+checkear( document.getElementById('ingresar_plano'), document.getElementById('plano-checked'))
+checkear( document.getElementById('event-image'), document.getElementById('event-checked'))
+checkear( document.getElementById('imagen_elaborado'), document.getElementById('producto-checked'))
+checkear( document.getElementById('ingresar-imagen'), document.getElementById('imagen-checked'))
+
 const addFichTec = document.getElementById('add-fichTec');
 const fichTecList = document.getElementById('fichTec-list');
 const selectFichTec = document.getElementById('select_fichTec');
@@ -37,6 +51,19 @@ const add_fich_tec_row = () => {
 }
 addFichTec.addEventListener(('click'), () => {
     add_row()
+})
+
+const menuList = document.getElementById('menu-list');
+const addMenu = document.getElementById('add-menu');
+const selectMenu = document.getElementById('select-menu');
+
+addMenu.addEventListener('click', () => {
+    menuList.innerHTML += `
+    <tr>
+        <td><i class="fa-solid fa-trash icon-variant"></i></td> 
+        <td>${selectMenu.value}</td>
+    </tr>
+    `
 })
 
 const encargadosList = document.getElementById('encargados-list')

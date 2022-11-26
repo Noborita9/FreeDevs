@@ -137,7 +137,7 @@ session_start();
 
 
     <section id="event_container">
-
+      
     </section>
 
   <section id="nosotros">
