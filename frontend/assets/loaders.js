@@ -79,6 +79,7 @@ const add_var_row = () => {
 <i class="fa-solid fa-trash icon-variant"></i>
 <input type="text" placeholder="unidad">
 <input type="number" placeholder="precio">
+<input type="number" placeholder="stock">
 </span>
 `
 

@@ -53,7 +53,7 @@
         opacity: 1;
     }
 
-    #event-info
+    .event-info
     {
         width: 60%;
         height: 100%;
@@ -63,17 +63,17 @@
         align-items: center;
     }
 
-    #event-info h2
+    .event-info h2
     {
         margin: 20px 0 30px 0;
     }
 
-    #event-info li
+    .event-info li
     {
         margin: 0 0 20px 0;
     }
 
-    #event-info p:nth-of-type(1)
+    .event-info p:nth-of-type(1)
     {
         width: 80%;
         margin: 0 0 20px 0;

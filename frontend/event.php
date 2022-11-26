@@ -145,7 +145,7 @@ session_start();
         <div class="event-space">
             <div class="event-banner">
                 <img src="./assets/img/restaurant.jpg" alt="">
-                <div id="event-info">
+                <div class="event-info">
                         <h2>nombre del evento</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi consequatur itaque assumenda atque ducimus architecto, adipisci tempore ea facilis quia ut vel doloribus libero nihil velit. Facilis odio inventore laudantium!</p>
                         <div>
