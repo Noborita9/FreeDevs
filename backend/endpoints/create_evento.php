@@ -38,19 +38,7 @@ function check_existance_evento()
 
 function proccess_evento()
 {
-    include("../conexion.php");
-
-    $stmt = $conn->prepare("INSERT INTO eventos (nombre, unidad, stock, precio) VALUES(:nombre, :unidad, :stock, :precio)");
-    $stmt->bindParam(":nombre", $nombre);
-    $stmt->bindParam(":unidad", $unidad);
-    $stmt->bindParam(":stock", $stock);
-    $stmt->bindParam(":precio", $precio);
-
-    $nombre = $_POST["nombre"];
-    $unidad = $_POST["unidad"];
-    $stock = $_POST["stock"];
-    $precio = $_POST["precio"];
-
-    $stmt->execute();
-    echo "Producto agregado";
+    include("../elements/evento.php");
+    $evento = new Evento();
+    $evento->
 }

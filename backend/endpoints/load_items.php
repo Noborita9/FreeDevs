@@ -11,9 +11,9 @@ function load_items($items)
     include("../conexion.php");
     if ($_POST["searching"] == true) {
         $query = $_POST["query_string"];
-        $data = $conn->query("SELECT * FROM " . $items . " WHERE " . $query . " ;")->fetchAll(PDO::FETCH_ASSOC);
+        $data = $conn->query("SELECT * FROM " . $items . " WHERE active=true AND " . $query . " ;")->fetchAll(PDO::FETCH_ASSOC);
     } else {
-        $data = $conn->query("SELECT * FROM " . $items . ";")->fetchAll(PDO::FETCH_ASSOC);
+        $data = $conn->query("SELECT * FROM " . $items . " WHERE active=true;")->fetchAll(PDO::FETCH_ASSOC);
     }
     if (!(json_encode($data) === false)) {
         $json = json_encode(["status" => 200, "body" => $data]);

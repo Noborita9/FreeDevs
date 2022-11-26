@@ -3,13 +3,12 @@ const charged_items = new Map()
 let buyButton = document.getElementById("comprar")
 
 function buyCart() {
-  console.log("Loggin in")
   charged_items.forEach(element => {
     const data = new FormData()
     data.set("id", element.id)
     data.set("stock", element.stock)
     console.log(data.get("stock"))
-    fetch('../backend/api/update_stock.php', {
+    fetch('../backend/endpoints/update_stock.php', {
       method: "POST",
       body: data
     }).then((res) => {
@@ -88,7 +87,7 @@ const loader = (is_searching, search_query) => {
     data.set("searching", true)
     data.set("query_string", search_query)
   }
-  fetch('../backend/api/load_items.php', {
+  fetch('../backend/endpoints/load_items.php', {
     method: "POST",
     body: data
   })

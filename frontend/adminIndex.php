@@ -180,7 +180,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <input type="text" name="nombre" placeholder="Nombre del insumo">
             <span>
               <input type="number" class="objeto" name="stock" value=0 min=0 >
-              <select type="text" class="counter select" name="unidad" placeholder="Unidad" style="height: initial;">
+              <select id="unidad-select" type="text" class="counter select" name="unidad" placeholder="Unidad" style="height: initial;">
                 <!-- <option>kg</option>
                 <option>L</option> -->
               </select>
