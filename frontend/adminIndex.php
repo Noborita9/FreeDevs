@@ -278,6 +278,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <!-- <section id="ingredient-list" class="table-list"></section> -->
             <table id="ingredient-list">
               <tr>
+                <th></th>
                 <th>insumo</th>
                 <th>cantidad</th>
               </tr>

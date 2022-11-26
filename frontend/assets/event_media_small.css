@@ -16,8 +16,9 @@
         height: 100%;
         position: absolute;
         top: 0;
-        left: -150px;
+        left: -130px;
         background: #fff;
+        box-shadow: rgb(0 0 0 / 50%) 0px 0px 20px;
     }
 
     #nav-events p
@@ -27,11 +28,74 @@
 
     .event-space
     {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .event-banner
+    {
         width: 90%;
         height: 90%;
-        background: #fff;
         margin: auto;
     }
 
+    .event-banner img
+    {
+        width: 100%;
+        height: 40%;
+        object-fit: cover;
+    }
 
+    #event-info
+    {
+        width: 100%;
+        /* height: 60%; */
+        min-height: 60%;
+        background: rgb(255, 255, 255, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #event-info p:nth-of-type(1)
+    {
+        width: 80%;
+        margin: 0 0 20px 0;
+    }
+
+    #showButton
+    {
+        width: 80px;
+        height: 80px;
+        border-radius: 80px;
+        position: absolute;
+        top: 15px;
+        right: -40px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #showButton
+    {
+        font-size: 1.4em;
+    }
+
+
+    .enterNav
+    {
+       transform: translateX(130px); 
+       transition: all;
+       transition-duration: 0.4s;
+    }
+
+    .leaveNav
+    {
+        transform: translateX(0px); 
+        transition: all;
+        transition-duration: 0.4s;
+    }
 }

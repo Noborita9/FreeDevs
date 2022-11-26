@@ -128,6 +128,9 @@ session_start();
 
     <section id="content">
         <div id="nav-events">
+            <div id="showButton">
+                <i class="fa-solid fa-list"></i>
+            </div>
             <p>evento</p>
             <p>evento</p>
             <p>evento</p>
@@ -140,7 +143,7 @@ session_start();
         </div>
         
         <div class="event-space">
-            <div id="event-banner">
+            <div class="event-banner">
                 <img src="./assets/img/restaurant.jpg" alt="">
                 <div id="event-info">
                         <h2>nombre del evento</h2>
@@ -155,6 +158,7 @@ session_start();
                 </div>
             </div>
         </div>
+        
 
     </section>
 
@@ -162,6 +166,7 @@ session_start();
     <script src="assets/event_loader.js"></script>
     <script src="assets/senders.js"></script>
     <script src="assets/logout.js"></script>
+    <script src="assets/eventMove.js"></script>
 </body>
 
 </html>

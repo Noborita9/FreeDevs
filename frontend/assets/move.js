@@ -11,3 +11,4 @@ closePanel.addEventListener('click', () => {
     filterPanel.classList.remove('enter');
     filterPanel.classList.add('leave');
 })
+

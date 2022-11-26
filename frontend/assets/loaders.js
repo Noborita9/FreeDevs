@@ -36,6 +36,7 @@ counterIngredient.value= 1
 addIngredient.addEventListener('click', () => {
   ingredientList.innerHTML += `
   <tr>
+  <td></td>
   <td>${ selectIngredient.value }</td>
   <td>${ counterIngredient.value }</td>
   </tr>`
