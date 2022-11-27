@@ -165,7 +165,7 @@
   textarea
   {
   width: 320px;
-  height: 60px;
+  height: 120px;
   padding: 5px;
   resize: vertical;
   }
@@ -442,7 +442,7 @@
     font-size: 30px;
     margin-top: -15px;
   }
-
+  
   #add-menu
   {
     position: absolute;

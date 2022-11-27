@@ -124,6 +124,7 @@ i:hover
   font-size: 1.2em;
   text-transform: capitalize;
   opacity: 0;
+  display: none;
 }
 
 @media (max-width: 700px) 

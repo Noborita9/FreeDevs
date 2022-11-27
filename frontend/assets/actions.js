@@ -1,8 +1,13 @@
 const avisos = document.getElementById('avisos');
 
-const invocarAviso = () => {
-  console.log(avisos)
+const invocarAviso = (text) => {
+  avisos.innerText=text;
+  avisos.style.display="flex"
+  avisos.style.animationIterationCount="1";
+  setTimeout(() => {avisos.style.display="none"}, 2000)
 }
+
+invocarAviso("funciono")
 
 
 const loginCallerBg = document.getElementById('login-caller-bg');
