@@ -13,3 +13,11 @@ function sendToEvent() {
 function sendToIndex() {
   window.open("./index.php", "_self")
 }
+
+document.getElementById("inicio_nav_move").addEventListener("click", ()=>{
+    sendToIndex()
+})
+
+document.getElementById("evento_nav_move").addEventListener("click", ()=>{
+    sendToEvent()
+})
