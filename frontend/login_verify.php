@@ -22,7 +22,7 @@ function process_login()
     ];
 
   /*configuracion consulta*/
-  $data = $pdo->query("SELECT * FROM usuarios")->fetchAll();
+  $data = $conn->query("SELECT * FROM usuarios")->fetchAll();
 
   /*recorro consulta*/
   $log_validate = false;

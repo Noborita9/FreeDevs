@@ -35,14 +35,14 @@ const transformer = (unit, quantity) => {
 
 // ingresarPlano.addEventListener('change', () => {planoChecked.classList.add('checked')})
 
-function checkear( inputFile, checkTick){
-    inputFile.addEventListener('change', () => {checkTick.classList.add('checked')})
+function checkear(inputFile, checkTick) {
+    inputFile.addEventListener('change', () => { checkTick.classList.add('checked') })
 }
 
-checkear( document.getElementById('ingresar_plano'), document.getElementById('plano-checked'))
-checkear( document.getElementById('event-image'), document.getElementById('event-checked'))
-checkear( document.getElementById('imagen_elaborado'), document.getElementById('producto-checked'))
-checkear( document.getElementById('ingresar-imagen'), document.getElementById('imagen-checked'))
+checkear(document.getElementById('ingresar_plano'), document.getElementById('plano-checked'))
+checkear(document.getElementById('event-image'), document.getElementById('event-checked'))
+checkear(document.getElementById('imagen_elaborado'), document.getElementById('producto-checked'))
+checkear(document.getElementById('ingresar-imagen'), document.getElementById('imagen-checked'))
 
 const addFichTec = document.getElementById('add-fichTec');
 const fichTecList = document.getElementById('fichTec-list');
@@ -389,7 +389,6 @@ const loader = (url, element, injector, item_table, is_searching, search_query) 
 }
 
 function create_item(data, route, loadFunction, type, reload) {
-
     fetch(`${backendRoute}${route}`, {
         method: "POST",
         body: data
@@ -518,19 +517,20 @@ options.forEach(option => {
         }
 
     })
-    buttons[2].addEventListener('click', () => {
+    document.querySelector("#cartel > span > button:nth-child(2)").addEventListener('click', () => {
         let data = new FormData()
         data.set("id", actual_id)
         data.set("item", type)
         create_item(data, "remove_item_by_id.php", option["loadFunction"], type)
+        document.getElementById("confirmar-accion").style.display = "none"
     })
 });
-document.querySelector("#form_productos > button:nth-child(14)").addEventListener("click", () => {
-    let data = new FormData()
-    data.set("id", actual_id)
-    data.set("item", "productos")
-    create_item(data, "remove_item_by_id.php", onClickLoadProductos, "productos")
-})
+/* document.querySelector("#form_productos > button:nth-child(13)").addEventListener("click", () => { */
+/*     let data = new FormData() */
+/*     data.set("id", actual_id) */
+/*     data.set("item", "productos") */
+/*     create_item(data, "remove_item_by_id.php", onClickLoadProductos, "productos") */
+/* }) */
 searchButton = document.getElementById("buscador_button")
 searchButton.addEventListener('click', () => {
     let searchValue = document.getElementById("buscador").value
