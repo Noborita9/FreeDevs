@@ -25,36 +25,36 @@ CREATE TABLE unidades (
 CREATE TABLE insumos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     unidad INT ,
-    nombre VARCHAR(50) NOT NULL, stock INT NOT NULL, precio INT NOT NULL, active BOOL DEFAULT true, FOREIGN KEY (unidad) REFERENCES unidades(id));
-CREATE TABLE fichas_tecnicas (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    active BOOL DEFAULT true,
     nombre VARCHAR(50) NOT NULL,
-    description VARCHAR(400) NOT NULL
-);
-
-CREATE TABLE ingred_por_ficha (
-    id_ingrediente INT,
-    id_ficha INT,
-    cantidad INT NOT NULL,
-    FOREIGN KEY (id_ficha) REFERENCES fichas_tecnicas (id),
-    FOREIGN KEY (id_ingrediente) REFERENCES insumos(id),
-    PRIMARY KEY (id_ingrediente, id_ficha)
+    stock INT NOT NULL,
+    precio INT NOT NULL,
+    active BOOL DEFAULT true,
+    FOREIGN KEY (unidad) REFERENCES unidades(id)
 );
 
 CREATE TABLE productos (
     id INT PRIMARY KEY AUTO_INCREMENT, 
-    id_ficha_tecnica INT,
     nombre VARCHAR (70) NOT NULL, 
-    imagen VARCHAR (200) NOT NULL,
+    imagen VARCHAR (200),
+    description VARCHAR(400) NOT NULL,
+    comment VARCHAR(100) NOT NULL,
+    active BOOL DEFAULT true
+);
+
+CREATE TABLE ingred_por_prod (
     active BOOL DEFAULT true,
-    FOREIGN KEY(id_ficha_tecnica) REFERENCES fichas_tecnicas(id)
+    id_producto INT,
+    id_ingrediente INT,
+    cantidad INT NOT NULL,
+    FOREIGN KEY (id_producto) REFERENCES productos (id),
+    FOREIGN KEY (id_ingrediente) REFERENCES insumos(id),
+    PRIMARY KEY (id_ingrediente, id_producto)
 );
 
 CREATE TABLE product_per_unity (
     id INT AUTO_INCREMENT,
     id_producto INT,
-    precio INT,
+    precio INT NOT NULL,
     unidad VARCHAR(30),
     active BOOL DEFAULT true,
     stock INT NOT NULL, 
@@ -132,9 +132,10 @@ VALUES
     ("Harina", 1, 10000, 1100),
     ("Aceite de girasol", 4, 60, 120),
     ("Polvo de hornear", 2, 100, 120),
+    ("Salsa de tomate", 3, 3000, 320),
     ("Huevo", 5, 24, 700);
-INSERT INTO fichas_tecnicas (nombre, description) VALUES ("Pizza con Mozzarella", ""), ("Pancho con Panceta", "");
-INSERT INTO productos (id_ficha_tecnica, nombre, imagen ) 
-VALUES (1, "Pizza Con Mozzarella", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83"),
-    (2, "Pancho con Panceta", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83");
+INSERT INTO productos (nombre, imagen, description, comment ) 
+VALUES ("Pizza Con Mozzarella", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83", "", ""),
+    ("Pancho con Panceta", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83", "", "");
 INSERT INTO product_per_unity (id_producto, unidad, precio, stock) VALUES (1, "Porcion", 110, 12), (1, "Entera", 550, 4), (2, "Unidad", 230, 10);
+INSERT INTO ingred_por_prod (id_producto, id_ingrediente, cantidad) VALUES (1, 1, 150), (1, 4, 500), (1, 7, 1000);

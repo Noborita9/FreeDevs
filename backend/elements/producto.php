@@ -31,7 +31,7 @@ class Producto
     public function select_all()
     {
         include("../conexion.php");
-        $query = "SELECT * FROM ingredientes;";
+        $query = "SELECT * FROM productos;";
         $data = $conn->query($query)->fetchAll();
         if (!(json_encode($data) === false)) {
             $json = json_encode(["status" => 200, "body" => $data]);
@@ -44,7 +44,7 @@ class Producto
     public function select_by_id($id)
     {
         include("../conexion.php");
-        $query = "SELECT * FROM ingredientes WHERE id=:id;";
+        $query = "SELECT * FROM productos WHERE id=:id;";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":id", $id);
         $stmt->execute();
@@ -60,7 +60,7 @@ class Producto
     public function delete_by_id()
     {
         include("../conexion.php");
-        $query = "UPDATE ingredientes SET active=false WHERE id=:id;";
+        $query = "UPDATE productos SET active=false WHERE id=:id;";
         // $query = "DELETE FROM {table} WHERE id=:id;";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":id", $this->id);

@@ -1,4 +1,5 @@
 <?php
+var_dump($_POST);
 if (
     isset($_POST["id"]) &&
     !empty($_POST["id"]) &&
@@ -19,6 +20,12 @@ function remove_item_by_id($id, $item)
         case 'eventos':
             include("../elements/evento.php");
             $remove_item = new Evento();
+            $remove_item->id = $id;
+            $remove_item->delete_by_id();
+            break;
+        case 'productos':
+            include("../elements/producto.php");
+            $remove_item = new Producto();
             $remove_item->id = $id;
             $remove_item->delete_by_id();
             break;

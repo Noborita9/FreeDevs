@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-/*me aseguro que existan los recursos por POST, con esto solo se procesa si se proviene del form configurado
-     para ello*/
+/*me aseguro que existan los recursos por POST, con esto solo se procesa si se proviene del form configurado para ello*/
 if (!empty($_POST["user_name"]) && !empty($_POST["user_pass"]) && isset($_POST["user_name"]) && isset($_POST["user_pass"])) {
   process_login();
 } else {

@@ -180,9 +180,9 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <textarea name="" cols="30" rows="10" placeholder="Detalle el mobiliario del evento"></textarea>
           <!-- <input type="text" placeholder="seleccione los menu"> -->
           <label for="ingresar_plano" class="cargar_file">cargar plano</label>
-          <input type="file" id="ingresar_plano" class="none_border" placeholder="Plano del evento">
+          <input type="file" name="plano" id="ingresar_plano" class="none_border" placeholder="Plano del evento">
           <label for="ingresar_plano" class="cargar_file">cargar imagen para el evento</label>
-          <input type="file" class="none_border" name="" placeholder="Imagen del evento">
+          <input type="file" name="img_event" class="none_border" name="" placeholder="Imagen del evento">
           <button type="button" >guardar</button>
           <button type="button">Eliminar</button>
         </form>
@@ -195,7 +195,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           </div>
 
           <!-- agregar insumos -->
-          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_insumos">
+          <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_insumos">
             <h2>Ingresar insumo</h2>
             <button type="button">agregar insumo</button>
             <input type="text" name="nombre" placeholder="Nombre del insumo">
@@ -226,7 +226,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             </span>
           </div>
       <!-- agregar usuarios -->
-          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_usuarios">
+          <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_usuarios">
             <h2>Ingresar usuario</h2>
             <button type="button">agregar usuario</button>
               <input type="text" name="nombre" placeholder="Nombre de usuario">
@@ -248,19 +248,18 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         </div>
   
         <!-- agregar productos -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms stage" id="form_productos">
+        <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms stage" id="form_productos">
         <h2>Ingresar producto</h2>
         <button type="button">agregar producto</button>
             <input type="text" name="nombre" placeholder="Nombre del producto">
             <label for="imagen_elaborado" class="cargar_file">Imagen del producto</label>
-            <input type="file" id="imagen_elaborado">
+            <input type="file" name="img_prod" id="imagen_elaborado">
             <span class="variants_system">
             <i class="fa-solid fa-plus" id="add-variant"></i>
             <p>nueva unidad</p>
             </span>
             <section id="variant_list"></section>
             <h2 style="padding: 2vw 0">Agrega una Ficha tecnica</h2>
-            <input type="text" name="nombre" placeholder="Nombre de la ficha tecnica">
             <span id="ingredient-field">
               <i class="fa-solid fa-plus" id="add-ingredient"></i>
               <!-- <input type="text" class="objeto" placeholder="ingrese un ingredente"> -->
@@ -279,9 +278,9 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
               </tr>
             </table>
             <textarea name="procedimiento" id="" cols="30" rows="10" placeholder="Descrba el procedmiento"></textarea>
-            <input type="text" placeholder="Ingrese un comentario">
+            <input type="text" name="comment" placeholder="Ingrese un comentario">
             <button type="button" >guardar</button>
-            <button>Eliminar</button>
+            <button type="button" >Eliminar</button>
         </form>
       </section>
 
@@ -298,7 +297,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         </div>
   
         <!-- agregar roles -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_roles">
+        <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_roles">
           <h2>Ingresar Rol</h2>
             <input type="text" name="nombre" placeholder="Nombre del rol">
             <button type="button" >guardar</button>
@@ -319,7 +318,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         </div>
   
         <!-- agregar mobiliarios -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_mobiliarios">
+        <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_mobiliarios">
           <h2>Ingresar producto</h2>
             <input type="text" name="nombre" placeholder="Nombre del producto">
             <label for="imagen_elaborado" class="cargar_file">Imagen del producto</label>
@@ -361,7 +360,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         </div>
   
         <!-- agregar menues -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_menus">
+        <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_menus">
           <h2>Ingresar Menu</h2>
             <input type="text" name="nombre" placeholder="Nombre del menu">
             <button type="button" >guardar</button>
@@ -383,7 +382,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         </div>
   
         <!-- agregar platos -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_platos">
+        <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_platos">
           <h2>Ingresar plato</h2>
             <input type="text" name="nombre" placeholder="Nombre del plato">
             <button type="button" >guardar</button>
@@ -404,7 +403,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         </div>
   
         <!-- agregar fchas tecncas -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_fichas">
+        <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_fichas">
           <h2>Ingresar Ficha tecnica</h2>
             <input type="text" name="nombre" placeholder="Nombre de la ficha tecnica">
             <span>
@@ -431,7 +430,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           </div>
 
           <!-- agregar imagenes -->
-          <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_imagenes">
+          <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_imagenes">
             <h2>Ingresar imagen</h2>
             <button type="button">agregar imagen</button>
             <label for="ingresar_plano" class="cargar_file">Imagen de presentacion</label>
@@ -454,7 +453,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         </div>
   
         <!-- agregar pedidos -->
-        <form action="../backend/api/create_insumo.php" method="post" class="forms" id="form_pedidos">
+        <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_pedidos">
           <h2>Ingresar pedido</h2>
           <button type="button">agregar pedido</button>
             <input type="text" name="nombre" placeholder="Nombre del pedido">
