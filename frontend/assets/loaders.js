@@ -2,6 +2,7 @@ const backendRoute = "../backend/endpoints/"
 const actual_ing = new Map()
 const ingred_map = new Map()
 const actual_map = new Map()
+let actual_type = "insumos"
 let actual_unities = []
 let actual_id = 0
 let variant_counter = 1
@@ -495,6 +496,7 @@ options.forEach(option => {
         loader(`${backendRoute}load_items.php`, `list_${type}`, option["loadFunction"], type)
         loader(`${backendRoute}load_items.php`, "ingredient-select", loadSelectionIngredientes, "insumos")
         actual_id = 0
+        actual_type = type
     })
     const buttons = document.querySelectorAll(`#form_${type} button`)
 
@@ -520,17 +522,11 @@ options.forEach(option => {
     document.querySelector("#cartel > span > button:nth-child(2)").addEventListener('click', () => {
         let data = new FormData()
         data.set("id", actual_id)
-        data.set("item", type)
+        data.set("item", actual_type)
         create_item(data, "remove_item_by_id.php", option["loadFunction"], type)
         document.getElementById("confirmar-accion").style.display = "none"
     })
 });
-/* document.querySelector("#form_productos > button:nth-child(13)").addEventListener("click", () => { */
-/*     let data = new FormData() */
-/*     data.set("id", actual_id) */
-/*     data.set("item", "productos") */
-/*     create_item(data, "remove_item_by_id.php", onClickLoadProductos, "productos") */
-/* }) */
 searchButton = document.getElementById("buscador_button")
 searchButton.addEventListener('click', () => {
     let searchValue = document.getElementById("buscador").value
