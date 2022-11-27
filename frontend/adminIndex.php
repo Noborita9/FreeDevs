@@ -44,7 +44,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <div>
           <ul class="navOptions">
             <li class="liSelected" onclick='location.href="./index.php"'><p>inicio</p></li>
-            <li onclick='location.href="."'><p>eventos</p></li>
+            <li onclick='sendToEvent()'><p>eventos</p></li>
             <li onclick='location.href="."'><p>nosotros</p></li>
             <li onclick='location.href="."'><p>contacto</p></li>
             <li onclick='location.href="./adminIndex.php"'><p>admin</p></li>

@@ -137,58 +137,21 @@ session_start();
             <div id="showButton">
                 <i class="fa-solid fa-list"></i>
             </div>
-            <p id="titulo1">evento</p>
-            <p id="titulo2">evento</p>
-            <p>evento</p>
-            <p>evento</p>
-            <p>evento</p>
-            <p>evento</p>
-            <p>evento</p>
-            <p>evento</p>
-            <p>evento</p>
         </div>
         
         <div class="event-space">
-            <div class="event-banner" id="1">
-                <img src="./assets/img/restaurant.jpg" alt="">
-                <div class="event-info">
-                        <h2>nombre del evento</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi consequatur itaque assumenda atque ducimus architecto, adipisci tempore ea facilis quia ut vel doloribus libero nihil velit. Facilis odio inventore laudantium!</p>
-                        <div>
-                        <li>fecha</li>
-                        <li>nombre de la ubicacion</li>
-                        <li>tipo de evento</li>
-                        <li>cantidad de personas</li>
-                        <li>conteacto</li>
-                        </div>
-                </div>
-            </div>
 
-            <div class="event-banner" id="2">
-                <img src="./assets/img/pancakes.jpg" alt="">
-                <div class="event-info">
-                        <h2>dia de la madre</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi consequatur itaque assumenda atque ducimus architecto, adipisci tempore ea facilis quia ut vel doloribus libero nihil velit. Facilis odio inventore laudantium!</p>
-                        <div>
-                        <li>fecha</li>
-                        <li>nombre de la ubicacion</li>
-                        <li>tipo de evento</li>
-                        <li>cantidad de personas</li>
-                        <li>conteacto</li>
-                        </div>
-                </div>
-            </div>
         </div>
         
 
     </section>
 
+    <script src="assets/eventMove.js"></script>
     <script src="assets/actions.js"></script>
     <!-- <script src="assets/event_loader.js"></script> -->
+    <script src="assets/loader_event.js"></script>
     <script src="assets/senders.js"></script>
     <script src="assets/logout.js"></script>
-    <script src="assets/eventMove.js"></script>
-    <script src="assets/showEvent.js"></script>
 </body>
 
 </html>

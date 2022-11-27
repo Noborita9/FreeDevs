@@ -34,6 +34,7 @@ const loader = () => {
       let json = JSON.parse(texto)
       let eventSpace = document.getElementById("event_container")
       eventSpace.innerHTML = " "
+      console.log(json["body"])
       let items = onClickLoadEventos(json["body"])
       items.forEach(item => {
         eventSpace.innerHTML += item
