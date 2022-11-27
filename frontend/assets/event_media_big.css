@@ -51,6 +51,7 @@
         height: 100%;
         object-fit: cover;
         opacity: 1;
+
     }
 
     .event-info
@@ -77,6 +78,16 @@
     {
         width: 80%;
         margin: 0 0 20px 0;
+    }
+
+    .event-view
+    {
+        display: flex;
+    }
+
+    .event-noView
+    {
+        display: none;
     }
 
     #showButton{ display: none}

@@ -27,7 +27,11 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
     <ul class="ulLogo">
       <img src="assets/img/greenHat.png" />
 
-
+      <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+        <p id="userName">'.$_SESSION["username"].'</p>
+          ';}
+          ?>
 
       <div>
           <ul class="navOptions">
@@ -44,16 +48,16 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
           <span id="navOptionsResponsive">
           <button class='dropdown-caller login-caller-sm' id=""><i class="fa-solid fa-bars"></i></button>
           <div class="dropdown-menu" id="dropdown-log-sm">
-          <li class="liSelected">
+          <li class="liSelected" onclick="sendToIndex()">
             <p>inicio</p>
           </li>
-          <li onclick='location.href="".'>
+          <li onclick="sendToEvent()">
             <p>eventos</p>
           </li>
-          <li onclick='location.href="."'>
+          <li onclick="sendToIndex()">
             <p>nosotros</p>
           </li>
-          <li onclick='location.href="#formularioContacto"'>
+          <li onclick="sendToIndex()">
             <p>contacto</p>
           </li>
 
@@ -99,14 +103,135 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
         <label for=""><input type="checkbox"> alfabeticamente</label>
         <label for=""><input type="checkbox"> por precio</label>
         <label for=""><input type="checkbox"> por stock</label>
-        <button id="buscar">buscar</button>
         <button id="filtrar">filtrar</button>
+        <button id="clean-filtrar">limpiar filtros</button>
+        <button id="buscar">buscar</button>
       </span>
+
       <span id="cart">
-        <h2>carrito</h2>
-        <button id="cancelar">cancelar</button>
-        <button onclick="buyCart()" id="comprar">comprar</button>
+      <h2>carrito</h2>
+        <!-- <div id="prod_${id}" class="registro">
+          <button onclick='chargeItem(${item["id"]}, 1)'>+</button>
+          <p id='stock_${item["id"]}'>${charged_items.get(id).stock}</p>
+          <button onclick='chargeItem(${item["id"]}, -1)'>-</button>
+          <p>${item["nombre"].slice(0,10)}</p>
+          <button onclick='removeItem(${item["id"]})'>x</button>
+        </div> -->
+
+        <div class="new-register"></div>
+
+        <div class="new-register">
+          <p class="register-title">pizza con pi;a</p>
+          <div class="register-options">
+            <button><i class="fa-solid fa-trash"></i></button>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <p>200</p>
+            <button><i class="fa-solid fa-minus"></i></button>
+            <p class="">3000</p>
+          </div>
+        </div>
+
+        <div class="new-register">
+          <p class="register-title">pizza con pi;a</p>
+          <div class="register-options">
+            <button><i class="fa-solid fa-trash"></i></button>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <button><i class="fa-solid fa-minus"></i></button>
+            <p class="">3000</p>
+          </div>
+        </div>
+
+        <div class="new-register">
+          <p class="register-title">pizza con pi;a</p>
+          <div class="register-options">
+            <button><i class="fa-solid fa-trash"></i></button>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <button><i class="fa-solid fa-minus"></i></button>
+            <p class="">3000</p>
+          </div>
+        </div>
+
+        <div class="new-register">
+          <p class="register-title">pizza con pi;a</p>
+          <div class="register-options">
+            <button><i class="fa-solid fa-trash"></i></button>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <button><i class="fa-solid fa-minus"></i></button>
+            <p class="">3000</p>
+          </div>
+        </div>
+
+        <div class="new-register">
+          <p class="register-title">pizza con pi;a</p>
+          <div class="register-options">
+            <button><i class="fa-solid fa-trash"></i></button>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <button><i class="fa-solid fa-minus"></i></button>
+            <p class="">3000</p>
+          </div>
+        </div>
+
+        <div class="new-register">
+          <p class="register-title">pizza con pi;a</p>
+          <div class="register-options">
+            <button><i class="fa-solid fa-trash"></i></button>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <button><i class="fa-solid fa-minus"></i></button>
+            <p class="">3000</p>
+          </div>
+        </div>
+
+        <div class="new-register">
+          <p class="register-title">pizza con pi;a</p>
+          <div class="register-options">
+            <button><i class="fa-solid fa-trash"></i></button>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <button><i class="fa-solid fa-minus"></i></button>
+            <p class="">3000</p>
+          </div>
+        </div>
+
+        <div class="new-register">
+          <p class="register-title">pizza con pi;a</p>
+          <div class="register-options">
+            <button><i class="fa-solid fa-trash"></i></button>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <button><i class="fa-solid fa-minus"></i></button>
+            <p class="">3000</p>
+          </div>
+        </div>
+
+        <div class="new-register">
+          <p class="register-title">pizza con pi;a</p>
+          <div class="register-options">
+            <button><i class="fa-solid fa-trash"></i></button>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <button><i class="fa-solid fa-minus"></i></button>
+            <p class="">3000</p>
+          </div>
+        </div>
+
+        <div class="new-register">
+          <p class="register-title">pizza con pi;a</p>
+          <div class="register-options">
+            <button><i class="fa-solid fa-trash"></i></button>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <button><i class="fa-solid fa-minus"></i></button>
+            <p class="">3000</p>
+          </div>
+        </div>
+        
       </span>
+
+      <span id="compra-detalles">
+          <div id="monto">
+            <p>monto final:</p>
+            <p>$27800000000</p>
+          </div>
+          <button id="cancelar">cancelar</button>
+          <button onclick="buyCart()" id="comprar">comprar</button>
+      </span>
+
     </div>
 
     <div id="content">

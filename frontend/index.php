@@ -24,6 +24,13 @@ session_start();
         <ul class="ulLogo">
             <img src="assets/img/greenHat.png" />
 
+            <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+        <p id="userName">'.$_SESSION["username"].'</p>
+          ';}
+          ?>
+
+
             <div>
                 <ul class="navOptions">
                     <li class="liSelected">
@@ -32,7 +39,7 @@ session_start();
                     <li onclick='sentToEvent()'>
                         <p>eventos</p>
                     </li>
-                    <li onclick='location.href="."'>
+                    <li onclick='location.href="#nosotros"'>
                         <p>nosotros</p>
                     </li>
                     <li onclick='location.href="#formularioContacto"'>
@@ -62,10 +69,10 @@ session_start();
         <span id="navOptionsResponsive">
           <button class='dropdown-caller login-caller-sm' id=""><i class="fa-solid fa-bars"></i></button>
           <div class="dropdown-menu" id="dropdown-log-sm">
-          <li class="liSelected">
+          <li class="liSelected" onclick="sendToIndex()">
             <p>inicio</p>
           </li>
-          <li onclick="sentToEvent()">
+          <li onclick="sendToEvent()">
             <p>eventos</p>
           </li>
           <li onclick='location.href="."'>
@@ -137,7 +144,7 @@ session_start();
 
 
     <section id="event_container">
-
+      
     </section>
 
   <section id="nosotros">

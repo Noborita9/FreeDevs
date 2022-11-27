@@ -31,7 +31,7 @@ function process_login()
     if (strcmp($row['username'], $array_dataset["user"]) == 0 && strcmp($row['passwd'], $array_dataset["pass"]) == 0) {
       $log_validate = true;
       $_SESSION["rol"] = $row["rol"];
-      $_SESSION["username"] = $row["nombre_usuario"];
+      $_SESSION["username"] = $row["username"];
       $_SESSION["user_id"] = $row["id"];
     }
   }

@@ -21,9 +21,25 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
     
   <div id="avisos"> bienvenido de nuevo</div>
 
+    <div id="confirmar-accion">
+      <div id="cartel">
+        <p>seguro que quieres eliminarlo?</p>
+        <span>
+          <button onclick="confirmSign('none')">cancelar</button>
+          <button>confirmar</button>
+        </span>
+      </div>
+    </div>
+
     <nav>
       <ul class="ulLogo">
         <img src="assets/img/greenHat.png" />
+
+        <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+        <p id="userName">'.$_SESSION["username"].'</p>
+          ';}
+          ?>
 
         <div>
           <ul class="navOptions">
@@ -40,16 +56,16 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <span id="navOptionsResponsive">
           <button class='dropdown-caller login-caller-sm' id=""><i class="fa-solid fa-bars"></i></button>
           <div class="dropdown-menu" id="dropdown-log-sm">
-          <li class="liSelected">
+          <li class="liSelected" onclick="sendToIndex()">
             <p>inicio</p>
           </li>
-          <li onclick='location.href="".'>
+          <li onclick='sendToEvent()'>
             <p>eventos</p>
           </li>
-          <li onclick='location.href="."'>
+          <li onclick="sendToIndex()">
             <p>nosotros</p>
           </li>
-          <li onclick='location.href="#formularioContacto"'>
+          <li onclick="sendToIndex()">
             <p>contacto</p>
           </li>
 
@@ -57,7 +73,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <p>admin</p>
           </li>
 
-          <li onclick='location.href='>
+          <li onclick='sendToMarket()'>
             <p>market</p>
           </li>
 
@@ -136,7 +152,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
     </section>
     <section id="gadgets">
       <ul>
-        <button id="filtro">Filtrar</button>
+        <!-- <button id="filtro">Filtrar</button> -->
         <input type="text" placeholder="Buscar" id="buscador">
         <button id="buscador_button">Buscar</button>
         <!-- <input type="text" placeholder="Filtrar"> -->
@@ -150,10 +166,11 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <!-- lista de eventos -->
         <div class="list" id="list_eventos">
         </div>
+        <div class="fill"></div>
         <!-- agregar eventos -->
         <form action="" class="forms" id="form_eventos">
           <h2>Ingresar evento</h2>
-          <button type="button">agregar evento</button>
+          <button type="button">agregar</button>
           <input type="text" placeholder="Nombre del evento">
           <textarea name="" cols="30" rows="10" placeholder="Informacion del evento"></textarea>
           <input type="date">
@@ -169,6 +186,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <table id="encargados-list">
             <caption>encargados/s</caption>
             <tr>
+              <th></th>
               <th>nombre</th>
               <th>apellido</th>
             </tr>
@@ -177,14 +195,34 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <input type="text" placeholder="Nombre de la ubicacion">
           <input type="number" placeholder="cantidad de personas">
           <input type="text" placeholder="tipo de servicio">
+          <span style="position: relative;">
+            <i class="fa-solid fa-plus" id="add-menu"></i>
+            <select name="" id="select-menu" class="select">
+            <option value="torta">torta</option>
+            </select>
+          </span>
+          <table id="menu-list">
+              <caption>menu</caption>
+              <tr>
+                <th></th>
+                <th>producto</th>
+              </tr>
+          </table>
           <textarea name="" cols="30" rows="10" placeholder="Detalle el mobiliario del evento"></textarea>
           <!-- <input type="text" placeholder="seleccione los menu"> -->
-          <label for="ingresar_plano" class="cargar_file">cargar plano</label>
-          <input type="file" name="plano" id="ingresar_plano" class="none_border" placeholder="Plano del evento">
-          <label for="ingresar_plano" class="cargar_file">cargar imagen para el evento</label>
-          <input type="file" name="img_event" class="none_border" name="" placeholder="Imagen del evento">
+          <span style="position: relative">
+           <label for="ingresar_plano" class="cargar_file">cargar plano</label>
+           <input type="file" id="ingresar_plano" class="none_border" placeholder="Plano del evento">
+           <i class="fa-solid fa-check" id="plano-checked"></i>
+          </span>
+          <!-- <img src="" id="" alt=""> -->
+          <span style="position: relative">
+            <label for="event-image" class="cargar_file">cargar imagen para el evento</label>
+            <input type="file" class="none_border" id="event-image" name="" placeholder="Imagen del evento">
+            <i class="fa-solid fa-check" id="event-checked"></i>
+          </span>
           <button type="button" >guardar</button>
-          <button type="button">Eliminar</button>
+          <button type="button" onclick="confirmSign('flex')">Eliminar</button>
         </form>
         </section>
 
@@ -193,11 +231,11 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
           <!-- lista de insumos -->
           <div class="list" id="list_insumos">
           </div>
-
+          <div class="fill"></div>
           <!-- agregar insumos -->
           <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_insumos">
             <h2>Ingresar insumo</h2>
-            <button type="button">agregar insumo</button>
+            <button type="button">agregar</button>
             <input type="text" name="nombre" placeholder="Nombre del insumo">
             <span>
               <input type="number" class="objeto" name="stock" value=0 min=0 >
@@ -208,7 +246,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             </span>
             <input type="number" name="precio" placeholder="precio">
             <button type="button" >guardar</button>
-          <button type="button">Eliminar</button>
+          <button type="button" onclick="confirmSign('flex')">Eliminar</button>
           </form>
         </section>
 
@@ -225,10 +263,11 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
               <p>Rol</p>
             </span>
           </div>
+          <div class="fill"></div>
       <!-- agregar usuarios -->
           <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_usuarios">
             <h2>Ingresar usuario</h2>
-            <button type="button">agregar usuario</button>
+            <button type="button">agregar</button>
               <input type="text" name="nombre" placeholder="Nombre de usuario">
               <input type="text" name="password" placeholder="Ingrese una contrase;a" >
               <label for="select-rol"></label>
@@ -237,7 +276,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
                 <option value="administrador">administrador</option> -->
               </select>
               <button type="button" >guardar</button>
-              <button>Eliminar</button>
+              <button onclick="confirmSign('flex')">Eliminar</button>
           </form>
         </section>
 
@@ -246,14 +285,18 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <!-- lista de productos -->
         <div class="list" id="list_productos">
         </div>
+        <div class="fill"></div>
   
         <!-- agregar productos -->
         <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms stage" id="form_productos">
         <h2>Ingresar producto</h2>
-        <button type="button">agregar producto</button>
+        <button type="button">agregar</button>
             <input type="text" name="nombre" placeholder="Nombre del producto">
-            <label for="imagen_elaborado" class="cargar_file">Imagen del producto</label>
-            <input type="file" name="img_prod" id="imagen_elaborado">
+            <span style="position: relative">
+             <label for="imagen_elaborado" class="cargar_file">Imagen del producto</label>
+             <input type="file" id="imagen_elaborado">
+             <i class="fa-solid fa-check" id="producto-checked"></i>
+            </span>
             <span class="variants_system">
             <i class="fa-solid fa-plus" id="add-variant"></i>
             <p>nueva unidad</p>
@@ -280,7 +323,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <textarea name="procedimiento" id="" cols="30" rows="10" placeholder="Descrba el procedmiento"></textarea>
             <input type="text" name="comment" placeholder="Ingrese un comentario">
             <button type="button" >guardar</button>
-            <button type="button" >Eliminar</button>
+            <button onclick="confirmSign('flex')">Eliminar</button>
         </form>
       </section>
 
@@ -343,7 +386,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <textarea name="procedimiento" id="" cols="30" rows="10" placeholder="Descrba el procedmiento"></textarea>
             <input type="text" placeholder="Ingrese un comentario">
             <button type="button" >guardar</button>
-            <button>Eliminar</button>
+            <button onclick="confirmSign('flex')">Eliminar</button>
         </form>
       </section>
 
@@ -428,15 +471,19 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
               <h2>imagen</h2>
             </span>
           </div>
+          <div class="fill"></div>
 
           <!-- agregar imagenes -->
           <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_imagenes">
             <h2>Ingresar imagen</h2>
-            <button type="button">agregar imagen</button>
-            <label for="ingresar_plano" class="cargar_file">Imagen de presentacion</label>
-            <input type="file" class="none_border" name="rol">
+            <button type="button">agregar</button>
+            <span style="position: relative;">
+              <label for="ingresar-imagen" class="cargar_file">Imagen de presentacion</label>
+              <input type="file" class="none_border" id="ingresar-imagen" name="rol">
+              <i class="fa-solid fa-check" id="imagen-checked"></i>
+            </span>
             <button type="button" >guardar</button>
-            <button>Eliminar</button>
+            <button onclick="confirmSign('flex')">Eliminar</button>
           </form>
         </section>
 
@@ -451,11 +498,12 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <h2>nombre</h2>
           </span>
         </div>
+        <div class="fill"></div>
   
         <!-- agregar pedidos -->
         <form action="../backend/endpoints/remove_item_by_id.php" method="post" class="forms" id="form_pedidos">
           <h2>Ingresar pedido</h2>
-          <button type="button">agregar pedido</button>
+          <button type="button">agregar</button>
             <input type="text" name="nombre" placeholder="Nombre del pedido">
             <span style="position: relative;">
             <i class="fa-solid fa-plus" id="add-fichTec"></i>
@@ -470,7 +518,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <input type="numeric" placeholder="cantidad">
             <textarea name="" id="" cols="30" rows="10" placeholder="detalles del pedido"></textarea>
             <button type="button" >guardar</button>
-            <button>Eliminar</button>
+            <button onclick="confirmSign('flex')">Eliminar</button>
         </form>
       </section>
 
@@ -490,6 +538,6 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
     <script src="./assets/loaders.js"></script>
     <script src="./assets/senders.js"></script>
     <script src="./assets/adminStage.js"></script>
-    <script src=""></script>
+    <script src="./assets/confirm.js"></script>
   </body>
 </html>

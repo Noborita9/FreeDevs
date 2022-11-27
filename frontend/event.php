@@ -26,6 +26,12 @@ session_start();
         <ul class="ulLogo">
             <img src="assets/img/greenHat.png" />
 
+            <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+        <p id="userName">'.$_SESSION["username"].'</p>
+          ';}
+          ?>
+
             <div>
                 <ul class="navOptions">
                     <li class="liSelected">
@@ -64,16 +70,16 @@ session_start();
         <span id="navOptionsResponsive">
           <button class='dropdown-caller login-caller-sm' id=""><i class="fa-solid fa-bars"></i></button>
           <div class="dropdown-menu" id="dropdown-log-sm">
-          <li class="liSelected">
+          <li class="liSelected" onclick="sendToIndex()">
             <p>inicio</p>
           </li>
           <li onclick="sentToEvent()">
             <p>eventos</p>
           </li>
-          <li onclick='location.href="."'>
+          <li onclick="sendToIndex()">
             <p>nosotros</p>
           </li>
-          <li onclick='location.href="#formularioContacto"'>
+          <li onclick="sendToIndex()">
             <p>contacto</p>
           </li>
           <?php if (strcmp($_SESSION["rol"], "admin") == 0) {
@@ -131,8 +137,8 @@ session_start();
             <div id="showButton">
                 <i class="fa-solid fa-list"></i>
             </div>
-            <p>evento</p>
-            <p>evento</p>
+            <p id="titulo1">evento</p>
+            <p id="titulo2">evento</p>
             <p>evento</p>
             <p>evento</p>
             <p>evento</p>
@@ -143,10 +149,25 @@ session_start();
         </div>
         
         <div class="event-space">
-            <div class="event-banner">
+            <div class="event-banner" id="1">
                 <img src="./assets/img/restaurant.jpg" alt="">
                 <div class="event-info">
                         <h2>nombre del evento</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi consequatur itaque assumenda atque ducimus architecto, adipisci tempore ea facilis quia ut vel doloribus libero nihil velit. Facilis odio inventore laudantium!</p>
+                        <div>
+                        <li>fecha</li>
+                        <li>nombre de la ubicacion</li>
+                        <li>tipo de evento</li>
+                        <li>cantidad de personas</li>
+                        <li>conteacto</li>
+                        </div>
+                </div>
+            </div>
+
+            <div class="event-banner" id="2">
+                <img src="./assets/img/pancakes.jpg" alt="">
+                <div class="event-info">
+                        <h2>dia de la madre</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi consequatur itaque assumenda atque ducimus architecto, adipisci tempore ea facilis quia ut vel doloribus libero nihil velit. Facilis odio inventore laudantium!</p>
                         <div>
                         <li>fecha</li>
@@ -163,10 +184,11 @@ session_start();
     </section>
 
     <script src="assets/actions.js"></script>
-    <script src="assets/event_loader.js"></script>
+    <!-- <script src="assets/event_loader.js"></script> -->
     <script src="assets/senders.js"></script>
     <script src="assets/logout.js"></script>
     <script src="assets/eventMove.js"></script>
+    <script src="assets/showEvent.js"></script>
 </body>
 
 </html>
