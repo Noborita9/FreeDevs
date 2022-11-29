@@ -125,7 +125,6 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
       <span id="compra-detalles">
           <div id="monto">
             <p>monto final:</p>
-            <p>$27800000000</p>
           </div>
           <button id="cancelar">cancelar</button>
           <button onclick="buyCart()" id="comprar">comprar</button>
