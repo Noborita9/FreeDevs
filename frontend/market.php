@@ -4,7 +4,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
   header("Location: ./login.php");
   exit();
 }
-?>
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,107 +119,6 @@ if (strcmp($_SESSION["rol"], "admin") != 0 && strcmp($_SESSION["rol"], "usuario"
         </div> -->
 
         <div class="new-register"></div>
-
-        <div class="new-register">
-          <p class="register-title">pizza con pi;a</p>
-          <div class="register-options">
-            <button><i class="fa-solid fa-trash"></i></button>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <p>200</p>
-            <button><i class="fa-solid fa-minus"></i></button>
-            <p class="">3000</p>
-          </div>
-        </div>
-
-        <div class="new-register">
-          <p class="register-title">pizza con pi;a</p>
-          <div class="register-options">
-            <button><i class="fa-solid fa-trash"></i></button>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-minus"></i></button>
-            <p class="">3000</p>
-          </div>
-        </div>
-
-        <div class="new-register">
-          <p class="register-title">pizza con pi;a</p>
-          <div class="register-options">
-            <button><i class="fa-solid fa-trash"></i></button>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-minus"></i></button>
-            <p class="">3000</p>
-          </div>
-        </div>
-
-        <div class="new-register">
-          <p class="register-title">pizza con pi;a</p>
-          <div class="register-options">
-            <button><i class="fa-solid fa-trash"></i></button>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-minus"></i></button>
-            <p class="">3000</p>
-          </div>
-        </div>
-
-        <div class="new-register">
-          <p class="register-title">pizza con pi;a</p>
-          <div class="register-options">
-            <button><i class="fa-solid fa-trash"></i></button>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-minus"></i></button>
-            <p class="">3000</p>
-          </div>
-        </div>
-
-        <div class="new-register">
-          <p class="register-title">pizza con pi;a</p>
-          <div class="register-options">
-            <button><i class="fa-solid fa-trash"></i></button>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-minus"></i></button>
-            <p class="">3000</p>
-          </div>
-        </div>
-
-        <div class="new-register">
-          <p class="register-title">pizza con pi;a</p>
-          <div class="register-options">
-            <button><i class="fa-solid fa-trash"></i></button>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-minus"></i></button>
-            <p class="">3000</p>
-          </div>
-        </div>
-
-        <div class="new-register">
-          <p class="register-title">pizza con pi;a</p>
-          <div class="register-options">
-            <button><i class="fa-solid fa-trash"></i></button>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-minus"></i></button>
-            <p class="">3000</p>
-          </div>
-        </div>
-
-        <div class="new-register">
-          <p class="register-title">pizza con pi;a</p>
-          <div class="register-options">
-            <button><i class="fa-solid fa-trash"></i></button>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-minus"></i></button>
-            <p class="">3000</p>
-          </div>
-        </div>
-
-        <div class="new-register">
-          <p class="register-title">pizza con pi;a</p>
-          <div class="register-options">
-            <button><i class="fa-solid fa-trash"></i></button>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-minus"></i></button>
-            <p class="">3000</p>
-          </div>
-        </div>
         
       </span>
 

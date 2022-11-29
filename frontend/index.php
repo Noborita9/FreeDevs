@@ -27,16 +27,13 @@ session_start();
             <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
             echo '
         <p id="userName">'.$_SESSION["username"].'</p>
-          ';}
-          ?>
-
-
+          ';} ?>
             <div>
                 <ul class="navOptions">
-                    <li class="liSelected">
+                    <li id="inicio_nav_move" class="liSelected">
                         <p>inicio</p>
                     </li>
-                    <li onclick='sentToEvent()'>
+                    <li id="eventos_nav_move">
                         <p>eventos</p>
                     </li>
                     <li onclick='location.href="#nosotros"'>

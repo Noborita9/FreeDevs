@@ -139,3 +139,4 @@ VALUES ("Pizza Con Mozzarella", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c
     ("Pancho con Panceta", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83", "", "");
 INSERT INTO product_per_unity (id_producto, unidad, precio, stock) VALUES (1, "Porcion", 110, 12), (1, "Entera", 550, 4), (2, "Unidad", 230, 10);
 INSERT INTO ingred_por_prod (id_producto, id_ingrediente, cantidad) VALUES (1, 1, 150), (1, 4, 500), (1, 7, 1000);
+
