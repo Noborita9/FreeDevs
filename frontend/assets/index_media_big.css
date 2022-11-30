@@ -269,4 +269,18 @@ form div button:hover
     font-size: 1.3em;
   }
 
+  #cont_tit
+  {
+    width: 100%;
+    display: flex;
+  }
+
+  .tit_ev
+  {
+    color: #fff;
+    font-size: 2em;
+    width: fit-content;
+    margin: auto;
+  }
+
 }

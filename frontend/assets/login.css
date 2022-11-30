@@ -97,12 +97,13 @@ form button:hover {
     margin: 0;
   }
 
-  section img{
+  #showImg{
     width: auto;
     height: 30px;
     margin: 0 0 5px 0;
     position: absolute;
     right: 0;
+    /* bottom: 4px; */
   }
 
   form img:hover {
@@ -178,6 +179,10 @@ form button:hover {
     margin: 0;
   }
 
+  #form_login > section:nth-child(4) {
+    margin: 20px;
+  }
+
   form input {
     width: 50vw;
     height: 3vh;
@@ -204,12 +209,13 @@ form button:hover {
     bottom: 0;
   }
 
-  section img{
+  #showImg{
     width: auto;
     height: 30px;
     margin: 0 0 0 0;
     position: absolute;
     right: 0;
+    bottom: 4px;
   }
 
   form button {
