@@ -69,7 +69,7 @@ session_start();
           <li class="liSelected" onclick="sendToIndex()">
             <p>inicio</p>
           </li>
-          <li onclick="sendToEvent()">
+          <li onclick="location.href='./event.php'">
             <p>eventos</p>
           </li>
           <li onclick='location.href="."'>

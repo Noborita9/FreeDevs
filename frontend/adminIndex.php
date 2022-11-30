@@ -44,7 +44,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <div>
           <ul class="navOptions">
             <li class="liSelected" onclick='location.href="./index.php"'><p>inicio</p></li>
-            <li onclick='sendToEvent()'><p>eventos</p></li>
+            <li onclick='location.href="./event.php"'><p>eventos</p></li>
             <li onclick='location.href="."'><p>nosotros</p></li>
             <li onclick='location.href="."'><p>contacto</p></li>
             <li onclick='location.href="./adminIndex.php"'><p>admin</p></li>
@@ -538,6 +538,8 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
     <script src="./assets/loaders.js"></script>
     <script src="./assets/senders.js"></script>
     <script src="./assets/adminStage.js"></script>
-    <script src="./assets/confirm.js"></script>
+    <script  src="./assets/confirm.js"></script>
+    <script  src="./assets/event_admin.js"></script>
+    <script  src="./assets/product_admin.js"></script>
   </body>
 </html>

@@ -1,18 +1,18 @@
 let currentId = 1;
 
-function showEvent(newId){
-  document.getElementById( currentId ).classList.remove('event-view')
-  document.getElementById( currentId ).classList.add('event-noView');
-  document.getElementById( newId ).classList.remove('event-noView')
-  document.getElementById( newId ).classList.add('event-view');
-  currentId = newId;
-  }
+function showEvent(newId) {
+    document.getElementById(currentId).classList.remove('event-view')
+    document.getElementById(currentId).classList.add('event-noView');
+    document.getElementById(newId).classList.remove('event-noView')
+    document.getElementById(newId).classList.add('event-view');
+    currentId = newId;
+}
 
 
 const onClickLoadEventos = (data) => {
 
     return data.map((item) => {
-      return `
+        return `
     <div class="event-banner event-noView" id="${item['id']}">
         <img src="./assets/img/restaurant.jpg" alt="">
         <div class="event-info">
@@ -28,73 +28,75 @@ const onClickLoadEventos = (data) => {
         </div>
     </div>
   `
-  })
+    })
 }
-  
+
 const onClickNavEvents = (data) => {
     return data.map((item) => {
         return `
         <p id="AA${item['id']}" onclick="showEvent( ${item['id']} )">${item['titulo']}</p>
         `
-})
+    })
 }
 
-  const loader = () => {
+const loader = () => {
     const data = new FormData()
     data.set('item', 'eventos')
     fetch('../backend/endpoints/load_items.php', {
-      method: "POST",
-      body: data
+        method: "POST",
+        body: data
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.text()
-        } else {
-          throw "Error"
-        }
-      })
-      .then((texto) => {
-        let json = JSON.parse(texto)
-        let eventSpace = document.querySelector(".event-space")
-        eventSpace.innerHTML = ""
-        let items = onClickLoadEventos(json["body"])
-        items.forEach(item => {
-          eventSpace.innerHTML += item
-        });
-
-        let navEvents = document.getElementById("nav-events")
-        // navEvents.innerHTML = ""
-        let navs = onClickNavEvents(json["body"])
-        navs.forEach(navs => {
-            navEvents.innerHTML += navs
-        })
-        document.getElementById('1').classList.add('event-view');
-        document.getElementById('1').classList.remove('event-noView');
-
-        const openPanel = document.getElementById('showButton');
-
-        let open = false;
-
-        openPanel.addEventListener('click', () => {
-            const navPanel = document.getElementById('nav-events');
-            console.log(true)
-            if(open == false){
-                navPanel.classList.remove('leaveNav');
-                navPanel.classList.add('enterNav');
-                open = true;
+        .then((res) => {
+            if (res.ok) {
+                return res.text()
+            } else {
+                throw "Error"
             }
-            else{
-                navPanel.classList.remove('enterNav');
-                navPanel.classList.add('leaveNav');
-                open = false;
-            }
-            
         })
-      })
-      .catch((err) => { console.log(err) })
-  }
+        .then((texto) => {
+            let json = JSON.parse(texto)
+            let eventSpace = document.querySelector(".event-space")
+            eventSpace.innerHTML = ""
+            let items = onClickLoadEventos(json["body"])
+            items.forEach(item => {
+                eventSpace.innerHTML += item
+            });
 
-  document.addEventListener('DOMContentLoaded', ()=> {
+            let navEvents = document.getElementById("nav-events")
+            // navEvents.innerHTML = ""
+            let navs = onClickNavEvents(json["body"])
+            navs.forEach(navs => {
+                navEvents.innerHTML += navs
+            })
+            document.getElementById('1').classList.add('event-view');
+            document.getElementById('1').classList.remove('event-noView');
+
+            const openPanel = document.getElementById('showButton');
+
+            let open = false;
+
+            console.log(openPanel)
+            openPanel.addEventListener('click', () => {
+                const navPanel = document.getElementById('nav-events');
+                console.log(true)
+                console.log(navPanel)
+                if (open == false) {
+                    navPanel.classList.remove('leaveNav');
+                    navPanel.classList.add('enterNav');
+                    open = true;
+                }
+                else {
+                    navPanel.classList.remove('enterNav');
+                    navPanel.classList.add('leaveNav');
+                    open = false;
+                }
+
+            })
+        })
+        .catch((err) => { console.log(err) })
+}
+
+document.addEventListener('DOMContentLoaded', () => {
     loader()
-  });
+});
 

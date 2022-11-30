@@ -1,5 +1,3 @@
-DROP DATABASE IF EXISTS gestornomia;
-CREATE DATABASE gestornomia;
 USE gestornomia;
 
 CREATE TABLE user_roles (
@@ -112,10 +110,26 @@ CREATE TABLE producto_per_prod_order (
     FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
+CREATE TABLE ventas (
+    id INT AUTO_INCREMENT, 
+    id_usuario INT,
+    total INT NOT NULL,
+    PRIMARY KEY(id, id_usuario),
+)
+
+CREATE TABLE prod_per_venta(
+    id_venta INT,
+    id_producto INT,
+    PRIMARY KEY(id_venta, id_producto),
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
+    FOREIGN KEY (id_venta) REFERENCES ventas(id)
+)
+
 INSERT INTO user_roles (nombre) VALUES("admin"), ("user");
 INSERT INTO usuarios (username, passwd, rol) VALUES("admin","admin","admin"), ("user", "user", "user");
 INSERT INTO unidades (nombre)
-VALUES ("Kg"),
+VALUES 
+    ("Kg"),
     ("Gr"),
     ("L"),
     ("Ml"),
@@ -135,8 +149,12 @@ VALUES
     ("Salsa de tomate", 3, 3000, 320),
     ("Huevo", 5, 24, 700);
 INSERT INTO productos (nombre, imagen, description, comment ) 
-VALUES ("Pizza Con Mozzarella", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83", "", ""),
+VALUES 
+    ("Pizza Con Mozzarella", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83", "", ""),
     ("Pancho con Panceta", "https://genrandom.com/6d8ac8b2-b4f2-4fc7-be93-c329e8e9cf83", "", "");
 INSERT INTO product_per_unity (id_producto, unidad, precio, stock) VALUES (1, "Porcion", 110, 12), (1, "Entera", 550, 4), (2, "Unidad", 230, 10);
 INSERT INTO ingred_por_prod (id_producto, id_ingrediente, cantidad) VALUES (1, 1, 150), (1, 4, 500), (1, 7, 1000);
-
+INSERT INTO eventos (titulo, tipo, servicio, fecha, ubicacion, cantidad_personas, contacto, image_name, mobiliario)
+VALUES 
+    (),
+    ();
