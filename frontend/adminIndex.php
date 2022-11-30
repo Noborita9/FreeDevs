@@ -544,5 +544,6 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
     <script  src="./assets/confirm.js"></script>
     <script  src="./assets/event_admin.js"></script>
     <script  src="./assets/product_admin.js"></script>
+    <script  src="./assets/usuarios_admin.js"></script>
   </body>
 </html>

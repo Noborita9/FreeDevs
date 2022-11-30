@@ -306,6 +306,7 @@ const productLoader = (is_searching, loader) => {
 document.getElementById("productos").addEventListener('click', () => {
     productLoader(false, getProductosHtml)
     window.localStorage.setItem("item", products_page)
+    window.localStorage.setItem("load_func", getProductosHtml)
 })
 
 document.querySelector("#form_productos > button:nth-child(2)").addEventListener("click", () => {

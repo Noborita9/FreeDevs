@@ -1,5 +1,10 @@
 <?php
-if (isset($_POST["usuario"]) && !empty($_POST["usuario"]) && isset($_POST["password"]) && !empty($_POST["password"]) && isset($_POST["role"]) && !empty($_POST["role"])) {
+if (isset($_POST["nombre"]) &&
+    !empty($_POST["nombre"]) &&
+    isset($_POST["password"]) &&
+    !empty($_POST["password"]) &&
+    isset($_POST["rol"]) &&
+    !empty($_POST["rol"])) {
     check_user_exists();
 } else {
     //header("Location: ../../frontend/index.html ");
@@ -8,28 +13,34 @@ if (isset($_POST["usuario"]) && !empty($_POST["usuario"]) && isset($_POST["passw
 function check_user_exists()
 {
     include("../conexion.php");
-    $stmt = $conn->prepare("SELECT nombre_usuario FROM usuarios WHERE nombre_usuario = ?;");
-    $stmt->execute($_POST["usuario"]);
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = :id;");
+    $stmt->bindParam(":id", $_POST["id"]);
+    $stmt->execute();
     $data = $stmt->fetchAll();
     if (!empty($data)) {
-        echo "Does not exists";
-        exit();
+        update_user();
     }
-    /* foreach ($data as $row) { */
-    /*   if (strcmp($_POST["usuario"], $row["nombre_usuario"] == 0)){ */
-    /*     echo "User Already Exists"; */
-    /*     exit(); */
-    /*   } */
-    /* } */
     create_user();
+}
+
+function update_user()
+{
+    include("../conexion.php");
+    $stmt = $conn->prepare("UPDATE usuarios set username = :username, passwd = :passwd rol, :rol WHERE id=:id)");
+    $stmt->bindParam(":username", $_POST["nombre"]);
+    $stmt->bindParam(":passwd", $_POST["password"]);
+    $stmt->bindParam(":rol", $_POST["rol"]);
+    $stmt->execute();
+    echo 1;
 }
 
 function create_user()
 {
     include("../conexion.php");
-    $stmt = $conn->prepare("INSERT INTO usuarios (nombre_usuario, contrasena, role) VALUES (:username, :password, :role)");
-    $stmt->bindParam(":username", $_POST["usuario"]);
-    $stmt->bindParam(":password", $_POST["password"]);
-    $stmt->bindParam(":role", $_POST["role"]);
+    $stmt = $conn->prepare("INSERT INTO usuarios (username, passwd, rol) VALUES (:username, :passwd, :rol)");
+    $stmt->bindParam(":username", $_POST["nombre"]);
+    $stmt->bindParam(":passwd", $_POST["password"]);
+    $stmt->bindParam(":rol", $_POST["rol"]);
     $stmt->execute();
+    echo 1;
 }

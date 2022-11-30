@@ -226,8 +226,8 @@ options.forEach(option => {
 searchButton = document.getElementById("buscador_button")
 searchButton.addEventListener('click', () => {
     let searchValue = document.getElementById("buscador").value
-    loader(`${backendRoute}load_items.php`, `list_insumos`, onClickLoadInsumos, "insumos", true, `nombre LIKE "%${searchValue}%"`)
+    console.log("Some Thing")
+    let item = window.localStorage.getItem("item")
+    let func = eval(`(${window.localStorage.getItem("load_func")})`)
+    loader(`${backendRoute}load_items.php`, `list_${item}`, func, item, true, `nombre LIKE "%${searchValue}%"`)
 })
-
-
-

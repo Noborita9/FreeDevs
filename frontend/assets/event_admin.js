@@ -47,4 +47,5 @@ const eventLoader = (is_searching) => {
 document.getElementById(event_page).addEventListener('click', ()=>{
     eventLoader(false)
     window.localStorage.setItem("item", event_page)
+    window.localStorage.setItem("load_func", getEventsHtml)
 })

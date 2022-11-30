@@ -129,8 +129,8 @@ CREATE TABLE prod_per_venta(
     FOREIGN KEY (id_venta) REFERENCES ventas(id)
 );
 
-INSERT INTO user_roles (nombre) VALUES("admin"), ("user");
-INSERT INTO usuarios (username, passwd, rol) VALUES("admin","admin","admin"), ("user", "user", "user");
+INSERT INTO user_roles (nombre) VALUES("admin"), ("usuario");
+INSERT INTO usuarios (username, passwd, rol) VALUES("admin","admin","admin"), ("user", "user", "usuario");
 INSERT INTO unidades (nombre)
 VALUES 
     ("Kg"),
