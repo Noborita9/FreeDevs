@@ -118,16 +118,16 @@ CREATE TABLE ventas (
     id INT AUTO_INCREMENT, 
     id_usuario INT,
     total INT NOT NULL,
-    PRIMARY KEY(id, id_usuario),
-)
+    PRIMARY KEY(id, id_usuario)
+);
 
 CREATE TABLE prod_per_venta(
     id_venta INT,
     id_producto INT,
     PRIMARY KEY(id_venta, id_producto),
-    FOREIGN KEY (id_producto) REFERENCES productos(id)
+    FOREIGN KEY (id_producto) REFERENCES productos(id),
     FOREIGN KEY (id_venta) REFERENCES ventas(id)
-)
+);
 
 INSERT INTO user_roles (nombre) VALUES("admin"), ("user");
 INSERT INTO usuarios (username, passwd, rol) VALUES("admin","admin","admin"), ("user", "user", "user");
