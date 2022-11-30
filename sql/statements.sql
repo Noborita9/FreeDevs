@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS gestornomia;
+
+CREATE DATABASE gestornomia;
+
 USE gestornomia;
 
 CREATE TABLE user_roles (

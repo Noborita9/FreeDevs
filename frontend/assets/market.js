@@ -28,7 +28,6 @@ function buyCart() {
             body: data
         }).then((res) => {
             if (res.ok) {
-                invocarAviso('compra existosa')
                 return res.text()
             } else {
                 throw "ERROR"
@@ -36,6 +35,8 @@ function buyCart() {
         }
         ).then((texto) => {
             loader()
+            invocarAviso('compra existosa')
+            cleanCart()
         }).catch((err) => {
             console.log(err)
         })
@@ -43,14 +44,14 @@ function buyCart() {
     buyButton = document.getElementById("comprar")
 }
 
-function cancelPurchase(){
+function cleanCart(){
     charged_items.forEach((item) => { removeItem(item.id) })
 }
 
 let cancelButton = document.getElementById('cancelar')
 
 cancelButton.addEventListener('click', () => {
-    cancelPurchase()
+    cleanCart()
 })
 
 function finalAmount(){
@@ -69,15 +70,17 @@ function removeItem(id) {
     }
 }
 
-function chargeItem(id, amount, price) {
+function chargeItem(id, amount, price, added = false) {
     let bdItems = loaded_items.get(`${id}`)
-    if(bdItems.stock > 0){
-        bdItems.stock = bdItems.stock - 1
+    if(bdItems.stock > 0 || added){
+        bdItems.stock = bdItems.stock - 1 * amount
         document.getElementById(`item_stock_${bdItems["id"]}`).innerText = `stock: ${bdItems["stock"]}`
         if (charged_items.has(id)) {
             let item = charged_items.get(id)
             item.stock = item.stock + amount
             item.precio = parseInt(item.precio) + price * amount
+            console.log(bdItems.stock + amount)
+            // bdItems.stock = bdItems.stock + amount
             if (item.stock <= 0) {
                 let stockElement = document.getElementById(`prod_${id}`).remove()
                 charged_items.delete(id)
@@ -97,9 +100,9 @@ function chargeItem(id, amount, price) {
             <p >${item["unidad"]}</p>
             <div class="register-options">
                 <button onclick="removeItem(${id})"><i class="fa-solid fa-trash"></i></button>
-                <button onclick="chargeItem(${id}, -1,${price})"><i class="fa-solid fa-minus"></i></button>
+                <button onclick="chargeItem(${id}, -1,${price}, true)"><i class="fa-solid fa-minus"></i></button>
                 <p id='stock_${id}'>${charged_items.get(id).stock}</p>
-                <button onclick="chargeItem(${id}, 1,${price})"><i class="fa-solid fa-plus"></i></button>
+                <button onclick="chargeItem(${id}, 1,${price}, false)"><i class="fa-solid fa-plus"></i></button>
                 <p class="" id='precio_${id}'>$${charged_items.get(id).precio}</p>
             </div>
             </div>
