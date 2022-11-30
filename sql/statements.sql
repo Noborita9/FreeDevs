@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS gestornomia;
+
+CREATE DATABASE gestornomia;
+
 USE gestornomia;
 
 CREATE TABLE user_roles (
@@ -156,5 +160,5 @@ INSERT INTO product_per_unity (id_producto, unidad, precio, stock) VALUES (1, "P
 INSERT INTO ingred_por_prod (id_producto, id_ingrediente, cantidad) VALUES (1, 1, 150), (1, 4, 500), (1, 7, 1000);
 INSERT INTO eventos (titulo, tipo, servicio, fecha, ubicacion, cantidad_personas, contacto, image_name, mobiliario)
 VALUES 
-    (),
+    ("mesa de dulces", "fiesta", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae perspiciatis cumque, magni quam debitis repellendus neque cupiditate in eum aspernatur explicabo, suscipit omnis ea aliquid, nam commodi excepturi beatae quas!",CURDATE(), "salon agua dulce", 60, 095123123, "https://images.pexels.com/photos/587741/pexels-photo-587741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "se dispondra de mesas y sillas para los invitados"),
     ();

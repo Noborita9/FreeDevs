@@ -287,4 +287,9 @@
     {
         padding-left: 20px;
     }
+
+    #stageCaller
+    {
+        display: none;
+    }
 }

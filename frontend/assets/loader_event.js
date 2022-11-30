@@ -75,7 +75,6 @@ const loader = () => {
 
             let open = false;
 
-            console.log(openPanel)
             openPanel.addEventListener('click', () => {
                 const navPanel = document.getElementById('nav-events');
                 console.log(true)
@@ -92,6 +91,7 @@ const loader = () => {
                 }
 
             })
+            showEvent(localStorage.getItem('event_id'))
         })
         .catch((err) => { console.log(err) })
 }
