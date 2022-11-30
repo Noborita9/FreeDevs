@@ -11,6 +11,10 @@ const invocarAviso = (text) => {
   setTimeout(() => {avisos.style.display="none"}, 2000)
 }
 
+// function purchase(){
+// 
+// }
+
 
 function buyCart() {
     charged_items.forEach(element => {
@@ -53,7 +57,6 @@ function finalAmount(){
     let monto = document.getElementById('monto')
     let total = 0;
     charged_items.forEach((item) => { total = total + parseInt(item.precio) })
-    console.log(total)
     monto.innerHTML = `<p>monto final:</p> <p>$${total}</p>`
 }
 
@@ -67,42 +70,47 @@ function removeItem(id) {
 }
 
 function chargeItem(id, amount, price) {
-    if (charged_items.has(id)) {
-        let item = charged_items.get(id)
-        item.stock = item.stock + amount
-        item.precio = parseInt(item.precio) + price * amount
-        console.log(parseInt(item.precio))
-        if (item.stock <= 0) {
-            let stockElement = document.getElementById(`prod_${id}`).remove()
-            charged_items.delete(id)
-        } else {
-            let stockElement = document.getElementById(`stock_${id}`)
-            stockElement.innerHTML = item.stock
-            let priceElement = document.getElementById(`precio_${id}`)
-            priceElement.innerHTML = `$${item.precio}`
-        }
+    let bdItems = loaded_items.get(`${id}`)
+    if(bdItems.stock > 0){
+        bdItems.stock = bdItems.stock - 1
+        document.getElementById(`item_stock_${bdItems["id"]}`).innerText = `stock: ${bdItems["stock"]}`
+        if (charged_items.has(id)) {
+            let item = charged_items.get(id)
+            item.stock = item.stock + amount
+            item.precio = parseInt(item.precio) + price * amount
+            if (item.stock <= 0) {
+                let stockElement = document.getElementById(`prod_${id}`).remove()
+                charged_items.delete(id)
+            } else {
+                let stockElement = document.getElementById(`stock_${id}`)
+                stockElement.innerHTML = item.stock
+                let priceElement = document.getElementById(`precio_${id}`)
+                priceElement.innerHTML = `$${item.precio}`
+            }
 
-    } else {
-        let item = loaded_items.get(`${id}`)
-        charged_items.set(id, { id: id, stock: 1, precio: item.precio})
-        console.log(charged_items)
-        // console.log(item.precio)
-        let newItem = `
-        <div id='prod_${id}' class="new-register">
-          <p  class="register-title">${item["nombre"]}</p>
-          <div class="register-options">
-            <button onclick="removeItem(${id})"><i class="fa-solid fa-trash"></i></button>
-            <button onclick="chargeItem(${id}, -1,${price})"><i class="fa-solid fa-minus"></i></button>
-            <p id='stock_${id}'>${charged_items.get(id).stock}</p>
-            <button onclick="chargeItem(${id}, 1,${price})"><i class="fa-solid fa-plus"></i></button>
-            <p class="" id='precio_${id}'>$${charged_items.get(id).precio}</p>
-          </div>
-        </div>
-`
-        let chargeElement = document.getElementById("cart")
-        chargeElement.innerHTML += newItem
+        } else {
+            let item = loaded_items.get(`${id}`)
+            charged_items.set(id, { id: id, stock: 1, precio: item.precio})
+            let newItem = `
+            <div id='prod_${id}' class="new-register">
+            <p class="register-title">${item["nombre"]}</p>
+            <p >${item["unidad"]}</p>
+            <div class="register-options">
+                <button onclick="removeItem(${id})"><i class="fa-solid fa-trash"></i></button>
+                <button onclick="chargeItem(${id}, -1,${price})"><i class="fa-solid fa-minus"></i></button>
+                <p id='stock_${id}'>${charged_items.get(id).stock}</p>
+                <button onclick="chargeItem(${id}, 1,${price})"><i class="fa-solid fa-plus"></i></button>
+                <p class="" id='precio_${id}'>$${charged_items.get(id).precio}</p>
+            </div>
+            </div>
+            `
+            let chargeElement = document.getElementById("cart")
+            chargeElement.innerHTML += newItem
+        }
+        finalAmount()
+    }else{
+        invocarAviso('no hay suficiente stock')
     }
-    finalAmount()
 }
 
 const loadProductos = (data) => {
@@ -115,7 +123,7 @@ const loadProductos = (data) => {
         <h2>${item["nombre"]}</h2>
           <h3>${item["unidad"]}</h3>
         <div>
-          <p>stock: ${item["stock"]}</p>
+          <p id="item_stock_${item["id"]}">stock: ${item["stock"]}</p>
           <p>$${item["precio"]}</p>
         </div>
       </span>
