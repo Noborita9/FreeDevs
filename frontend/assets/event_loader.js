@@ -11,7 +11,7 @@ const onClickLoadEventos = (data) => {
 
     <section class="event">
     <section class="content">
-      <img src="assets/img/${item['image_name']}">
+      <img src="${item['image_name']}">
       <div>
         <h2>${item['titulo']}</h2>
         <p>${item['servicio']}</p>
