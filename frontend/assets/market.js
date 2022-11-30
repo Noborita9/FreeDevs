@@ -63,6 +63,8 @@ function finalAmount(){
 
 function removeItem(id) {
     if (charged_items.has(id)) {
+        loaded_items.get(`${id}`).stock = loaded_items.get(`${id}`).stock + charged_items.get(id).stock
+        document.getElementById(`item_stock_${id}`).innerText = `stock: ${loaded_items.get(`${id}`).stock}`
         charged_items.delete(id)
         let stockElement = document.getElementById(`prod_${id}`)
         stockElement.remove(stockElement)
@@ -79,8 +81,6 @@ function chargeItem(id, amount, price, added = false) {
             let item = charged_items.get(id)
             item.stock = item.stock + amount
             item.precio = parseInt(item.precio) + price * amount
-            console.log(bdItems.stock + amount)
-            // bdItems.stock = bdItems.stock + amount
             if (item.stock <= 0) {
                 let stockElement = document.getElementById(`prod_${id}`).remove()
                 charged_items.delete(id)
@@ -121,7 +121,7 @@ const loadProductos = (data) => {
         loaded_items.set(item["id"], item)
         console.log(item.precio)
         return `
-      <span class="producto" id='${item["id"]}' >
+      <span class="producto" id='${item["id"]}' style='background-image: url("../backend/imgs/${item["imagen"]}")' >
         <div class="filter" onclick='chargeItem(${item["id"]}, 1, ${item["precio"]})'></div>
         <h2>${item["nombre"]}</h2>
           <h3>${item["unidad"]}</h3>

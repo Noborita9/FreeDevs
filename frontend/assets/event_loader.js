@@ -11,7 +11,7 @@ const onClickLoadEventos = (data) => {
 
     <section class="event">
     <section class="content">
-      <img src="assets/img/${item['image_name']}">
+      <img src="${item['image_name']}">
       <div>
         <h2>${item['titulo']}</h2>
         <p>${item['servicio']}</p>
@@ -38,9 +38,9 @@ const loader = () => {
     })
     .then((texto) => {
       let json = JSON.parse(texto)
+      console.log(json)
       let eventSpace = document.getElementById("event_container")
-      eventSpace.innerHTML = " "
-      console.log(json["body"])
+      json["body"].length > 0 ? eventSpace.innerHTML = " <span id='cont_tit'> <h2 class='tit_ev'>proximos eventos</h2> </span>" : eventSpace.innerHTML = "<span class='cont_tit'> <h2 class='tit_ev'>no hay eventos </h2> <h2 class='tit_ev'>proximos</h2> </span>"
       let items = onClickLoadEventos(json["body"])
       items.forEach(item => {
         eventSpace.innerHTML += item
