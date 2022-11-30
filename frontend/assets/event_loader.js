@@ -1,6 +1,12 @@
+function sendEvent(id){
+    localStorage.setItem('event_id', id)
+    window.open("./event.php", "_self")
+}
+
 const onClickLoadEventos = (data) => {
 
   return data.map((item) => {
+    
     return `
 
     <section class="event">
@@ -9,7 +15,7 @@ const onClickLoadEventos = (data) => {
       <div>
         <h2>${item['titulo']}</h2>
         <p>${item['servicio']}</p>
-        <button>mas informacion</button>
+        <button onclick="sendEvent(${item['id']})">mas informacion</button>
       </div>
     </section>
     </section>
