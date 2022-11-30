@@ -1,13 +1,13 @@
-const avisos = document.getElementById('avisos');
+// const avisos = document.getElementById('avisos');
 
-const invocarAviso = (text) => {
-  avisos.innerText=text;
-  avisos.style.display="flex"
-  avisos.style.animationIterationCount="1";
-  setTimeout(() => {avisos.style.display="none"}, 2000)
-}
+// const invocarAviso = (text) => {
+//   avisos.innerText=text;
+//   avisos.style.display="flex"
+//   avisos.style.animationIterationCount="1";
+//   setTimeout(() => {avisos.style.display="none"}, 2000)
+// }
 
-invocarAviso("funciono")
+// invocarAviso("funciono")
 
 
 const loginCallerBg = document.getElementById('login-caller-bg');
@@ -25,12 +25,12 @@ affected.style.display=monitor
 dropdownLogSm.style.display="none";
 dropdownLogBg.style.display="none";
 
-loginCallerBg.onfocus=() => {setTimeout(doDisplay, 100, dropdownLogBg, "flex")};
-loginCallerBg.onblur=() => {setTimeout(doDisplay, 100, dropdownLogBg, "none")};
-loginCallerSm.forEach((boton) => {boton.onfocus=() => {setTimeout(doDisplay, 100, dropdownLogSm, "flex")};})
-loginCallerSm.forEach((boton) => {boton.onblur=() => {setTimeout(doDisplay, 100, dropdownLogSm, "none")};})
-gestorIndiceSm.onfocus=() => {setTimeout(doDisplay, 100, gestorOptionsSm, "flex")};
-gestorIndiceSm.onblur=() => {setTimeout(doDisplay, 100, gestorOptionsSm, "none")};
+loginCallerBg.onfocus=() => {setTimeout(doDisplay, 200, dropdownLogBg, "flex")};
+loginCallerBg.onblur=() => {setTimeout(doDisplay, 200, dropdownLogBg, "none")};
+loginCallerSm.forEach((boton) => {boton.onfocus=() => {setTimeout(doDisplay, 200, dropdownLogSm, "flex")};})
+loginCallerSm.forEach((boton) => {boton.onblur=() => {setTimeout(doDisplay, 200, dropdownLogSm, "none")};})
+gestorIndiceSm.onfocus=() => {setTimeout(doDisplay, 200, gestorOptionsSm, "flex")};
+gestorIndiceSm.onblur=() => {setTimeout(doDisplay, 200, gestorOptionsSm, "none")};
 
 
 gestorOptionsSm.style.display="none";

@@ -507,15 +507,18 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <input type="text" name="nombre" placeholder="Nombre del pedido">
             <span style="position: relative;">
             <i class="fa-solid fa-plus" id="add-fichTec"></i>
-              <select id="select_fichTec" class="select"> 
+              <select id="select_fichTec" class="select objeto" style="height: initial;"> 
                 <!-- <option value="un producto">torta</option>  -->
               </select>
+              <input type="numeric" placeholder="cantidad" class="counter">
             </span>
             <!-- <section class="table-list" id="fichTec-list"></section> -->
             <table id="fichTec-list">
-              <tr><th>producto</th></tr>
+              <tr>
+                <th>producto</th>
+                <th>cantidad</th>
+              </tr>
             </table>
-            <input type="numeric" placeholder="cantidad">
             <textarea name="" id="" cols="30" rows="10" placeholder="detalles del pedido"></textarea>
             <button type="button" >guardar</button>
             <button onclick="confirmSign('flex')">Eliminar</button>

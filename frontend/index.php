@@ -27,7 +27,8 @@ session_start();
             <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
             echo '
         <p id="userName">'.$_SESSION["username"].'</p>
-          ';} ?>
+        ';
+            } ?>
             <div>
                 <ul class="navOptions">
                     <li id="inicio_nav_move" class="liSelected">
@@ -172,6 +173,12 @@ session_start();
     <script src="assets/event_loader.js"></script>
     <script src="assets/senders.js"></script>
     <script src="assets/logout.js"></script>
+    <script src="assets/sendEmail.js"></script>
+    <?php if (strcmp($_SESSION["rol"], "usuario") == 0 || strcmp($_SESSION["rol"], "admin") == 0) {
+            echo '
+        <script > invocarAviso("bienvenido al sistema"); </script>
+          ';
+            } ?>
 </body>
 
 </html>

@@ -14,7 +14,7 @@ const onClickLoadEventos = (data) => {
     return data.map((item) => {
         return `
     <div class="event-banner event-noView" id="${item['id']}">
-        <img src="./assets/img/restaurant.jpg" alt="">
+        <img src="${item['image_name']}" alt="">
         <div class="event-info">
                 <h2>${item['titulo']}</h2>
                 <p>${item['servicio']}</p>
