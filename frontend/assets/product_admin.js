@@ -253,7 +253,7 @@ const chargeProduct = (id, clear) => {
         actual_unities = []
         nombre_in_form.value = ""
     } else {
-        let act_item = products.get(id)
+        let act_item = products.get(`${id}`)
         nombre_in_form.value = act_item.nombre
         prod_id = id
         loadUnities(id)

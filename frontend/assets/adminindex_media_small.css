@@ -630,6 +630,7 @@ objeto
     height: 50px;
     position: absolute;
     bottom: 0;
+    display: none;
   }
 
 }

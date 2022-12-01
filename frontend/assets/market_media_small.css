@@ -194,7 +194,7 @@
         color: #fff;
         border: none;
         position: absolute;
-        bottom: 0;
+        bottom: 7vh;
         right: 0;
         font-size: 2.5vh;
     }
@@ -207,7 +207,7 @@
         color: #fff;
         border: none;
         position: absolute;
-        bottom: 7vh;
+        bottom: 14vh;
         right: 0;
         font-size: 2.5vh;
     }
@@ -322,7 +322,7 @@
 
     #compra-detalles
     {
-        height: 16% !important;
+        height: 30% !important;
         align-items: flex-start !important;
     }
 
