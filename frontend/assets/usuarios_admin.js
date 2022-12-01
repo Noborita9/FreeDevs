@@ -23,6 +23,7 @@ const loadRoles = () => {
 }
 
 const chargeUser = (id, clear = false) => {
+    console.log('funciono')
     let username = document.querySelector("#form_usuarios > input[type=text]:nth-child(3)")
     let password = document.querySelector("#form_usuarios > input[type=text]:nth-child(4)")
     let rol_select = document.getElementById("select-rol")
@@ -93,6 +94,13 @@ const usersLoader = (is_searching) => {
 }
 
 document.getElementById(usuarios_page).addEventListener('click', () => {
+    usersLoader(false)
+    loadRoles()
+    window.localStorage.setItem("item", usuarios_page)
+    window.localStorage.setItem("load_func", getUsersHtml)
+})
+
+document.getElementById('usuarios_responsive').addEventListener('click', () => {
     usersLoader(false)
     loadRoles()
     window.localStorage.setItem("item", usuarios_page)

@@ -254,14 +254,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
         <section class="menu" id="menu_usuarios">
           <!-- lista de usuarios -->
           <div class="list" id="list_usuarios">
-            <span>
-              <h2>Juan</h2>
-              <p>Usuario</p>
-            </span>
-            <span>
-              <h2>nombre</h2>
-              <p>Rol</p>
-            </span>
+
           </div>
           <div class="fill"></div>
       <!-- agregar usuarios -->

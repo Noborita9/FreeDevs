@@ -80,7 +80,7 @@ const chargeItem = (item, id, clear) => {
         let stock_in_form = document.querySelector("#form_insumos > span > input")
         let unidad_in_form = document.querySelector("#unidad-select")
         let precio_in_form = document.querySelector("#form_insumos > input[type=number]:nth-child(5)")
-        let act_item = actual_map.get(id)
+        let act_item = actual_map.get(`${id}`)
         nombre_in_form.value = act_item.nombre
         stock_in_form.value = transformer(act_item.unidad, act_item.stock)
         unidad_in_form.value = units[act_item.unidad]

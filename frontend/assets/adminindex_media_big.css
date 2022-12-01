@@ -323,7 +323,7 @@
     transform: translateY(-10px) !important;
   }
 
-#eventos:focus, #usuarios:focus, #productos:focus, #imagenes:focus
+#eventos:focus, #usuarios:focus, #productos:focus, #imagenes:focus, #pedidos:focus, #insumos:focus
   {
     background: #1F1F1F;
     color: #fff;

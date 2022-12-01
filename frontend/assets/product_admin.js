@@ -254,7 +254,7 @@ const chargeProduct = (id, clear) => {
         nombre_in_form.value = ""
         window.localStorage.setItem("item_id", prod_id)
     } else {
-        let act_item = products.get(id)
+        let act_item = products.get(`${id}`)
         nombre_in_form.value = act_item.nombre
         prod_id = id
         window.localStorage.setItem("item_id", prod_id)
