@@ -7,7 +7,7 @@ let events_id = 0
 const getEventsHtml = (data) => {
     return data.map((item) => {
         events.set(item["id"], item)
-        return `<span id='${item[' id']}'><h2>${item['titulo']}</h2><p>fecha xx/xx/xxxx</p></span>`
+        return `<span id='${item['id']}'><h2>${item['titulo']}</h2><p>${item['fecha']}</p></span>`
     })
 }
 
@@ -44,7 +44,7 @@ const eventLoader = (is_searching) => {
         .catch((err) => { console.log(err) })
 }
 
-document.getElementById(event_page).addEventListener('click', ()=>{
+document.getElementById(event_page).addEventListener('click', () => {
     eventLoader(false)
     window.localStorage.setItem("item", event_page)
     window.localStorage.setItem("load_func", getEventsHtml)

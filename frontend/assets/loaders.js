@@ -86,6 +86,7 @@ const chargeItem = (item, id, clear) => {
         unidad_in_form.value = units[act_item.unidad]
         precio_in_form.value = act_item.precio
         actual_id = id
+        window.localStorage.setItem("item_id", id)
     }
     else if (clear && item == "insumos") {
         let nombre_in_form = document.querySelector("#form_insumos > input[type=text]:nth-child(3)")
@@ -97,6 +98,7 @@ const chargeItem = (item, id, clear) => {
         stock_in_form.value = 0
         unidad_in_form.value = "Kg"
         precio_in_form.value = 0
+        window.localStorage.setItem("item_id", actual_id)
     }
 }
 
@@ -124,7 +126,7 @@ const loader = (url, element, injector, item_table, is_searching, search_query) 
             let json = JSON.parse(texto)
             let elementSpace = document.getElementById(element)
             elementSpace.innerHTML = " "
-            let items = injector(json["body"])
+            let items = injector(json["body"], item_table)
             items.forEach(item => {
                 elementSpace.innerHTML += item
             });
@@ -190,12 +192,36 @@ const options = [
     },
 ]
 
+
+const getLoadFunction = (data, type) => {
+    if (type == "productos") {
+        return data.map((item) => {
+            products.set(item["id"], item)
+            return `<span onclick='chargeProduct(${item['id']})' id='${item['id']}'><h2>${item['nombre']}</h2></span>`
+        })
+    } else if (type == "usuarios") {
+        return data.map((item) => {
+            users.set(`${item["id"]}`, item)
+            return `<span onclick='chargeUser(${item["id"]})' id='${item['id']}'><h2>${item['username']}</h2><p>${item['rol']}</span>`
+        })
+    } else if (type == "eventos") {
+        return data.map((item) => {
+            events.set(item["id"], item)
+            return `<span id='${item['id']}'><h2>${item['titulo']}</h2><p>${item['fecha']}</p></span>`
+        })
+    } else if (type == "insumos"){
+        return onClickLoadInsumos(data)
+    }
+}
+
+window.localStorage.setItem("item", "insumos")
 options.forEach(option => {
     let type = option["type"]
     let type_dom = document.getElementById(`${type}`)
     type_dom.addEventListener('click', () => {
         loader(`${backendRoute}load_items.php`, `list_${type}`, option["loadFunction"], type)
         loader(`${backendRoute}load_items.php`, "ingredient-select", loadSelectionIngredientes, "insumos")
+        window.localStorage.setItem("item", "insumos")
         actual_id = 0
         actual_type = type
     })
@@ -217,9 +243,10 @@ options.forEach(option => {
     })
     document.querySelector("#cartel > span > button:nth-child(2)").addEventListener('click', () => {
         let data = new FormData()
-        data.set("id", actual_id)
-        data.set("item", actual_type)
-        create_item(data, "remove_item_by_id.php", option["loadFunction"], type)
+        let item_to_remove = window.localStorage.getItem("item")
+        data.set("id", window.localStorage.getItem("item_id"))
+        data.set("item", item_to_remove)
+        create_item(data, "remove_item_by_id.php", getLoadFunction, item_to_remove)
         document.getElementById("confirmar-accion").style.display = "none"
     })
 });
@@ -228,6 +255,5 @@ searchButton.addEventListener('click', () => {
     let searchValue = document.getElementById("buscador").value
     console.log("Some Thing")
     let item = window.localStorage.getItem("item")
-    let func = eval(`(${window.localStorage.getItem("load_func")})`)
-    loader(`${backendRoute}load_items.php`, `list_${item}`, func, item, true, `nombre LIKE "%${searchValue}%"`)
+    loader(`${backendRoute}load_items.php`, `list_${item}`, getLoadFunction, item, true, `nombre LIKE "%${searchValue}%"`)
 })

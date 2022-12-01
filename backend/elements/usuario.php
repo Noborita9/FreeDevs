@@ -48,7 +48,7 @@ class Usuario
     public function delete_by_id()
     {
         include("../conexion.php");
-        $query = "DELETE FROM unidades where id=:id;";
+        $query = "DELETE FROM usuarios where id=:id;";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":id", $this->id);
         $stmt->execute();

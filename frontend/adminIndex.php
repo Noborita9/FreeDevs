@@ -276,7 +276,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
                 <option value="administrador">administrador</option> -->
               </select>
               <button type="button" >guardar</button>
-              <button onclick="confirmSign('flex')">Eliminar</button>
+              <button type="button" onclick="confirmSign('flex')">Eliminar</button>
           </form>
         </section>
 
@@ -323,7 +323,7 @@ if (strcmp($_SESSION["rol"], "admin") != 0) {
             <textarea name="procedimiento" id="" cols="30" rows="10" placeholder="Descrba el procedmiento"></textarea>
             <input type="text" name="comment" placeholder="Ingrese un comentario">
             <button type="button" >guardar</button>
-            <button onclick="confirmSign('flex')">Eliminar</button>
+            <button type="button" onclick="confirmSign('flex')">Eliminar</button>
         </form>
       </section>
 

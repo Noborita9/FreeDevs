@@ -67,14 +67,14 @@ CREATE TABLE product_per_unity (
 CREATE TABLE eventos (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     titulo VARCHAR (200) NOT NULL,
-    tipo VARCHAR (200) NOT NULL, 
-    servicio VARCHAR (200) NOT NULL,
+    tipo VARCHAR (400) NOT NULL, 
+    servicio VARCHAR (400) NOT NULL,
     fecha DATE NOT NULL,
     ubicacion VARCHAR (200) NOT NULL,
     cantidad_personas INT NOT NULL ,
-    contacto VARCHAR (100) NOT NULL,
-    image_name VARCHAR (100),
-    mobiliario VARCHAR (200),
+    contacto VARCHAR (400) NOT NULL,
+    image_name VARCHAR (400),
+    mobiliario VARCHAR (400),
     active BOOL DEFAULT true
 );
 
@@ -160,5 +160,4 @@ INSERT INTO product_per_unity (id_producto, unidad, precio, stock) VALUES (1, "P
 INSERT INTO ingred_por_prod (id_producto, id_ingrediente, cantidad) VALUES (1, 1, 150), (1, 4, 500), (1, 7, 1000);
 INSERT INTO eventos (titulo, tipo, servicio, fecha, ubicacion, cantidad_personas, contacto, image_name, mobiliario)
 VALUES 
-    ("mesa de dulces", "fiesta", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae perspiciatis cumque, magni quam debitis repellendus neque cupiditate in eum aspernatur explicabo, suscipit omnis ea aliquid, nam commodi excepturi beatae quas!",CURDATE(), "salon agua dulce", 60, 095123123, "https://images.pexels.com/photos/587741/pexels-photo-587741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "se dispondra de mesas y sillas para los invitados"),
-    ();
+    ("mesa de dulces", "fiesta", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae perspiciatis cumque, magni quam debitis repellendus neque cupiditate in eum aspernatur explicabo, suscipit omnis ea aliquid, nam commodi excepturi beatae quas!",CURDATE(), "salon agua dulce", 60, 095123123, "https://images.pexels.com/photos/587741/pexels-photo-587741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "se dispondra de mesas y sillas para los invitados");

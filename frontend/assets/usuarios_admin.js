@@ -18,8 +18,7 @@ const getUsersHtml = (data) => {
 const loadRoles = () => {
     let rol_select = document.getElementById("select-rol")
     rol_select.innerHTML = ""
-    roles.forEach(role => {
-        rol_select.innerHTML += `<option>${role}</option>`
+    roles.forEach(role => { rol_select.innerHTML += `<option>${role}</option>`
     });
 }
 
@@ -32,12 +31,14 @@ const chargeUser = (id, clear = false) => {
         username.value = ""
         password.value = ""
         rol_select.value = "usuario"
+        window.localStorage.setItem("item_id", user_id)
     } else {
         let act_item = users.get(`${id}`)
         username.value = act_item.username
         password.value = act_item.passwd
         rol_select.value = act_item.rol
         user_id = id
+        window.localStorage.setItem("item_id", user_id)
     }
 }
 

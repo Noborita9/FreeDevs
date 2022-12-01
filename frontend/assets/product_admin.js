@@ -252,10 +252,12 @@ const chargeProduct = (id, clear) => {
         prod_id = 0
         actual_unities = []
         nombre_in_form.value = ""
+        window.localStorage.setItem("item_id", prod_id)
     } else {
         let act_item = products.get(id)
         nombre_in_form.value = act_item.nombre
         prod_id = id
+        window.localStorage.setItem("item_id", prod_id)
         loadUnities(id)
         loadIngredients(id)
     }
@@ -306,7 +308,6 @@ const productLoader = (is_searching, loader) => {
 document.getElementById("productos").addEventListener('click', () => {
     productLoader(false, getProductosHtml)
     window.localStorage.setItem("item", products_page)
-    window.localStorage.setItem("load_func", getProductosHtml)
 })
 
 document.querySelector("#form_productos > button:nth-child(2)").addEventListener("click", () => {
@@ -316,3 +317,7 @@ document.querySelector("#form_productos > button:nth-child(2)").addEventListener
 document.querySelector("#form_productos > button:nth-child(12)").addEventListener("click", () => {
     save_producto()
 })
+
+/* document.querySelector("#form_productos > button:nth-child(13)").addEventListener("click", () => { */
+/*     save_producto() */
+/* }) */
