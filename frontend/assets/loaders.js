@@ -253,7 +253,11 @@ options.forEach(option => {
 searchButton = document.getElementById("buscador_button")
 searchButton.addEventListener('click', () => {
     let searchValue = document.getElementById("buscador").value
-    console.log("Some Thing")
     let item = window.localStorage.getItem("item")
-    loader(`${backendRoute}load_items.php`, `list_${item}`, getLoadFunction, item, true, `nombre LIKE "%${searchValue}%"`)
+    if (item == "usuarios"){
+        loader(`${backendRoute}load_items.php`, `list_${item}`, getLoadFunction, item, true, `username LIKE "%${searchValue}%"`)
+    } else {
+        loader(`${backendRoute}load_items.php`, `list_${item}`, getLoadFunction, item, true, `nombre LIKE "%${searchValue}%"`)
+
+    }
 })
